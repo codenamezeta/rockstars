@@ -1,0 +1,151 @@
+/*************************************************************************
+GLOBAL STYLES
+*************************************************************************/
+/* *:focus {
+  border: 2px solid red;
+} */
+
+// TODO: Not yet implemented
+// html {
+//   box-sizing: border-box;
+//   font-size: 20px;
+//   font-family: 'mr-eaves-modern', sans-serif;
+//   font-weight: 400;
+//   font-style: normal;
+// }
+
+* {
+  &::selection {
+    background: #5b0707;
+    color: #fff;
+  }
+
+  &::-moz-selection {
+    background: #5b0707;
+    color: #fff;
+  }
+}
+
+main.hero {
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
+    url('./public/assets/fold-overlay.png') no-repeat center center/cover,
+    url('./public/assets/Vine-Background.png') repeat center center/contain;
+}
+
+section#benefits {
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+    url('./public/assets/Dust-Overlay.png') no-repeat center center/cover;
+  opacity: 0.9;
+  position: relative;
+
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   background-color: rgba(0, 0, 0, 0.97);
+  //   z-index: -1;
+  // }
+}
+
+section#testimonials {
+  background: url('./public/assets/rough-texture-01.png') no-repeat center
+    center/cover;
+  opacity: 0.99;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: -1;
+  }
+}
+
+section#enroll {
+  background: radial-gradient(circle, #210, #000);
+}
+
+header.header-style-1 {
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+    url('./public/assets/Dust-Overlay.png') no-repeat center center/cover;
+  opacity: 0.99;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+  }
+}
+
+header.header-style-2 {
+  background:
+    linear-gradient(to left, rgba(0, 0, 0, 0.5), rgb(62, 1, 1, 0.5)),
+    url('./public/assets/Background-Circles.png') no-repeat center center/cover;
+  opacity: 0.99;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(68, 0, 0, 0.1);
+    z-index: -1;
+  }
+}
+
+footer {
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+    url('./public/assets/Vine-Background.png') no-repeat center center/cover;
+  opacity: 0.99;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+  }
+}
+
+.program-card {
+  flex: 1 1 calc(50% - 1rem); /* Adjust the width to account for the gap */
+  background: url('./public/assets/Vine-Background.png') no-repeat center
+    center/cover;
+  opacity: 0.99;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+}
