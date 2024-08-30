@@ -1,5 +1,5 @@
 'use client'
-import PriceBox from './PriceBox'
+import ProgramPriceBox from './ProgramPriceBox'
 import { useState } from 'react'
 
 interface PricingClassesProps {
@@ -18,7 +18,7 @@ export default function PricingClasses({
   }
 
   return (
-    <section className='bg-background overflow-hidden'>
+    <section id='classes_pricing' className='bg-background overflow-hidden'>
       <div className='container px-5 py-24 mx-auto'>
         <div className='flex flex-col text-center w-full mb-20'>
           <h2 className='sm:text-3xl text-2xl font-medium title-font mb-2'>
@@ -51,7 +51,7 @@ export default function PricingClasses({
           </div>
         </div>
         <div className='flex flex-wrap'>
-          <PriceBox
+          <ProgramPriceBox
             name={'Rock Shop'}
             price={49}
             interval={'/month'}
@@ -75,7 +75,7 @@ export default function PricingClasses({
             customPrice={false}
             customPriceText={''}
           />
-          <PriceBox
+          <ProgramPriceBox
             name={'JamCore'}
             price={toggled ? 104 : 79}
             interval={'/month'}
@@ -96,7 +96,7 @@ export default function PricingClasses({
             customPrice={false}
             customPriceText={''}
           />
-          <PriceBox
+          <ProgramPriceBox
             name={'BandCore'}
             price={toggled ? 124 : 99}
             interval={'/month'}
@@ -120,7 +120,7 @@ export default function PricingClasses({
             customPrice={false}
             customPriceText={''}
           />
-          <PriceBox
+          <ProgramPriceBox
             name={'Rockstar Pro'}
             price={150}
             customPrice={true}

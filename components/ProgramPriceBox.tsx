@@ -1,7 +1,7 @@
 import { buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
 
-type PriceBoxProps = {
+type ProgramPriceBoxProps = {
   name: string
   price: number
   interval: string
@@ -16,7 +16,7 @@ type PriceBoxProps = {
   callToActionText: string
 }
 
-const PriceBox: React.FC<PriceBoxProps> = ({
+const ProgramPriceBox: React.FC<ProgramPriceBoxProps> = ({
   name = 'Coming Soon',
   price = 0,
   interval = '/session',
@@ -32,7 +32,7 @@ const PriceBox: React.FC<PriceBoxProps> = ({
   ],
   disclaimers = ['Prices & availability are subject to change.'],
   callToActionText = 'Get Started',
-}: PriceBoxProps) => {
+}: ProgramPriceBoxProps) => {
   return (
     <div className='p-3 xl:w-1/4 md:w-1/2 w-full'>
       <div
@@ -47,9 +47,10 @@ const PriceBox: React.FC<PriceBoxProps> = ({
             {highlightText.toUpperCase()}
           </span>
         )}
-        <h2 className='text-sm tracking-widest text-gray-400 title-font mb-1 font-medium'>
+        <h2 className='text-sm tracking-widest text-primary title-font mb-1 font-medium'>
           {name.toUpperCase()}
         </h2>
+
         <h2 className='text-5xl text-white leading-none flex flex-wrap items-baseline pb-4 mb-4 border-b border-gray-800'>
           {customPrice ? (
             customPriceText
@@ -127,4 +128,4 @@ const PriceBox: React.FC<PriceBoxProps> = ({
   )
 }
 
-export default PriceBox
+export default ProgramPriceBox

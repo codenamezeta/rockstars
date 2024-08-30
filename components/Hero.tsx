@@ -2,7 +2,6 @@
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import Photo from '@/public/imgs/drummer-girl-1.png'
-import Vines from '@/public/assets/Vine-Background.png'
 
 function scrollToEnroll() {
   document.getElementById('enroll')?.scrollIntoView({ behavior: 'smooth' })
@@ -33,7 +32,6 @@ export default function Hero(): JSX.Element {
           <Image alt='Girl Playing Drums' src={Photo} />
         </div>
       </div>
-      {/* <Image alt='Girl Playing Drums' src={Vines} /> */}
     </main>
   )
 }

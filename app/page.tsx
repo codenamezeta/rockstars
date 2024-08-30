@@ -5,6 +5,7 @@ import ProgramsOverview from '@/components/ProgramsOverview'
 // import Team from '@/components/Team'
 import Contact from '@/components/Contact'
 import Enroll from '@/components/Enroll'
+import SectionOverview from '@/components/SectionOverview'
 export default function Home() {
   return (
     <>

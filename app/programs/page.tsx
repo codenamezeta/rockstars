@@ -27,7 +27,8 @@ export default function ProgramsPage(): JSX.Element {
               learn, whether it’s rock, pop, punk, blues, acoustic, alternative,
               metal, reggae, folk, country or anything in between, you know you
               are going to learn the way the pros do – by studying those great
-              artists who inspire you to succeed.
+              artists who inspire you to succeed. Take a look at a few of the
+              instruments we specialize in.
             </p>
             <div className='flex mt-6 justify-center'>
               <div className='w-16 h-1 rounded-full bg-accent inline-flex'></div>

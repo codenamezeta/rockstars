@@ -1,10 +1,20 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+
 import { Button } from './ui/button'
 import Logo from '@/public/imgs/logos/logo-white-shadow.svg'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+
+const toggleMobileNav = () => {
+  const menu = document.querySelector('.navbar-menu')
+  menu?.classList.toggle('hidden')
+}
+
+function scrollToEnroll() {
+  // Scroll to the enroll section after the page has finished loading
+  document.getElementById('enroll')?.scrollIntoView({ behavior: 'smooth' })
+}
 
 type Page = {
   name: string // The name of the page
@@ -12,66 +22,41 @@ type Page = {
 }
 
 export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
-  const [isSolid, setIsSolid] = useState(false) // Inside the component
-  const pathname = usePathname()
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setIsSolid(false)
-      } else {
-        setIsSolid(true)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const [isNavOpen, setIsNavOpen] = useState(true)
-
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen)
-  }
-
+  const pathname = usePathname() // For the current page path
   return (
-    <nav className='w-full sticky top-0 z-20 bg-black'>
-      {/* <div className='container py-2 flex flex-row justify-between items-center h-24'> */}
-      <div
-        className={`transition-all duration-700 ease-in-out container py-2 flex flex-row justify-between items-center ${isSolid ? 'h-24' : 'h-36'}`}
-      >
-        <Link
-          href={pages[0].path}
-          // className={`transition-all duration-700 ease-in-out ${isSolid ? 'lg:w-24 w-2/12' : 'lg:w-44 w-3/12'}`}
-          className=''
-        >
+    <nav className='bg-black'>
+      <div className='container relative px-4 py-4 flex justify-between items-center bg-black'>
+        <Link className='text-3xl font-bold leading-none' href='/'>
           <Image
-            className='transition-all duration-700 ease-in-out'
             alt='The Rockstars of Tomorrow logo'
             src={Logo}
-            width={isSolid ? 100 : 120}
-            height={isSolid ? 97 : 97}
+            width={100}
+            height={97}
           />
-          <span className='sr-only'>
-            <h2>Rockstars of Tomorrow</h2>
-          </span>
         </Link>
-        <ul
-          className={`flex flex-col bg-black w-full font-medium mt-4 absolute top-24 left-0 md:static md:w-auto md:flex-row md:p-0 md:mt-0 md:border-0 ${
-            isNavOpen ? 'flex' : 'hidden md:flex'
-          }`}
-        >
-          {pages.map((page) => (
-            <li
-              key={page.path}
-              className='py-4 my-2 mx-4 text-center rounded border border-gray-400 md:border-0'
+        <div className='lg:hidden'>
+          <button
+            className='navbar-burger flex items-center text-white p-3'
+            onClick={toggleMobileNav}
+          >
+            <svg
+              className='block h-4 w-4 fill-current'
+              viewBox='0 0 20 20'
+              xmlns='http://www.w3.org/2000/svg'
             >
+              <title>Mobile menu</title>
+              <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z'></path>
+            </svg>
+          </button>
+        </div>
+        <ul className='hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6'>
+          {pages.map((page) => (
+            <li key={page.path} className=''>
               <Link
                 href={page.path}
-                className={`text-xl text-gray-400 hover:text-white hover:font-bold ${
+                className={`text-sm text-gray-400 hover:text-gray-500 ${
                   pathname === page.path ? 'text-white' : ''
                 }`}
-                onClick={toggleNav}
                 aria-current='page'
               >
                 {page.name}
@@ -79,34 +64,123 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
             </li>
           ))}
         </ul>
-        <Link href='/#enroll' className='ml-auto md:ml-0 mr-4'>
-          <Button variant='accent'>Get started</Button>
-        </Link>
-        <button
-          onClick={toggleNav}
-          data-collapse-toggle='main_nav'
-          type='button'
-          className='inline-flex items-center p-0 m-0 w-12 h-12 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
-          aria-controls='main_nav'
-          aria-expanded={isNavOpen}
+        <Button
+          className='hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6'
+          variant='outline'
+          size='lg'
         >
-          <span className='sr-only'>Open main menu</span>
-          <svg
-            className='w-8 h-8'
-            aria-hidden='true'
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 17 14'
-          >
-            <path
-              stroke='currentColor'
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth='2'
-              d='M1 1h15M1 7h15M1 13h15'
-            />
-          </svg>
-        </button>
+          Call Us
+        </Button>
+
+        <Button
+          className='hidden lg:inline-block lg:mr-3 py-2 px-6'
+          variant='accent'
+          size='lg'
+          onClick={
+            pathname === '/'
+              ? scrollToEnroll
+              : () => {
+                  window.location.href = '/#enroll'
+                }
+          }
+        >
+          Get Started ⭐
+        </Button>
+        {/* <a
+          className='hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200'
+          href='http://app.mymusicstaff.com'
+        >
+          Sign In
+        </a>
+        <a
+          className='hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200'
+          href='/#enroll'
+        >
+          Sign up
+        </a> */}
+      </div>
+
+      {/* Navbar Backdrop */}
+      <div className='navbar-menu relative z-50 hidden'>
+        <div
+          className='navbar-backdrop fixed inset-0 bg-gray-800 opacity-25'
+          onClick={toggleMobileNav}
+        ></div>
+
+        {/* Mobile Nav */}
+        <nav className='fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-black border-r overflow-y-auto'>
+          <div className='flex items-center mb-8'>
+            <Link href={pages[0].path} onClick={toggleMobileNav}>
+              <Image
+                className='w-32 h-24 mr-auto'
+                alt='The Rockstars of Tomorrow logo'
+                src={Logo}
+              />
+              <span className='sr-only'>
+                <h2>Rockstars of Tomorrow</h2>
+              </span>
+            </Link>
+            <button className='navbar-close ml-auto' onClick={toggleMobileNav}>
+              <svg
+                className='h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500'
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+              >
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  stroke-width='2'
+                  d='M6 18L18 6M6 6l12 12'
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div>
+            <ul>
+              {pages.map((page) => (
+                <li key={page.path} className='mb-4'>
+                  <Link
+                    href={page.path}
+                    className={`block p-4 text-xl font-semibold text-gray-400 hover:bg-accent hover:text-white rounded ${
+                      pathname === page.path ? 'text-white' : ''
+                    }`}
+                    onClick={toggleMobileNav}
+                    aria-current='page'
+                  >
+                    {page.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className='mt-auto'>
+            <div className='pt-6'>
+              <Button variant='outline' className='w-full mb-4'>
+                Call Us
+              </Button>
+
+              <Button
+                className='text-xl py-8 px-12'
+                variant='accent'
+                size='full'
+                onClick={
+                  pathname === '/'
+                    ? scrollToEnroll
+                    : () => {
+                        window.location.href = '/#enroll'
+                      }
+                }
+              >
+                Get Started ⭐
+              </Button>
+            </div>
+            <p className='my-4 text-xs text-center text-gray-400'>
+              <span>Copyright © 2021</span>
+            </p>
+          </div>
+        </nav>
       </div>
     </nav>
   )
