@@ -11,7 +11,7 @@ import Link from 'next/link'
 export default function ProgramsOverview(): JSX.Element {
   return (
     <section className='body-font bg-black'>
-      <div className='container px-5 py-12 pb-24 mx-auto'>
+      <div className='container px-5 pt-0 mt-0 pb-24 mx-auto'>
         <h2 className='sm:text-3xl text-2xl font-medium title-font text-primary mb-4 text-center'>
           Programs
         </h2>

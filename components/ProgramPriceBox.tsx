@@ -2,18 +2,19 @@ import { buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
 
 type ProgramPriceBoxProps = {
-  name: string
-  price: number
-  interval: string
-  currency: string
-  customPrice: boolean
-  customPriceText: string
-  additionalCostText: string
-  highlight: boolean
-  highlightText: string
-  featuresList: string[]
-  disclaimers: string[]
-  callToActionText: string
+  name?: string
+  price?: number
+  interval?: string
+  currency?: string
+  customPrice?: boolean
+  customPriceText?: string
+  additionalCostText?: string
+  highlight?: boolean
+  highlightText?: string
+  featuresList?: string[]
+  disclaimers?: string[]
+  callToActionText?: string
+  callToActionPath?: string
 }
 
 const ProgramPriceBox: React.FC<ProgramPriceBoxProps> = ({
@@ -31,7 +32,8 @@ const ProgramPriceBox: React.FC<ProgramPriceBoxProps> = ({
     'Please check back later for more information.',
   ],
   disclaimers = ['Prices & availability are subject to change.'],
-  callToActionText = 'Get Started',
+  callToActionText = '',
+  callToActionPath = '',
 }: ProgramPriceBoxProps) => {
   return (
     <div className='p-3 xl:w-1/4 md:w-1/2 w-full'>
@@ -106,23 +108,25 @@ const ProgramPriceBox: React.FC<ProgramPriceBoxProps> = ({
             </p>
           ))}
 
-        <Link
-          className={`${buttonVariants({ variant: 'accent' })} mt-4`}
-          href='/'
-        >
-          {callToActionText}
-          <svg
-            fill='none'
-            stroke='currentColor'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth='2'
-            className='w-4 h-4 ml-auto'
-            viewBox='0 0 24 24'
+        {callToActionText && (
+          <Link
+            className={`${buttonVariants({ variant: 'accent' })} mt-4`}
+            href={callToActionPath}
           >
-            <path d='M5 12h14M12 5l7 7-7 7'></path>
-          </svg>
-        </Link>
+            {callToActionText}
+            <svg
+              fill='none'
+              stroke='currentColor'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth='2'
+              className='w-4 h-4 ml-auto'
+              viewBox='0 0 24 24'
+            >
+              <path d='M5 12h14M12 5l7 7-7 7'></path>
+            </svg>
+          </Link>
+        )}
       </div>
     </div>
   )

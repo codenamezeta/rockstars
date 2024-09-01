@@ -4,7 +4,7 @@ import Separator from './Separator'
 
 export default function Benefits(): JSX.Element {
   return (
-    <section id='benefits' className='pb-12 text-white body-font bg-background'>
+    <section id='benefits' className='pt-12 text-white body-font bg-background'>
       <div className='container px-5 py-24 mx-auto flex flex-wrap'>
         <div className='text-center mb-20'>
           <h2 className='sm:text-3xl text-2xl font-medium title-font text-primary mb-4'>

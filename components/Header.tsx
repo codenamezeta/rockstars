@@ -15,7 +15,7 @@ export default function Header({
 }: HeaderProps): JSX.Element {
   return (
     <header
-      className={`header-style-${headerStyle} px-5 py-24 mx-auto ${customClasses}`}
+      className={`themed-background-style-${headerStyle} px-5 py-24 mx-auto ${customClasses}`}
     >
       <div className='container'>
         <h1 className='sm:text-6xl text-4xl font-medium title-font mb-2 text-white'>

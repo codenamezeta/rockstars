@@ -71,7 +71,6 @@ export default function PricingClasses({
               '* Time based on number of students enrolled.',
               '** One-time cost of $15 for materials.',
             ]} // This is the text that will be displayed just above the call to action button
-            callToActionText={'Get Started'}
             customPrice={false}
             customPriceText={''}
           />
@@ -92,7 +91,6 @@ export default function PricingClasses({
               'Students can also participate in the Rock Shop program.',
             ]}
             disclaimers={['* Time based on number of students enrolled.']} // This is the text that will be displayed just above the call to action button
-            callToActionText={'Get Started'}
             customPrice={false}
             customPriceText={''}
           />
@@ -116,7 +114,6 @@ export default function PricingClasses({
               '* Time based on number of students enrolled.',
               '** Requires instructor approval.',
             ]} // This is the text that will be displayed just above the call to action button
-            callToActionText={'Get Started'}
             customPrice={false}
             customPriceText={''}
           />
@@ -142,6 +139,7 @@ export default function PricingClasses({
             ]}
             disclaimers={['']} // This is the text that will be displayed just above the call to action button
             callToActionText={'Contact us for details'}
+            callToActionPath='/contact'
           />
         </div>
       </div>

@@ -7,7 +7,7 @@ import { GrGoogle } from 'react-icons/gr'
 export default function Footer(): JSX.Element {
   return (
     <footer className='text-gray-400 bg-black body-font'>
-      <div className='container px-5 py-12 mx-auto'>
+      <div className='container px-5 pt-12 mx-auto'>
         <div className='flex flex-wrap md:text-left text-center order-first'>
           <div className='lg:w-1/4 md:w-1/2 w-full px-4'>
             <div className='flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start'>
@@ -131,7 +131,7 @@ export default function Footer(): JSX.Element {
               target='_blank'
               rel='noopener noreferrer'
             >
-              Web design by @codenamezeta
+              @codenamezeta
             </a>
           </p>
         </div>

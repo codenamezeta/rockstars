@@ -93,7 +93,7 @@ section#enroll {
   background: radial-gradient(circle, #210, #000);
 }
 
-header.header-style-1 {
+.themed-background-style-1 {
   background:
     linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
     url('./public/assets/Dust-Overlay.png') no-repeat center center/cover;
@@ -112,7 +112,7 @@ header.header-style-1 {
   }
 }
 
-header.header-style-2 {
+.themed-background-style-2 {
   background:
     linear-gradient(to left, rgba(0, 0, 0, 0.5), rgb(62, 1, 1, 0.5)),
     url('./public/assets/Background-Circles.png') no-repeat center center/cover;
@@ -127,6 +127,24 @@ header.header-style-2 {
     right: 0;
     bottom: 0;
     background-color: rgba(68, 0, 0, 0.1);
+    z-index: -1;
+  }
+}
+
+.themed-background-style-3 {
+  background: url('./public/assets/rough-texture-01.png') no-repeat center
+    center/cover;
+  opacity: 0.99;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.95);
     z-index: -1;
   }
 }
@@ -146,6 +164,24 @@ footer {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+  }
+}
+
+.background-theme-img {
+  background: url('./public/assets/Dust-Overlay.png') no-repeat center
+    center/cover;
+  opacity: 0.99;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: -1;
   }
 }
