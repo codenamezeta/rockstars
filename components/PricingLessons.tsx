@@ -1,19 +1,17 @@
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
 import LessonPriceBox from './LessonPriceBox'
+import SectionOverview from './SectionOverview'
 
 export default function PricingLessons(): JSX.Element {
   return (
     <section id='lessons_pricing' className='py-24 bg-black body-font'>
-      <div className='text-center w-full mb-8'>
-        <h2 className='sm:text-3xl text-2xl font-medium title-font mb-2'>
-          Music Lessons
-        </h2>
-        <p className='lg:w-2/3 mx-auto leading-relaxed text-base text-primary'>
-          Learn to play your favorite instrument with the guidance of our expert
-          instructors.
-        </p>
-      </div>
+      <SectionOverview
+        title={'Music Lessons'}
+        subtitle={
+          'Learn to play your favorite instrument with the guidance of our expert instructors.'
+        }
+      />
       <div className='lessons-pricing-details'>
         <div className='p-4 md:w-2/3 w-full mx-auto'>
           <h2 className='text-4xl text-white leading-none flex flex-wrap items-baseline pb-4 mb-4 border-b border-gray-800'>

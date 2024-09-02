@@ -38,13 +38,13 @@ export default function ProgramsPage(): JSX.Element {
         </div>
       </section>
 
-      <section className='text-foreground body-font'>
+      <section id='programs' className='text-foreground body-font'>
         <div className='text-center my-24 container'>
-          <Image
+          {/* <Image
             src={rockstarProImage}
             alt='Rockstar Pro'
-            className='w-full -my-24'
-          />
+            className='w-full -mt-24'
+          /> */}
           <h2 className='sm:text-3xl text-2xl font-medium title-font text-primary mb-4'>
             Band Programs
           </h2>

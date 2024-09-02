@@ -28,12 +28,8 @@ export default function Contact({
               <h2 className='title-font font-semibold text-white tracking-widest text-xs'>
                 ADDRESS
               </h2>
-              <a className='mt-1'>
-                2855 Foothill Boulevard
-                <br />
-                Suite A-102
-                <br />
-                La Verne CA 92557
+              <a className='text-xs leading-none tracking-tighter'>
+                2855 Foothill Blvd. Suite A-102 La Verne CA 92557
               </a>
             </div>
             <div className='lg:w-1/2 px-6 mt-4 lg:mt-0'>
@@ -41,7 +37,7 @@ export default function Contact({
                 EMAIL
               </h2>
               <a
-                className='leading-relaxed'
+                className='text-xs leading-none tracking-tighter'
                 href='mailto:laverne@rockstarsoftomorrow.com'
               >
                 laverne@rockstarsoftomorrow.com
@@ -49,7 +45,10 @@ export default function Contact({
               <h2 className='title-font font-semibold text-white tracking-widest text-xs mt-4'>
                 PHONE
               </h2>
-              <a className='leading-relaxed' href='tel:9514567890'>
+              <a
+                className='text-xs leading-none tracking-tighter'
+                href='tel:9514567890'
+              >
                 (951) 456-7890
               </a>
             </div>

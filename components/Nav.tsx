@@ -1,8 +1,8 @@
 'use client'
-
 import { Button } from './ui/button'
 import Logo from '@/public/imgs/logos/logo-white-shadow.svg'
 import { usePathname } from 'next/navigation'
+import { IoStarSharp } from 'react-icons/io5'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -24,7 +24,7 @@ type Page = {
 export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
   const pathname = usePathname() // For the current page path
   return (
-    <nav className='bg-black'>
+    <nav className='bg-black sticky top-0 z-50'>
       <div className='container relative px-4 py-4 flex justify-between items-center bg-black'>
         <Link className='text-3xl font-bold leading-none' href='/'>
           <Image
@@ -54,7 +54,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
             <li key={page.path} className=''>
               <Link
                 href={page.path}
-                className={`text-sm text-gray-400 hover:text-gray-500 ${
+                className={`text-lg text-gray-500 hover:text-foreground ${
                   pathname === page.path ? 'text-white' : ''
                 }`}
                 aria-current='page'
@@ -84,7 +84,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
                 }
           }
         >
-          Get Started ⭐
+          Get Started <IoStarSharp className='inline' />
         </Button>
         {/* <a
           className='hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200'
@@ -143,7 +143,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
                 <li key={page.path} className='mb-4'>
                   <Link
                     href={page.path}
-                    className={`block p-4 text-xl font-semibold text-gray-400 hover:bg-accent hover:text-white rounded ${
+                    className={`block p-4 text-2xl font-semibold text-gray-400 hover:bg-accent hover:text-white rounded ${
                       pathname === page.path ? 'text-white' : ''
                     }`}
                     onClick={toggleMobileNav}
@@ -162,7 +162,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
               </Button>
 
               <Button
-                className='text-xl py-8 px-12'
+                className=''
                 variant='accent'
                 size='full'
                 onClick={
@@ -173,7 +173,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
                       }
                 }
               >
-                Get Started ⭐
+                Get Started <IoStarSharp />
               </Button>
             </div>
             <p className='my-4 text-xs text-center text-gray-400'>

@@ -1,6 +1,7 @@
 'use client'
 import ProgramPriceBox from './ProgramPriceBox'
 import { useState } from 'react'
+import SectionOverview from './SectionOverview'
 
 interface PricingClassesProps {
   sectionTitle?: string
@@ -19,15 +20,19 @@ export default function PricingClasses({
 
   return (
     <section id='classes_pricing' className='bg-background overflow-hidden'>
-      <div className='container px-5 py-24 mx-auto'>
-        <div className='flex flex-col text-center w-full mb-20'>
-          <h2 className='sm:text-3xl text-2xl font-medium title-font mb-2'>
+      <SectionOverview
+        title='Rock Band Classes'
+        subtitle='Choose the best plan for you and your bandmates'
+      />
+      <div className='container px-5 mx-auto'>
+        <div className='flex flex-col text-center w-full'>
+          {/* <h2 className='sm:text-3xl text-2xl font-medium title-font mb-2'>
             {sectionTitle}
           </h2>
           <p className='lg:w-2/3 mx-auto leading-relaxed text-base text-primary'>
             {sectionDescription}
-          </p>
-          <div className='flex mx-auto border-2 border-accent rounded overflow-hidden mt-6'>
+          </p> */}
+          <div className='flex mx-auto border-2 border-accent rounded overflow-hidden my-6'>
             <button
               className={
                 !toggled

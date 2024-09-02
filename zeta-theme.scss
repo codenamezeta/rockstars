@@ -204,3 +204,9 @@ footer {
     z-index: -1;
   }
 }
+
+.outlined-icon {
+  stroke-width: 24; /* Adjust thickness as needed */
+  stroke: #fff; /* Set the outline color */
+  fill: #5b0707; /* Make the icon's fill transparent */
+}

@@ -16,23 +16,28 @@ type ProgramsProps = {
 
 export default function Programs({ programs }: ProgramsProps): JSX.Element {
   return (
-    <div className='container flex flex-col lg:flex-row flex-wrap gap-8'>
+    <section className='container flex flex-col lg:flex-row flex-wrap gap-8'>
       {programs.map((program: Program, index: number) => (
         <div
           key={index}
+          id={program.name}
           className='program-card flex flex-col p-8 rounded-lg border-2 border-accent'
         >
-          <h2 className='text-primary text-2xl title-font font-bold'>
+          <h2 className='text-primary text-lg md:text-2xl title-font font-bold'>
             {program.name}
           </h2>
-          <span className='font-bold text-xl my-3'>{program.tagline}</span>
-          <p className='leading-relaxed text-lg'>{program.description}</p>
+          <span className='font-bold text-sm md:text-xl my-3'>
+            {program.tagline}
+          </span>
+          <p className='leading-relaxed text-sm md:text-lg'>
+            {program.description}
+          </p>
           <Separator />
-          <ul className='text-white text-sm title-font font-medium mb-8 flex flex-wrap gap-2 text-left justify-between'>
+          <ul className='title-font font-medium mb-8 flex flex-wrap gap-2 text-left justify-between'>
             {program.details.map((detail: String, i: number) => (
               <li
                 key={i}
-                className='bg-accent p-2 rounded-xl border-1 border-gray-300'
+                className='bg-accent p-3 rounded-lg border-1 border-gray-300 text-xs'
               >
                 {detail}
               </li>
@@ -56,6 +61,6 @@ export default function Programs({ programs }: ProgramsProps): JSX.Element {
           </Link>
         </div>
       ))}
-    </div>
+    </section>
   )
 }

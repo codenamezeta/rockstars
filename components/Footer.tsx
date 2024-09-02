@@ -22,7 +22,7 @@ export default function Footer(): JSX.Element {
               </div>
             </div>
           </div>
-          <nav className='lg:w-1/4 md:w-1/2 w-full px-4 list-none'>
+          <nav className='lg:w-1/4 md:w-1/2 w-full px-4 list-none tracking-tighter'>
             <h4 className='text-xl'>Get In Touch</h4>
             <hr className='w-16 h-1 rounded-full bg-accent inline-flex mb-2'></hr>
             <li className='mb-2'>
@@ -61,7 +61,7 @@ export default function Footer(): JSX.Element {
               </span>
             </li>
           </nav>
-          <nav className='lg:w-1/4 md:w-1/2 w-full px-4 list-none'>
+          <nav className='lg:w-1/4 md:w-1/2 w-full px-4 list-none tracking-tighter'>
             <h4 className='text-xl'>Get Support</h4>
             <hr className='w-16 h-1 rounded-full bg-accent inline-flex mb-2'></hr>
             <li className='mb-2'>
@@ -80,7 +80,7 @@ export default function Footer(): JSX.Element {
               <a href='#'>Privacy Policy</a>
             </li>
           </nav>
-          <nav className='lg:w-1/4 md:w-1/2 w-full px-4 list-none'>
+          <nav className='lg:w-1/4 md:w-1/2 w-full px-4 list-none tracking-tighter'>
             <h4 className='text-xl'>Get Connected</h4>
             <hr className='w-16 h-1 rounded-full bg-accent inline-flex mb-2'></hr>
             <li className='mb-2'>
@@ -111,17 +111,7 @@ export default function Footer(): JSX.Element {
       </div>
       <div id='socket' className='bg-transparent container'>
         <div className='px-5 py-6 mx-auto flex items-center sm:flex-row flex-col'>
-          <Link
-            href='/'
-            className='flex title-font font-medium items-center md:justify-start justify-center text-white'
-          >
-            <span className='sr-only self-center text-2xl font-semibold whitespace-nowrap '>
-              Rockstars of Tomorrow
-            </span>
-          </Link>
-          <span className='ml-3 text-xl sr-only'>Rockstars of Tomorrow</span>
-
-          <p className='text-sm text-gray-400 text-center mx-auto'>
+          <p className='text-xs text-gray-400 text-center mx-auto tracking-tight'>
             Copyright &copy; {new Date().getFullYear()} Rockstars of Tomorrow La
             Verne
             <br />

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import rockstar from '../public/imgs/Kids/Teen Girl with Guitar.png'
 import Separator from './Separator'
+import Link from 'next/link'
 
 export default function Benefits(): JSX.Element {
   return (
@@ -38,9 +39,12 @@ export default function Benefits(): JSX.Element {
                 Gain valuable experience, build confidence, and thrill the
                 audience with your music!
               </p>
-              <a className='mt-3 text-gray-500 inline-flex items-center'>
-                Learn More
-              </a>
+              <Link
+                href='/programs#programs'
+                className='mt-3 text-gray-500 inline-flex items-center'
+              >
+                Learn More &rarr;
+              </Link>
             </div>
           </div>
           <div className='flex flex-col mb-10 lg:items-start items-center'>
@@ -49,13 +53,16 @@ export default function Benefits(): JSX.Element {
                 Rock Band Group Classes
               </h2>
               <p className='leading-relaxed text-base'>
-                Jam with fellow rockers in our exclusive "JamCore" and
-                "BandCore" classes. Master collaboration, communication, and
-                improvisation, and develop your unique band sound.
+                Jam with fellow rockers in our exclusive JamCore and BandCore
+                classes. Master collaboration, communication, and improvisation,
+                and develop your unique band sound.
               </p>
-              <a className='mt-3 text-gray-500 inline-flex items-center'>
+              <Link
+                className='mt-3 text-gray-500 inline-flex items-center'
+                href={'/programs#programs'}
+              >
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
           <div className='flex flex-col mb-10 lg:items-start items-center'>
