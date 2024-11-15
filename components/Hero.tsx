@@ -5,7 +5,7 @@ import Photo from '@/public/imgs/drummer-girl-1.png'
 import { IoStarSharp } from 'react-icons/io5'
 
 function scrollToEnroll() {
-  document.getElementById('enroll')?.scrollIntoView({ behavior: 'smooth' })
+  document.getElementById('free-trial')?.scrollIntoView({ behavior: 'smooth' })
 }
 
 export default function Hero(): JSX.Element {

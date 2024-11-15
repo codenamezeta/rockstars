@@ -15,7 +15,7 @@ export default function ProgramsPage(): JSX.Element {
         subtitle='Your path to Rockstardom!'
         headerStyle={2}
       />
-      <section className='bg-black'>
+      <section className='bg-black' id='private_lessons'>
         <div className='container px-5 py-24 mx-auto'>
           <div id='lessons' className='text-center mb-20'>
             <h2 className='sm:text-3xl text-2xl font-medium title-font text-primary mb-4'>
@@ -38,7 +38,7 @@ export default function ProgramsPage(): JSX.Element {
         </div>
       </section>
 
-      <section id='programs' className='text-foreground body-font'>
+      <section id='band_classes' className='text-foreground body-font'>
         <div className='text-center my-24 container'>
           {/* <Image
             src={rockstarProImage}
@@ -46,7 +46,7 @@ export default function ProgramsPage(): JSX.Element {
             className='w-full -mt-24'
           /> */}
           <h2 className='sm:text-3xl text-2xl font-medium title-font text-primary mb-4'>
-            Band Programs
+            Band Classes
           </h2>
           <p className='text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-secondary'>
             We offer a variety of programs designed to ignite your musical

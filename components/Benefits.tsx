@@ -61,7 +61,7 @@ export default function Benefits(): JSX.Element {
                 className='mt-3 text-gray-500 inline-flex items-center'
                 href={'/programs#programs'}
               >
-                Learn More
+                Learn More &rarr;
               </Link>
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function Benefits(): JSX.Element {
                 expert tutelage.
               </p>
               <a className='mt-3 text-gray-500 inline-flex items-center'>
-                Learn More
+                Learn More &rarr;
               </a>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function Benefits(): JSX.Element {
                 inner rockstar.
               </p>
               <a className='mt-3 text-gray-500 inline-flex items-center'>
-                Learn More
+                Learn More &rarr;
               </a>
             </div>
           </div>

@@ -14,14 +14,18 @@ export default function PricingLessons(): JSX.Element {
       />
       <div className='lessons-pricing-details'>
         <div className='p-4 md:w-2/3 w-full mx-auto'>
-          <h2 className='text-4xl text-white leading-none flex flex-wrap items-baseline pb-4 mb-4 border-b border-gray-800'>
+          <h2 className='text-4xl text-white leading-none flex flex-wrap'>
             Private Lessons
-            <span className='text-sm text-gray-400 mt-2'>
-              Private, one-on-one instruction at your own pace, custom-tailored
-              for every individual student. You can also share your lesson time
-              in private groups with your own family members and friends.
-            </span>
           </h2>
+          <p
+            className='text-sm text-gray-400 mt-2'
+            style={{ maxWidth: '60ch' }}
+          >
+            Private, one-on-one instruction at your own pace, custom-tailored
+            for every individual student. You can also share your lesson time in
+            private groups with your own family members and friends.
+          </p>
+          <div className='my-4 border-b border-gray-800 w-full'></div>
           {/* This div marks the pricing data seperated from the textual description */}
           <div className='flex flex-col md:flex-row md:gap-2'>
             <LessonPriceBox

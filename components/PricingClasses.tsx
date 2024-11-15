@@ -36,8 +36,8 @@ export default function PricingClasses({
             <button
               className={
                 !toggled
-                  ? 'py-1 px-4 bg-accent text-white focus:outline-none transition-all duration-500'
-                  : 'py-1 px-4 text-gray-300 focus:outline-none transition-all duration-500'
+                  ? 'text-xs md:text-base py-1 px-4 bg-accent text-white focus:outline-none transition-all duration-500'
+                  : 'text-xs md:text-base py-1 px-4 text-gray-300 focus:outline-none transition-all duration-500'
               }
               onClick={handleToggle}
             >
@@ -46,8 +46,8 @@ export default function PricingClasses({
             <button
               className={
                 !toggled
-                  ? 'py-1 px-4 text-gray-300 focus:outline-none transition-all duration-500'
-                  : 'py-1 px-4 bg-accent text-white focus:outline-none transition-all duration-500'
+                  ? 'text-xs md:text-base py-1 px-4 text-gray-300 focus:outline-none transition-all duration-500'
+                  : 'text-xs md:text-base py-1 px-4 bg-accent text-white focus:outline-none transition-all duration-500'
               }
               onClick={handleToggle}
             >

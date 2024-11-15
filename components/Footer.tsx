@@ -13,11 +13,9 @@ export default function Footer(): JSX.Element {
             <div className='flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start'>
               <div className='relative w-40 mb-12 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2'>
                 <Image
-                  className='w-60'
+                  className='w-40 h-auto'
                   alt='The Rockstars of Tomorrow logo'
                   src={Logo}
-                  // width={328}
-                  // height={200}
                 />
               </div>
             </div>

@@ -34,7 +34,7 @@ export default function ProgramsOverview(): JSX.Element {
               tailored to fit your needs and goals. We offer lessons for all
               ages and skill levels.
             </p>
-            <Link href='/programs'>
+            <Link href='/programs#private_lessons'>
               <Button className='bg-white text-black hover:text-white mt-6'>
                 Learn More &rarr;
               </Button>
@@ -58,7 +58,7 @@ export default function ProgramsOverview(): JSX.Element {
               coach to learn songs, write original music, and perform at
               concerts.
             </p>
-            <Link href='/programs'>
+            <Link href='/programs#band_classes'>
               <Button className='bg-white text-black hover:text-white mt-6'>
                 Learn More &rarr;
               </Button>
@@ -82,7 +82,7 @@ export default function ProgramsOverview(): JSX.Element {
               performance skills, write original songs, and headline at
               exclusive concerts!
             </p>
-            <Link href='/programs'>
+            <Link href='/programs#band_classes'>
               <Button className='bg-white text-black hover:text-white mt-6'>
                 Learn More &rarr;
               </Button>

@@ -33,7 +33,7 @@ export default function Programs({ programs }: ProgramsProps): JSX.Element {
             {program.description}
           </p>
           <Separator />
-          <ul className='title-font font-medium mb-8 flex flex-wrap gap-2 text-left justify-between'>
+          <ul className='title-font font-medium mb-8 flex flex-wrap gap-2 text-left justify-start'>
             {program.details.map((detail: String, i: number) => (
               <li
                 key={i}

@@ -26,13 +26,8 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
   return (
     <nav className='bg-black sticky top-0 z-50'>
       <div className='container relative px-4 py-4 flex justify-between items-center bg-black'>
-        <Link className='text-3xl font-bold leading-none' href='/'>
-          <Image
-            alt='The Rockstars of Tomorrow logo'
-            src={Logo}
-            width={100}
-            height={97}
-          />
+        <Link className='text-3xl font-bold leading-none w-40' href='/'>
+          <Image alt='The Rockstars of Tomorrow logo' src={Logo} priority />
         </Link>
         <div className='lg:hidden'>
           <button
@@ -67,20 +62,18 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
         <Button
           className='hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6'
           variant='outline'
-          size='lg'
         >
-          Call Us
+          <a href='tel:9095965556'>Call Us</a>
         </Button>
 
         <Button
           className='hidden lg:inline-block lg:mr-3 py-2 px-6'
           variant='accent'
-          size='lg'
           onClick={
             pathname === '/'
               ? scrollToEnroll
               : () => {
-                  window.location.href = '/#enroll'
+                  window.location.href = '/#free-trial'
                 }
           }
         >
@@ -169,7 +162,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
                   pathname === '/'
                     ? scrollToEnroll
                     : () => {
-                        window.location.href = '/#enroll'
+                        window.location.href = '/#free-trial'
                       }
                 }
               >

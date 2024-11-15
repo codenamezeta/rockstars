@@ -9,7 +9,7 @@ export default function pricing() {
       <Header title='Pricing' headerStyle={2} />
       <PricingClasses />
       <PricingLessons />
-      <section className='w-full bg-black'>
+      <section className='container'>
         <FAQs
           faqs={[
             {
