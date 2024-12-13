@@ -29,7 +29,7 @@ const LessonPriceBox: React.FC<LessonPriceBoxProps> = ({
   additionalCostText = '+$87 / additional student',
   highlight = false,
   highlightText = 'Most Popular',
-  highlightColor = 'accent',
+  highlightColor = 'primary',
   featuresList = [
     // 'Details for this program are coming soon.',
     // 'Please check back later for more information.',
@@ -41,9 +41,9 @@ const LessonPriceBox: React.FC<LessonPriceBoxProps> = ({
   return (
     <div
       className={
-        highlight
-          ? `h-full p-6 rounded-lg border-2 border-${highlightColor} flex flex-col flex-wrap relative overflow-hidden mb-4 md:w-1/3 bg-background`
-          : 'h-full p-6 rounded-lg border-2 border-gray-700 flex flex-col flex-wrap relative overflow-hidden mb-4 md:w-1/3 bg-background'
+        highlight ?
+          `p-6 rounded-lg border-2 border-${highlightColor} flex flex-col flex-wrap relative overflow-hidden mb-4 md:w-1/3 bg-background`
+        : 'p-6 rounded-lg border-2 border-gray-700 flex flex-col flex-wrap relative overflow-hidden mb-4 md:w-1/3 bg-background'
       }
     >
       {highlight && (
@@ -54,7 +54,7 @@ const LessonPriceBox: React.FC<LessonPriceBoxProps> = ({
         </span>
       )}
       <div className='flex flex-wrap justify-center border-b border-accent py-2 mt-4 mb-2'>
-        <h2 className='text-5xl w-full text-primary font-bold text-center leading-none'>
+        <h2 className='text-5xl w-full text-accent font-bold text-center leading-none'>
           {timeBlockSize}
         </h2>
         <span
@@ -62,39 +62,46 @@ const LessonPriceBox: React.FC<LessonPriceBoxProps> = ({
           style={{ minWidth: 'fit-content' }}
         >
           {recurrence}
+          <br />
+          {/* <span className='text-xs text-muted-foreground'>
+            or a {((timeBlockSize * 4) / 60).toFixed(0)} hour block of time.*
+          </span> */}
         </span>
         <h2 className='text-5xl text-foreground font-bold leading-none'>
-          {customPrice ? (
+          {customPrice ?
             customPriceText
-          ) : price <= 0 ? (
+          : price <= 0 ?
             'Free'
-          ) : (
-            <span className='flex justify-center md:justify-start'>
+          : <span className='flex justify-center md:justify-start'>
               <span className='text-2xl'>{currency}</span>
               {price}
               <span className='text-lg ml-1 mt-auto font-normal text-gray-400'>
                 {price <= 0 ? '' : `${interval}`}
               </span>
             </span>
-          )}
+          }
         </h2>
       </div>
       {additionalCostText && (
-        <p className='text-sm text-foreground mb-4 ml-auto'>
-          {additionalCostText}
-        </p>
+        <>
+          <span className='text-sm text-foreground mb-1 mx-auto text-gray-400'>
+            Make it a group:{' '}
+          </span>
+          <span className='text-sm text-foreground mb-4 mx-auto'>
+            {additionalCostText}
+          </span>
+        </>
       )}
       {/* <h2 className='text-5xl text-white leading-none flex flex-wrap items-baseline pb-4 my-2 border-b border-gray-800'>
-        {customPrice ? (
+        {customPrice ?
           customPriceText
-        ) : price <= 0 ? (
+        : price <= 0 ?
           'Free'
-        ) : (
-          <>
+        : <>
             <span className='text-2xl self-start'>{currency}</span>
             {price}
           </>
-        )}
+        }
         <span
           className='text-lg ml-1 mt-auto font-normal text-gray-400'
           style={{ minWidth: 'fit-content' }}
@@ -141,8 +148,8 @@ const LessonPriceBox: React.FC<LessonPriceBoxProps> = ({
 
       {callToActionText && (
         <Link
-          className={`${buttonVariants({ variant: 'accent' })} mt-4`}
-          href='/'
+          className={`${buttonVariants({ variant: 'secondary' })} mt-4`}
+          href='/#free_trial'
         >
           {callToActionText}
           <svg

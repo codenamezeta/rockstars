@@ -1,69 +1,120 @@
+'use client'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
 import LessonPriceBox from './LessonPriceBox'
 import SectionOverview from './SectionOverview'
+import { useState } from 'react'
 
 export default function PricingLessons(): JSX.Element {
+  const [toggled, setToggled] = useState(false)
+
+  const handleToggle = () => {
+    setToggled(!toggled)
+  }
   return (
-    <section id='lessons_pricing' className='py-24 bg-black body-font'>
-      <SectionOverview
-        title={'Music Lessons'}
-        subtitle={
-          'Learn to play your favorite instrument with the guidance of our expert instructors.'
-        }
-      />
-      <div className='lessons-pricing-details'>
-        <div className='p-4 md:w-2/3 w-full mx-auto'>
+    <section id='lessons_pricing' className='themed-background-style-4'>
+      <div className='container py-24'>
+        <SectionOverview
+          title={'Music Lessons'}
+          subtitle={
+            'Learn to play your favorite instrument with the guidance of our expert instructors.'
+          }
+        />
+        <div className='lessons-pricing-details'>
           <h2 className='text-4xl text-white leading-none flex flex-wrap'>
             Private Lessons
           </h2>
           <p
             className='text-sm text-gray-400 mt-2'
-            style={{ maxWidth: '60ch' }}
+            style={{ maxWidth: '65ch' }}
           >
             Private, one-on-one instruction at your own pace, custom-tailored
             for every individual student. You can also share your lesson time in
             private groups with your own family members and friends.
           </p>
-          <div className='my-4 border-b border-gray-800 w-full'></div>
+          {/* <div className='my-4 border-b border-gray-800 w-full'></div> */}
+
+          {/* <h2 className='sm:text-3xl text-2xl font-medium title-font mb-2'>
+            {sectionTitle}
+          </h2>
+          <p className='lg:w-2/3 mx-auto leading-relaxed text-base text-primary'>
+            {sectionDescription}
+          </p> */}
+          <div className='flex md:w-2/5 lg:w-1/4 mx-auto border-2 border-accent rounded overflow-hidden my-6'>
+            <button
+              className={
+                !toggled ?
+                  'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
+                : 'text-xs md:text-base py-1 px-4 w-full text-muted-foreground focus:outline-none transition-all duration-500'
+              }
+              onClick={handleToggle}
+            >
+              Flat Rate
+            </button>
+            <button
+              className={
+                !toggled ?
+                  'text-xs md:text-base py-1 px-4 w-full text-muted-foreground focus:outline-none transition-all duration-500'
+                : 'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
+              }
+              onClick={handleToggle}
+            >
+              Hourly Rate
+            </button>
+          </div>
+
           {/* This div marks the pricing data seperated from the textual description */}
           <div className='flex flex-col md:flex-row md:gap-2'>
             <LessonPriceBox
-              timeBlockSize={30}
-              interval='/month'
+              timeBlockSize={toggled ? 2 : 30}
+              interval={toggled ? '' : '/month'}
               price={159}
-              additionalCostText='+$69 / additional student'
+              additionalCostText='+$69 each additional student'
               customPrice={false}
               customPriceText={''}
               highlight={false}
               highlightText={''}
-              featuresList={[]}
+              featuresList={
+                !toggled ?
+                  ['Fifth week free', 'Free trial lesson']
+                : ['Flexible scheduling']
+              }
               disclaimers={['Prices & availability are subject to change.']}
               callToActionText={''}
-              recurrence={'minutes / week'}
+              recurrence={toggled ? 'Hour Block' : 'minutes per week'}
             />
             <LessonPriceBox
-              highlight={true}
+              highlight={!toggled}
               highlightText='Most Popular'
-              timeBlockSize={45}
+              timeBlockSize={toggled ? 3 : 45}
+              interval={toggled ? '' : '/month'}
+              recurrence={toggled ? 'Hour Block' : 'minutes per week'}
               price={237}
-              additionalCostText='+$87 / additional student'
+              additionalCostText='+$87 each additional student'
               callToActionText={''}
+              featuresList={
+                !toggled ? ['Fifth week free'] : ['Flexible scheduling']
+              }
             />
             <LessonPriceBox
               highlight={true}
               highlightText='Best Value'
-              highlightColor='primary'
-              timeBlockSize={60}
+              highlightColor='accent'
+              timeBlockSize={toggled ? 4 : 60}
+              interval={toggled ? '' : '/month'}
+              recurrence={toggled ? 'Hour Block' : 'minutes per week'}
               price={309}
-              additionalCostText='+$109 / additional student'
+              additionalCostText='+$109 each additional student'
               callToActionText={''}
+              featuresList={
+                !toggled ? ['Fifth week free'] : ['Flexible scheduling']
+              }
             />
           </div>
 
           <Link
             className={`${buttonVariants({ variant: 'outline' })} mt-4`}
-            href='/'
+            href='/#free_trial'
           >
             Schedule a free trial lesson
             <svg

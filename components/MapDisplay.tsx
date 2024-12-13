@@ -1,112 +1,117 @@
-type MapDisplayTypes = {
-  hideForm?: boolean
-}
+import { Button } from '@/components/ui/button'
+import { FaPhone } from 'react-icons/fa'
+import { MdOutlineMail, MdMessage } from 'react-icons/md'
+import { FaLocationDot } from 'react-icons/fa6'
+import { IoChatbubblesOutline } from 'react-icons/io5'
 
-export default function Contact({
-  hideForm = false,
-}: MapDisplayTypes): JSX.Element {
+export default function Contact(): JSX.Element {
   return (
-    <section className='text-foreground bg-background body-font relative'>
-      <div className='container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap'>
-        <div
-          className={
-            hideForm
-              ? 'w-full h-full bg-gray-900 rounded-lg overflow-hidden pt-96 pb-12 px-12 flex items-end justify-start relative'
-              : 'lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative'
-          }
-        >
-          <iframe
-            width='100%'
-            height='100%'
-            title='map'
-            className='absolute inset-0'
-            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26430.451890819546!2d-117.72068707178822!3d34.10009751624425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c32f7d4b2bed15%3A0xe9feabccc14ce1f!2sRockstars%20Of%20Tomorrow!5e0!3m2!1sen!2sus!4v1708116233335!5m2!1sen!2sus'
-            style={{ filter: 'grayscale(0.85)', opacity: '0.5' }}
-          ></iframe>
-          <div className='bg-background relative flex flex-wrap py-6 rounded shadow-md w-full'>
-            <div className='lg:w-1/2 px-6'>
-              <h2 className='title-font font-semibold text-white tracking-widest text-xs'>
-                ADDRESS
-              </h2>
-              <a className='text-xs leading-none tracking-tighter'>
-                2855 Foothill Blvd. Suite A-102 La Verne CA 92557
-              </a>
-            </div>
-            <div className='lg:w-1/2 px-6 mt-4 lg:mt-0'>
-              <h2 className='title-font font-semibold text-white tracking-widest text-xs'>
-                EMAIL
-              </h2>
-              <a
-                className='text-xs leading-none tracking-tighter'
-                href='mailto:laverne@rockstarsoftomorrow.com'
-              >
-                laverne@rockstarsoftomorrow.com
-              </a>
-              <h2 className='title-font font-semibold text-white tracking-widest text-xs mt-4'>
-                PHONE
-              </h2>
-              <a
-                className='text-xs leading-none tracking-tighter'
-                href='tel:9514567890'
-              >
-                (951) 456-7890
-              </a>
-            </div>
-          </div>
-        </div>
-        <div
-          className={
-            hideForm
-              ? 'hidden'
-              : 'lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0'
-          }
-        >
-          <h2 className='text-white text-lg mb-1 font-medium title-font'>
-            Feedback
-          </h2>
-          <p className='leading-relaxed mb-5'>
-            Questions, comments, or concerns? Let us know how we can help you.
-          </p>
-          <div className='relative mb-4'>
-            <label htmlFor='name' className='leading-7 text-sm'>
-              Name
-            </label>
-            <input
-              type='text'
-              id='name'
-              name='name'
-              className='w-full bg-background rounded border border-gray-700 focus:border-white focus:ring-2 focus:ring-white text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
-            />
-          </div>
-          <div className='relative mb-4'>
-            <label htmlFor='email' className='leading-7 text-sm'>
+    <div className='container mx-auto flex sm:flex-nowrap flex-wrap mb-12 space-x-6'>
+      <div className='themed-background-style-3 rounded-xl w-full md:w-1/2 lg:w-1/3 p-6'>
+        <ul className='flex flex-col justify-between tracking-wide'>
+          <li className=''>
+            <h3 className='text-lg uppercase text-white font-bold tracking-wide'>
+              Phone
+            </h3>
+            <span className='text-accent block tracking-widest'>
+              (844) 36-MUSIC
+              <sub className='text-xs text-muted-foreground tracking-tight'>
+                (68742)
+              </sub>
+            </span>
+            <a
+              href='sms:8443668742'
+              className='hover:underline hover:text-accent'
+            >
+              <Button variant='outline' className='mt-4 mb-2 mr-4'>
+                Text <MdMessage className='text-xl inline' />
+              </Button>
+            </a>
+            <a
+              href='tel:8443668742'
+              className='hover:underline hover:text-accent'
+            >
+              <Button variant='outline' className='mb-4'>
+                Call <FaPhone className='text-xl inline' />
+              </Button>
+            </a>
+          </li>
+          <li className=''>
+            <h3 className='text-lg uppercase text-white font-bold tracking-wide'>
               Email
-            </label>
-            <input
-              type='email'
-              id='email'
-              name='email'
-              className='w-full bg-background rounded border border-gray-700 focus:border-white focus:ring-2 focus:ring-white text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
-            />
-          </div>
-          <div className='relative mb-4'>
-            <label htmlFor='message' className='leading-7 text-sm'>
-              Message
-            </label>
-            <textarea
-              id='message'
-              name='message'
-              className='w-full bg-background rounded border border-gray-700 focus:border-white focus:ring-2 focus:ring-white h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out'
-            ></textarea>
-          </div>
-          <button className='text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-secondary hover:text-black rounded text-lg'>
-            Submit
-          </button>
-          <p className='text-xs text-gray-600 text-opacity-90 mt-3'>
-            Questions, comments, or concerns? Let us know how we can help you.
-          </p>
-        </div>
+            </h3>
+            <span className='text-accent block tracking-widest'>
+              laverne@rockstarsoftomorrow.com
+            </span>
+            <a
+              href='mailto:laverne@rockstarsoftomorrow.com'
+              className='hover:underline hover:text-accent'
+            >
+              <Button variant='outline' className='my-4 mr-4'>
+                Email <MdOutlineMail className='text-xl inline' />
+              </Button>
+            </a>
+          </li>
+          {/* <li className=''>
+            <h3 className='text-lg uppercase text-white font-bold tracking-wide'>
+              Chat
+            </h3>
+            <span className='text-accent block tracking-widest'>Live Chat</span>
+            <a
+              href='https://app.mymusicstaff.com/'
+              className='hover:underline hover:text-accent'
+            >
+              <Button variant='outline' className='my-4 mr-4'>
+                Connect <IoChatbubblesOutline className='text-xl inline' />
+              </Button>
+            </a>
+          </li> */}
+          <li className=''>
+            <h3 className='text-lg uppercase text-white font-bold tracking-wide'>
+              Visit
+            </h3>
+            <span className='text-accent block tracking-widest'>
+              2855 Foothill Blvd A-102, La Verne, CA 91750
+            </span>
+            <a
+              href='https://maps.app.goo.gl/cP1WQ4s371cQdKbK8'
+              className='hover:underline hover:text-accent'
+            >
+              <Button variant='outline' className='my-4 mr-4'>
+                Get Directions <FaLocationDot className='text-xl inline' />
+              </Button>
+            </a>
+          </li>
+          <li className=''>
+            <h3 className='text-lg uppercase text-white font-bold tracking-wide'>
+              Hours
+            </h3>
+            <span className='text-accent block tracking-widest'>
+              Mon - Thu: 11:00am - 8:00pm
+              <br />
+              Fri: 11:00am - 7:00pm
+              <br />
+              Sat: 10:00am - 4:00pm
+              <br />
+              Sun: Closed
+            </span>
+          </li>
+        </ul>
       </div>
-    </section>
+
+      <div
+        className='lg:w-2/3 md:w-1/2 rounded-xl overflow-hidden relative'
+        style={{ aspectRatio: 16 / 9 }}
+      >
+        <iframe
+          width='100%'
+          height='100%'
+          title='map'
+          className='absolute inset-0'
+          src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26430.451890819546!2d-117.72068707178822!3d34.10009751624425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c32f7d4b2bed15%3A0xe9feabccc14ce1f!2sRockstars%20Of%20Tomorrow!5e0!3m2!1sen!2sus!4v1708116233335!5m2!1sen!2sus'
+          style={{ filter: 'grayscale(0.5)', opacity: '0.85' }}
+        ></iframe>
+      </div>
+    </div>
   )
 }

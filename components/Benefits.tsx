@@ -1,25 +1,23 @@
 import Image from 'next/image'
 import rockstar from '../public/imgs/Kids/Teen Girl with Guitar.png'
-import Separator from './Separator'
 import Link from 'next/link'
+import SectionOverview from './SectionOverview'
 
 export default function Benefits(): JSX.Element {
   return (
-    <section id='benefits' className='pt-12 text-white body-font bg-background'>
-      <div className='container px-5 py-24 mx-auto flex flex-wrap'>
-        <div className='text-center mb-20'>
-          <h2 className='sm:text-3xl text-2xl font-medium title-font text-primary mb-4'>
-            Learn the Rockstar Way!
-          </h2>
-          <p className='text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-secondary'>
-            Frustrated with traditional music schools that don't cater to your
+    <section
+      id='benefits'
+      className='pt-44 pb-12 text-white body-font bg-background'
+    >
+      <SectionOverview
+        title='Learn the Rockstar Way!'
+        overviewText="Frustrated with traditional music schools that don't cater to your
             rock n' roll dreams? Rockstars of Tomorrow is different. We're
             dedicated to providing aspiring young rock musicians like you with
             the unique and immersive learning experience you crave. Here's what
-            sets us apart:
-          </p>
-          <Separator />
-        </div>
+            sets us apart:"
+      />
+      <div className='container px-5 mx-auto flex flex-wrap'>
         <div className='lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden'>
           <Image
             alt='rockstar kid'
@@ -30,7 +28,7 @@ export default function Benefits(): JSX.Element {
         <div className='flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center'>
           <div className='flex flex-col mb-10 lg:items-start items-center'>
             <div className='flex-grow'>
-              <h2 className='text-primary text-lg title-font font-medium mb-3'>
+              <h2 className='text-accent text-lg title-font font-medium mb-3'>
                 Performance Opportunities Galore
               </h2>
               <p className='leading-relaxed text-base'>
@@ -40,7 +38,7 @@ export default function Benefits(): JSX.Element {
                 audience with your music!
               </p>
               <Link
-                href='/programs#programs'
+                href='/programs#band_classes'
                 className='mt-3 text-gray-500 inline-flex items-center'
               >
                 Learn More &rarr;
@@ -49,7 +47,7 @@ export default function Benefits(): JSX.Element {
           </div>
           <div className='flex flex-col mb-10 lg:items-start items-center'>
             <div className='flex-grow'>
-              <h2 className='text-primary text-lg title-font font-medium mb-3'>
+              <h2 className='text-accent text-lg title-font font-medium mb-3'>
                 Rock Band Group Classes
               </h2>
               <p className='leading-relaxed text-base'>
@@ -59,7 +57,7 @@ export default function Benefits(): JSX.Element {
               </p>
               <Link
                 className='mt-3 text-gray-500 inline-flex items-center'
-                href={'/programs#programs'}
+                href={'/programs'}
               >
                 Learn More &rarr;
               </Link>
@@ -67,7 +65,7 @@ export default function Benefits(): JSX.Element {
           </div>
           <div className='flex flex-col mb-10 lg:items-start items-center'>
             <div className='flex-grow'>
-              <h2 className='text-primary text-lg title-font font-medium mb-3'>
+              <h2 className='text-accent text-lg title-font font-medium mb-3'>
                 Seasoned Rock Mentors
               </h2>
               <p className='leading-relaxed text-base'>
@@ -83,7 +81,7 @@ export default function Benefits(): JSX.Element {
           </div>
           <div className='flex flex-col mb-0 lg:items-start items-center'>
             <div className='flex-grow'>
-              <h2 className='text-primary text-lg title-font font-medium mb-3'>
+              <h2 className='text-accent text-lg title-font font-medium mb-3'>
                 State-of-the-Art Facilities
               </h2>
               <p className='leading-relaxed text-base'>
@@ -92,9 +90,12 @@ export default function Benefits(): JSX.Element {
                 best possible learning experience and help you unleash your
                 inner rockstar.
               </p>
-              <a className='mt-3 text-gray-500 inline-flex items-center'>
+              <Link
+                href='/p'
+                className='mt-3 text-gray-500 inline-flex items-center'
+              >
                 Learn More &rarr;
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -39,31 +39,30 @@ const ProgramPriceBox: React.FC<ProgramPriceBoxProps> = ({
     <div className='p-3 xl:w-1/4 md:w-1/2 w-full'>
       <div
         className={
-          highlight
-            ? 'h-full p-6 rounded-lg border-2 border-accent flex flex-col flex-wrap relative overflow-hidden'
-            : 'h-full p-6 rounded-lg border-2 border-gray-700 flex flex-col flex-wrap relative overflow-hidden'
+          highlight ?
+            'h-full p-6 rounded-lg border-2 border-primary flex flex-col flex-wrap relative overflow-hidden'
+          : 'h-full p-6 rounded-lg border-2 border-gray-700 flex flex-col flex-wrap relative overflow-hidden'
         }
       >
         {highlight && (
-          <span className='bg-accent text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl'>
+          <span className='bg-primary text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl'>
             {highlightText.toUpperCase()}
           </span>
         )}
-        <h2 className='text-sm tracking-widest text-primary title-font mb-1 font-medium'>
+        <h2 className='text-md tracking-widest text-accent title-font mb-1 font-medium'>
           {name.toUpperCase()}
         </h2>
 
         <h2 className='text-5xl text-white leading-none flex flex-wrap items-baseline pb-4 mb-4 border-b border-gray-800'>
-          {customPrice ? (
+          {customPrice ?
             customPriceText
-          ) : price <= 0 ? (
+          : price <= 0 ?
             'Free'
-          ) : (
-            <>
+          : <>
               <span className='text-2xl self-start'>{currency}</span>
               {price}
             </>
-          )}
+          }
           <span
             className='text-lg ml-1 mt-auto font-normal text-gray-400'
             style={{ minWidth: 'fit-content' }}
@@ -110,7 +109,7 @@ const ProgramPriceBox: React.FC<ProgramPriceBoxProps> = ({
 
         {callToActionText && (
           <Link
-            className={`${buttonVariants({ variant: 'accent' })} mt-4`}
+            className={`${buttonVariants({ variant: 'default' })} mt-4`}
             href={callToActionPath}
           >
             {callToActionText}

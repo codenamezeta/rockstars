@@ -1,37 +1,81 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import Photo from '@/public/imgs/drummer-girl-1.png'
+import Link from 'next/link'
+// import Photo from '@/public/imgs/drummer-girl-1.png'
 import { IoStarSharp } from 'react-icons/io5'
 
-function scrollToEnroll() {
-  document.getElementById('free-trial')?.scrollIntoView({ behavior: 'smooth' })
+interface HeroProps {
+  title: string
+  subtitle?: string
+  text?: string
+  list?: string[]
+  ctaText?: string
+  ctaLink?: string
+  imageSrc?: string | { src: string; height: number; width: number } | undefined
 }
 
-export default function Hero(): JSX.Element {
+export default function Hero({
+  title = 'Rockstars of Tomorrow',
+  subtitle,
+  text,
+  list,
+  ctaText = 'Free Trial',
+  ctaLink = '/#free_trial',
+  imageSrc,
+}: HeroProps): JSX.Element {
   return (
-    <main className='hero flex'>
-      <div className='container flex flex-col lg:flex-row pt-24 lg:items-center'>
-        <div className='z-10 lg:w-2/3'>
-          <h1 className='text-6xl font-bold'>Unleash Your Inner Rockstar!</h1>
-          <p className='my-4 text-xl'>
-            From playing your first chord to recording your debut album,
-            Rockstars of Tomorrow in La Verne is the neighborhood music studio
-            that brings out the rockstar in everyone.
-          </p>
-          <Button
-            className='text-xl py-8 px-12'
-            variant='accent'
-            size='lg'
-            onClick={scrollToEnroll}
+    <header className='hero h-screen'>
+      <div className='container flex flex-col justify-center lg:justify-end h-full lg:flex-row'>
+        <div className='z-10 lg:self-center lg:w-2/3 lg:h-auto'>
+          {/* <h1 className='text-4xl lg:text-8xl font-bold text-primary uppercase tracking-tighter'>
+            {title}
+          </h1> */}
+          <h1 className='font-anton text-4xl lg:text-8xl text-accent uppercase themed-text-effect-1'>
+            {title}
+          </h1>
+          <h2
+            className='mt-3 font-bold uppercase text-lg lg:text-4xl text-white tracking-widest'
+            style={{ textShadow: '1px -1px hsl(36, 25%, 50%)' }}
           >
-            Get Started <IoStarSharp className='ml-2 text-primary' />
-          </Button>
+            {subtitle}
+          </h2>
+          <p className='my-4 text-sm lg:text-xl tracking-wider'>{text}</p>
+          {list && (
+            <ul className='tracking-wider font-bold'>
+              {list.map((item, index) => (
+                <li
+                  key={index}
+                  className='text-md md:text-lg text-foreground flex items-center'
+                >
+                  <IoStarSharp className='text-accent mr-2 themed-text-effect-2' />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          )}
+          <Link href={ctaLink}>
+            <Button
+              className='text-xl tracking-widest uppercase py-8 mt-4'
+              size='full'
+            >
+              <IoStarSharp className='mr-2 text-secondary' />
+              {ctaText}
+              <IoStarSharp className='ml-2 text-secondary' />
+            </Button>
+          </Link>
         </div>
-        <div className='lg:self-end lg:w-full'>
-          <Image alt='Girl Playing Drums' src={Photo} />
-        </div>
+        {imageSrc && (
+          <div className='self-end hidden lg:block'>
+            <Image
+              alt='Girl Playing Drums'
+              src={imageSrc}
+              // width={600}
+              // height={600}
+            />
+          </div>
+        )}
       </div>
-    </main>
+    </header>
   )
 }

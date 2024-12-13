@@ -2,22 +2,43 @@ import Separator from './Separator'
 
 type SectionOverviewTypes = {
   title: string
-  subtitle: string
+  subtitle?: string
+  overviewText?: string
+  titleColor?: string
+  subtitleColor?: string
+  separatorColor?: string
+  overviewTextColor?: string
+  customId?: string
+  customClasses?: string
 }
 
 export default function SectionOverview({
   title,
   subtitle,
+  overviewText,
+  titleColor = 'accent',
+  subtitleColor = 'secondary',
+  separatorColor = 'primary',
+  overviewTextColor = 'secondary',
+  customId,
+  customClasses,
 }: SectionOverviewTypes): JSX.Element {
   return (
-    <div className='container'>
-      <h2 className='sm:text-3xl text-2xl font-medium text-center title-font text-secondary mt-24 mb-4'>
+    <div id={customId} className={`mb-12 ${customClasses}`}>
+      <h2 className={`font-anton text-center text-6xl text-${titleColor}`}>
         {title}
       </h2>
-      <p className='text-base leading-relaxed text-center xl:w-2/4 lg:w-3/4 mx-auto text-secondary'>
+      <h3
+        className={`text-center my-4 text-2xl title-font text-${subtitleColor}`}
+      >
         {subtitle}
+      </h3>
+      <p
+        className={`text-center text-base leading-relaxed max-w-prose mx-auto text-${overviewTextColor}`}
+      >
+        {overviewText}
       </p>
-      <Separator />
+      <Separator color={separatorColor} />
     </div>
   )
 }

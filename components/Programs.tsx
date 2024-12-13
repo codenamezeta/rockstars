@@ -2,48 +2,39 @@
 import Separator from '@/components/Separator'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { getAllBandClasses } from '@/lib/programs'
 
-type Program = {
-  name: string
-  tagline: string
-  description: string
-  details: string[]
-}
-
-type ProgramsProps = {
-  programs: Program[]
-}
-
-export default function Programs({ programs }: ProgramsProps): JSX.Element {
+export default function Programs(): JSX.Element {
+  const bandClasses = getAllBandClasses()
   return (
     <section className='container flex flex-col lg:flex-row flex-wrap gap-8'>
-      {programs.map((program: Program, index: number) => (
+      {bandClasses.map((bandClass, index: number) => (
         <div
           key={index}
-          id={program.name}
-          className='program-card flex flex-col p-8 rounded-lg border-2 border-accent'
+          id={bandClass.programName}
+          className='program-card flex flex-col p-8 rounded-lg border-2 border-primary'
         >
-          <h2 className='text-primary text-lg md:text-2xl title-font font-bold'>
-            {program.name}
+          <h2 className='text-accent text-lg md:text-2xl title-font font-bold'>
+            {bandClass.programName}
           </h2>
           <span className='font-bold text-sm md:text-xl my-3'>
-            {program.tagline}
+            {bandClass.tagline}
           </span>
-          <p className='leading-relaxed text-sm md:text-lg'>
-            {program.description}
+          <p className='leading-relaxed text-sm md:text-lg mb-3'>
+            {bandClass.description}
           </p>
-          <Separator />
-          <ul className='title-font font-medium mb-8 flex flex-wrap gap-2 text-left justify-start'>
-            {program.details.map((detail: String, i: number) => (
+          {/* <Separator /> */}
+          {/* <ul className='title-font font-medium mb-8 flex flex-wrap gap-2 text-left justify-start'>
+            {bandClass.features.map((feature: String, i: number) => (
               <li
                 key={i}
-                className='bg-accent p-3 rounded-lg border-1 border-gray-300 text-xs'
+                className='bg-primary p-3 rounded-lg border-1 border-gray-300 text-xs'
               >
-                {detail}
+                {feature}
               </li>
             ))}
-          </ul>
-          <Link href='/#enroll' className='mt-auto'>
+          </ul> */}
+          <Link href={`/programs/${bandClass.programName}`} className='mt-auto'>
             <Button variant='outline' size='full'>
               Get started
               <svg

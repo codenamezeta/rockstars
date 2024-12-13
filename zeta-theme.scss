@@ -5,7 +5,7 @@ GLOBAL STYLES
   border: 2px solid red;
 } */
 
-// TODO: Not yet implemented
+// TODO: Apply better fonts
 // html {
 //   box-sizing: border-box;
 //   font-size: 20px;
@@ -26,7 +26,7 @@ GLOBAL STYLES
   }
 }
 
-main.hero {
+header.hero {
   background:
     linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
     url('./public/assets/fold-overlay.png') no-repeat center center/cover,
@@ -89,7 +89,11 @@ section#classes_pricing {
   }
 }
 
-section#enroll {
+.themed-gradient-1 {
+  background: linear-gradient(to top, black 0%, #150900 33%, black 100%);
+}
+
+.themed-gradient-2 {
   background: radial-gradient(circle, #210, #000);
 }
 
@@ -149,6 +153,25 @@ section#enroll {
   }
 }
 
+.themed-background-style-4 {
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+    url('./public/assets/scratch-texture-2.jpg') no-repeat center center/cover;
+  opacity: 0.99;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: -1;
+  }
+}
+
 footer {
   background:
     linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
@@ -163,7 +186,7 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.33);
     z-index: -1;
   }
 }
@@ -210,3 +233,68 @@ footer {
   stroke: #fff; /* Set the outline color */
   fill: #5b0707; /* Make the icon's fill transparent */
 }
+
+.themed-text-effect-1 {
+  paint-order: stroke fill;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  -webkit-text-stroke: 5px #5b0707;
+  // text-shadow: 1px 1px white;
+  // text-shadow: 2px 2px hsl(36, 50%, 60%);
+
+  /* https://caniuse.com/mdn-css_properties_paint-order */
+  /* default is paint-order: fill stroke */
+  /* mdn: https://developer.mozilla.org/en-US/docs/Web/CSS/paint-order */
+}
+.themed-text-effect-2 {
+  paint-order: stroke fill;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  -webkit-text-stroke: 5px hsl(36, 50%, 60%);
+  // text-shadow: 1px 1px white;
+  // text-shadow: 2px 2px hsl(36, 50%, 60%);
+
+  /* https://caniuse.com/mdn-css_properties_paint-order */
+  /* default is paint-order: fill stroke */
+  /* mdn: https://developer.mozilla.org/en-US/docs/Web/CSS/paint-order */
+}
+
+// @layer demo.support {
+//   h1 {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+
+//     text-transform: uppercase;
+//     font-size: calc(1rem + min(90px, 15vw));
+//     font-weight: 900;
+//     letter-spacing: -0.175ch;
+//     line-height: 0.9;
+//     color: white;
+//     -webkit-text-stroke: 5px black;
+//     text-shadow: 8px 8px black;
+
+//     > span:first-of-type {
+//       font-size: 0.75em;
+//     }
+
+//     > div {
+//       display: flex;
+//       gap: 0.5ch;
+//     }
+//   }
+// section {
+//   display: grid;
+//   place-items: center;
+//   gap: 2vmin;
+
+//   > p {
+//     border: 2px solid #aaa;
+//     border-radius: 1e3px;
+//     padding-inline: 1.5ch;
+//     line-height: 1.75;
+//   }
+// }
+// }

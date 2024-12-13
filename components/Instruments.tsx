@@ -37,7 +37,7 @@ export default function Instruments(): JSX.Element {
         {instrumentsData.map((instrument, index) => (
           <li
             key={index}
-            className={`flex w-1/3 md:w-full text-sm px-4 py-3 border-b border-r border-black cursor-pointer hover:text-white hover:bg-accent transition-all duration-700 ${selected === instrument.title.toLowerCase() ? 'font-bold text-white bg-accent' : 'bg-secondary'}`}
+            className={`flex w-1/3 md:w-full text-sm px-4 py-3 border-b border-r border-black cursor-pointer hover:text-white hover:bg-primary transition-all duration-700 ${selected === instrument.title.toLowerCase() ? 'font-bold text-white bg-primary' : 'bg-secondary'}`}
             aria-current='page'
             onClick={() => setSelected(instrument.title.toLowerCase())}
           >
@@ -45,8 +45,8 @@ export default function Instruments(): JSX.Element {
           </li>
         ))}
       </ul>
-      <div className='p-6 bg-background text-foreground rounded-lg w-full themed-background-style-3'>
-        <h3 className='text-sm text-xl md:text-3xl text-primary font-bold mb-2'>
+      <div className='p-6 bg-background rounded-lg w-full themed-background-style-3'>
+        <h3 className='text-sm text-xl md:text-3xl text-accent font-bold mb-2'>
           {
             instrumentsData.find(
               (item) => item.title.toLowerCase() === selected

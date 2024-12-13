@@ -1,21 +1,23 @@
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-// import privateLessonsImg from '@/public/imgs/guitar-kid-2-2.jpg'
 import privateLessonsImg from '@/public/imgs/drums-02.jpg'
 import bandClassImg from '@/public/imgs/band-02-crop-01.png'
 import rockstarProImg from '@/public/imgs/stage-02.jpg'
 import workshopsImg from '@/public/imgs/audio-01.jpg'
-import Separator from './Separator'
+import SectionOverview from './SectionOverview'
 import Link from 'next/link'
 
 export default function ProgramsOverview(): JSX.Element {
   return (
-    <section className='body-font bg-black'>
+    <section className='body-font themed-gradient-1'>
       <div className='container px-5 pt-0 mt-0 pb-24 mx-auto'>
-        <h2 className='sm:text-3xl text-2xl font-medium title-font text-primary mb-4 text-center'>
-          Programs
-        </h2>
-        <Separator />
+        <SectionOverview
+          customId='programs_overview'
+          title='Programs'
+          overviewText='
+          Rockstars of Tomorrow offers a variety of programs to help students develop their skills, build confidence, and have fun. Whether you are a beginner or an experienced musician, we have a program that is right for you. Our programs are designed to help students learn to play music, write songs, perform in a band, and more. We offer private lessons, band classes, workshops, and our exclusive Rockstar Pro program.
+        '
+        />
         <div className='flex flex-wrap -mx-4 -mb-10 text-left'>
           <div className='sm:w-1/2 mb-24 px-4'>
             <div className='rounded-lg h-64 overflow-hidden'>

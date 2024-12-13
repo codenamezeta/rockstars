@@ -2,8 +2,9 @@ import MapDisplay from '@/components/MapDisplay' // MapDisplay doesn't have a se
 import Header from '@/components/Header'
 import { FiExternalLink } from 'react-icons/fi'
 import { FaPhone } from 'react-icons/fa'
-import { MdOutlineMail } from 'react-icons/md'
+import { MdOutlineMail, MdMessage } from 'react-icons/md'
 import { FaLocationDot } from 'react-icons/fa6'
+
 export default function contactPage(): JSX.Element {
   return (
     <>
@@ -12,23 +13,33 @@ export default function contactPage(): JSX.Element {
         headerStyle={2}
         subtitle='We would love to hear from you. Feel free to visit our studio in person or give us a call.'
       />
-      <section id='quick_connect' className='py-4 bg-black body-font'>
+      <section
+        id='quick_connect'
+        className='py-6 bg-background body-font mb-12'
+      >
         <div className='container'>
-          <ul className='flex flex-col md:flex-row gap-12 justify-between'>
-            <li className='text-center'>
+          <ul className='flex flex-col md:flex-row gap-6 justify-between space-x-2'>
+            <li className='text-center flex-1'>
               <a
                 href='https://app.mymusicstaff.com/'
                 className='text-xs tracking-tighter'
               >
-                <FiExternalLink className='mx-auto mb-4 text-3xl' />
-                <h3 className='text-xl text-primary'>Client Portal:</h3>
+                <FiExternalLink className='mx-auto mb-4 text-3xl text-white' />
+                <h3 className='text-sm text-accent'>Student Portal:</h3>
                 MyMusicStaff.com
               </a>
             </li>
-            <li className='text-center'>
-              <a href='tel:9514567890' className='text-xs tracking-tighter'>
-                <FaPhone className='mx-auto mb-4 text-3xl text-accent outlined-icon' />
-                <h3 className='text-xl text-primary'>Call Us:</h3>(951) 456-7890
+            {/* <li className='text-center'>
+              <a href='tel:8443668742' className='text-xs tracking-tighter'>
+                <FaPhone className='mx-auto mb-4 text-3xl text-white' />
+                <h3 className='text-xl text-accent'>Call Us:</h3>(844) 36-MUSIC
+              </a>
+            </li> */}
+            <li className='text-center  flex-1'>
+              <a href='sms:8443668742' className='text-xs tracking-tighter'>
+                <MdMessage className='mx-auto mb-4 text-3xl text-white' />
+                <h3 className='text-sm text-accent'>Text or Call Us:</h3>(844)
+                36-MUSIC
               </a>
             </li>
             <li className='text-center'>
@@ -37,20 +48,20 @@ export default function contactPage(): JSX.Element {
                 className='text-xs tracking-tighter'
               >
                 <MdOutlineMail
-                  className='mx-auto mb-4 text-3xl'
+                  className='mx-auto mb-4 text-3xl text-white'
                   color='accent'
                 />
-                <h3 className='text-xl text-primary'>Email Us:</h3>
+                <h3 className='text-sm text-accent'>Email Us:</h3>
                 laverne@rockstarsoftomorrow.com
               </a>
             </li>
-            <li className='text-center'>
+            <li className='text-center  flex-1'>
               <a
                 href='https://maps.app.goo.gl/cP1WQ4s371cQdKbK8'
                 className='text-xs tracking-tighter'
               >
-                <FaLocationDot className='mx-auto mb-4 text-3xl outlined-icon' />
-                <h3 className='text-xl text-primary'>Visit Us:</h3>
+                <FaLocationDot className='mx-auto mb-4 text-3xl text-white' />
+                <h3 className='text-sm text-accent'>Visit Us:</h3>
                 2855 Foothill Blvd, A-102, La Verne, CA 91750
               </a>
             </li>

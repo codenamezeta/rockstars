@@ -8,10 +8,7 @@ interface PricingClassesProps {
   sectionDescription?: string
 }
 
-export default function PricingClasses({
-  sectionTitle = 'Rock Band Classes',
-  sectionDescription = 'Choose the best plan for you and your bandmates',
-}: PricingClassesProps): JSX.Element {
+export default function PricingClasses(): JSX.Element {
   const [toggled, setToggled] = useState(false)
 
   const handleToggle = () => {
@@ -19,105 +16,125 @@ export default function PricingClasses({
   }
 
   return (
-    <section id='classes_pricing' className='bg-background overflow-hidden'>
+    <section
+      id='classes_pricing'
+      className='bg-background overflow-hidden py-24'
+    >
       <SectionOverview
         title='Rock Band Classes'
         subtitle='Choose the best plan for you and your bandmates'
       />
-      <div className='container px-5 mx-auto'>
-        <div className='flex flex-col text-center w-full'>
-          {/* <h2 className='sm:text-3xl text-2xl font-medium title-font mb-2'>
-            {sectionTitle}
-          </h2>
-          <p className='lg:w-2/3 mx-auto leading-relaxed text-base text-primary'>
-            {sectionDescription}
-          </p> */}
-          <div className='flex mx-auto border-2 border-accent rounded overflow-hidden my-6'>
-            <button
-              className={
-                !toggled
-                  ? 'text-xs md:text-base py-1 px-4 bg-accent text-white focus:outline-none transition-all duration-500'
-                  : 'text-xs md:text-base py-1 px-4 text-gray-300 focus:outline-none transition-all duration-500'
-              }
-              onClick={handleToggle}
-            >
-              With active lessons enrollment
-            </button>
-            <button
-              className={
-                !toggled
-                  ? 'text-xs md:text-base py-1 px-4 text-gray-300 focus:outline-none transition-all duration-500'
-                  : 'text-xs md:text-base py-1 px-4 bg-accent text-white focus:outline-none transition-all duration-500'
-              }
-              onClick={handleToggle}
-            >
-              Without active lessons enrollment
-            </button>
-          </div>
+      <div className='container px-0 mx-auto'>
+        <div className='flex mx-auto w-11/12 md:w-3/5 xl:w-1/3 h-12 xl:h-auto border-2 border-accent rounded overflow-hidden my-6'>
+          <button
+            className={
+              !toggled ?
+                'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
+              : 'text-xs md:text-base py-1 px-4 w-full text-gray-300 focus:outline-none transition-all duration-500'
+            }
+            onClick={handleToggle}
+          >
+            Added to private lessons
+          </button>
+          <button
+            className={
+              !toggled ?
+                'text-xs md:text-base py-1 px-4 w-full text-gray-300 focus:outline-none transition-all duration-500'
+              : 'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
+            }
+            onClick={handleToggle}
+          >
+            Without private lessons
+          </button>
         </div>
         <div className='flex flex-wrap'>
-          <ProgramPriceBox
-            name={'Rock Shop'}
-            price={49}
-            interval={'/month'}
+          {/* <ProgramPriceBox
+            name={'Open Jam'}
+            price={0}
             currency={'$'}
+            interval={'Free Trial'}
             additionalCostText={''}
             highlight={false}
             highlightText={''} // This is the text that will be displayed in the top right corner of the box
             featuresList={[
-              '30–120 minutes/class.*',
-              'On-going weekly classes.',
-              'Students perform every six months here at the school.',
-              'Open to all levels, but focused on beginners.',
-              'Songs are pre-selected by the instructor.',
-              'Includes sheet music and audio files.**',
+              '30-minute trial class.',
+              'Open to all ages.',
+              'No experience required.',
+              'No instrument required.',
+              'No commitment.',
             ]}
-            disclaimers={[
-              '* Time based on number of students enrolled.',
-              '** One-time cost of $15 for materials.',
-            ]} // This is the text that will be displayed just above the call to action button
+            disclaimers={['']} // This is the text that will be displayed just above the call to action button
+            callToActionText={'Sign up now'}
+            callToActionPath='/contact'
+          /> */}
+          <ProgramPriceBox
+            name={'RockStart'}
+            price={49}
+            currency={'$'}
+            interval={'/class'}
+            additionalCostText={
+              toggled ?
+                'RockStart program is only available when combined with private lessons.'
+              : ''
+            }
+            highlight={false}
+            highlightText={''} // This is the text that will be displayed in the top right corner of the box
+            featuresList={[
+              '30–120 minutes/class.*',
+              'Monthly class.',
+              'Students perform up to four songs in-studio as a band.',
+              'Open to all levels, but focused on beginners.',
+              'Pre-selected songs.',
+              'Includes sheet music and audio files.',
+            ]}
+            disclaimers={['* Time based on number of songs performed.']} // This is the text that will be displayed just above the call to action button
             customPrice={false}
             customPriceText={''}
           />
           <ProgramPriceBox
             name={'JamCore'}
-            price={toggled ? 104 : 79}
-            interval={'/month'}
+            price={toggled ? 208 : 158}
+            interval={'/session'}
             currency={'$'}
             additionalCostText={''}
             highlight={false}
             highlightText={''} // This is the text that will be displayed in the top right corner of the box
             featuresList={[
-              '30–120 minutes/week.*',
               '8-week sessions.',
-              'Performs a show at the end of each session at a local venue.',
-              'Open to intermediate level students.',
+              '30–120 minutes/week.*',
+              'Performs at 1 show per session at a local venue.',
+              'Open to intermediate level students.**',
               'Students continue the class every session with new bands, different songs, and fresh performances.',
-              'Students can also participate in the Rock Shop program.',
+              'Students can also participate in the RockStart program.***',
             ]}
-            disclaimers={['* Time based on number of students enrolled.']} // This is the text that will be displayed just above the call to action button
+            disclaimers={[
+              '* Time based on number of students enrolled.',
+              '** Requires instructor approval.',
+              '*** Subject to availability.',
+            ]} // This is the text that will be displayed just above the call to action button
             customPrice={false}
             customPriceText={''}
           />
           <ProgramPriceBox
             name={'BandCore'}
-            price={toggled ? 124 : 99}
-            interval={'/month'}
+            price={toggled ? 372 : 297}
+            interval={'/session'}
             currency={'$'}
             additionalCostText={''}
             highlight={true}
             highlightText={'Most Popular'} // This is the text that will be displayed in the top right corner of the box
             featuresList={[
-              '30–120 minutes/week.*',
               '12-week sessions.',
-              'Performs at 2 shows per session at a local venue.',
+              '30–120 minutes/week.*',
+              'Performs at 2 shows per session at local venues.',
               'Open to advanced level students.**',
               'Students continue the class every session with new bands, different songs, and fresh performances.',
-              'Students can also participate in the Rock Shop & JamCore programs.',
+              'Students can also participate in the RockStart & JamCore programs.***',
             ]}
             disclaimers={[
               '* Time based on number of students enrolled.',
               '** Requires instructor approval.',
+              '*** Subject to availability.',
             ]} // This is the text that will be displayed just above the call to action button
             customPrice={false}
             customPriceText={''}
@@ -140,9 +157,9 @@ export default function PricingClasses({
               'On-going for as long as you and your bandmates wish.',
               'Discounts on recording time, photoshoots, and more.',
               'Open to all skill levels.',
-              'Students can also participate in the Rock Shop, JamCore, & BandCore programs.',
+              'Students can also participate in the RockStart, JamCore, & BandCore programs.*',
             ]}
-            disclaimers={['']} // This is the text that will be displayed just above the call to action button
+            disclaimers={['* Subject to availability.']} // This is the text that will be displayed just above the call to action button
             callToActionText={'Contact us for details'}
             callToActionPath='/contact'
           />
