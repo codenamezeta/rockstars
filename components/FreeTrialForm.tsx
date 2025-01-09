@@ -28,14 +28,14 @@ const formSchema = z.object({
   contact: z.object({
     firstName: z
       .string()
-      .regex(/^[a-zA-Z\s]*$/, {
+      .regex(/^[a-zA-Z\s-]{2,50}$/, {
         message: 'First name must only contain letters.',
       })
       .min(2, { message: 'First name must be at least 2 characters.' })
       .max(50, { message: 'First name must be at most 50 characters.' }),
     lastName: z
       .string()
-      .regex(/^[a-zA-Z\s]*$/, {
+      .regex(/^[a-zA-Z\s-]{2,50}$/, {
         message: 'Last name must only contain letters.',
       })
       .min(2, { message: 'Last name must be at least 2 characters.' })
@@ -43,7 +43,7 @@ const formSchema = z.object({
     email: z
       .string()
       .email({
-        message: "Oops! This doesn't appear to be a valid email address",
+        message: "Oops! This doesn't appear to be a valid email address.",
       })
       .nonempty({ message: 'Email is required.' }),
     phone: z
@@ -112,7 +112,15 @@ const interests = [
   { id: 'Unsure / Other', label: ' Unsure / Other' },
 ] as const
 
-export default function FreeTrialForm(): JSX.Element {
+type FreeTrialFormProps = {
+  title?: string
+  overviewText?: string
+}
+
+export default function FreeTrialForm({
+  title = 'Free Trial Lesson',
+  overviewText = 'Start with a free trial lesson! Fill out the form below to get started. We will contact you to schedule your lesson and a tour of our school.',
+}: FreeTrialFormProps): JSX.Element {
   // Define a state to track if the form has been submitted.
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
   const [studentCount, setStudentCount] = useState<number>(1)
@@ -209,96 +217,92 @@ export default function FreeTrialForm(): JSX.Element {
   return (
     <section id='free_trial' className='themed-background-style-1 py-24'>
       <div className='max-w-screen-md mx-auto px-6'>
-        <SectionOverview
-          title='Free Trial Lesson'
-          overviewText='Start with a free trial lesson! Fill out the form below to get
-          started. We will contact you to schedule your lesson and a tour of our
-          school.'
-        />
+        <SectionOverview title={title} overviewText={overviewText} />
         <Form {...form}>
-          {isSubmitted ?
+          {isSubmitted ? (
             <div className='text-center'>
-              <p className='mb-4 text-xl font-bold'>
+              <p className='mb-4 text-2xl font-bold'>
                 Thank you for submitting your information!
               </p>
               <p className='mb-8'>
                 We will contact you shortly to schedule your free trial lesson.
               </p>
             </div>
-          : <form
+          ) : (
+            <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className='space-y-8'
+              className='space-y-6 font-arvo'
               role='trial signup'
             >
-              <h3 className='mb-2 text-2xl font-bold'>
+              <h3 className='mb-2 text-3xl font-bold'>
                 Your Contact Information
               </h3>
-              <span className='mb-8 text-muted-foreground text-sm'>
+              <span className='mb-8 text-foreground'>
                 {`We'll start with your contact info so we can get in touch with
                 you. Next, we'll get some details for up to ${studentCountLimit} students. We
-                never share your information.`}
+                do not sell or share your information.`}
               </span>
-              <FormField
-                control={form.control}
-                name='contact.firstName'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Your First Name *</FormLabel>
-                    <FormControl>
-                      <Input placeholder='First name' {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name='contact.lastName' // Use the correct path for the nested field
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Your Last Name *</FormLabel>
-                    <FormControl>
-                      <Input placeholder='Last name' {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name='contact.email'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Your Email Address *</FormLabel>
-                    <FormControl>
-                      <Input placeholder='youremail@address.com' {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name='contact.phone'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Your Phone Number *</FormLabel>
-                    <FormControl>
-                      <Input placeholder='(909) 555-0123' {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+              <div className='flex flex-wrap justify-between'>
+                <FormField
+                  control={form.control}
+                  name='contact.firstName'
+                  render={({ field }) => (
+                    <FormItem className='w-full md:w-1/2 md:pr-4 mb-4'>
+                      <FormLabel>Your First Name *</FormLabel>
+                      <FormControl>
+                        <Input placeholder='First name' {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name='contact.lastName' // Use the correct path for the nested field
+                  render={({ field }) => (
+                    <FormItem className='w-full md:w-1/2 mb-4'>
+                      <FormLabel>Your Last Name *</FormLabel>
+                      <FormControl>
+                        <Input placeholder='Last name' {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name='contact.email'
+                  render={({ field }) => (
+                    <FormItem className='w-full md:w-1/2 md:pr-4 mb-4'>
+                      <FormLabel>Your Email Address *</FormLabel>
+                      <FormControl>
+                        <Input placeholder='youremail@address.com' {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name='contact.phone'
+                  render={({ field }) => (
+                    <FormItem className='w-full md:w-1/2 mb-4'>
+                      <FormLabel>Your Phone Number *</FormLabel>
+                      <FormControl>
+                        <Input placeholder='(909) 555-0123' {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
               <FormField
                 control={form.control}
                 name='contact.sources'
                 render={() => (
                   <FormItem>
                     <div className='mb-4'>
-                      <FormLabel className='text-base'>
-                        How did you hear about us?
-                      </FormLabel>
+                      <FormLabel>How did you hear about us?</FormLabel>
                       <FormDescription>Check all that apply.</FormDescription>
                     </div>
                     {sources.map((source) => (
@@ -316,8 +320,8 @@ export default function FreeTrialForm(): JSX.Element {
                                 <Checkbox
                                   checked={field.value?.includes(source.id)}
                                   onCheckedChange={(checked) => {
-                                    return checked ?
-                                        field.onChange([
+                                    return checked
+                                      ? field.onChange([
                                           ...(field.value ?? []),
                                           source.id,
                                         ])
@@ -329,7 +333,7 @@ export default function FreeTrialForm(): JSX.Element {
                                   }}
                                 />
                               </FormControl>
-                              <FormLabel className='font-normal'>
+                              <FormLabel className='font-medium'>
                                 {source.label}
                               </FormLabel>
                             </FormItem>
@@ -354,7 +358,7 @@ export default function FreeTrialForm(): JSX.Element {
                         className='mr-2'
                       />
                     </FormControl>
-                    <FormLabel className='font-bold text-lg'>
+                    <FormLabel className='font-bold text-xl'>
                       I am signing up for myself
                     </FormLabel>
                     <FormDescription>
@@ -369,7 +373,7 @@ export default function FreeTrialForm(): JSX.Element {
               {/* Student Details */}
               {Array.from({ length: studentCount }).map((_, index) => (
                 <div key={index} className='space-x-3 space-y-4'>
-                  <h3 className='mb-2 text-2xl font-bold'>
+                  <h3 className='mb-2 text-3xl font-bold'>
                     {studentCount > 1 ? `Student ${index + 1}'s ` : 'Student'}{' '}
                     Details
                   </h3>
@@ -384,9 +388,9 @@ export default function FreeTrialForm(): JSX.Element {
                             placeholder="Student's first name"
                             {...field}
                             value={
-                              selfSignup && index === 0 ?
-                                contactFirstName
-                              : field.value
+                              selfSignup && index === 0
+                                ? contactFirstName
+                                : field.value
                             }
                             onChange={(e) => {
                               field.onChange(e)
@@ -415,9 +419,9 @@ export default function FreeTrialForm(): JSX.Element {
                             placeholder="Student's last name"
                             {...field}
                             value={
-                              selfSignup && index === 0 ?
-                                contactLastName
-                              : field.value
+                              selfSignup && index === 0
+                                ? contactLastName
+                                : field.value
                             }
                             onChange={(e) => {
                               field.onChange(e)
@@ -441,9 +445,9 @@ export default function FreeTrialForm(): JSX.Element {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>
-                          {form.watch(`students.${index}.firstName`) ?
-                            form.watch(`students.${index}.firstName`)
-                          : 'Student'}
+                          {form.watch(`students.${index}.firstName`)
+                            ? form.watch(`students.${index}.firstName`)
+                            : 'Student'}
                           {"'s "}
                           Date of Birth
                         </FormLabel>
@@ -464,12 +468,13 @@ export default function FreeTrialForm(): JSX.Element {
                     render={() => (
                       <FormItem>
                         <div className='mb-4'>
-                          <FormLabel className='text-base'>Interests</FormLabel>
+                          <FormLabel>Interests</FormLabel>
                           <FormDescription>
                             Which programs{' '}
-                            {form.watch(`students.${index}.firstName`) ?
-                              'is ' + form.watch(`students.${index}.firstName`)
-                            : 'are you'}{' '}
+                            {form.watch(`students.${index}.firstName`)
+                              ? 'is ' +
+                                form.watch(`students.${index}.firstName`)
+                              : 'are you'}{' '}
                             interested in?
                           </FormDescription>
                         </div>
@@ -488,8 +493,8 @@ export default function FreeTrialForm(): JSX.Element {
                                     className=''
                                     checked={field.value?.includes(interest.id)}
                                     onCheckedChange={(checked) => {
-                                      return checked ?
-                                          field.onChange([
+                                      return checked
+                                        ? field.onChange([
                                             ...(field.value ?? []),
                                             interest.id,
                                           ])
@@ -517,7 +522,7 @@ export default function FreeTrialForm(): JSX.Element {
                 </div>
               ))}
               <div className='flex flex-wrap items-center'>
-                <p className='pb-6 w-full text-center'>Add / remove students</p>
+                <p className='pb-6 w-full text-center'>Add / Remove Students</p>
                 <Button
                   type='button'
                   variant='outline'
@@ -525,13 +530,14 @@ export default function FreeTrialForm(): JSX.Element {
                   className={`ml-auto mr-2 block ${studentCount <= 1 ? 'hidden' : ''}`}
                   onClick={() => setStudentCount((prevState) => prevState - 1)}
                 >
-                  {studentCount <= 1 ?
+                  {studentCount <= 1 ? (
                     'At least one student is required'
-                  : <>
+                  ) : (
+                    <>
                       <FaUserMinus className='inline-block mr-2' />
                       Remove
                     </>
-                  }
+                  )}
                 </Button>
                 <Button
                   type='button'
@@ -540,11 +546,13 @@ export default function FreeTrialForm(): JSX.Element {
                   className={`mr-auto block ${studentCount <= 1 ? 'mx-auto' : ''}`}
                   onClick={() => setStudentCount((prevState) => prevState + 1)}
                 >
-                  {studentCount < studentCountLimit ?
+                  {studentCount < studentCountLimit ? (
                     <>
                       <FaUserPlus className='inline-block mr-2' /> Add Student
                     </>
-                  : 'Maximum Students Reached'}
+                  ) : (
+                    'Maximum Students Reached'
+                  )}
                 </Button>
               </div>
               <FormField
@@ -554,7 +562,10 @@ export default function FreeTrialForm(): JSX.Element {
                   <FormItem>
                     <FormLabel>Comments</FormLabel>
                     <FormControl>
-                      <Textarea placeholder='Any comments?' {...field} />
+                      <Textarea
+                        placeholder='Anything else you would like us to know?'
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -562,13 +573,13 @@ export default function FreeTrialForm(): JSX.Element {
               />
               <Button
                 type='submit'
-                className='bg-primary text-white px-8 py-3 rounded-md hover:bg-primary'
+                size='lg'
                 // disabled={!form.formState.isValid}
               >
                 Submit
               </Button>
             </form>
-          }
+          )}
         </Form>
       </div>
     </section>

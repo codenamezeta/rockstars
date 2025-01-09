@@ -1,15 +1,27 @@
-//* Description: This file contains the data for the programs offered at the school.
-//- Define the programs offered at the school
+//- This file contains the data for the programs offered at the school.
+//* Define the programs offered at the school
+
+import { features } from 'process'
+
 //@ Band Classes
 const RockStart = {
   programName: 'RockStart',
   tagline: 'The perfect program for young beginners who are just starting out.',
   programType: 'Band class',
+  slug: 'rockstart',
   description:
     "RockStart is the perfect program for young beginners who are just starting out. In this program, you'll learn the basics of playing an instrument and get to experience the excitement of playing in a band. You'll work with classmates of similar skill levels to learn fun, easy-to-play songs chosen by your instructor. Each week, you'll rehearse these songs in a structured environment, focusing on developing your musicianship and teamwork. The program culminates in a live performance at a local venue, giving you the ultimate payoff – the thrill of rocking out in front of a real audience!",
+  details: {
+    recurrence: 'Monthly',
+    duration: '30–120 minutes/class.*',
+    performances: 'Students perform up to four songs in-studio as a band.',
+    skillLevel: 'Open to all levels, but focused on beginners.',
+    songs: 'Pre-selected songs.',
+    materials: 'Includes sheet music and audio files.',
+  },
   features: [
-    '30–120 minutes/class.*',
     'Monthly class.',
+    '30–120 minutes/class.*',
     'Students perform up to four songs in-studio as a band.',
     'Open to all levels, but focused on beginners.',
     'Pre-selected songs.',
@@ -54,6 +66,7 @@ const JamCore = {
   programName: 'JamCore',
   tagline: 'Experience the excitement of playing live with other musicians!',
   programType: 'Band class',
+  slug: 'jamcore',
   description:
     "Have you been playing your instrument for a few years and are ready to take the stage? JamCore is your chance to experience the excitement of playing live with other musicians! In this program, you'll collaborate with classmates of similar skill levels to learn assigned songs chosen by your instructor. Each week, you'll rehearse these songs in a structured environment, focusing on developing your musicianship and teamwork. The program culminates in a live performance at a local venue, giving you the ultimate payoff – the thrill of rocking out in front of a real audience!",
   features: [
@@ -108,8 +121,9 @@ const BandCore = {
   tagline:
     'Join an elite group of musicians collaborating, performing, and evolving together.',
   programType: 'Band class',
+  slug: 'bandcore',
   description:
-    "Are you an experienced musician looking to push your boundaries and develop your own unique sound? BandCore is designed to take your musical journey to the next level! This program is all about collaboration and creative expression. You'll get to form your own band with classmates who share your musical tastes, allowing you to choose songs you're passionate about (with guidance from your instructor). BandCore offers extended rehearsal periods compared to JamCore, giving you more time to hone your skills as a band and truly own your sound. The program culminates in not just one, but two electrifying live shows at local venues, putting your hard work on display for the world to see!",
+    "Are you an experienced musician looking to push your boundaries and develop your own unique sound? BandCore is designed to take your musical journey to the next level! This program is all about collaboration and creative expression. You'll get to form your own band with classmates who share your musical tastes, allowing you to choose songs you're passionate about (with guidance from your instructor). BandCore has extended session lengths compared to JamCore, giving you more time to conquer more challenging material, hone your skills as a band, and truly own your sound. The BandCore program culminates in not just one, but two electrifying live shows at local venues, putting your hard work on display for the world to see!",
   features: [
     '12-week sessions.',
     '30–120 minutes/week.*',
@@ -160,13 +174,14 @@ const RockstarPro = {
   programName: 'Rockstar Pro',
   tagline: 'The ultimate program for serious musicians.',
   programType: 'Band class',
+  slug: 'rockstar-pro',
   description:
     'Rockstar Pro is the ultimate program for serious musicians. Whether you’re a seasoned performer or just starting out, this program is designed to help you take your music to the next level. You’ll get to perform at local venues, festivals, and more, and you’ll have the opportunity to build your ideal setlist and work on any music you want, including originals. With personalized instruction and guidance from an instructor of your choice, you’ll have the freedom to explore your musical interests and develop your own unique sound. Rockstar Pro is an ongoing program, so you can continue for as long as you and your bandmates wish, with discounts on recording time, photoshoots, and more.',
   features: [
     'Perform at local venues, festivals, and more.',
     'Priority booking for shows.',
     'Build your ideal setlist and work on any music you want, including originals.',
-    'Personalized instruction and guidance from instructor of your choice.',
+    'Personalized instruction and guidance from an instructor of your choice.',
     'On-going for as long as you and your bandmates wish.',
     'Discounts on recording time, photoshoots, and more.',
     'Open to all skill levels.',
@@ -202,11 +217,13 @@ const RockstarPro = {
 const SongwritingWorkshop = {
   programName: 'Songwriting Workshop',
   tagline: 'Learn the art of songwriting from experienced musicians.',
+  programType: 'Workshop',
   description:
     'The Songwriting Workshop is a unique program designed to help you develop your skills as a songwriter. Whether you’re a beginner or an experienced musician, this workshop will give you the tools you need to create your own original music. You’ll learn the fundamentals of songwriting, including melody, harmony, rhythm, and lyrics, and you’ll have the opportunity to collaborate with other students to create new songs. The workshop culminates in a live performance where you can showcase your original music to an audience of your peers.',
 }
 const MusicProductionWorkshop = {
   programName: 'Music Production Workshop',
+  programType: 'Workshop',
   tagline: 'Learn how to produce your own music like a pro.',
   description:
     'The Music Production Workshop is a hands-on program that will teach you the ins and outs of music production. Whether you’re a beginner or an experienced musician, this workshop will give you the skills you need to produce your own music like a pro. You’ll learn how to record, mix, and master your tracks, and you’ll have the opportunity to collaborate with other students to create professional-quality recordings. The workshop culminates in a listening party where you can share your music with an audience of your peers.',
@@ -221,6 +238,7 @@ const MusicProductionWorkshop = {
 //@ Lessons
 const PrivateLessons = {
   programName: 'Private Lessons',
+  programType: 'Lesson',
   tagline: 'Get personalized instruction from experienced musicians.',
   description:
     'Private Lessons are the perfect way to get personalized instruction from experienced musicians. Whether you’re a beginner or an advanced player, our instructors will work with you to develop your skills and achieve your musical goals. You’ll have the opportunity to learn at your own pace and focus on the areas that interest you most, whether it’s technique, theory, or performance. Private Lessons are available for all ages and skill levels, and are offered in a variety of instruments and styles.',
@@ -233,6 +251,7 @@ const PrivateLessons = {
 }
 const GroupLessons = {
   programName: 'Group Lessons',
+  programType: 'Lesson',
   tagline: 'Learn with others in a fun and supportive group setting.',
   description:
     'Group Lessons are a fun and interactive way to learn music with others. Whether you’re a beginner or an experienced player, our instructors will work with you to develop your skills and achieve your musical goals. You’ll have the opportunity to learn in a supportive group setting and collaborate with other students to create music together. Group Lessons are available for all ages and skill levels, and are offered in a variety of instruments and styles.',

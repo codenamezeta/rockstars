@@ -1,3 +1,11 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description:
+    'Rockstars of Tomorrow in La Verne is committed to protecting your privacy. Read our Privacy Policy to learn how we collect, use, and protect your personal information.',
+}
+
 export default function PrivacyPolicyPage() {
   return (
     <main className='mx-auto my-44 max-w-prose'>

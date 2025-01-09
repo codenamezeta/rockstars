@@ -1,5 +1,4 @@
-//* Programs Component
-import Separator from '@/components/Separator'
+//- Programs Component
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { getAllBandClasses } from '@/lib/programs'
@@ -23,18 +22,7 @@ export default function Programs(): JSX.Element {
           <p className='leading-relaxed text-sm md:text-lg mb-3'>
             {bandClass.description}
           </p>
-          {/* <Separator /> */}
-          {/* <ul className='title-font font-medium mb-8 flex flex-wrap gap-2 text-left justify-start'>
-            {bandClass.features.map((feature: String, i: number) => (
-              <li
-                key={i}
-                className='bg-primary p-3 rounded-lg border-1 border-gray-300 text-xs'
-              >
-                {feature}
-              </li>
-            ))}
-          </ul> */}
-          <Link href={`/programs/${bandClass.programName}`} className='mt-auto'>
+          <Link href={`/programs/${bandClass.slug}`} className='mt-auto'>
             <Button variant='outline' size='full'>
               Get started
               <svg

@@ -25,16 +25,18 @@ export default function SectionOverview({
 }: SectionOverviewTypes): JSX.Element {
   return (
     <div id={customId} className={`mb-12 ${customClasses}`}>
-      <h2 className={`font-anton text-center text-6xl text-${titleColor}`}>
+      <h2
+        className={`font-soleil font-bold tracking-tight text-4xl sm:text-6xl text-center text-${titleColor}`}
+      >
         {title}
       </h2>
       <h3
-        className={`text-center my-4 text-2xl title-font text-${subtitleColor}`}
+        className={`text-center my-4 text-3xl title-font text-${subtitleColor}`}
       >
         {subtitle}
       </h3>
       <p
-        className={`text-center text-base leading-relaxed max-w-prose mx-auto text-${overviewTextColor}`}
+        className={`text-center text-lg leading-relaxed max-w-prose mx-auto text-${overviewTextColor}`}
       >
         {overviewText}
       </p>

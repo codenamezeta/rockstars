@@ -1,30 +1,61 @@
+import drummerGirl from '@/public/imgs/drummer-girl-1.png'
 import Hero from '@/components/Hero'
 import Benefits from '@/components/Benefits'
-import Testimonials from '@/components/Testimonials'
 import ProgramsOverview from '@/components/ProgramsOverview'
 // import Team from '@/components/Team'
+import Testimonials from '@/components/Testimonials'
 import Contact from '@/components/Contact'
-// import Enroll from '@/components/Enroll'
-import FreeTrialForm from '@/components/FreeTrialForm'
-import drummerGirl from '@/public/imgs/drummer-girl-1.png'
-// import photo from '@/public/imgs/Kids/Teen Blue Guitar Girl.png'
+import GHLForm from '@/components/GHLForm'
+// import FreeTrialForm from '@/components/FreeTrialForm'
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Rockstars of Tomorrow - La Verne',
+  description:
+    'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
+  openGraph: {
+    title: 'Rockstars of Tomorrow - La Verne',
+    description:
+      'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
+    images: [
+      {
+        url: '/imgs/drummer-girl-1.png',
+        width: 800,
+        height: 600,
+        alt: 'Young Woman Drummer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Rockstars of Tomorrow - La Verne',
+    description:
+      'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
+    images: ['/imgs/drummer-girl-1.png'],
+  },
+}
 
 export default function Home() {
   return (
     <>
       <Hero
-        title='Your Rockstar Moment!'
-        // subtitle='A Real Rockstar Experience that Breaks the Mold!'
-        text='With our proprietary Rockstar Method, you will learn to play real songs on real stages with real bands. Our unique approach to music education will have you performing like a pro in just six months!'
+        title='Unleash Your Inner Rockstar!'
+        subtitle='With Expert Music Lessons and Performance Coaching.'
+        text='Real Bands, Real Stages, Real Rockstar Confidence!'
         // list={['Real Bands', 'Real Stages', 'Real Rockstar Confidence!']}
-        imageSrc={drummerGirl}
+        image={{
+          src: drummerGirl,
+          alt: 'Young Woman Drummer',
+        }}
       />
       <Benefits />
       <ProgramsOverview />
       {/* <Team /> */}
       <Testimonials />
       <Contact />
-      <FreeTrialForm />
+      <GHLForm />
+      {/* <FreeTrialForm /> */}
     </>
   )
 }

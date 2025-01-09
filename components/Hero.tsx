@@ -1,6 +1,6 @@
 'use client'
 import { Button } from '@/components/ui/button'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 // import Photo from '@/public/imgs/drummer-girl-1.png'
 import { IoStarSharp } from 'react-icons/io5'
@@ -12,7 +12,13 @@ interface HeroProps {
   list?: string[]
   ctaText?: string
   ctaLink?: string
-  imageSrc?: string | { src: string; height: number; width: number } | undefined
+  image?: {
+    src: string | StaticImageData
+    alt: string
+    width?: number
+    height?: number
+    classNames?: string
+  }
 }
 
 export default function Hero({
@@ -21,8 +27,8 @@ export default function Hero({
   text,
   list,
   ctaText = 'Free Trial',
-  ctaLink = '/#free_trial',
-  imageSrc,
+  ctaLink = '/?scrollTo=free_trial',
+  image,
 }: HeroProps): JSX.Element {
   return (
     <header className='hero h-screen'>
@@ -31,7 +37,7 @@ export default function Hero({
           {/* <h1 className='text-4xl lg:text-8xl font-bold text-primary uppercase tracking-tighter'>
             {title}
           </h1> */}
-          <h1 className='font-anton text-4xl lg:text-8xl text-accent uppercase themed-text-effect-1'>
+          <h1 className='text-4xl md:text-6xl lg:text-8xl font-soleil uppercase text-accent text-effect-1'>
             {title}
           </h1>
           <h2
@@ -65,16 +71,17 @@ export default function Hero({
             </Button>
           </Link>
         </div>
-        {imageSrc && (
-          <div className='self-end hidden lg:block'>
+        <div className='self-end hidden lg:block w-2/3 overflow-hidden'>
+          {image && (
             <Image
-              alt='Girl Playing Drums'
-              src={imageSrc}
-              // width={600}
-              // height={600}
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              className={image.classNames}
             />
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </header>
   )

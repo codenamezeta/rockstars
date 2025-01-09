@@ -1,12 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     container: {
       center: true,
@@ -81,6 +76,7 @@ module.exports = {
       fontFamily: {
         arvo: ['var(--font-arvo)', 'sans-serif'],
         anton: ['var(--font-anton)', 'sans-serif'],
+        soleil: ['var(--font-soleil)', 'sans-serif'],
       },
     },
     plugins: [require('tailwindcss-animate')],

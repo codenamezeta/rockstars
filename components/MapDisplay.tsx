@@ -2,13 +2,12 @@ import { Button } from '@/components/ui/button'
 import { FaPhone } from 'react-icons/fa'
 import { MdOutlineMail, MdMessage } from 'react-icons/md'
 import { FaLocationDot } from 'react-icons/fa6'
-import { IoChatbubblesOutline } from 'react-icons/io5'
 
 export default function Contact(): JSX.Element {
   return (
-    <div className='container mx-auto flex sm:flex-nowrap flex-wrap mb-12 space-x-6'>
-      <div className='themed-background-style-3 rounded-xl w-full md:w-1/2 lg:w-1/3 p-6'>
-        <ul className='flex flex-col justify-between tracking-wide'>
+    <div className='container mx-auto flex sm:flex-nowrap flex-wrap mb-12'>
+      <div className='bg-black border rounded-lg md:rounded-none md:rounded-l-xl w-full md:w-1/2 lg:w-1/3 p-6 pr-1'>
+        <ul className='flex flex-col justify-between tracking-wide list-none'>
           <li className=''>
             <h3 className='text-lg uppercase text-white font-bold tracking-wide'>
               Phone
@@ -19,18 +18,12 @@ export default function Contact(): JSX.Element {
                 (68742)
               </sub>
             </span>
-            <a
-              href='sms:8443668742'
-              className='hover:underline hover:text-accent'
-            >
+            <a href='sms:8443668742' className='text-white'>
               <Button variant='outline' className='mt-4 mb-2 mr-4'>
                 Text <MdMessage className='text-xl inline' />
               </Button>
             </a>
-            <a
-              href='tel:8443668742'
-              className='hover:underline hover:text-accent'
-            >
+            <a href='tel:8443668742' className='text-white'>
               <Button variant='outline' className='mb-4'>
                 Call <FaPhone className='text-xl inline' />
               </Button>
@@ -40,12 +33,12 @@ export default function Contact(): JSX.Element {
             <h3 className='text-lg uppercase text-white font-bold tracking-wide'>
               Email
             </h3>
-            <span className='text-accent block tracking-widest'>
+            <span className='text-accent block truncate text-xs xl:text-base tracking-widest'>
               laverne@rockstarsoftomorrow.com
             </span>
             <a
               href='mailto:laverne@rockstarsoftomorrow.com'
-              className='hover:underline hover:text-accent'
+              className='text-white'
             >
               <Button variant='outline' className='my-4 mr-4'>
                 Email <MdOutlineMail className='text-xl inline' />
@@ -59,7 +52,7 @@ export default function Contact(): JSX.Element {
             <span className='text-accent block tracking-widest'>Live Chat</span>
             <a
               href='https://app.mymusicstaff.com/'
-              className='hover:underline hover:text-accent'
+              className='text-white'
             >
               <Button variant='outline' className='my-4 mr-4'>
                 Connect <IoChatbubblesOutline className='text-xl inline' />
@@ -75,7 +68,7 @@ export default function Contact(): JSX.Element {
             </span>
             <a
               href='https://maps.app.goo.gl/cP1WQ4s371cQdKbK8'
-              className='hover:underline hover:text-accent'
+              className='text-white'
             >
               <Button variant='outline' className='my-4 mr-4'>
                 Get Directions <FaLocationDot className='text-xl inline' />
@@ -100,7 +93,7 @@ export default function Contact(): JSX.Element {
       </div>
 
       <div
-        className='lg:w-2/3 md:w-1/2 rounded-xl overflow-hidden relative'
+        className='lg:w-2/3 md:w-1/2 rounded-r-xl overflow-hidden relative'
         style={{ aspectRatio: 16 / 9 }}
       >
         <iframe

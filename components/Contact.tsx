@@ -2,7 +2,10 @@ import SectionOverview from './SectionOverview'
 import MapDisplay from './MapDisplay'
 export default function Contact(): JSX.Element {
   return (
-    <section className='pt-24 pb-12 bg-background'>
+    <section
+      id='contact_info'
+      className='pt-24 pb-12 themed-background-style-3'
+    >
       <SectionOverview
         title='Contact Us'
         overviewText='We would love to hear from you. Feel free to visit our studio in person or give us a call.'

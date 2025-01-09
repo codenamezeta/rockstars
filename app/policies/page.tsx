@@ -1,3 +1,11 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Studio Policies',
+  description:
+    'We value clear communication and want to make sure our students and families understand our policies. Below, you will find details about missed lessons, cancellations, and payment procedures.',
+}
+
 export default function PricingLessons(): JSX.Element {
   return (
     <>

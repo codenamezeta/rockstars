@@ -36,33 +36,34 @@ const ProgramPriceBox: React.FC<ProgramPriceBoxProps> = ({
   callToActionPath = '',
 }: ProgramPriceBoxProps) => {
   return (
-    <div className='p-3 xl:w-1/4 md:w-1/2 w-full'>
+    <div className='p-2 xl:w-1/4 md:w-1/2 w-full font-soleil'>
       <div
         className={
-          highlight ?
-            'h-full p-6 rounded-lg border-2 border-primary flex flex-col flex-wrap relative overflow-hidden'
-          : 'h-full p-6 rounded-lg border-2 border-gray-700 flex flex-col flex-wrap relative overflow-hidden'
+          highlight
+            ? 'h-full p-4 rounded-lg border-2 border-primary flex flex-col flex-wrap relative overflow-hidden'
+            : 'h-full p-4 rounded-lg border-2 border-gray-800 flex flex-col flex-wrap relative overflow-hidden'
         }
       >
         {highlight && (
-          <span className='bg-primary text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl'>
+          <span className='bg-primary text-white px-3 py-1 tracking-widest text-xs absolute m-0 right-0 top-0 rounded-bl uppercase'>
             {highlightText.toUpperCase()}
           </span>
         )}
-        <h2 className='text-md tracking-widest text-accent title-font mb-1 font-medium'>
+        <h2 className='text-xl tracking-tight text-accent uppercase'>
           {name.toUpperCase()}
         </h2>
 
-        <h2 className='text-5xl text-white leading-none flex flex-wrap items-baseline pb-4 mb-4 border-b border-gray-800'>
-          {customPrice ?
+        <h2 className='text-6xl text-white font-bold flex flex-wrap items-baseline my-4 border-b border-gray-800'>
+          {customPrice ? (
             customPriceText
-          : price <= 0 ?
+          ) : price <= 0 ? (
             'Free'
-          : <>
+          ) : (
+            <>
               <span className='text-2xl self-start'>{currency}</span>
               {price}
             </>
-          }
+          )}
           <span
             className='text-lg ml-1 mt-auto font-normal text-gray-400'
             style={{ minWidth: 'fit-content' }}
@@ -78,38 +79,43 @@ const ProgramPriceBox: React.FC<ProgramPriceBoxProps> = ({
             </p>
           )}
         </h2>
-        {/* <hr className='border-b border-gray-800' /> */}
-        {featuresList &&
-          featuresList.map((feature, index) => (
-            <p key={index} className='flex items-top text-gray-300 mb-2'>
-              <span className='w-4 h-4 mr-2 mt-1 inline-flex items-center justify-center bg-gray-800 text-gray-500 rounded-full flex-shrink-0'>
-                <svg
-                  fill='#ccc'
-                  stroke='currentColor'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth='2.5'
-                  className='w-3 h-3'
-                  viewBox='0 0 24 24'
-                >
-                  <path d='M12 2L15.09 8.45L22 9.27L17 14.14L18.18 21L12 17.77L5.82 21L7 14.14L2 9.27L8.91 8.45L12 2Z'></path>
-                </svg>
-              </span>
-              {feature}
-            </p>
-          ))}
+
+        <ul className='text-gray-200 m-0 font-arvo'>
+          {featuresList &&
+            featuresList.map((feature, index) => (
+              <li key={index} className='flex my-2 list-none'>
+                <span className='w-4 h-4 mr-2 mt-1 inline-flex items-center justify-center bg-transparent text-gray-500 rounded-full flex-shrink-0'>
+                  <svg
+                    fill='#ccc'
+                    stroke='currentColor'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2.5'
+                    className='w-3 h-3'
+                    viewBox='0 0 24 24'
+                  >
+                    <path d='M12 2L15.09 8.45L22 9.27L17 14.14L18.18 21L12 17.77L5.82 21L7 14.14L2 9.27L8.91 8.45L12 2Z'></path>
+                  </svg>
+                </span>
+                {feature}
+              </li>
+            ))}
+        </ul>
         {/* White space above disclaimers. Aligns buttons to the bottom of the cards */}
         <div className='h-2 w-full mt-auto'></div>
         {disclaimers &&
           disclaimers.map((disclaimerLine, index) => (
-            <p key={index} className='text-xs text-gray-400 text-center'>
+            <p
+              key={index}
+              className='text-xs text-gray-400 text-center font-soleil font-thin tracking-wide'
+            >
               {disclaimerLine}
             </p>
           ))}
 
         {callToActionText && (
           <Link
-            className={`${buttonVariants({ variant: 'default' })} mt-4`}
+            className={`${buttonVariants({ variant: 'default' })} mt-4 no-underline`}
             href={callToActionPath}
           >
             {callToActionText}

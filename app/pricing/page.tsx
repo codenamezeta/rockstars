@@ -3,6 +3,14 @@ import PricingLessons from '@/components/PricingLessons'
 import FAQs from '@/components/FAQs'
 import Header from '@/components/Header'
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Pricing',
+  description:
+    'Rockstars of Tomorrow offers a variety of music lesson and class packages to fit your needs and budget. Learn more about our pricing and policies here!',
+}
+
 export default function pricing() {
   return (
     <>

@@ -15,10 +15,10 @@ export default function Footer(): JSX.Element {
               src={Logo}
             />
           </div>
-          <nav className='w-full md:w-1/2 lg:w-1/6 list-none text-center lg:text-left lg:tracking-tighter'>
+          <nav className='w-full md:w-1/2 lg:w-1/6 text-center lg:text-left lg:tracking-tighter'>
             <h4 className='text-xl font-anton tracking-wider'>Get Connected</h4>
             <hr className='w-16 h-1 rounded-full bg-primary border-0 inline-flex mb-2'></hr>
-            <ul>
+            <ul className='list-none'>
               <li className='mb-2'>
                 <a href='https://www.rockstarsoftomorrow.com/'>RoT Main Site</a>
               </li>
@@ -47,7 +47,7 @@ export default function Footer(): JSX.Element {
           <nav className='w-full md:w-1/2 lg:w-1/6 mx-auto list-none text-center lg:text-left lg:tracking-tighter'>
             <h4 className='text-xl font-anton tracking-wider'>Get Support</h4>
             <hr className='w-16 h-1 rounded-full bg-primary border-0 inline-flex mb-2'></hr>
-            <ul>
+            <ul className='list-none'>
               <li className='mb-2'>
                 <a href='https://app.mymusicstaff.com/'>Customer Portal</a>
               </li>
@@ -69,7 +69,7 @@ export default function Footer(): JSX.Element {
           <nav className='w-full md:w-1/2 lg:w-1/5 list-none text-center lg:text-left lg:tracking-tighter'>
             <h4 className='text-xl font-anton tracking-wider'>Get In Touch</h4>
             <hr className='w-16 h-1 rounded-full bg-primary border-0 inline-flex mb-2'></hr>
-            <ul>
+            <ul className='list-none'>
               <li className='mb-2'>
                 <a href='sms:8443668742'>
                   (844) 36-MUSIC

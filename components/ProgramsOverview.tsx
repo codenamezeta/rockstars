@@ -9,8 +9,8 @@ import Link from 'next/link'
 
 export default function ProgramsOverview(): JSX.Element {
   return (
-    <section className='body-font themed-gradient-1'>
-      <div className='container px-5 pt-0 mt-0 pb-24 mx-auto'>
+    <section className='body-font py-24 themed-gradient-1'>
+      <div className='container'>
         <SectionOverview
           customId='programs_overview'
           title='Programs'

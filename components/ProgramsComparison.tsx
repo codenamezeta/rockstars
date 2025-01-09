@@ -4,12 +4,12 @@ import { Button } from '@/components/ui/button'
 import Separator from '@/components/Separator'
 import SectionOverview from './SectionOverview'
 
-export default function ProgramsComparison(): JSX.Element {
+export function ProgramsComparisonCards(): JSX.Element {
   const bandClasses = getAllBandClasses()
   return (
-    <aside id='programs_comparison' className='py-24 bg-black'>
+    <section id='programs_comparison' className='py-24 bg-black'>
       <SectionOverview
-        title='Which Program is Right for You'
+        title='Which Program is Right for You?'
         titleColor='white'
         separatorColor='accent'
       />
@@ -54,7 +54,7 @@ export default function ProgramsComparison(): JSX.Element {
                   </p>
                 ))}
               <Link
-                href={`/programs/${bandClass.programName}`}
+                href={`/programs/${bandClass.slug}`}
                 className='py-4 text-center text-foreground hover:text-accent'
               >
                 Learn More &rarr;
@@ -62,6 +62,90 @@ export default function ProgramsComparison(): JSX.Element {
             </div>
           </div>
         ))}
+      </div>
+    </section>
+  )
+}
+
+// export default function ProgramsComparisonTable(): JSX.Element {
+//   const bandClasses = getAllBandClasses()
+//   return (
+//     <aside className='bg-black py-16'>
+//       <div className='container mx-auto px-6'>
+//         <h2 className='text-3xl font-bold mb-6 text-center'>
+//           Which Program is Right for You?
+//         </h2>
+
+//         <table className='table-auto w-full text-left bg-background shadow-lg rounded-lg'>
+//           <thead className='bg-primary'>
+//             <tr>
+//               {bandClasses.map((bandClass, index) => (
+//                 <th key={index} className='px-4 py-2'>
+//                   {bandClass.programName}
+//                 </th>
+//               ))}
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {bandClasses.map((bandClass, index) => (
+//               <tr key={index}>
+//                 {bandClass.features.map((feature, index) => (
+//                   <td key={index} className='border px-4 py-2'>
+//                     {feature}
+//                   </td>
+//                 ))}
+//               </tr>
+//             ))}
+//           </tbody>
+//         </table>
+//       </div>
+//     </aside>
+//   )
+// }
+
+export default function ProgramsComparisonTable() {
+  const bandClasses = getAllBandClasses()
+  // Define the columns (program names)
+  const columns = bandClasses.map((bandClass) => bandClass.programName)
+
+  // Define the rows (features)
+  const rows = []
+  for (let i = 0; i < 8; i++) {
+    const row = bandClasses.map((bandClass) => bandClass.features[i] || '')
+    rows.push(row)
+  }
+
+  return (
+    <aside className='py-12'>
+      <div className='container mx-auto px-6'>
+        <h2 className='text-3xl font-bold mb-6 text-center'>
+          Which Program is Right for You?
+        </h2>
+
+        <table className='table-auto w-full text-left bg-background shadow-lg rounded-lg'>
+          <thead className='bg-primary'>
+            <tr>
+              {/* <th className='px-4 py-2'>Feature</th> */}
+              {columns.map((column, index) => (
+                <th key={index} className=''>
+                  {column}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {/* <td className='border px-4 py-2'>Feature {rowIndex + 1}</td> */}
+                {row.map((feature, colIndex) => (
+                  <td key={colIndex} className=''>
+                    {feature}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </aside>
   )

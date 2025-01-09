@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { usePathname, useRouter } from 'next/navigation'
+import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import Logo from '@/public/imgs/logos/logo-white-shadow.svg'
@@ -13,9 +13,10 @@ type Page = {
 }
 
 export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
+  const searchParams = useSearchParams()
   const pathname = usePathname() // For the current page path
   const router = useRouter()
-  const [scrollTriggered, setScrollTriggered] = useState(false)
+  // const [scrollTriggered, setScrollTriggered] = useState(false)
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -25,59 +26,45 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
     setMobileNavOpen(!mobileNavOpen)
   }
 
+  function scrollToSection(scrollTarget: string) {
+    const targetEl = document.querySelector(`#${scrollTarget}`)
+    if (!targetEl) return
+    mobileNavOpen && toggleMobileNav()
+    const yOffset = -44 // adjust offset to account for fixed navbar
+    const y =
+      targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset
+    window.scrollTo({ top: y, behavior: 'smooth' })
+  }
+
   useEffect(() => {
-    if (scrollTriggered && pathname === '/') {
-      scrollToFormWithOffset()
-      setScrollTriggered(false) // Reset the trigger
+    //* If the URL has ?scrollTo=free_trial, call the scrolling logic
+    const scrollTarget = searchParams.get('scrollTo')
+    if (scrollTarget) {
+      //- 1. Scroll
+      scrollToSection(scrollTarget)
+
+      //- 2. Remove the param
+      const newParams = new URLSearchParams(searchParams.toString())
+      newParams.delete('scrollTo')
+      //? This ensures the URL changes, so next time ?scrollTo=free_trial is added, the effect runs again
+      router.replace(`${pathname}?${newParams.toString()}`, { scroll: false })
     }
-    const navbarTransparencyChange = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
+    // Add scroll event listener to change navbar color on scroll
+    function navbarTransparencyChange() {
+      setIsScrolled(window.scrollY > 50)
     }
 
+    // Check immediately on mount
+    navbarTransparencyChange()
+
+    // Then watch for scroll changes
     window.addEventListener('scroll', navbarTransparencyChange)
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener('scroll', navbarTransparencyChange)
-    }
-  }, [scrollTriggered, pathname])
-
-  const scrollToFormWithOffset = () => {
-    const element = document.getElementById('free_trial')
-    if (element) {
-      const offset = 100 // Adjust this value to your desired offset
-      const bodyRect = document.body.getBoundingClientRect().top
-      const elementRect = element.getBoundingClientRect().top || 0
-      const elementPosition = elementRect - bodyRect
-      const offsetPosition = elementPosition - offset
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      })
-      // console.log('Scrolled to form with offset');
-    }
-  }
-
-  const scrollToTrialRequest = async () => {
-    if (mobileNavOpen) {
-      toggleMobileNav()
-    }
-    if (pathname !== '/') {
-      setScrollTriggered(true) // Set the trigger for scrolling
-      await router.push('/')
-    } else {
-      scrollToFormWithOffset()
-    }
-  }
+    return () => window.removeEventListener('scroll', navbarTransparencyChange)
+  }, [searchParams, pathname])
 
   return (
     <nav
-      className={`font-anton fixed top-0 w-full z-50 transition-colors duration-600 ${
+      className={`font-soleil font-bold tracking-wide fixed top-0 w-full z-50 transition-colors duration-500 ${
         isScrolled ? 'bg-black' : 'bg-transparent'
       }`}
     >
@@ -85,7 +72,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
         <Link className='text-3xl font-bold leading-none w-24 md:w-40' href='/'>
           <Image alt='The Rockstars of Tomorrow logo' src={Logo} priority />
         </Link>
-        <div className='lg:hidden'>
+        <div className='lg:hidden ml-auto'>
           <button
             className='navbar-burger flex items-center text-white p-3'
             onClick={toggleMobileNav}
@@ -100,12 +87,12 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
             </svg>
           </button>
         </div>
-        <ul className='hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6'>
+        <ul className='hidden list-none lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6'>
           {pages.map((page) => (
             <li key={page.path} className=''>
               <Link
                 href={page.path}
-                className={`text-lg text-gray-500 hover:text-foreground ${
+                className={`text-xl font-bold text-gray-500 no-underline hover:underline hover:text-foreground hover:tracking-wider transition duration-300 ${
                   pathname === page.path ? 'text-white' : ''
                 }`}
                 aria-current='page'
@@ -121,15 +108,13 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
         >
           <a href='tel:9095965556'>Call Us</a>
         </Button> */}
-
-        <Button
-          className='hidden lg:flex md:py-6'
-          onClick={scrollToTrialRequest}
-        >
-          <IoStarSharp className='items-baseline mr-2' />
-          Free Trial
-          <IoStarSharp className='inline ml-2' />
-        </Button>
+        <Link href='/?scrollTo=free_trial'>
+          <Button className='hidden lg:flex md:py-6'>
+            <IoStarSharp className='items-baseline mr-2' />
+            Free Trial
+            <IoStarSharp className='inline ml-2' />
+          </Button>
+        </Link>
       </div>
 
       {/* Navbar Backdrop below mobile nav creates a grayish overlay */}
@@ -170,12 +155,12 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
             </button>
           </div>
           <div>
-            <ul>
+            <ul className='list-none'>
               {pages.map((page) => (
                 <li key={page.path} className='mb-4'>
                   <Link
                     href={page.path}
-                    className={`block p-4 text-2xl font-semibold text-gray-400 hover:bg-accent hover:text-white rounded ${
+                    className={`block no-underline p-4 text-2xl font-semibold text-gray-400 hover:bg-accent hover:text-white rounded ${
                       pathname === page.path ? 'text-white' : ''
                     }`}
                     onClick={toggleMobileNav}
@@ -193,11 +178,13 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
                 Call Us
               </Button>
 
-              <Button size='full' onClick={scrollToTrialRequest}>
-                <IoStarSharp className='items-baseline mr-2' />
-                Free Trial
-                <IoStarSharp className='inline ml-2' />
-              </Button>
+              <Link href='/?scrollTo=free_trial'>
+                <Button size='full'>
+                  <IoStarSharp className='items-baseline mr-2' />
+                  Free Trial
+                  <IoStarSharp className='inline ml-2' />
+                </Button>
+              </Link>
             </div>
             <p className='font-arvo my-4 text-xs text-center text-gray-400'>
               <span>

@@ -4,9 +4,51 @@ import Instruments from '@/components/Instruments'
 import Programs from '@/components/Programs'
 import FAQs from '@/components/FAQs'
 import SectionOverview from '@/components/SectionOverview'
-import ProgramsComparison from '@/components/ProgramsComparison'
+import { ProgramsComparisonCards } from '@/components/ProgramsComparison'
 // import rockstarProImage from '@/public/imgs/band-01.png'
 // import Image from 'next/image'
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Programs',
+  description:
+    'Rockstars of Tomorrow offers a variety of programs designed to ignite your musical passion and turn you into a confident, stage-ready rockstar!',
+  keywords: [
+    'music programs',
+    'rockstar programs',
+    'band classes',
+    'private lessons',
+    'group lessons',
+    'music education',
+    'learn music',
+    'music school',
+  ],
+  authors: [{ name: 'Rockstars of Tomorrow' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://www.rockstarsoftomorrow.com/programs',
+    title: 'Programs - Rockstars of Tomorrow',
+    description:
+      'Explore a variety of music programs designed to ignite your musical passion and turn you into a confident, stage-ready rockstar!',
+    images: [
+      {
+        url: 'https://www.rockstarsoftomorrow.com/imgs/band-01.png',
+        width: 800,
+        height: 600,
+        alt: 'Rockstar Pro',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@rockstarsoftomorrow',
+    title: 'Programs - Rockstars of Tomorrow',
+    description:
+      'Explore a variety of music programs designed to ignite your musical passion and turn you into a confident, stage-ready rockstar!',
+    images: ['https://www.rockstarsoftomorrow.com/imgs/band-01.png'],
+  },
+}
 
 export default function ProgramsPage(): JSX.Element {
   return (
@@ -16,23 +58,6 @@ export default function ProgramsPage(): JSX.Element {
         subtitle='Your path to Rockstardom!'
         headerStyle={2}
       />
-      <section className='bg-black' id='private_lessons'>
-        <div className='container px-5 py-24 mx-auto'>
-          <div id='lessons' className='text-center mb-20'>
-            <SectionOverview
-              title='Private & Group Lessons'
-              overviewText='Rockstars Of Tomorrow lesson plans are custom-tailored for every
-              student’s unique goals. This means no matter what you want to
-              learn, whether it’s rock, pop, punk, blues, acoustic, alternative,
-              metal, reggae, folk, country or anything in between, you know you
-              are going to learn the way the pros do – by studying those great
-              artists who inspire you to succeed. Take a look at a few of the
-              instruments we specialize in.'
-            />
-          </div>
-          <Instruments />
-        </div>
-      </section>
 
       <section id='band_classes' className='text-foreground body-font py-24'>
         <div className='text-center container'>
@@ -53,8 +78,28 @@ export default function ProgramsPage(): JSX.Element {
 
         <Programs />
       </section>
-      <ProgramsComparison />
+      <section className='bg-black' id='private_lessons'>
+        <div className='container px-5 py-24 mx-auto'>
+          <div id='lessons' className='text-center mb-20'>
+            <SectionOverview
+              title='Private & Group Lessons'
+              overviewText='Rockstars Of Tomorrow lesson plans are custom-tailored for every
+              student’s unique goals. This means no matter what you want to
+              learn, whether it’s rock, pop, punk, blues, acoustic, alternative,
+              metal, reggae, folk, country or anything in between, you know you
+              are going to learn the way the pros do – by studying those great
+              artists who inspire you to succeed. Take a look at a few of the
+              instruments we specialize in.'
+            />
+          </div>
+          <Instruments />
+        </div>
+      </section>
+
+      <ProgramsComparisonCards />
+
       <section className='container'>
+        <SectionOverview title='FAQs' />
         <FAQs
           faqs={[
             {
@@ -87,11 +132,11 @@ export default function ProgramsPage(): JSX.Element {
             //   answer:
             //     'Absolutely. By default, we hit your card on the 1st of the month to cover all your upcoming lessons, but hey, we’re flexible. Want a different date? No problem. Pick a date that fits your rhythm, and we’ll make sure your payment covers all the lessons between then and your next billing cycle. Easy, breezy, rockstar style.',
             // },
-            {
-              question: 'Do you offer summer camps or workshops?',
-              answer:
-                'Oh, you’re gonna love this. Jam Camp is a week-long shred fest in July and August. You’ll play a new song every day with a live band, then blow minds at the finale concert. We also run killer workshops on everything from gear care to audio production.',
-            },
+            // {
+            //   question: 'Do you offer summer camps or workshops?',
+            //   answer:
+            //     'Oh, you’re gonna love this. Jam Camp is a week-long shred fest in July and August. You’ll play a new song every day with a live band, then blow minds at the finale concert. We also run killer workshops on everything from gear care to audio production.',
+            // },
             {
               question: 'What methods or curriculum do you use?',
               answer:
@@ -110,7 +155,7 @@ export default function ProgramsPage(): JSX.Element {
             {
               question: 'Do you offer group lessons?',
               answer:
-                'Hell yeah! Why jam alone when you can rock out with your friends or family? Convert any private lesson into a group sesh for a small fee. Because music is a team sport.',
+                'Heck yeah! Why jam alone when you can rock out with your friends or family? Convert any private lesson into a group sesh for a small fee. Because music is a team sport.',
             },
             {
               question: 'How often are lessons?',
