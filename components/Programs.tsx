@@ -22,7 +22,21 @@ export default function Programs(): JSX.Element {
           <p className='leading-relaxed text-sm md:text-lg mb-3'>
             {bandClass.description}
           </p>
-          <Link href={`/programs/${bandClass.slug}`} className='mt-auto'>
+          <ul className='list-none text-sm md:text-lg'>
+            {bandClass.features.map((benefit, index) => (
+              <li key={index} className='my-2'>
+                {benefit}
+              </li>
+            ))}
+          </ul>
+          <ul className='list-none mt-auto'>
+            {bandClass.disclaimers.map((disclaimer, index) => (
+              <li key={index} className='text-muted-foreground text-xs'>
+                {disclaimer}
+              </li>
+            ))}
+          </ul>
+          {/* <Link href={`/programs/${bandClass.slug}`} className='mt-auto'>
             <Button variant='outline' size='full'>
               Get started
               <svg
@@ -37,7 +51,7 @@ export default function Programs(): JSX.Element {
                 <path d='M5 12h14M12 5l7 7-7 7'></path>
               </svg>
             </Button>
-          </Link>
+          </Link> */}
         </div>
       ))}
     </section>

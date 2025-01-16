@@ -115,7 +115,7 @@ const ProgramPriceBox: React.FC<ProgramPriceBoxProps> = ({
 
         {callToActionText && (
           <Link
-            className={`${buttonVariants({ variant: 'default' })} mt-4 no-underline`}
+            className={`${buttonVariants({ variant: 'outline' })} mt-4 no-underline border-primary`}
             href={callToActionPath}
           >
             {callToActionText}

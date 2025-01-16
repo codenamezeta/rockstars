@@ -96,10 +96,10 @@ export default function ProgramsPage(): JSX.Element {
         </div>
       </section>
 
-      <ProgramsComparisonCards />
+      {/* <ProgramsComparisonCards /> */}
 
       <section className='container'>
-        <SectionOverview title='FAQs' />
+        {/* <SectionOverview title='FAQs' /> */}
         <FAQs
           faqs={[
             {

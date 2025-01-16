@@ -43,9 +43,9 @@ export default function PricingLessons(): JSX.Element {
           <div className='flex md:w-2/5 lg:w-1/4 mx-auto border-2 border-accent rounded overflow-hidden my-6'>
             <button
               className={
-                !toggled ?
-                  'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
-                : 'text-xs md:text-base py-1 px-4 w-full text-muted-foreground focus:outline-none transition-all duration-500'
+                !toggled
+                  ? 'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
+                  : 'text-xs md:text-base py-1 px-4 w-full text-muted-foreground focus:outline-none transition-all duration-500'
               }
               onClick={handleToggle}
             >
@@ -53,9 +53,9 @@ export default function PricingLessons(): JSX.Element {
             </button>
             <button
               className={
-                !toggled ?
-                  'text-xs md:text-base py-1 px-4 w-full text-muted-foreground focus:outline-none transition-all duration-500'
-                : 'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
+                !toggled
+                  ? 'text-xs md:text-base py-1 px-4 w-full text-muted-foreground focus:outline-none transition-all duration-500'
+                  : 'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
               }
               onClick={handleToggle}
             >
@@ -75,9 +75,9 @@ export default function PricingLessons(): JSX.Element {
               highlight={false}
               highlightText={''}
               featuresList={
-                !toggled ?
-                  ['Fifth week free', 'Free trial lesson']
-                : ['Flexible scheduling']
+                !toggled
+                  ? ['Fifth week free', 'Free trial lesson']
+                  : ['Flexible scheduling']
               }
               disclaimers={['Prices & availability are subject to change.']}
               callToActionText={''}
@@ -113,10 +113,10 @@ export default function PricingLessons(): JSX.Element {
           </div>
 
           <Link
-            className={`${buttonVariants({ variant: 'outline' })} mt-4`}
-            href='/#free_trial'
+            className={`${buttonVariants({ variant: 'default' })} mt-4`}
+            href='/?scrollTo=free_trial'
           >
-            Schedule a free trial lesson
+            Book A Free Trial
             <svg
               fill='none'
               stroke='currentColor'

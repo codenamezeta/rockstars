@@ -111,7 +111,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
         <Link href='/?scrollTo=free_trial'>
           <Button className='hidden lg:flex md:py-6'>
             <IoStarSharp className='items-baseline mr-2' />
-            Free Trial
+            Book A Free Trial
             <IoStarSharp className='inline ml-2' />
           </Button>
         </Link>
@@ -181,7 +181,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
               <Link href='/?scrollTo=free_trial'>
                 <Button size='full'>
                   <IoStarSharp className='items-baseline mr-2' />
-                  Free Trial
+                  Book A Free Trial
                   <IoStarSharp className='inline ml-2' />
                 </Button>
               </Link>

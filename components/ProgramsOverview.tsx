@@ -66,7 +66,7 @@ export default function ProgramsOverview(): JSX.Element {
               </Button>
             </Link>
           </div>
-          <div className='sm:w-1/2 mb-24 px-4'>
+          {/* <div className='sm:w-1/2 mb-24 px-4'>
             <div className='rounded-lg h-64 overflow-hidden'>
               <Image
                 alt='content'
@@ -113,7 +113,7 @@ export default function ProgramsOverview(): JSX.Element {
                 Learn More &rarr;
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

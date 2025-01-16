@@ -26,7 +26,7 @@ export default function Hero({
   subtitle,
   text,
   list,
-  ctaText = 'Free Trial',
+  ctaText = 'Book A Free Trial',
   ctaLink = '/?scrollTo=free_trial',
   image,
 }: HeroProps): JSX.Element {
@@ -37,22 +37,25 @@ export default function Hero({
           {/* <h1 className='text-4xl lg:text-8xl font-bold text-primary uppercase tracking-tighter'>
             {title}
           </h1> */}
-          <h1 className='text-4xl md:text-6xl lg:text-8xl font-soleil uppercase text-accent text-effect-1'>
+          {/* <span className='mt-3 font-bold lg:text-xl text-white tracking-wider'>
+            From Lessons to Live Performances
+          </span> */}
+          <h1 className='text-4xl lg:text-6xl font-soleil uppercase text-accent tracking-tighter font-bold'>
             {title}
           </h1>
           <h2
-            className='mt-3 font-bold uppercase text-lg lg:text-4xl text-white tracking-widest'
-            style={{ textShadow: '1px -1px hsl(36, 25%, 50%)' }}
+            className='mt-3 font-bold text-sm lg:text-xl text-white tracking-tight'
+            // style={{ textShadow: '1px -1px hsl(36, 25%, 50%)' }}
           >
             {subtitle}
           </h2>
-          <p className='my-4 text-sm lg:text-xl tracking-wider'>{text}</p>
+          <p className='my-4 text-md font-arvo tracking-tight'>{text}</p>
           {list && (
-            <ul className='tracking-wider font-bold'>
+            <ul className='tracking-tight font-arvo'>
               {list.map((item, index) => (
                 <li
                   key={index}
-                  className='text-md md:text-lg text-foreground flex items-center'
+                  className='text-sm md:text-base text-foreground flex items-center'
                 >
                   <IoStarSharp className='text-accent mr-2 themed-text-effect-2' />
                   {item}

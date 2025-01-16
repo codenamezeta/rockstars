@@ -13,7 +13,7 @@ export default function Benefits(): JSX.Element {
         title='Learn the Rockstar Way!'
         overviewText="Frustrated with traditional music schools that don't cater to your
             rock n' roll dreams? Rockstars of Tomorrow is different. We're
-            dedicated to providing aspiring young rock musicians like you with
+            dedicated to providing aspiring young musicians like you with
             the unique and immersive learning experience you crave. Here's what
             sets us apart:"
       />
@@ -37,49 +37,48 @@ export default function Benefits(): JSX.Element {
                 Gain valuable experience, build confidence, and thrill the
                 audience with your music!
               </p>
-              <Link
+              {/* <Link
                 href='/programs#band_classes'
                 className='mt-3 text-gray-500 inline-flex items-center hover:text-accent hover:underline'
               >
                 Learn More &rarr;
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div className='flex flex-col mb-10 lg:items-start items-center'>
             <div className='flex-grow'>
               <h2 className='text-accent text-2xl title-font font-medium mb-3'>
-                Rock Band Group Classes
+                Live Band Classes
               </h2>
               <p className='leading-relaxed'>
-                Jam with fellow rockers in our exclusive JamCore and BandCore
+                Jam with fellow musicians in our exclusive JamCore and BandCore
                 classes. Master collaboration, communication, and improvisation,
                 and develop your unique band sound.
               </p>
-              <Link
+              {/* <Link
                 className='mt-3 text-gray-500 inline-flex items-center hover:text-accent hover:underline'
                 href={'/programs'}
               >
                 Learn More &rarr;
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div className='flex flex-col mb-10 lg:items-start items-center'>
             <div className='flex-grow'>
               <h2 className='text-accent text-2xl title-font font-medium mb-3'>
-                Seasoned Rock Mentors
+                Superstar Music Mentors
               </h2>
               <p className='leading-relaxed'>
-                Learn from the best! Our faculty comprises rock music veterans
-                with diverse backgrounds and years of experience. Get
-                personalized guidance and transform your skills under their
-                expert tutelage.
+                Learn from the best! Our faculty comprises music veterans with
+                diverse backgrounds and years of experience. Get personalized
+                guidance and transform your skills under their expert tutelage.
               </p>
-              <Link
+              {/* <Link
                 className='mt-3 text-gray-500 inline-flex items-center hover:text-accent hover:underline'
                 href={'/team'}
               >
                 Learn More &rarr;
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div className='flex flex-col mb-0 lg:items-start items-center'>
@@ -93,12 +92,12 @@ export default function Benefits(): JSX.Element {
                 best possible learning experience and help you unleash your
                 inner rockstar.
               </p>
-              <Link
+              {/* <Link
                 href='/?scrollTo=contact_info'
                 className='mt-3 text-gray-500 inline-flex items-center hover:text-accent hover:underline'
               >
                 Learn More &rarr;
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
