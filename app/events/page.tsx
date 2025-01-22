@@ -1,5 +1,5 @@
 import Header from '@/components/Header'
-import { getAllEvents } from '@/lib/strapi'
+// import { getAllEvents } from '@/lib/strapi'
 
 import type { Metadata } from 'next'
 
@@ -10,18 +10,18 @@ export const metadata: Metadata = {
 }
 
 export default async function EventsPage() {
-  const events = await getAllEvents()
+  // const events = await getAllEvents()
 
-  if (!events || !events.data) {
-    return <div>Error loading events.</div>
-  }
+  // if (!events || !events.data) {
+  //   return <div>Error loading events.</div>
+  // }
 
   return (
     <>
       <Header title='Events' headerStyle={1} />
       <main className='container py-24'>
         <ul>
-          {events.data.map((event: any) => (
+          {/* {events.data.map((event: any) => (
             <li
               key={event.id}
               className='mb-8 p-4 bg-background border border-gray-200 text-white'
@@ -34,7 +34,7 @@ export default async function EventsPage() {
               </h2>
               <p>{event.description}</p>
             </li>
-          ))}
+          ))} */}
         </ul>
       </main>
     </>

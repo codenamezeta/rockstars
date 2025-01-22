@@ -5,6 +5,7 @@ import { Arvo } from 'next/font/google'
 import localFont from 'next/font/local'
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import React, { Suspense } from 'react'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
@@ -88,15 +89,17 @@ export default function RootLayout({
       <body
         className={`${arvo.variable} ${soleil.className} font-arvo bg-black`}
       >
-        <Nav
-          pages={[
-            { name: 'Home', path: '/' },
-            { name: 'Programs', path: '/programs' },
-            { name: 'Pricing', path: '/pricing' },
-            { name: 'Contact', path: '/contact' },
-            // { name: 'Team', path: '/team' },
-          ]}
-        />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Nav
+            pages={[
+              { name: 'Home', path: '/' },
+              { name: 'Programs', path: '/programs' },
+              { name: 'Pricing', path: '/pricing' },
+              { name: 'Contact', path: '/contact' },
+              // { name: 'Team', path: '/team' },
+            ]}
+          />
+        </Suspense>
         {children}
         {/* Google Analytics */}
         <Script

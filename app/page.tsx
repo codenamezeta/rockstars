@@ -19,21 +19,21 @@ export const metadata: Metadata = {
     title: 'Rockstars of Tomorrow - La Verne',
     description:
       'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
-    images: [
-      {
-        url: '/imgs/drummer-girl-1.png',
-        width: 800,
-        height: 600,
-        alt: 'Young Woman Drummer',
-      },
-    ],
+    // images: [
+    //   {
+    //     url: '/imgs/drummer-girl-1.png',
+    //     width: 800,
+    //     height: 600,
+    //     alt: 'Young Woman Drummer',
+    //   },
+    // ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Rockstars of Tomorrow - La Verne',
     description:
       'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
-    images: ['/imgs/drummer-girl-1.png'],
+    // images: ['/imgs/drummer-girl-1.png'],
   },
 }
 
