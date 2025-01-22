@@ -23,7 +23,7 @@ const FAQs: React.FC<FAQsProps> = ({ faqs }) => {
       {faqs.map((faq, index) => (
         <div key={index} className='py-6'>
           <details className='group'>
-            <summary className='flex justify-between items-center font-medium cursor-pointer list-none'>
+            <summary className='flex justify-between items-start font-medium cursor-pointer list-none'>
               <span className='text-xl'>{faq.question}</span>
               <span className='transition group-open:-rotate-180'>
                 <svg

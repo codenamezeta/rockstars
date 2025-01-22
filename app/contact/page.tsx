@@ -31,10 +31,10 @@ export default function contactPage(): JSX.Element {
           title='Customer Support'
           overviewText='We are here to help! If you have any questions or concerns, please feel free to reach out to us. Our team is available to assist you with any inquiries you may have.'
         />
-        <div className='flex gap-4'>
-          <div className='bg-background border border-gray-200 p-4 rounded-lg w-1/2'>
+        <div className='flex flex-col md:flex-row gap-4 mb-24'>
+          <div className='bg-background border border-gray-200 p-4 rounded-lg md:w-1/2'>
             <h3 className='text-3xl font-bold text-white'>Student Portal</h3>
-            <p className='text-xl text-white'>
+            <p className='text-base text-white'>
               Rockstars of Tomorrow partners with{' '}
               <Link
                 href='https://mymusicstaff.com'
@@ -58,9 +58,9 @@ export default function contactPage(): JSX.Element {
               Access Student Portal <FiExternalLink />
             </Link>
           </div>
-          <div className='bg-background border border-gray-200 p-4 rounded-lg w-1/2'>
+          <div className='bg-background border border-gray-200 p-4 rounded-lg md:w-1/2'>
             <h3 className='text-3xl font-bold text-white'>Studio Policies</h3>
-            <p className='text-xl text-white'>
+            <p className='text-base text-white'>
               To ensure a positive experience for all students, Rockstars of
               Tomorrow has established studio policies that outline our
               expectations for students, parents, and instructors. Please review

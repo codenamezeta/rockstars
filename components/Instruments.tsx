@@ -1,65 +1,99 @@
 'use client'
 import { useState } from 'react'
+import { Button } from './ui/button'
+import { IoStarSharp } from 'react-icons/io5'
+import Link from 'next/link'
 
 const instrumentsData = [
   {
     title: 'Guitar',
-    description:
-      "Today’s most popular instrument – the guitar. Whether it's acoustic or electric, rock or pop, rhythm or lead, we’ve got you covered. Playing guitar is one of those skills that comes in handy in so many situations later in life, you’ll never regret it. The guitar is an incredibly expressive instrument that can be played in a ton of different styles. These days with the selection of guitar types, amps, pedals, and effects, there are so many great sounds a guitar can produce, which makes it the perfect instrument for rock, blues, jazz, metal, reggae, punk, alternative, country and many many more. Come to think of it… if a genre of music debuted in the last 60 years, chances are it was inspired by the electric guitar revolution!",
+    heading: 'Unleash Your Inner Rockstar with Guitar Lessons',
+    description: [
+      'The guitar: the ultimate symbol of musical rebellion and creativity. Whether you’re shredding electric riffs or strumming soulful acoustic chords, we’ve got the know-how to get you rocking. From rhythm to lead, rock to pop, and everything in between, the guitar is your gateway to pure musical freedom.',
+      'This isn’t just an instrument – it’s your ticket to a lifetime of epic jams, impromptu singalongs, and unforgettable moments. With today’s arsenal of guitars, amps, pedals, and effects, you can create jaw-dropping sounds for any genre – rock, blues, metal, punk, reggae, alternative, country, and more.',
+      "In fact, if a music genre exploded onto the scene in the last six decades, chances are it was inspired by the electric guitar revolution. Ready to make some noise? Let's turn it up to 11!",
+    ],
   },
   {
-    title: 'Bass',
-    description:
-      'The bass guitar is a great instrument for beginners and experts alike. It’s easy enough for anyone to master and there’s really nothing else like it. It rumbles and it roars! Versatile enough for most types of modern music and a staple of blues, rock, metal, and jazz. Like our guitar program, our bass instructors will teach you to master bass techniques like walking, improvising, right hand fingering, slapping, playing with a pick, communicating with the drummer and most importantly of all – holding a song together. In a world full of guitar players, the demand for great bass players is strong. We take this program serious so you will get noticed!',
+    title: 'Bass Guitar',
+    heading: 'Feel the Rumble with Bass Guitar Lessons',
+    description: [
+      'The bass guitar: the heartbeat of every band and the unsung hero of every epic track. Whether you’re a total beginner or a seasoned player, the bass is your chance to command the groove and bring the low-end thunder. It rumbles, it roars, and it’s the glue that holds the music together!',
+      'Versatile and essential, the bass drives modern music – from blues to rock, metal to jazz, and beyond. Our bass instructors will teach you everything from right-hand fingering and slapping to walking basslines, improvisation, and locking in tight with the drummer. Most importantly, you’ll master the art of holding a song together like a pro.',
+      'In a world overflowing with guitarists, great bass players are rare and in high demand. Ready to take your place as the backbone of the band? Let’s turn up the low end and make you unforgettable!',
+    ],
   },
   {
     title: 'Drums',
-    description:
-      'The drums are probably the most fun you’ll ever have sitting down. Primal and loud, the drums are a great way to get exercise and release angst. You’ll also improve your coordination and math skills. Playing the drums with other musicians in a band is a kind of fun that can only be understood through experience. Plain and simple, the drums rock and so will you after taking this explosive drum program! You’ll learn rudiments, theory, technique, dynamics and timing all while rockin’ to the beats of your favorite songs. Learn how to rock the kit like John Bonham, Travis Barker, Neil Peart, Keith Moon and Dave Grohl. Great for all types of rock music as well as metal, reggae, pop, and punk. We’ll learn about other types of percussion instruments that go beyond the traditional drum sets as well.',
+    heading: 'Ignite the Beat with Drum Lessons',
+    description: [
+      'The drums: the ultimate powerhouse of music and the most fun you’ll ever have sitting down. Raw, primal, and electrifying, the drums are your go-to outlet for energy, creativity, and a little controlled chaos. Plus, it’s a killer workout and a secret weapon for mastering coordination and rhythm.',
+      'Nothing compares to the adrenaline rush of playing drums in a band – it’s pure, unfiltered fun you have to feel to believe. Our explosive drum program will have you rocking the kit like legends John Bonham, Travis Barker, Neil Peart, Keith Moon, and Dave Grohl. You’ll nail rudiments, theory, technique, dynamics, and timing while grooving to the beats of your favorite songs.',
+      'Whether you’re into rock, metal, punk, reggae, or pop, we’ll help you bring the thunder. And it doesn’t stop at the kit – we’ll explore other percussion instruments to expand your skills. Ready to lead the charge and make some noise? Let’s drum up something epic!',
+    ],
   },
   {
-    title: 'Keyboard',
-    description:
-      'Great for solo artists and ensemble musicians alike, the keyboard is the modern-day predecessor to the piano which has been around for centuries. The catalog of great piano music is absurdly huge and one that is constantly growing. The enormous array of synthesizers and virtual instruments a keyboard can replicate means there is literally no genre of music that can’t be performed on this amazing instrument. The keyboard’s logical layout makes it easy to learn and it’s large range makes it like having an entire orchestra at your fingertips, which is great for singers or composers. In this program, students can learn music theory, reading music, left and right hand techniques, improvising, counterpoint, and performance skills. Learning the piano is fun again!',
+    title: 'Piano / Keyboard',
+    heading: 'Command the Keys with Piano & Keyboard Lessons',
+    description: [
+      'The piano and keyboard: timeless, powerful, and endlessly versatile. From centuries-old classics to cutting-edge modern hits, this instrument has done it all – and now it’s your turn. Whether you’re performing solo, rocking with a band, or crafting your next masterpiece, the keyboard gives you the ultimate musical edge.',
+      'With its intuitive layout and massive range, the keyboard is like having an entire orchestra at your fingertips. And thanks to today’s synthesizers and virtual instruments, there’s no genre you can’t conquer – from rock and pop to classical, electronic, jazz, and beyond.',
+      'In this program, you’ll master music theory, reading, hand techniques, improvisation, counterpoint, and performance skills. Whether you’re a budding singer-songwriter, a future composer, or just looking to have fun, the keyboard is your gateway to endless possibilities. It’s time to unleash your inner maestro and make piano lessons fun again!',
+    ],
   },
   {
     title: 'Vocals',
-    description:
-      'Singing is by far the oldest form of musical expression and quite arguably the most challenging and most beautiful instrument of them all. Just about every genre of music includes vocals of some sort. No matter how good a singer gets, there are always new challenges to master but believe it or not, anyone can sing! It’s like learning to ride a bike… a bit scary at first, but once the fundamentals are in place, the sky’s the limit. If you’ve never sang before, no problem… we start with the basics and build up from there. For experienced singers looking to strengthen your gift and increase your range, we will help hone your skills to take it to the next level. Singing is extremely rewarding and is one of the best ways to express yourself through music. Our vocal program will give you a voice to be heard.',
+    heading: 'Find Your Voice with Vocal Lessons',
+    description: [
+      'Singing: the oldest, most powerful, and most breathtaking instrument of all. From soulful ballads to rock anthems, vocals are the heart of almost every genre. And the best part? Anyone can learn to sing!  It’s like learning to ride a bike… a bit scary at first, but once the fundamentals are in place, the sky’s the limit.',
+      'For beginners, we’ll start with the essentials – building confidence, pitch, and control. For seasoned vocalists, our program is all about pushing your limits, expanding your range, and refining your unique sound.',
+      'Singing is more than just a skill – it’s the ultimate form of self-expression and connection. Whether you’re chasing the thrill of the stage or just singing your heart out for the love of music, our vocal program will help you unlock your true potential and make sure your voice is heard loud and clear. Ready to hit the high notes? Let’s make it happen!',
+    ],
   },
 ]
 
-export default function Instruments(): JSX.Element {
+export default function Instruments() {
   const [selected, setSelected] = useState('guitar')
+
+  // Find the currently selected instrument once
+  const activeInstrument = instrumentsData.find(
+    (item) => item.title.toLowerCase() === selected
+  )
+
   return (
     <div className='flex-col md:flex-row flex lg:w-2/3 mx-auto'>
       <ul className='flex flex-row md:flex-col flex-wrap text-sm md:text-lg font-medium text-gray-500 dark:text-gray-400'>
         {instrumentsData.map((instrument, index) => (
           <li
             key={index}
-            className={`flex w-1/3 md:w-full text-sm px-4 py-3 border-b border-r border-black cursor-pointer hover:text-white hover:bg-primary transition-all duration-700 ${selected === instrument.title.toLowerCase() ? 'font-bold text-white bg-primary' : 'bg-secondary'}`}
-            aria-current='page'
+            className={`flex w-1/3 md:w-full text-sm px-4 py-3 border-b border-r border-black cursor-pointer hover:text-white hover:bg-primary transition-all duration-700 ${
+              selected === instrument.title.toLowerCase()
+                ? 'font-bold text-white bg-primary'
+                : 'bg-secondary'
+            }`}
             onClick={() => setSelected(instrument.title.toLowerCase())}
           >
             {instrument.title}
           </li>
         ))}
       </ul>
+
       <div className='p-6 bg-background rounded-lg w-full themed-background-style-3'>
         <h3 className='text-sm text-xl md:text-3xl text-accent font-bold mb-2'>
-          {
-            instrumentsData.find(
-              (item) => item.title.toLowerCase() === selected
-            )?.title
-          }
+          {activeInstrument?.heading}
         </h3>
-        <p className='mb-2 text-sm md:text-xl'>
-          {
-            instrumentsData.find(
-              (item) => item.title.toLowerCase() === selected
-            )?.description
-          }
-        </p>
+        {activeInstrument?.description.map((paragraph, idx) => (
+          <p key={idx} className='mb-4 text-sm md:text-xl'>
+            {paragraph}
+          </p>
+        ))}
+        <Link href='/?scrollTo=free_trial'>
+          <Button size='full'>
+            <IoStarSharp className='items-baseline mr-2' />
+            Book A Free Trial
+            <IoStarSharp className='inline ml-2' />
+          </Button>
+        </Link>
       </div>
     </div>
   )

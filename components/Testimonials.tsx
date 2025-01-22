@@ -8,6 +8,13 @@ import kaelyn from '../public/imgs/testimonial-authors/kaelyn.png'
 import billie from '../public/imgs/testimonial-authors/billie.jpg'
 import krista from '../public/imgs/testimonial-authors/krista.jpg'
 import virginia from '../public/imgs/testimonial-authors/virginia.jpg'
+import janice from '../public/imgs/testimonial-authors/janice.png'
+import marcellus from '../public/imgs/testimonial-authors/marcellus.jpg'
+import samii from '../public/imgs/testimonial-authors/samii.jpg'
+import trina from '../public/imgs/testimonial-authors/trina.jpg'
+import janelle from '../public/imgs/testimonial-authors/janelle.jpg'
+import randy from '../public/imgs/testimonial-authors/randy.png'
+import susie from '../public/imgs/testimonial-authors/susie.png'
 import SectionOverview from './SectionOverview'
 
 const testimonials = [
@@ -41,6 +48,41 @@ const testimonials = [
     author: 'Virginia A.',
     image: virginia,
   },
+  {
+    text: "I'm so so happy I found this place! I am taking voice and guitar here with Kevin and so far have just been focusing on voice. I chose a random song, \"Peaches\" from Super Mario Bros and he knew it, and was able to play it in the correct key on the keyboard for me to sing to. I had so much fun and I surprised myself when following his modeling. He used his voice so skillfully and brings the passion through the dynamics. Such a good price for how much I'm getting out of it! I know voice lessons in general aren't cheap. I hope he gets nicely compensated, because he deserves it.",
+    author: 'Janice T.',
+    image: janice,
+  },
+  {
+    text: "My time spent in this studio was epic. Each person was truly a thrill to play with, I wouldn't change a thing. Thanks Guys",
+    author: 'Marcellus M.',
+    image: marcellus,
+  },
+  {
+    text: 'I work next door to the rock star crew and let me just say they are just that.... rock stars! Not only are they trained in music and sound great!! but are some of the friendliest people ever! Brian is a Forsure sell, always has the biggest smile and a great personality. I recently started bringing my 4 year old son here to the tiny bopper class. He loves it and has so much fun! Looking forward to all the great things he will learn! Thanks guys!!',
+    author: 'Samii W.',
+    image: samii,
+  },
+  {
+    text: "Kevin is not only highly knowledgeable but he shows his passion for music. My son is taking both guitar & drum lessons with him. He's so excited to come to lessons and feels like he connects with his teacher on a personal level too. Kevin has traveled all over the world playing music & doing what he loves, so he has practical knowledge in addition to helping my son learn the chords.",
+    author: 'Trina W.',
+    image: trina,
+  },
+  {
+    text: 'Great Establishment. My son loves his weekly session and loved playing outside at their little concert they have after learning 2 songs and has gotten so much better and more confident. Jesse is also very patient with my son. Thanks guys!',
+    author: 'Janelle T.',
+    image: janelle,
+  },
+  {
+    text: 'Our son has been attending RockStars Of Tomorrow for six years now. This music school is the best thing we could have done for our son. He started on piano then graduated to drums and is now practicing drums and bass. Music is such a great gift to have and I’m glad we found RockStars.',
+    author: 'Randy K.',
+    image: randy,
+  },
+  // {
+  //   text: "Can’t say enough about this place-it’s where I have watched children(my own included) find their passion, talent and confidence thru music. The staff is amazing-shout out Michael! Thanks you for the good vibe and all you do to teach and inspire",
+  //   author: "Susie W.",
+  //   image: susie,
+  // }
 ]
 
 export default function Testimonials(): JSX.Element {

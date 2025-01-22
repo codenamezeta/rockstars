@@ -2,8 +2,8 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import privateLessonsImg from '@/public/imgs/drums-02.jpg'
 import bandClassImg from '@/public/imgs/band-02-crop-01.png'
-import rockstarProImg from '@/public/imgs/stage-02.jpg'
-import workshopsImg from '@/public/imgs/audio-01.jpg'
+// import rockstarProImg from '@/public/imgs/stage-02.jpg'
+// import workshopsImg from '@/public/imgs/audio-01.jpg'
 import SectionOverview from './SectionOverview'
 import Link from 'next/link'
 
@@ -36,7 +36,7 @@ export default function ProgramsOverview(): JSX.Element {
               tailored to fit your needs and goals. We offer lessons for all
               ages and skill levels.
             </p>
-            <Link href='/programs#private_lessons'>
+            <Link href='/programs?scrollTo=private_lessons'>
               <Button className='bg-white text-black hover:text-white mt-6'>
                 Learn More &rarr;
               </Button>
@@ -60,7 +60,7 @@ export default function ProgramsOverview(): JSX.Element {
               coach to learn songs, write original music, and perform at
               concerts.
             </p>
-            <Link href='/programs#band_classes'>
+            <Link href='/programs?scrollTo=band_classes'>
               <Button className='bg-white text-black hover:text-white mt-6'>
                 Learn More &rarr;
               </Button>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Header from '@/components/Header'
 
 export const metadata: Metadata = {
   title: 'Studio Policies',
@@ -9,14 +10,11 @@ export const metadata: Metadata = {
 export default function PricingLessons(): JSX.Element {
   return (
     <>
-      <header className='bg-primary text-white mt-40 p-6 max-w-4xl mx-auto'>
-        <h1 className='text-3xl font-bold'>Studio Policies</h1>
-        <p className='mt-2 text-lg'>
-          We value clear communication and want to make sure our students and
-          families understand our policies. Below, you'll find details about
-          missed lessons, cancellations, and payment procedures.
-        </p>
-      </header>
+      <Header
+        title='Studio Policies'
+        subtitle='We value clear communication and want to make sure our students and families understand our policies. Below, you will find details about missed lessons, cancellations, and payment procedures.'
+        headerStyle={2}
+      />
       <main className='max-w-4xl mx-auto pt-8 pb-24 px-4 sm:px-6 lg:px-8'>
         {/* <!-- Cancellation Policies Section --> */}
         <section className='mb-8'>

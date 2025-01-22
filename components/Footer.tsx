@@ -1,6 +1,8 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Logo from '@/public/imgs/logos/logo-white-shadow.svg'
 import { FaYelp, FaInstagram, FaFacebook } from 'react-icons/fa6'
+import { LiaExternalLinkAltSolid } from 'react-icons/lia'
 import { GrGoogle } from 'react-icons/gr'
 
 export default function Footer(): JSX.Element {
@@ -49,19 +51,25 @@ export default function Footer(): JSX.Element {
             <hr className='w-16 h-1 rounded-full bg-primary border-0 inline-flex mb-2'></hr>
             <ul className='list-none'>
               <li className='mb-2'>
-                <a href='https://app.mymusicstaff.com/'>Customer Portal</a>
+                <a
+                  href='https://app.mymusicstaff.com/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Student Portal <LiaExternalLinkAltSolid className='inline' />
+                </a>
+              </li>
+              <li className='mb-2'>
+                <a href='/contact'>Contact Us</a>
               </li>
               <li className='mb-2'>
                 <a href='/policies'>Studio Policies</a>
               </li>
               <li className='mb-2'>
-                <a href='#'>FAQ's</a>
-              </li>
-              <li className='mb-2'>
-                <a href='#'>Terms of Use</a>
+                <a href='/terms-of-use'>Terms of Use</a>
               </li>
               <li>
-                <a href='#'>Privacy Policy</a>
+                <Link href='/privacy-policy'>Privacy Policy</Link>
               </li>
             </ul>
           </nav>
@@ -95,16 +103,35 @@ export default function Footer(): JSX.Element {
               </li>
               <li>
                 <span className='flex mt-2 justify-center lg:justify-start'>
-                  <a className='mr-2'>
+                  <a
+                    href='https://www.instagram.com/rockstarslaverne/'
+                    className='mr-2'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
                     <FaInstagram />
                   </a>
-                  <a className='mx-2'>
+                  <a
+                    href='https://www.facebook.com/rockstarslaverne/'
+                    className='mr-2'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
                     <FaFacebook />
                   </a>
-                  <a className='mx-2'>
+                  <a
+                    href='https://www.yelp.com/biz/rockstars-of-tomorrow-la-verne'
+                    className='mr-2'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
                     <FaYelp />
                   </a>
-                  <a className='ml-2'>
+                  <a
+                    href='https://g.page/r/CR_OFMy86p8OEBM/'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
                     <GrGoogle />
                   </a>
                 </span>

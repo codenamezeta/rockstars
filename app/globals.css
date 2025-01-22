@@ -47,4 +47,8 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Hide the default Safari triangle */
+  summary::-webkit-details-marker {
+    display: none;
+  }
 }

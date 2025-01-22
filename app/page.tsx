@@ -1,5 +1,6 @@
 import drummerGirl from '@/public/imgs/drummer-girl-1.png'
 import Hero from '@/components/Hero'
+import ProblemSolution from '@/components/ProblemSolution'
 import Benefits from '@/components/Benefits'
 import ProgramsOverview from '@/components/ProgramsOverview'
 // import Team from '@/components/Team'
@@ -54,6 +55,7 @@ export default function Home() {
           alt: 'Young Woman Drummer',
         }}
       />
+      <ProblemSolution />
       <Benefits />
       <ProgramsOverview />
       {/* <Team /> */}

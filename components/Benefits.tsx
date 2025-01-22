@@ -32,10 +32,11 @@ export default function Benefits(): JSX.Element {
                 Performance Opportunities Galore
               </h2>
               <p className='leading-relaxed'>
-                Get ready to rock real stages! We provide regular live
-                performance opportunities at venues in the La Verne community.
-                Gain valuable experience, build confidence, and thrill the
-                audience with your music!
+                At Rockstars of Tomorrow, we offer regular live performance
+                opportunities at top venues in La Verne and nearby communities.
+                Build your confidence, gain real-world experience, and captivate
+                audiences with your music. It’s your chance to shine and create
+                unforgettable memories for both you and your fans.
               </p>
               {/* <Link
                 href='/programs#band_classes'
@@ -51,9 +52,13 @@ export default function Benefits(): JSX.Element {
                 Live Band Classes
               </h2>
               <p className='leading-relaxed'>
-                Jam with fellow musicians in our exclusive JamCore and BandCore
-                classes. Master collaboration, communication, and improvisation,
-                and develop your unique band sound.
+                Join forces with fellow musicians in our exclusive JamCore and
+                BandCore classes, where the magic of collaboration comes alive.
+                Sharpen your communication skills, learn to adapt and sync with
+                others. Whether you're jamming for fun or preparing for the
+                stage, these classes are designed to help you grow as a musician
+                while creating unforgettable musical moments with your
+                bandmates.
               </p>
               {/* <Link
                 className='mt-3 text-gray-500 inline-flex items-center hover:text-accent hover:underline'
@@ -69,9 +74,12 @@ export default function Benefits(): JSX.Element {
                 Superstar Music Mentors
               </h2>
               <p className='leading-relaxed'>
-                Learn from the best! Our faculty comprises music veterans with
-                diverse backgrounds and years of experience. Get personalized
-                guidance and transform your skills under their expert tutelage.
+                Learn from the best! With diverse backgrounds and years of
+                experience, the Rockstars of Tomorrow team includes some of the
+                most accomplished and inspiring contemporary music instructors
+                around, chosen for their talent, dedication, and ability to
+                connect with aspiring musicians. Get personalized guidance and
+                transform your skills under their expert tutelage.
               </p>
               {/* <Link
                 className='mt-3 text-gray-500 inline-flex items-center hover:text-accent hover:underline'
@@ -87,10 +95,13 @@ export default function Benefits(): JSX.Element {
                 State-of-the-Art Facilities
               </h2>
               <p className='leading-relaxed'>
-                Practice and perform in our fully equipped, professional-grade
-                studios. Our facilities are designed to provide you with the
-                best possible learning experience and help you unleash your
-                inner rockstar.
+                Elevate your music journey in our state-of-the-art,
+                professional-grade studios, fully equipped to meet the needs of
+                aspiring rockstars. Designed for both practice and performance,
+                our facilities offer an immersive environment that inspires
+                creativity and ensures the best possible learning experience.
+                Step into the spotlight and unleash your full potential with
+                tools and spaces crafted for greatness.
               </p>
               {/* <Link
                 href='/?scrollTo=contact_info'

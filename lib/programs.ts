@@ -10,7 +10,7 @@ const RockStart = {
   programType: 'Band class',
   slug: 'rockstart',
   description:
-    "RockStart is the perfect program for young beginners who are just starting out. In this program, you'll learn the basics of playing an instrument and get to experience the excitement of playing in a band. You'll work with classmates of similar skill levels to learn fun, easy-to-play songs chosen by your instructor. Each week, you'll rehearse these songs in a structured environment, focusing on developing your musicianship and teamwork. The program culminates in a live performance at a local venue, giving you the ultimate payoff – the thrill of rocking out in front of a real audience!",
+    'RockStart gets you ready to rock in just six months! Our beginner band program is designed to have students performing up to four pre-selected hit songs with confidence. Includes printed and digital sheet music, and custom audio tracks accessible through our student portal, learning and practicing is fun and effortless. Students perfect each song with their private instructor, rehearse and practice at home, and then meet monthly for a live band jam in our studio’s Live Room. After mastering all four songs, graduates are ready to level up to our JamCore band class.',
   details: {
     recurrence: 'Monthly',
     duration: '30–120 minutes/class.*',
@@ -68,7 +68,7 @@ const JamCore = {
   programType: 'Band class',
   slug: 'jamcore',
   description:
-    "Have you been playing your instrument for a few years and are ready to take the stage? JamCore is your chance to experience the excitement of playing live with other musicians! In this program, you'll collaborate with classmates of similar skill levels to learn assigned songs chosen by your instructor. Each week, you'll rehearse these songs in a structured environment, focusing on developing your musicianship and teamwork. The program culminates in a live performance at a local venue, giving you the ultimate payoff – the thrill of rocking out in front of a real audience!",
+    "Designed for intermediate level students who are ready to take the stage. JamCore is your chance to experience the excitement of playing live with other musicians! In this program, you'll collaborate with classmates of similar skill levels to learn assigned songs chosen by your instructor. Each week, you'll rehearse these songs in a structured environment, focusing on developing your musicianship and teamwork. The program culminates in a live performance at a local venue, giving you the ultimate payoff – the thrill of rocking out in front of a real audience!",
   features: [
     '8-week sessions.',
     '30–120 minutes/week.*',
@@ -176,7 +176,7 @@ const RockstarPro = {
   programType: 'Band class',
   slug: 'rockstar-pro',
   description:
-    'Rockstar Pro is the ultimate program for serious musicians. Whether you’re a seasoned performer or just starting out, this program is designed to help you take your music to the next level. You’ll get to perform at local venues, festivals, and more, and you’ll have the opportunity to build your ideal setlist and work on any music you want, including originals. With personalized instruction and guidance from an instructor of your choice, you’ll have the freedom to explore your musical interests and develop your own unique sound. Rockstar Pro is an ongoing program, so you can continue for as long as you and your bandmates wish, with discounts on recording time, photoshoots, and more.',
+    'Rockstar Pro is the ultimate one-of-a-kind band program fully customizable just for you and your chosen band mates. Whether you’re a seasoned performer or just starting out, this program is designed to help you take your music to the next level. You’ll get to perform at local venues, festivals, and more, and you’ll have the opportunity to build your ideal setlist and work on any music you want, including originals. With personalized instruction and guidance from an instructor of your choice, you’ll have the freedom to explore your musical interests and develop your own unique sound. Rockstar Pro is an ongoing program, so you can continue for as long as you and your bandmates wish, with discounts on recording time, photoshoots, and more.',
   features: [
     'Perform at local venues, festivals, and more.',
     'Priority booking for shows.',
