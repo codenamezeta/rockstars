@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'We value clear communication and want to make sure our students and families understand our policies. Below, you will find details about missed lessons, cancellations, and payment procedures.',
 }
 
-export default function PricingLessons(): JSX.Element {
+export default function StudioPolicies(): JSX.Element {
   return (
     <>
       <Header
