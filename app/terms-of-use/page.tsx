@@ -1,8 +1,9 @@
+import { Suspense } from 'react'
 import Header from '@/components/Header'
 import SectionOverview from '@/components/SectionOverview'
 import Link from 'next/link'
 
-export default function termsOfUsePage(): JSX.Element {
+export function TermsOfUsePage(): JSX.Element {
   return (
     <>
       <Header
@@ -159,5 +160,13 @@ export default function termsOfUsePage(): JSX.Element {
         </div>
       </main>
     </>
+  )
+}
+
+export default function TermsOfUse() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <TermsOfUsePage />
+    </Suspense>
   )
 }
