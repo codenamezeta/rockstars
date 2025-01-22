@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+// import Link from 'next/link'
+// import { Button } from '@/components/ui/button'
 import Hero from '@/components/Hero'
 import SectionOverview from '@/components/SectionOverview'
 import { getClass } from '@/lib/programs'
@@ -8,8 +8,8 @@ import TryoutProcess from '@/components/TryoutProcess'
 import Commitments from '@/components/Commitments'
 import Testimonials from '@/components/Testimonials'
 import FreeTrialForm from '@/components/FreeTrialForm'
-import drummerGirl from '@/public/imgs/drummer-girl-1.png'
-import FAQs from '@/components/FAQs'
+// import drummerGirl from '@/public/imgs/drummer-girl-1.png'
+// import FAQs from '@/components/FAQs'
 
 interface BandCoreInfoPageProps {
   programName: string
@@ -37,7 +37,7 @@ export default function BandCoreInfoPage(): JSX.Element {
         ]}
         ctaText='Enroll'
         ctaLink='#free_trial'
-        imageSrc={drummerGirl}
+        // imageSrc={drummerGirl}
       />
       <main id='bandcore_benifits' className='container py-24'>
         <SectionOverview
