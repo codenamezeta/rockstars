@@ -22,27 +22,29 @@ export default function Footer(): JSX.Element {
             <hr className='w-16 h-1 rounded-full bg-primary border-0 inline-flex mb-2'></hr>
             <ul className='list-none'>
               <li className='mb-2'>
-                <a href='https://www.rockstarsoftomorrow.com/'>RoT Main Site</a>
+                <Link href='https://www.rockstarsoftomorrow.com/'>
+                  RoT Main Site
+                </Link>
               </li>
               <li className='mb-2'>
-                <a href='https://www.rockstarsoftomorrow.com/locations'>
+                <Link href='https://www.rockstarsoftomorrow.com/locations'>
                   More Locations
-                </a>
+                </Link>
               </li>
               <li className='mb-2'>
-                <a href='https://rockstars-of-tomorrow.myshopify.com/'>
+                <Link href='https://rockstars-of-tomorrow.myshopify.com/'>
                   Merch & Gear
-                </a>
+                </Link>
               </li>
               <li className='mb-2'>
-                <a href='https://www.rockstarsoftomorrow.com/franchising'>
+                <Link href='https://www.rockstarsoftomorrow.com/franchising'>
                   Franchising
-                </a>
+                </Link>
               </li>
               <li>
-                <a href='https://www.rockstarsoftomorrow.com/jointheteam'>
+                <Link href='https://www.rockstarsoftomorrow.com/jointheteam'>
                   Join Our Team
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -51,22 +53,22 @@ export default function Footer(): JSX.Element {
             <hr className='w-16 h-1 rounded-full bg-primary border-0 inline-flex mb-2'></hr>
             <ul className='list-none'>
               <li className='mb-2'>
-                <a
+                <Link
                   href='https://app.mymusicstaff.com/'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
                   Student Portal <LiaExternalLinkAltSolid className='inline' />
-                </a>
+                </Link>
               </li>
               <li className='mb-2'>
-                <a href='/contact'>Contact Us</a>
+                <Link href='/contact'>Contact Us</Link>
               </li>
               <li className='mb-2'>
-                <a href='/policies'>Studio Policies</a>
+                <Link href='/policies'>Studio Policies</Link>
               </li>
               <li className='mb-2'>
-                <a href='/terms-of-use'>Terms of Use</a>
+                <Link href='/terms-of-use'>Terms of Use</Link>
               </li>
               <li>
                 <Link href='/privacy-policy'>Privacy Policy</Link>
@@ -91,7 +93,7 @@ export default function Footer(): JSX.Element {
                 </a>
               </li>
               <li className='mb-0'>
-                <a
+                <Link
                   target='_blank'
                   rel='noopener noreferrer'
                   href='https://maps.app.goo.gl/8YnNEHG3ZJVbneSH8'
@@ -99,41 +101,41 @@ export default function Footer(): JSX.Element {
                   2855 Foothill Blvd. A-102
                   <br />
                   La Verne, CA 91750
-                </a>
+                </Link>
               </li>
               <li>
                 <span className='flex mt-2 justify-center lg:justify-start'>
-                  <a
+                  <Link
                     href='https://www.instagram.com/rockstarslaverne/'
                     className='mr-2'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
                     <FaInstagram />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href='https://www.facebook.com/rockstarslaverne/'
                     className='mr-2'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
                     <FaFacebook />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href='https://www.yelp.com/biz/rockstars-of-tomorrow-la-verne'
                     className='mr-2'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
                     <FaYelp />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href='https://g.page/r/CR_OFMy86p8OEBM/'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
                     <GrGoogle />
-                  </a>
+                  </Link>
                 </span>
               </li>
             </ul>
@@ -145,14 +147,13 @@ export default function Footer(): JSX.Element {
           <p className='text-xs text-gray-600 text-center mx-auto tracking-tight'>
             Copyright &copy; {new Date().getFullYear()} A2Zeta Creative Design
             <br />
-            <a
+            <Link
               href='https://a2zeta.com'
               className='text-gray-600 ml-1'
               target='_blank'
-              rel='noopener noreferrer'
             >
               @codenamezeta
-            </a>
+            </Link>
           </p>
         </div>
       </div>
