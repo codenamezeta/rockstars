@@ -4,6 +4,7 @@ import '/zeta-theme.scss'
 import { Arvo } from 'next/font/google'
 import localFont from 'next/font/local'
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
@@ -97,6 +98,20 @@ export default function RootLayout({
           ]}
         />
         {children}
+        {/* Google Analytics */}
+        <Script
+          id='gtag-script'
+          strategy='afterInteractive'
+          src={`https://www.googletagmanager.com/gtag/js?id=G-PZ2V2Q2WL2`}
+        />
+        <Script id='gtag-config-script' strategy='afterInteractive'>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PZ2V2Q2WL2');
+          `}
+        </Script>
         <Footer />
       </body>
     </html>
