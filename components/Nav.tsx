@@ -174,9 +174,14 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
           </div>
           <div className='mt-auto'>
             <div className='pt-6'>
-              <Button variant='outline' className='w-full mb-4'>
-                Call Us
-              </Button>
+              <Link href='tel:8443668742'>
+                <Button
+                  variant='outline'
+                  className='w-full mb-4 bg-transparent'
+                >
+                  Call Us
+                </Button>
+              </Link>
 
               <Link href='/?scrollTo=free_trial'>
                 <Button size='full'>
