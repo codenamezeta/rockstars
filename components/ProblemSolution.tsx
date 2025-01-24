@@ -28,8 +28,8 @@ export default function Benefits(): JSX.Element {
             Transform Practice Time Into a Rockstar Experience
           </h2>
           <p className='leading-relaxed mb-6 text-xl'>
-            Without fresh challenges or variety, practice can feel like a grid –
-            making kids lose interest and start to see music as a chore rather
+            Without fresh challenges or variety, practice can feel like a grind
+            – making kids lose interest and start to see music as a chore rather
             than a passion. The same dull scales, the same old songs—it’s enough
             to make even the most dedicated young rockstar want to hang up their
             guitar. Boredom sets in, frustration takes over, and before long,
