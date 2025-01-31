@@ -84,13 +84,13 @@ const ProgramPriceBox: React.FC<ProgramPriceBoxProps> = ({
           {featuresList &&
             featuresList.map((feature, index) => (
               <li key={index} className='flex my-2 list-none'>
-                <span className='w-4 h-4 mr-2 mt-1 inline-flex items-center justify-center bg-transparent text-gray-500 rounded-full flex-shrink-0'>
+                <span className='w-4 h-4 mr-2 mt-1 inline-flex items-center justify-center bg-transparent text-accent rounded-full flex-shrink-0'>
                   <svg
-                    fill='#ccc'
+                    fill='hsla(0, 100%, 100%, 0.0)'
                     stroke='currentColor'
                     strokeLinecap='round'
                     strokeLinejoin='round'
-                    strokeWidth='2.5'
+                    strokeWidth='1.5'
                     className='w-3 h-3'
                     viewBox='0 0 24 24'
                   >

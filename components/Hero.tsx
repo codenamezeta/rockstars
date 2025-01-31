@@ -67,12 +67,12 @@ export default function Hero({
           )}
           <Link href={ctaLink}>
             <Button
-              className='lg:text-xl tracking-widest uppercase py-8 mt-4'
+              className='lg:text-xl tracking-widest uppercase text-primary-foreground py-8 mt-4'
               size='full'
             >
-              <IoStarSharp className='mr-2 text-secondary' />
+              <IoStarSharp className='mr-2' />
               {ctaText}
-              <IoStarSharp className='ml-2 text-secondary' />
+              <IoStarSharp className='ml-2' />
             </Button>
           </Link>
         </div>

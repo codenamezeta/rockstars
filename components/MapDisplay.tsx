@@ -12,20 +12,20 @@ export default function Contact(): JSX.Element {
             <h3 className='text-lg uppercase text-white font-bold tracking-wide'>
               Phone
             </h3>
-            <span className='text-accent block tracking-widest'>
+            <span className='text-accent block w-max tracking-widest text-xl'>
               (844) 36-MUSIC
-              <sub className='text-xs text-muted-foreground tracking-tight'>
-                (68742)
+              <sub className='block text-right text-sm text-muted-foreground tracking-wider -mt-3 pr-1'>
+                {`6   8   7   4   2   `}
               </sub>
             </span>
-            <a href='sms:8443668742' className='text-white'>
-              <Button variant='outline' className='mt-4 mb-2 mr-4'>
-                Text <MdMessage className='text-xl inline' />
-              </Button>
-            </a>
             <a href='tel:8443668742' className='text-white'>
               <Button variant='outline' className='mb-4'>
                 Call <FaPhone className='text-xl inline' />
+              </Button>
+            </a>
+            <a href='sms:8443668742' className='text-white'>
+              <Button variant='outline' className='mt-4 mb-2 ml-4'>
+                Text <MdMessage className='text-xl inline' />
               </Button>
             </a>
           </li>
@@ -80,13 +80,13 @@ export default function Contact(): JSX.Element {
               Hours
             </h3>
             <span className='text-accent block tracking-widest'>
-              Mon - Thu: 11:00am - 8:00pm
+              <strong>Mon - Thu:</strong> 11:00am - 8:00pm
               <br />
-              Fri: 11:00am - 7:00pm
+              <strong>Fri:</strong> 11:00am - 7:00pm
               <br />
-              Sat: 10:00am - 4:00pm
+              <strong>Sat:</strong> 10:00am - 4:00pm
               <br />
-              Sun: Closed
+              <strong>Sun:</strong> Closed
             </span>
           </li>
         </ul>

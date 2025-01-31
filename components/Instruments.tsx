@@ -62,13 +62,13 @@ export default function Instruments() {
 
   return (
     <div className='flex-col md:flex-row flex lg:w-2/3 mx-auto'>
-      <ul className='flex flex-row md:flex-col flex-wrap text-sm md:text-lg font-medium text-gray-500 dark:text-gray-400'>
+      <ul className='flex flex-row md:flex-col flex-wrap text-sm md:text-lg font-medium text-muted-foreground'>
         {instrumentsData.map((instrument, index) => (
           <li
             key={index}
-            className={`flex w-1/3 md:w-full text-sm px-4 py-3 border-b border-r border-black cursor-pointer hover:text-white hover:bg-primary transition-all duration-700 ${
+            className={`flex w-1/3 md:w-full text-sm px-4 py-3 border-b border-r border-black cursor-pointer hover:text-primary-foreground hover:bg-primary transition-all duration-700 ${
               selected === instrument.title.toLowerCase()
-                ? 'font-bold text-white bg-primary'
+                ? 'font-bold text-primary-foreground bg-primary'
                 : 'bg-secondary'
             }`}
             onClick={() => setSelected(instrument.title.toLowerCase())}

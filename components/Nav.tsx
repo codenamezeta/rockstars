@@ -64,25 +64,25 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
 
   return (
     <nav
-      className={`font-soleil font-bold tracking-wide fixed top-0 w-full z-50 transition-colors duration-500 ${
-        isScrolled ? 'bg-black' : 'bg-transparent'
+      className={`font-soleil font-bold tracking-wide fixed top-0 w-full z-50 border-primary transition-colors duration-500 ${
+        isScrolled ? 'bg-black border-b' : 'bg-transparent'
       }`}
     >
-      <div className='container px-4 py-4 flex justify-between items-center'>
+      <div className='container px-4 py-2 flex justify-center items-center'>
         <Link
-          className='text-3xl font-bold leading-none mr-auto w-24 md:w-40'
+          className='text-3xl font-bold leading-none w-24 md:w-40 mr-auto lg:mr-0'
           href='/'
         >
           <Image alt='The Rockstars of Tomorrow logo' src={Logo} priority />
         </Link>
 
-        <ul className='hidden list-none lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6'>
+        <ul className='hidden list-none lg:flex lg:mx-auto lg:flex lg:items-center lg:justify-between'>
           {pages.map((page) => (
             <li key={page.path} className=''>
               <Link
                 href={page.path}
-                className={`text-xl font-bold text-gray-500 no-underline hover:underline hover:text-foreground hover:tracking-wider transition duration-300 ${
-                  pathname === page.path ? 'text-white' : ''
+                className={`mx-3 text-xl font-bold text-muted-foreground no-underline hover:underline hover:text-primary-foreground hover:tracking-wider transition duration-300 ${
+                  pathname === page.path ? 'text-gray-100' : ''
                 }`}
                 aria-current='page'
               >

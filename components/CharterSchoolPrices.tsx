@@ -45,7 +45,10 @@ export default function CharterSchoolPrices(): JSX.Element {
       </thead>
       <tbody>
         {tableData.map((data: TableData, index: number) => (
-          <tr key={index} className='border-b border-gray-700'>
+          <tr
+            key={index}
+            className={`${index < tableData.length - 1 ? 'border-b border-gray-700' : ''} ${index % 2 === 0 ? 'bg-secondary' : ''}`}
+          >
             <td className='text-lg py-3'>
               <span className='text-4xl text-accent font-bold'>
                 {data.blockSize}{' '}
@@ -60,7 +63,7 @@ export default function CharterSchoolPrices(): JSX.Element {
             </td>
             <td className='text-5xl text-accent font-bold'>
               <div className='flex items-start justify-center'>
-                <span className='text-lg text-primary-foreground mr-1'>$</span>
+                <span className='text-lg text-foreground mr-1'>$</span>
                 {data.price}
               </div>
             </td>
