@@ -69,24 +69,13 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
       }`}
     >
       <div className='container px-4 py-4 flex justify-between items-center'>
-        <Link className='text-3xl font-bold leading-none w-24 md:w-40' href='/'>
+        <Link
+          className='text-3xl font-bold leading-none mr-auto w-24 md:w-40'
+          href='/'
+        >
           <Image alt='The Rockstars of Tomorrow logo' src={Logo} priority />
         </Link>
-        <div className='lg:hidden ml-auto'>
-          <button
-            className='navbar-burger flex items-center text-white p-3'
-            onClick={toggleMobileNav}
-          >
-            <svg
-              className='block h-6 w-6 fill-current'
-              viewBox='0 0 20 20'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <title>Mobile Nav Menu</title>
-              <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z'></path>
-            </svg>
-          </button>
-        </div>
+
         <ul className='hidden list-none lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6'>
           {pages.map((page) => (
             <li key={page.path} className=''>
@@ -109,12 +98,27 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
           <a href='tel:9095965556'>Call Us</a>
         </Button> */}
         <Link href='/?scrollTo=free_trial'>
-          <Button className='hidden lg:flex md:py-6'>
-            <IoStarSharp className='items-baseline mr-2' />
+          <Button className='flex text-xs ml-4 tracking-tight md:tracking-normal md:py-6 md:text-lg md:ml-0'>
+            <IoStarSharp className='items-baseline md:mr-2' />
             Book A Free Trial
-            <IoStarSharp className='inline ml-2' />
+            <IoStarSharp className='inline md:ml-2' />
           </Button>
         </Link>
+        <div className='lg:hidden'>
+          <button
+            className='navbar-burger flex items-center text-white p-3 ml-4'
+            onClick={toggleMobileNav}
+          >
+            <svg
+              className='block h-6 w-6 fill-current'
+              viewBox='0 0 20 20'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <title>Mobile Nav Menu</title>
+              <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z'></path>
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Navbar Backdrop below mobile nav creates a grayish overlay */}
