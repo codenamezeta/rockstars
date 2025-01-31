@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Script from 'next/script'
 import SectionOverview from '@/components/SectionOverview'
+import CharterSchoolPrices from '@/components/CharterSchoolPrices'
 import FAQs from '@/components/FAQs'
 import { LiaExternalLinkAltSolid } from 'react-icons/lia'
-// import { CharterSchoolPricingLessons } from '@/components/PricingLessons'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -16,14 +16,14 @@ export default function StudioPolicies(): JSX.Element {
   return (
     <>
       <Header
-        title='Charter School Information'
+        title='Charter Schools'
         subtitle='Your Music Journey, Funded by Your Charter School'
         headerStyle={2}
       />
       <main className='max-w-4xl mx-auto py-24 px-4 sm:px-6 lg:px-8'>
-        <SectionOverview title='Welcome Charter School Students & Families' />
-        <div className='max-w-prose mx-auto'>
-          <p className='text-center text-foreground text-lg leading-relaxed tracking-wide my-12'>
+        <SectionOverview title='Welcome Charter School Students & Families!' />
+        <div className='mx-auto'>
+          <p className='text-foreground text-lg leading-relaxed tracking-wider font-bold my-12'>
             Rockstars of Tomorrow – La Verne is an approved vendor for multiple
             charter schools, making it easy for students to access high-quality
             music education using their charter funds. Whether you're looking
@@ -32,10 +32,10 @@ export default function StudioPolicies(): JSX.Element {
             fits your learning style.
           </p>
 
-          <h2 className='text-3xl title-font font-bold text-accent tracking-wider'>
+          <h2 className='text-4xl title-font font-bold text-accent tracking-wider'>
             Our Charter School Partners
           </h2>
-          <span className='text-center text-sm'>
+          <span className='text-center text-lg'>
             We are currently an approved vendor for the following charter
             schools:
           </span>
@@ -181,80 +181,14 @@ export default function StudioPolicies(): JSX.Element {
           </div>
         </div>
       </section>
-      <section className='py-24'>
+      <section className='py-24 themed-background-style-1'>
         <div className='container'>
           <SectionOverview
             title='Program Pricing'
             overviewText='We make it easy for Charter School families! Our lesson blocks can be used for any Private Lesson, Band Class, or Workshop, making scheduling simple and stress-free.'
             separatorColor='accent'
           />
-          <table className='table-auto w-full text-left bg-background shadow-lg rounded-lg'>
-            <thead className='bg-primary'>
-              <tr>
-                <th className='p-8 text-xl'>Length of Time</th>
-                <th className='p-8 text-xl'>Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className='border-b'>
-                <td className='text-lg p-8'>
-                  <span className='text-4xl text-accent font-bold'>1 </span>
-                  Hour
-                  <span className='block w-full text-base'>Block of Time</span>
-                </td>
-                <td className='text-4xl text-accent font-bold p-8'>$92</td>
-              </tr>
-              <tr className='border-b'>
-                <td className='text-lg p-8'>
-                  <span className='text-4xl text-accent font-bold'>2 </span>
-                  Hour
-                  <span className='block w-full text-base'>Block of Time</span>
-                </td>
-                <td className='text-4xl text-accent font-bold p-8'>$180</td>
-              </tr>
-              <tr className='border-b'>
-                <td className='text-lg p-8'>
-                  <span className='text-4xl text-accent font-bold'>3 </span>
-                  Hour
-                  <span className='block w-full text-base'>Block of Time</span>
-                </td>
-                <td className='text-4xl text-accent font-bold p-8'>$264</td>
-              </tr>
-              <tr className='border-b'>
-                <td className='text-lg p-8'>
-                  <span className='text-4xl text-accent font-bold'>4 </span>
-                  Hour
-                  <span className='block w-full text-base'>Block of Time</span>
-                </td>
-                <td className='text-4xl text-accent font-bold p-8'>$344</td>
-              </tr>
-              <tr className='border-b'>
-                <td className='text-lg p-8'>
-                  <span className='text-4xl text-accent font-bold'>6 </span>
-                  Hour
-                  <span className='block w-full text-base'>Block of Time</span>
-                </td>
-                <td className='text-4xl text-accent font-bold p-8'>$504</td>
-              </tr>
-              <tr className='border-b'>
-                <td className='text-lg p-8'>
-                  <span className='text-4xl text-accent font-bold'>8 </span>
-                  Hour
-                  <span className='block w-full text-base'>Block of Time</span>
-                </td>
-                <td className='text-4xl text-accent font-bold p-8'>$656</td>
-              </tr>
-              <tr className=''>
-                <td className='text-lg p-8'>
-                  <span className='text-4xl text-accent font-bold'>12 </span>
-                  Hour
-                  <span className='block w-full text-base'>Block of Time</span>
-                  <span className='block w-full text-sm'>(Best Value)</span>
-                </td>
-                <td className='text-4xl text-accent font-bold p-8'>$960</td>
-              </tr>
-            </tbody>
-          </table>
+          <CharterSchoolPrices />
         </div>
         {/* <CharterSchoolPricingLessons /> */}
       </section>
