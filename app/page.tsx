@@ -1,3 +1,4 @@
+import lineLogo from '@/public/imgs/logos/Black-Line-Logo.png'
 import drummerGirl from '@/public/imgs/drummer-girl-1.png'
 import Hero from '@/components/Hero'
 import ProblemSolution from '@/components/ProblemSolution'
@@ -15,25 +16,27 @@ export const metadata: Metadata = {
   title: 'Rockstars of Tomorrow - La Verne',
   description:
     'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
+  keywords:
+    'music lessons, music classes, music school, music instruction, music performance, music coaching, music, California, La Verne, Pomona, Claremont, San Dimas, Glendora, Covina, Upland, Rancho Cucamonga, Ontario, Fontana, Rialto, Riverside, San Bernardino, Inland Empire, locations, cost, price, pricing, reddit, yelp, facebook, instagram, google, twitter, social media, review, grease, beginners, intermediate, advanced, online, guitar, bass, drums, keyboards, vocals, singing, voice, synth, percussion, piano, ukulele, songwriting, song writing, audio, production, engineering, workshops, rock, metal, pop, alternative, punk, blues, modern, learn, play, fun, exciting, new, child, children, kid, kids, teen, teens, adult, adults, band, group, performance, venue, stage, jam, session, recording, studio, live, show, concert, event,',
   openGraph: {
     title: 'Rockstars of Tomorrow - La Verne',
     description:
       'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
-    // images: [
-    //   {
-    //     url: '/imgs/drummer-girl-1.png',
-    //     width: 800,
-    //     height: 600,
-    //     alt: 'Young Woman Drummer',
-    //   },
-    // ],
+    images: [
+      {
+        url: lineLogo.src,
+        width: 800,
+        height: 600,
+        alt: 'Rockstars of Tomorrow - La Verne',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Rockstars of Tomorrow - La Verne',
     description:
       'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
-    // images: ['/imgs/drummer-girl-1.png'],
+    images: [lineLogo.src],
   },
 }
 

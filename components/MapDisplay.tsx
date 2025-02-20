@@ -6,7 +6,7 @@ import { FaLocationDot } from 'react-icons/fa6'
 export default function Contact(): JSX.Element {
   return (
     <div className='container mx-auto flex sm:flex-nowrap flex-wrap mb-12'>
-      <div className='bg-black border rounded-lg md:rounded-none md:rounded-l-xl w-full md:w-1/2 lg:w-1/3 p-6 pr-1'>
+      <div className='bg-black border rounded-lg border-1 border-primary md:rounded-none md:rounded-l-xl w-full md:w-1/2 lg:w-1/3 p-6 pr-1'>
         <ul className='flex flex-col justify-between tracking-wide list-none'>
           <li className=''>
             <h3 className='text-lg uppercase text-white font-bold tracking-wide'>

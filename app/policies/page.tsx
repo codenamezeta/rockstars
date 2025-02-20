@@ -15,9 +15,9 @@ export default function StudioPolicies(): JSX.Element {
         subtitle='We value clear communication and want to make sure our students and families understand our policies. Below, you will find details about missed lessons, cancellations, and payment procedures.'
         headerStyle={2}
       />
-      <main className='max-w-4xl mx-auto pt-8 pb-24 px-4 sm:px-6 lg:px-8'>
+      <main className='container pt-8 pb-24 px-4 sm:px-6 lg:px-8'>
         {/* <!-- Cancellation Policies Section --> */}
-        <section className='mb-8'>
+        <section className='mb-8 max-w-3xl'>
           <h2 className='text-3xl font-semibold text-accent mb-4'>
             Missed Lesson Policies
           </h2>
@@ -125,7 +125,7 @@ export default function StudioPolicies(): JSX.Element {
         </section>
 
         {/* <!-- Account Cancellation Section --> */}
-        <section className='mb-8'>
+        <section className='mb-8 max-w-3xl'>
           <h2 className='text-3xl font-semibold text-accent mb-4'>
             Account Cancellation
           </h2>
@@ -158,7 +158,7 @@ export default function StudioPolicies(): JSX.Element {
         </section>
 
         {/* <!-- Payment Policies Section --> */}
-        <section>
+        <section className='mb-8 max-w-3xl'>
           <h2 className='text-3xl font-semibold text-accent mb-4'>
             Payment Policies
           </h2>
@@ -230,9 +230,51 @@ export default function StudioPolicies(): JSX.Element {
                 and 72 hours in advance.
               </li>
             </ul>
+            <h4 className='text-lg font-semibold mt-6'>
+              Charter School Payment Plan:
+            </h4>
+            <ul className='list-disc pl-6 mt-2 space-y-2'>
+              <li>
+                <strong>POs must be received before attending lessons.</strong>
+              </li>
+              <li>
+                Must choose a block of lesson time (1 to 12 hours) from our
+                charter school rate plans.
+              </li>
+              <li>
+                A <strong>credit/debit card must be on file</strong> and will be
+                auto-charged on the <strong>1st of each month</strong> for any
+                balance not covered by charter funds.
+              </li>
+              <li>
+                Families are responsible for ensuring all necessary POs are
+                submitted before each billing cycle begins (1st of each month).
+              </li>
+              <li>
+                Track your charter funds balance through your 
+                <strong>monthly invoice</strong> (emailed) or by logging into
+                your student portal.{' '}
+                <strong>No PO reminder notifications are sent.</strong>
+              </li>
+              <li>
+                If a PO is submitted late (after your card has been charged on
+                the 1st of the month), <strong>a $25 admin fee applies</strong>{' '}
+                to refund your card, and processing may take up to 
+                <strong>5 days.</strong>
+              </li>
+              <li>
+                <strong>Make-up lessons</strong> are available for cancellations
+                made <strong>24+ hours in advance.</strong>
+              </li>
+              <li>
+                Lesson cancellations with 72+ hours' notice (or studio closures)
+                are <strong>not charged.</strong>
+              </li>
+            </ul>
             <p className='mt-4'>
               <strong>Default:</strong> All students are enrolled in the Flat
-              Rate Plan unless the Block of Time Plan is specifically requested.
+              Rate Plan unless a Block of Time or Charter School Plan is
+              specifically requested.
             </p>
           </article>
           {/* Group and Band Classes Payment Plans */}

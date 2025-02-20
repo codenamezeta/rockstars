@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   title: 'Pricing',
   description:
     'Rockstars of Tomorrow offers a variety of music lesson and class packages to fit your needs and budget. Learn more about our pricing and policies here!',
+  keywords:
+    'music lessons, music classes, music school, music instruction, music pricing, music lesson pricing, music class pricing, music lesson packages, music class packages, music lesson policies, music class policies, cost, pricing',
 }
 
 export default function pricing() {

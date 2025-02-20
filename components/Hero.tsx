@@ -40,16 +40,16 @@ export default function Hero({
           {/* <span className='mt-3 font-bold lg:text-xl text-white tracking-wider'>
             From Lessons to Live Performances
           </span> */}
-          <h1 className='text-xl md:text-4xl xl:text-6xl font-soleil uppercase text-accent tracking-tighter font-bold'>
+          <h1 className='themed-text-1 text-xl md:text-4xl lg:text-5xl xl:text-7xl font-soleil uppercase text-accent tracking-tight font-bold'>
             {title}
           </h1>
           <h2
-            className='mt-3 font-bold text-sm md:text-md xl:text-xl text-white tracking-tight'
+            className='mt-3 font-arvo font-bold text-sm md:text-md xl:text-xl text-white tracking-tight'
             // style={{ textShadow: '1px -1px hsl(36, 25%, 50%)' }}
           >
             {subtitle}
           </h2>
-          <p className='my-4 text-sm md:text-md font-arvo tracking-tight'>
+          <p className='my-4 text-sm md:text-md xl:text-lg font-soleil tracking-tight'>
             {text}
           </p>
           {list && (
@@ -84,6 +84,7 @@ export default function Hero({
               width={image.width}
               height={image.height}
               className={image.classNames}
+              priority
             />
           )}
         </div>

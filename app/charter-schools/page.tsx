@@ -249,7 +249,10 @@ export default function StudioPolicies(): JSX.Element {
           />
         </div>
       </section>
-      <section className='max-w-4xl mx-auto pt-8 pb-24 px-4 sm:px-6 lg:px-8'>
+      <section
+        id='charter_school_trial_form'
+        className='pt-8 pb-24 px-4 sm:px-6 lg:px-8'
+      >
         <SectionOverview
           title='Request a Free Trial Lesson'
           overviewText='Fill out the form below to request a free trial lesson and let us know you’re using charter funds. We’ll contact you to confirm your free trial, guide you through the enrollment process, and coordinate with your charter school.'

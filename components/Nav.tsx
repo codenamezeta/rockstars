@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import Logo from '@/public/imgs/logos/logo-white-shadow.svg'
+import Logo from '@/public/imgs/logos/ROT-Logo-White.png'
 import { Button } from './ui/button'
 import { IoStarSharp } from 'react-icons/io5'
 
@@ -72,8 +72,9 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
         <Link
           className='text-3xl font-bold leading-none w-24 md:w-40 mr-auto lg:mr-0'
           href='/'
+          as={'image'}
         >
-          <Image alt='The Rockstars of Tomorrow logo' src={Logo} priority />
+          <Image alt='The Rockstars of Tomorrow logo' src={Logo} />
         </Link>
 
         <ul className='hidden list-none lg:flex lg:mx-auto lg:flex lg:items-center lg:justify-between'>
@@ -81,8 +82,10 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
             <li key={page.path} className=''>
               <Link
                 href={page.path}
-                className={`mx-3 text-xl font-bold text-muted-foreground no-underline hover:underline hover:text-primary-foreground hover:tracking-wider transition duration-300 ${
-                  pathname === page.path ? 'text-gray-100' : ''
+                className={`mx-3 text-xl font-bold no-underline hover:underline hover:text-primary-foreground hover:tracking-wider transition duration-300 ${
+                  pathname === page.path
+                    ? 'text-foreground'
+                    : 'text-muted-foreground'
                 }`}
                 aria-current='page'
               >
@@ -97,10 +100,18 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
         >
           <a href='tel:9095965556'>Call Us</a>
         </Button> */}
-        <Link href='/?scrollTo=free_trial'>
+        <Link
+          href={
+            pathname === '/charter-schools'
+              ? '/charter-schools?scrollTo=charter_school_trial_form'
+              : '/?scrollTo=free_trial'
+          }
+        >
           <Button className='flex text-xs ml-4 tracking-tight md:tracking-normal md:py-6 md:text-lg md:ml-0'>
             <IoStarSharp className='items-baseline md:mr-2' />
-            Book A Free Trial
+            {pathname === '/charter-schools'
+              ? 'Get Started'
+              : 'Book A Free Trial'}
             <IoStarSharp className='inline md:ml-2' />
           </Button>
         </Link>
@@ -129,7 +140,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
         ></div>
 
         {/* Mobile Nav */}
-        <nav className='fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-black border-r overflow-y-auto'>
+        <nav className='fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-black border-r border-primary overflow-y-auto'>
           <div className='flex items-center mb-8'>
             <Link href={pages[0].path} onClick={toggleMobileNav}>
               <Image
@@ -178,19 +189,27 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
           </div>
           <div className='mt-auto'>
             <div className='pt-6'>
-              <Link href='tel:8443668742'>
+              {/* <Link href='tel:8443668742'>
                 <Button
                   variant='outline'
                   className='w-full mb-4 bg-transparent'
                 >
                   Call Us
                 </Button>
-              </Link>
+              </Link> */}
 
-              <Link href='/?scrollTo=free_trial'>
+              <Link
+                href={
+                  pathname === '/charter-schools'
+                    ? '/charter-schools?scrollTo=charter_school_trial_form'
+                    : '/?scrollTo=free_trial'
+                }
+              >
                 <Button size='full'>
                   <IoStarSharp className='items-baseline mr-2' />
-                  Book A Free Trial
+                  {pathname === '/charter-schools'
+                    ? 'Get Started'
+                    : 'Book A Free Trial'}
                   <IoStarSharp className='inline ml-2' />
                 </Button>
               </Link>

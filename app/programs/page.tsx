@@ -1,6 +1,7 @@
 //* Programs Page
 import Header from '@/components/Header'
-import Instruments from '@/components/Instruments'
+// import Instruments from '@/components/Instruments'
+import { InstrumentsSelector } from '@/components/Instruments'
 import Programs from '@/components/Programs'
 import FAQs from '@/components/FAQs'
 import SectionOverview from '@/components/SectionOverview'
@@ -92,7 +93,7 @@ export default function ProgramsPage(): JSX.Element {
               instruments we specialize in.'
             />
           </div>
-          <Instruments />
+          <InstrumentsSelector />
         </div>
       </section>
 

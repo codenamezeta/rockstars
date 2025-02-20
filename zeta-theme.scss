@@ -33,6 +33,21 @@ header.hero {
     url('/assets/Vine-Background.png') repeat center center/contain;
 }
 
+.themed-text-1 {
+  text-shadow:
+    3px 3px 0px #5b0707,
+    -3px -3px 0px #5b0707,
+    -3px 3px 0px #5b0707,
+    3px -3px 0px #5b0707;
+}
+.themed-text-2 {
+  text-shadow:
+    2px 2px 0px #5b0707,
+    -2px -2px 0px #5b0707,
+    -2px 2px 0px #5b0707,
+    2px -2px 0px #5b0707;
+}
+
 section#benefits {
   background:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
@@ -237,7 +252,7 @@ footer {
   -webkit-text-stroke: 1px #5b0707;
   // -webkit-text-stroke: 2px hsl(36, 50%, 60%);
   // text-shadow: 1px 1px white;
-  // text-shadow: 2px 2px hsl(36, 50%, 60%);
+  text-shadow: 2px 2px #cca366;
   text-shadow: 2px 2px #5b0707;
 
   /* https://caniuse.com/mdn-css_properties_paint-order */
@@ -256,6 +271,12 @@ footer {
   /* https://caniuse.com/mdn-css_properties_paint-order */
   /* default is paint-order: fill stroke */
   /* mdn: https://developer.mozilla.org/en-US/docs/Web/CSS/paint-order */
+}
+
+strong {
+  font-weight: 900;
+  font-size: 1.05em;
+  // color: blue;
 }
 
 // @layer demo.support {
