@@ -110,7 +110,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
           <Button className='flex text-xs ml-4 tracking-tight md:tracking-normal md:py-6 md:text-lg md:ml-0'>
             <IoStarSharp className='items-baseline md:mr-2' />
             {pathname === '/charter-schools'
-              ? 'Get Started'
+              ? 'Book Charter School Free Trial'
               : 'Book A Free Trial'}
             <IoStarSharp className='inline md:ml-2' />
           </Button>
@@ -208,7 +208,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
                 <Button size='full'>
                   <IoStarSharp className='items-baseline mr-2' />
                   {pathname === '/charter-schools'
-                    ? 'Get Started'
+                    ? 'Book Charter School Free Trial'
                     : 'Book A Free Trial'}
                   <IoStarSharp className='inline ml-2' />
                 </Button>

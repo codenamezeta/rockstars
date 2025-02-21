@@ -35,7 +35,7 @@ export default function StudioPolicies(): JSX.Element {
           <h2 className='text-4xl title-font font-bold text-accent tracking-wider'>
             Our Charter School Partners
           </h2>
-          <span className='text-center text-lg'>
+          <span className='text-lg'>
             We are currently an approved vendor for the following charter
             schools:
           </span>
@@ -181,18 +181,99 @@ export default function StudioPolicies(): JSX.Element {
           </div>
         </div>
       </section>
+      <section
+        id='charter_school_trial_form'
+        className='py-24 px-4 sm:px-6 lg:px-8 themed-background-style-1'
+      >
+        <SectionOverview
+          title='Request a Free Trial Lesson'
+          overviewText='Fill out the form below to request a free trial lesson and let us know you’re using charter funds. We’ll contact you to confirm your free trial, guide you through the enrollment process, and coordinate with your charter school.'
+        />
+        <iframe
+          src='https://api.leadconnectorhq.com/widget/form/3lYXfZud480reGDqWrQV'
+          style={{
+            width: '100%',
+            height: '100%',
+            border: 'none',
+            borderRadius: '3px',
+          }}
+          id='inline-3lYXfZud480reGDqWrQV'
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type='alwaysShow'
+          data-trigger-value=''
+          data-activation-type='alwaysActivated'
+          data-activation-value=''
+          data-deactivation-type='neverDeactivate'
+          data-deactivation-value=''
+          data-form-name='00 La Verne Free Trial Form - Charter School'
+          data-height='2315'
+          data-layout-iframe-id='inline-3lYXfZud480reGDqWrQV'
+          data-form-id='3lYXfZud480reGDqWrQV'
+          title='00 La Verne Free Trial Form - Charter School'
+        ></iframe>
+        <Script src='https://link.msgsndr.com/js/form_embed.js'></Script>
+      </section>
       <section className='py-24 themed-background-style-1'>
         <div className='container'>
           <SectionOverview
-            title='Program Pricing'
-            overviewText='We make it easy for Charter School families! Our lesson blocks can be used for any Private Lesson, Band Class, or Workshop, making scheduling simple and stress-free.'
+            title='Charter School Pricing'
+            overviewText='We make it easy for Charter School families! Our Charter School lesson blocks can be used for any Private Lesson, Band Class, or Workshop, making scheduling simple and stress-free.'
             separatorColor='accent'
           />
           <CharterSchoolPrices />
         </div>
         {/* <CharterSchoolPricingLessons /> */}
       </section>
-      <section>
+      <section
+        className='py-24 themed-background-style-3'
+        id='charter_policies'
+      >
+        <div className='container'>
+          <SectionOverview
+            title='Charter School Payment Policies'
+            overviewText='Here are some important details to be aware of.'
+          />
+          <ul className='list-disc pl-6 mt-2 space-y-2 max-w-prose mx-auto'>
+            <li>
+              <strong>POs must be received before attending lessons.</strong>
+            </li>
+            <li>
+              Must choose a block of lesson time (1 to 12 hours) from our
+              charter school rate plans. (See above.)
+            </li>
+            <li>
+              A <strong>credit/debit card must be on file</strong> and will be
+              auto-charged on the <strong>1st of each month</strong> for any
+              balance not covered by charter funds.
+            </li>
+            <li>
+              Families are responsible for ensuring all necessary POs are
+              submitted before each billing cycle begins (1st of each month).
+            </li>
+            <li>
+              Track your charter funds balance through your 
+              <strong>monthly invoice</strong> (emailed) or by logging into
+              your student portal.{' '}
+              <strong>No PO reminder notifications are sent.</strong>
+            </li>
+            <li>
+              If a PO is submitted late (after your card has been charged on the
+              1st of the month), <strong>a $25 admin fee applies</strong> to
+              refund your card, and processing may take up to 
+              <strong>5 days.</strong>
+            </li>
+            <li>
+              <strong>Make-up lessons</strong> are available for cancelations
+              made <strong>24+ hours in advance.</strong>
+            </li>
+            <li>
+              Lesson cancelations with 72+ hours' notice (or studio closures)
+              are <strong>not charged.</strong>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section className='pt-24'>
         <div className='container'>
           <FAQs
             faqs={[
@@ -238,7 +319,7 @@ export default function StudioPolicies(): JSX.Element {
                 question:
                   'What if my funds run out before the end of the term?',
                 answer:
-                  'You can continue lessons by covering the remaining balance out of pocket. Any services not covered by your charter funds will automatically be charged to your stored payment card.',
+                  'You can continue lessons by covering the remaining balance out of pocket. Any services not covered by your charter funds will automatically be charged to your stored payment card. You can track your charter funds balance through your monthly invoice (emailed) or by logging into your student portal.',
               },
               {
                 question: 'Are there any hidden costs I should be aware of?',
@@ -248,38 +329,6 @@ export default function StudioPolicies(): JSX.Element {
             ]}
           />
         </div>
-      </section>
-      <section
-        id='charter_school_trial_form'
-        className='pt-8 pb-24 px-4 sm:px-6 lg:px-8'
-      >
-        <SectionOverview
-          title='Request a Free Trial Lesson'
-          overviewText='Fill out the form below to request a free trial lesson and let us know you’re using charter funds. We’ll contact you to confirm your free trial, guide you through the enrollment process, and coordinate with your charter school.'
-        />
-        <iframe
-          src='https://api.leadconnectorhq.com/widget/form/3lYXfZud480reGDqWrQV'
-          style={{
-            width: '100%',
-            height: '100%',
-            border: 'none',
-            borderRadius: '3px',
-          }}
-          id='inline-3lYXfZud480reGDqWrQV'
-          data-layout="{'id':'INLINE'}"
-          data-trigger-type='alwaysShow'
-          data-trigger-value=''
-          data-activation-type='alwaysActivated'
-          data-activation-value=''
-          data-deactivation-type='neverDeactivate'
-          data-deactivation-value=''
-          data-form-name='00 La Verne Free Trial Form - Charter School'
-          data-height='2315'
-          data-layout-iframe-id='inline-3lYXfZud480reGDqWrQV'
-          data-form-id='3lYXfZud480reGDqWrQV'
-          title='00 La Verne Free Trial Form - Charter School'
-        ></iframe>
-        <Script src='https://link.msgsndr.com/js/form_embed.js'></Script>
       </section>
     </>
   )

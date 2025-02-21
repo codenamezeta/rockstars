@@ -3,9 +3,10 @@ import './globals.css'
 import '/zeta-theme.scss'
 import { Arvo } from 'next/font/google'
 import localFont from 'next/font/local'
+import lineLogo from '@/public/imgs/logos/Black-Line-Logo.png'
 import type { Metadata } from 'next'
 import Script from 'next/script'
-import React, { Suspense } from 'react'
+import { Suspense } from 'react'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
@@ -96,6 +97,28 @@ export const metadata: Metadata = {
     // ],
   },
   manifest: '/favicons/site.webmanifest',
+  keywords:
+    'music lessons, music classes, music school, music instruction, music performance, music coaching, music, California, La Verne, Pomona, Claremont, San Dimas, Glendora, Covina, Upland, Rancho Cucamonga, Ontario, Fontana, Rialto, Riverside, San Bernardino, Inland Empire, locations, cost, price, pricing, reddit, yelp, facebook, instagram, google, twitter, social media, review, grease, beginners, intermediate, advanced, online, guitar, bass, drums, keyboards, vocals, singing, voice, synth, percussion, piano, ukulele, songwriting, song writing, audio, production, engineering, workshops, rock, metal, pop, alternative, punk, blues, modern, learn, play, fun, exciting, new, child, children, kid, kids, teen, teens, adult, adults, band, group, performance, venue, stage, jam, session, recording, studio, live, show, concert, event,',
+  openGraph: {
+    title: 'Rockstars of Tomorrow - La Verne',
+    description:
+      'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
+    images: [
+      {
+        url: lineLogo.src,
+        width: 800,
+        height: 600,
+        alt: 'Rockstars of Tomorrow - La Verne',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Rockstars of Tomorrow - La Verne',
+    description:
+      'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
+    images: [lineLogo.src],
+  },
 }
 
 export default function RootLayout({
@@ -115,7 +138,15 @@ export default function RootLayout({
               { name: 'Programs', path: '/programs' },
               { name: 'Pricing', path: '/pricing' },
               { name: 'Contact', path: '/contact' },
-              // { name: 'Team', path: '/team' },
+              // {
+              //   name: 'More', // This will be the dropdown trigger
+              //   subPages: [
+              //     { name: 'Support', path: '/support' },
+              //     { name: 'Gallery', path: '/gallery' },
+              //     { name: 'Services', path: '/services' },
+              //     { name: 'About Us', path: '/about' },
+              //   ],
+              // },
             ]}
           />
         </Suspense>
