@@ -3,14 +3,13 @@ import SectionOverview from './SectionOverview'
 
 export default function GHLForm() {
   return (
-    <section
-      id='free_trial'
-      className='themed-background-style-1 py-24 mx-auto'
-    >
-      <SectionOverview
-        title='Free Trial Lesson'
-        overviewText='Start with a free trial lesson! Fill out the form below to get started. We will contact you to schedule your lesson and a tour of our school.'
-      />
+    <section id='free_trial' className='themed-background-style-1 py-24'>
+      <div className='container'>
+        <SectionOverview
+          title='Free Trial Lesson'
+          overviewText='Start with a free trial lesson! Fill out the form below to get started. We will contact you to schedule your lesson and a tour of our school.'
+        />
+      </div>
       <iframe
         src='https://api.leadconnectorhq.com/widget/form/rfGd5dRFL8gB4WDPke9g'
         style={{

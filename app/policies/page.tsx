@@ -4,7 +4,7 @@ import Header from '@/components/Header'
 export const metadata: Metadata = {
   title: 'Studio Policies',
   description:
-    'We value clear communication and want to make sure our students and families understand our policies. Below, you will find details about missed lessons, cancellations, and payment procedures.',
+    'We value clear communication and want to make sure our students and families understand our policies. Below, you will find details about missed lessons, cancelations, and payment procedures.',
 }
 
 export default function StudioPolicies(): JSX.Element {
@@ -12,12 +12,12 @@ export default function StudioPolicies(): JSX.Element {
     <>
       <Header
         title='Studio Policies'
-        subtitle='We value clear communication and want to make sure our students and families understand our policies. Below, you will find details about missed lessons, cancellations, and payment procedures.'
+        subtitle='We value clear communication and want to make sure our students and families understand our policies. Below, you will find details about missed lessons, cancelations, and payment procedures.'
         headerStyle={2}
       />
-      <main className='max-w-4xl mx-auto pt-8 pb-24 px-4 sm:px-6 lg:px-8'>
-        {/* <!-- Cancellation Policies Section --> */}
-        <section className='mb-8'>
+      <main className='container pt-8 pb-24 px-4 sm:px-6 lg:px-8'>
+        {/* <!-- Cancelation Policies Section --> */}
+        <section className='mb-8 max-w-3xl'>
           <h2 className='text-3xl font-semibold text-accent mb-4'>
             Missed Lesson Policies
           </h2>
@@ -51,6 +51,7 @@ export default function StudioPolicies(): JSX.Element {
               </li>
               <li>
                 If no workable time is available, a{' '}
+                <strong>subtitute instructor</strong> or a{' '}
                 <strong>digital lesson</strong> may be provided (not
                 guaranteed).
               </li>
@@ -61,8 +62,8 @@ export default function StudioPolicies(): JSX.Element {
               <li>
                 <strong>Active accounts only:</strong> Make-up credits are valid
                 only while your account is active and cannot be used after
-                cancellation unless you return or transfer them to another
-                active student.
+                cancelation unless you return or transfer them to another active
+                student.
               </li>
               <li>No makes-ups for unpaid future lessons.</li>
             </ul>
@@ -85,10 +86,17 @@ export default function StudioPolicies(): JSX.Element {
               If the Instructor/Studio Cancels:
             </h4>
             <ul className='list-disc pl-6 mt-2 space-y-2'>
-              <li>A substitute instructor will be assigned, if available.</li>
+              <li>
+                A substitute instructor will be assigned, if available, with or
+                without advanced notice.
+              </li>
               <li>
                 If a substitute is unavailable, the lesson can be rescheduled or
                 credited with a <strong>non-expiring make-up credit</strong>.
+              </li>
+              <li>
+                Students who opt for cancelation over a substitute instructor,
+                will receive a 30-day make-up credit instead.
               </li>
               <li>
                 {/* TODO: Add link to the calendar when that feature becomes ready */}
@@ -117,17 +125,17 @@ export default function StudioPolicies(): JSX.Element {
                 another open group lesson within 30 days, provided:
                 <ul className='list-disc pl-6 mt-2 space-y-2'>
                   <li>The group is not empty or full.</li>
-                  <li>You give 24+ hours notice.</li>
+                  <li>You gave 24+ hours notice of cancelation.</li>
                 </ul>
               </li>
             </ul>
           </article>
         </section>
 
-        {/* <!-- Account Cancellation Section --> */}
-        <section className='mb-8'>
+        {/* <!-- Account Cancelation Section --> */}
+        <section className='mb-8 max-w-3xl'>
           <h2 className='text-3xl font-semibold text-accent mb-4'>
-            Account Cancellation
+            Account Cancelation
           </h2>
           <ul className='list-disc pl-6 space-y-2'>
             <li>
@@ -135,30 +143,29 @@ export default function StudioPolicies(): JSX.Element {
               at any time with at least <strong>24 hours notice</strong>.
             </li>
             <li>
-              Unused balances can be:
+              <strong>Make-up credits</strong> are valid only while your account
+              is active and cannot be used after cancelation.
+            </li>
+            <li>
+              <strong>No refunds</strong> for unused balances or make-up credits
+              after cancelation.
+            </li>
+            <li>
+              Unused balances and make-up credits can be:
               <ul className='list-disc pl-6 mt-2 space-y-2'>
                 <li>Held on your account for future use if you return.</li>
                 <li>Transferred to another active student.</li>
               </ul>
             </li>
             <li>
-              <strong>No refunds</strong> for unused balances or make-up credits
-              after cancellation.
-            </li>
-            <li>
-              <strong>Make-up credits</strong> are valid only while your account
-              is active and cannot be used after cancellation unless you return
-              or transfer them to another active student.
-            </li>
-            <li>
-              Open Band Classes: Cancelling after the session starts will incur
+              Open Band Classes: Canceling after the session starts will incur
               charges for the full session.
             </li>
           </ul>
         </section>
 
         {/* <!-- Payment Policies Section --> */}
-        <section>
+        <section className='mb-8 max-w-3xl'>
           <h2 className='text-3xl font-semibold text-accent mb-4'>
             Payment Policies
           </h2>
@@ -211,8 +218,8 @@ export default function StudioPolicies(): JSX.Element {
               </li>
               <li>
                 If you receive fewer than four lessons per month on average
-                (calculated over the year), make-up lessons will be provided but
-                not a credit or refund.
+                (calculated over the calendar year), make-up lessons will be
+                provided but not a credit or refund.
               </li>
             </ul>
 
@@ -226,13 +233,55 @@ export default function StudioPolicies(): JSX.Element {
                 holiday closures) are not deducted from your balance.
               </li>
               <li>
-                Make-up lessons are available for cancellations made between 24
-                and 72 hours in advance.
+                Make-up lessons are available for cancelations made 24+ hours in
+                advance.
+              </li>
+            </ul>
+            <h4 className='text-lg font-semibold mt-6' id='charter_schools'>
+              Charter School Payment Plan:
+            </h4>
+            <ul className='list-disc pl-6 mt-2 space-y-2'>
+              <li>
+                <strong>POs must be received before attending lessons.</strong>
+              </li>
+              <li>
+                Must choose a block of lesson time (1 to 12 hours) from our
+                charter school rate plans.
+              </li>
+              <li>
+                A <strong>credit/debit card must be on file</strong> and will be
+                auto-charged on the <strong>1st of each month</strong> for any
+                balance not covered by charter funds.
+              </li>
+              <li>
+                Families are responsible for ensuring all necessary POs are
+                submitted before each billing cycle begins (1st of each month).
+              </li>
+              <li>
+                Track your charter funds balance through your 
+                <strong>monthly invoice</strong> (emailed) or by logging into
+                your student portal.{' '}
+                <strong>No PO reminder notifications are sent.</strong>
+              </li>
+              <li>
+                If a PO is submitted late (after your card has been charged on
+                the 1st of the month), <strong>a $25 admin fee applies</strong>{' '}
+                to refund your card, and processing may take up to 
+                <strong>5 days.</strong>
+              </li>
+              <li>
+                <strong>Make-up lessons</strong> are available for cancelations
+                made <strong>24+ hours in advance.</strong>
+              </li>
+              <li>
+                Lesson cancelations with 72+ hours' notice (or studio closures)
+                are <strong>not charged.</strong>
               </li>
             </ul>
             <p className='mt-4'>
               <strong>Default:</strong> All students are enrolled in the Flat
-              Rate Plan unless the Block of Time Plan is specifically requested.
+              Rate Plan unless a Block of Time or Charter School Plan is
+              specifically requested.
             </p>
           </article>
           {/* Group and Band Classes Payment Plans */}

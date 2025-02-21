@@ -1,13 +1,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import Logo from '@/public/imgs/logos/logo-white-shadow.svg'
+import Logo from '@/public/imgs/logos/ROT-Logo-White.png'
 import { FaYelp, FaInstagram, FaFacebook } from 'react-icons/fa6'
 import { LiaExternalLinkAltSolid } from 'react-icons/lia'
 import { GrGoogle } from 'react-icons/gr'
+// import Script from 'next/script'
 
 export default function Footer(): JSX.Element {
   return (
     <footer className='text-muted-foreground'>
+      {/* <Script
+        src='https://widgets.leadconnectorhq.com/loader.js'
+        data-resources-url='https://widgets.leadconnectorhq.com/chat-widget/loader.js'
+        data-widget-id='67ae9527a81d1c137dd765c2'
+      ></Script> */}
       <div className='container pt-12 mx-auto'>
         <div className='flex flex-col md:flex-row md:flex-wrap gap-y-12'>
           <div className='w-full md:w-1/4 md:m-auto lg:w-1/3'>

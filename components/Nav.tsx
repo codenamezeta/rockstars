@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import Logo from '@/public/imgs/logos/logo-white-shadow.svg'
+import Logo from '@/public/imgs/logos/ROT-Logo-White.png'
 import { Button } from './ui/button'
 import { IoStarSharp } from 'react-icons/io5'
 
@@ -64,36 +64,28 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
 
   return (
     <nav
-      className={`font-soleil font-bold tracking-wide fixed top-0 w-full z-50 transition-colors duration-500 ${
-        isScrolled ? 'bg-black' : 'bg-transparent'
+      className={`font-soleil font-bold tracking-wide fixed top-0 w-full z-50 border-primary transition-colors duration-500 ${
+        isScrolled ? 'bg-black border-b' : 'bg-transparent'
       }`}
     >
-      <div className='container px-4 py-4 flex justify-between items-center'>
-        <Link className='text-3xl font-bold leading-none w-24 md:w-40' href='/'>
-          <Image alt='The Rockstars of Tomorrow logo' src={Logo} priority />
+      <div className='container px-4 py-2 flex justify-center items-center'>
+        <Link
+          className='text-3xl font-bold leading-none w-24 md:w-40 mr-auto lg:mr-0'
+          href='/'
+          as={'image'}
+        >
+          <Image alt='The Rockstars of Tomorrow logo' src={Logo} />
         </Link>
-        <div className='lg:hidden ml-auto'>
-          <button
-            className='navbar-burger flex items-center text-white p-3'
-            onClick={toggleMobileNav}
-          >
-            <svg
-              className='block h-6 w-6 fill-current'
-              viewBox='0 0 20 20'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <title>Mobile Nav Menu</title>
-              <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z'></path>
-            </svg>
-          </button>
-        </div>
-        <ul className='hidden list-none lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6'>
+
+        <ul className='hidden list-none lg:flex lg:mx-auto lg:flex lg:items-center lg:justify-between'>
           {pages.map((page) => (
             <li key={page.path} className=''>
               <Link
                 href={page.path}
-                className={`text-xl font-bold text-gray-500 no-underline hover:underline hover:text-foreground hover:tracking-wider transition duration-300 ${
-                  pathname === page.path ? 'text-white' : ''
+                className={`mx-3 text-xl font-bold no-underline hover:underline hover:text-primary-foreground hover:tracking-wider transition duration-300 ${
+                  pathname === page.path
+                    ? 'text-foreground'
+                    : 'text-muted-foreground'
                 }`}
                 aria-current='page'
               >
@@ -108,13 +100,36 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
         >
           <a href='tel:9095965556'>Call Us</a>
         </Button> */}
-        <Link href='/?scrollTo=free_trial'>
-          <Button className='hidden lg:flex md:py-6'>
-            <IoStarSharp className='items-baseline mr-2' />
-            Book A Free Trial
-            <IoStarSharp className='inline ml-2' />
+        <Link
+          href={
+            pathname === '/charter-schools'
+              ? '/charter-schools?scrollTo=charter_school_trial_form'
+              : '/?scrollTo=free_trial'
+          }
+        >
+          <Button className='flex text-xs ml-4 tracking-tight md:tracking-normal md:py-6 md:text-lg md:ml-0'>
+            <IoStarSharp className='items-baseline md:mr-2' />
+            {pathname === '/charter-schools'
+              ? 'Book Charter School Free Trial'
+              : 'Book A Free Trial'}
+            <IoStarSharp className='inline md:ml-2' />
           </Button>
         </Link>
+        <div className='lg:hidden'>
+          <button
+            className='navbar-burger flex items-center text-white p-3 ml-4'
+            onClick={toggleMobileNav}
+          >
+            <svg
+              className='block h-6 w-6 fill-current'
+              viewBox='0 0 20 20'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <title>Mobile Nav Menu</title>
+              <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z'></path>
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Navbar Backdrop below mobile nav creates a grayish overlay */}
@@ -125,7 +140,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
         ></div>
 
         {/* Mobile Nav */}
-        <nav className='fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-black border-r overflow-y-auto'>
+        <nav className='fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-black border-r border-primary overflow-y-auto'>
           <div className='flex items-center mb-8'>
             <Link href={pages[0].path} onClick={toggleMobileNav}>
               <Image
@@ -174,19 +189,27 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
           </div>
           <div className='mt-auto'>
             <div className='pt-6'>
-              <Link href='tel:8443668742'>
+              {/* <Link href='tel:8443668742'>
                 <Button
                   variant='outline'
                   className='w-full mb-4 bg-transparent'
                 >
                   Call Us
                 </Button>
-              </Link>
+              </Link> */}
 
-              <Link href='/?scrollTo=free_trial'>
+              <Link
+                href={
+                  pathname === '/charter-schools'
+                    ? '/charter-schools?scrollTo=charter_school_trial_form'
+                    : '/?scrollTo=free_trial'
+                }
+              >
                 <Button size='full'>
                   <IoStarSharp className='items-baseline mr-2' />
-                  Book A Free Trial
+                  {pathname === '/charter-schools'
+                    ? 'Book Charter School Free Trial'
+                    : 'Book A Free Trial'}
                   <IoStarSharp className='inline ml-2' />
                 </Button>
               </Link>

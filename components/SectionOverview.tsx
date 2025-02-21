@@ -17,9 +17,9 @@ export default function SectionOverview({
   subtitle,
   overviewText,
   titleColor = 'accent',
-  subtitleColor = 'secondary',
+  subtitleColor = 'foreground',
   separatorColor = 'primary',
-  overviewTextColor = 'secondary',
+  overviewTextColor = 'primary-foreground',
   customId,
   customClasses,
 }: SectionOverviewTypes): JSX.Element {

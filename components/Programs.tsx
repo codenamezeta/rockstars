@@ -13,7 +13,7 @@ export default function Programs(): JSX.Element {
           id={bandClass.programName}
           className='program-card flex flex-col p-8 rounded-lg border-2 border-primary'
         >
-          <h2 className='text-accent text-lg md:text-4xl title-font font-bold'>
+          <h2 className='text-accent text-3xl md:text-5xl title-font font-bold themed-text-2'>
             {bandClass.programName}
           </h2>
           <span className='font-bold text-sm md:text-xl my-3'>

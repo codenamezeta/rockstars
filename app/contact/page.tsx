@@ -32,9 +32,9 @@ export default function contactPage(): JSX.Element {
           overviewText='We are here to help! If you have any questions or concerns, please feel free to reach out to us. Our team is available to assist you with any inquiries you may have.'
         />
         <div className='flex flex-col md:flex-row gap-4 mb-24'>
-          <div className='bg-background border border-gray-200 p-4 rounded-lg md:w-1/2'>
+          <div className='flex flex-col bg-background border border-muted p-4 rounded-lg md:w-1/2'>
             <h3 className='text-3xl font-bold text-white'>Student Portal</h3>
-            <p className='text-base text-white'>
+            <p className='text-base text-foreground mb-4'>
               Rockstars of Tomorrow partners with{' '}
               <Link
                 href='https://mymusicstaff.com'
@@ -51,16 +51,16 @@ export default function contactPage(): JSX.Element {
             </p>
             <Link
               href='https://app.mymusicstaff.com/'
-              className={`${buttonVariants({ variant: 'default' })} mt-4`}
+              className={`${buttonVariants({ variant: 'default', size: 'sm' })} mt-auto w-max`}
               target='_blank'
               rel='noreferrer noopener'
             >
               Access Student Portal <FiExternalLink />
             </Link>
           </div>
-          <div className='bg-background border border-gray-200 p-4 rounded-lg md:w-1/2'>
+          <div className='flex flex-col bg-background border border-muted p-4 rounded-lg md:w-1/2'>
             <h3 className='text-3xl font-bold text-white'>Studio Policies</h3>
-            <p className='text-base text-white'>
+            <p className='text-base text-foreground mb-4'>
               To ensure a positive experience for all students, Rockstars of
               Tomorrow has established studio policies that outline our
               expectations for students, parents, and instructors. Please review
@@ -69,7 +69,7 @@ export default function contactPage(): JSX.Element {
             </p>
             <Link
               href='/policies'
-              className={`${buttonVariants({ variant: 'default' })} mt-4`}
+              className={`${buttonVariants({ variant: 'default', size: 'sm' })} mt-auto w-max`}
             >
               View Our Studio Policies
             </Link>
