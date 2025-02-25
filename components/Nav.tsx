@@ -30,7 +30,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
     const targetEl = document.querySelector(`#${scrollTarget}`)
     if (!targetEl) return
     mobileNavOpen && toggleMobileNav()
-    const yOffset = -44 // adjust offset to account for fixed navbar
+    const yOffset = -48 // adjust offset to account for fixed navbar
     const y =
       targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset
     window.scrollTo({ top: y, behavior: 'smooth' })

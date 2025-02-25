@@ -40,12 +40,12 @@ export default function pricing() {
             {
               question: 'Do you offer group lessons?',
               answer:
-                'Hell yeah! Why jam alone when you can rock out with your friends or family? Convert any private lesson into a group sesh for a small fee. Because music is a team sport.',
+                'Oh yeah! Why jam alone when you can rock out with your friends or family? Convert any private lesson into a group sesh for a small fee. Because music is a team sport.',
             },
             {
               question: 'How often are lessons?',
               answer:
-                'Most of our rockers do one private lesson and one band class a week. Need more? Less? A custom setup? Let’s crank it up to fit your vibe.',
+                'Most of our rockers do one private lesson and one band class a week. Need more? Less? A custom setup? No problem! Let us know how we can help.',
             },
             {
               question: 'What if I need to reschedule a lesson?',
