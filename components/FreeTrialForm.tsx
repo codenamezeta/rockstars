@@ -139,7 +139,7 @@ export default function FreeTrialForm({
       console.log('Form Submitted:', values)
       setIsSubmitted(true)
       const response = await fetch(
-        'https://services.leadconnectorhq.com/hooks/401tGZcoz0SM6s61g5JO/webhook-trigger/cc6bcdad-b94f-4ef7-a127-b6f5bc4e43bd',
+        'https://services.leadconnectorhq.com/hooks/401tGZcoz0SM6s61g5JO/webhook-trigger/cc6bcdad-b94f-4ef7-a127-b6f5bc4e43bd', // GHL
         {
           method: 'POST',
           headers: {

@@ -131,6 +131,8 @@ export function InstrumentsSelector() {
             <Image
               src={instrument.thumbnail}
               alt={`Image of ${instrument.title} player`}
+              loading='lazy'
+              placeholder='blur'
             />
             <span className='themed-text-2 text-accent text-xl md:text-2xl lg:text-4xl tracking-tighter font-bold block w-full text-right -mt-6 lg:-mt-12 mr-4 lg:mb-2 z-20'>
               {instrument.title}

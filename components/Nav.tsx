@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import Logo from '@/public/imgs/logos/ROT-Logo-White.png'
+import Logo from '@/public/imgs/logos/rockstars-la-verne-logo-white.png'
 import { Button } from './ui/button'
 import { IoStarSharp } from 'react-icons/io5'
 
@@ -74,7 +74,17 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
           href='/'
           as={'image'}
         >
-          <Image alt='The Rockstars of Tomorrow logo' src={Logo} />
+          <div className='relative h-[60px] md:h-[80px]'>
+            <Image
+              alt='The Rockstars of Tomorrow logo'
+              src={Logo}
+              quality={50}
+              fill
+              style={{ objectFit: 'contain' }}
+              sizes='180px' // This is critical - specify the exact max size
+              priority={true}
+            />
+          </div>
         </Link>
 
         <ul className='hidden list-none lg:flex lg:mx-auto lg:flex lg:items-center lg:justify-between'>
@@ -146,11 +156,17 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
         <nav className='fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-black border-r border-primary overflow-y-auto'>
           <div className='flex items-center mb-8'>
             <Link href={pages[0].path} onClick={toggleMobileNav}>
-              <Image
-                className='w-32 h-24 mr-auto'
-                alt='The Rockstars of Tomorrow logo'
-                src={Logo}
-              />
+              <div className='relative w-[128px] h-[96px]'>
+                <Image
+                  alt='The Rockstars of Tomorrow logo'
+                  src={Logo}
+                  quality={50}
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  sizes='128px'
+                  loading='lazy' // Explicitly lazy load this one
+                />
+              </div>
               <span className='sr-only'>
                 <h2>Rockstars of Tomorrow</h2>
               </span>

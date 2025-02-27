@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import Logo from '@/public/imgs/logos/ROT-Logo-White.png'
+import Logo from '@/public/imgs/logos/rockstars-la-verne-logo-white.png'
 import { FaYelp, FaInstagram, FaFacebook } from 'react-icons/fa6'
 import { LiaExternalLinkAltSolid } from 'react-icons/lia'
 import { GrGoogle } from 'react-icons/gr'
@@ -21,6 +21,8 @@ export default function Footer(): JSX.Element {
               className='px-12 md:px-0 lg:pr-24 brightness-75'
               alt='The Rockstars of Tomorrow logo'
               src={Logo}
+              loading='lazy'
+              placeholder='blur'
             />
           </div>
           <nav className='w-full md:w-1/2 lg:w-1/6 text-center lg:text-left lg:tracking-tighter'>

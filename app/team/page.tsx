@@ -33,6 +33,8 @@ export default function TeamPage() {
                   <Image
                     src={teacher.avatar}
                     alt={`${teacher.first_name}'s profile`}
+                    loading='lazy'
+                    placeholder='blur'
                     width={80}
                     height={80}
                     className='w-40 h-40 float-left bg-gray-100 object-cover object-center flex-shrink-0 rounded-xl mr-4'

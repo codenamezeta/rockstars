@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 // import Photo from '@/public/imgs/drummer-girl-1.png'
 import { IoStarSharp } from 'react-icons/io5'
 
@@ -30,6 +31,27 @@ export default function Hero({
   ctaLink = '/?scrollTo=free_trial',
   image,
 }: HeroProps): JSX.Element {
+  // Start with isXlScreen as undefined (not true or false)
+  const [isXlScreen, setIsXlScreen] = useState<boolean | undefined>(undefined)
+  // Add a state to track if we've mounted on the client
+  const [hasMounted, setHasMounted] = useState(false)
+
+  // Check viewport size on client side
+  useEffect(() => {
+    // Mark that we've mounted on client
+    setHasMounted(true)
+
+    const checkViewportSize = () => {
+      setIsXlScreen(window.innerWidth >= 1280) // 1280px is the xl breakpoint in Tailwind
+    }
+
+    // Initial check
+    checkViewportSize()
+
+    // Listen for resize events
+    window.addEventListener('resize', checkViewportSize)
+    return () => window.removeEventListener('resize', checkViewportSize)
+  }, [])
   return (
     <header className='hero xl:h-screen'>
       <div className='container flex flex-col justify-center xl:justify-end h-full xl:flex-row'>
@@ -76,15 +98,18 @@ export default function Hero({
             </Button>
           </Link>
         </div>
+
+        {/* Image section - only rendered if we're mounted on client and on XL screens */}
         <div className='self-end hidden xl:block w-2/3 overflow-hidden'>
-          {image && (
+          {image && hasMounted && isXlScreen === true && (
             <Image
               src={image.src}
               alt={image.alt}
-              width={image.width}
-              height={image.height}
+              width={image.width || 1000}
+              height={image.height || 1000}
               className={image.classNames}
-              priority
+              priority={true}
+              quality={33}
             />
           )}
         </div>

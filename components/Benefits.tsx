@@ -23,6 +23,8 @@ export default function Benefits(): JSX.Element {
             alt='rockstar kid'
             className='object-cover object-center -mb-32 md:-mb-44 lg:-mb-56'
             src={rockstar}
+            loading='lazy'
+            placeholder='blur'
           />
         </div>
         <div className='flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center text-lg'>

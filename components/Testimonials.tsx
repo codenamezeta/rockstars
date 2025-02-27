@@ -129,6 +129,8 @@ export default function Testimonials(): JSX.Element {
                 className='rounded-full object-cover object-center max-w-12 max-h-12'
                 width={80}
                 height={80}
+                loading='lazy'
+                placeholder='blur'
               />
               <span className='font-medium text-white text-lg'>
                 {testimonial.author}
