@@ -116,6 +116,7 @@ export default function Footer(): JSX.Element {
                     className='mr-2'
                     target='_blank'
                     rel='noopener noreferrer'
+                    aria-label='Instagram Page'
                   >
                     <FaInstagram />
                   </Link>
@@ -124,6 +125,7 @@ export default function Footer(): JSX.Element {
                     className='mr-2'
                     target='_blank'
                     rel='noopener noreferrer'
+                    aria-label='Facebook Page'
                   >
                     <FaFacebook />
                   </Link>
@@ -132,6 +134,7 @@ export default function Footer(): JSX.Element {
                     className='mr-2'
                     target='_blank'
                     rel='noopener noreferrer'
+                    aria-label='Yelp Reviews'
                   >
                     <FaYelp />
                   </Link>
@@ -139,6 +142,7 @@ export default function Footer(): JSX.Element {
                     href='https://g.page/r/CR_OFMy86p8OEBM/'
                     target='_blank'
                     rel='noopener noreferrer'
+                    aria-label='Google Reviews'
                   >
                     <GrGoogle />
                   </Link>
