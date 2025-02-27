@@ -112,6 +112,7 @@ export default function Testimonials(): JSX.Element {
         interval={8000}
         showStatus={false}
         swipeable={false}
+        ariaLabel='Testimonials'
       >
         {testimonials.map((testimonial, index) => (
           <div key={index} className='bg-transparent container mt-24'>

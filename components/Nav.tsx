@@ -107,7 +107,10 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
               : '/?scrollTo=free_trial'
           }
         >
-          <Button className='flex text-xs ml-4 tracking-tight md:tracking-normal md:py-6 md:text-lg md:ml-0'>
+          <Button
+            className='flex text-xs ml-4 tracking-tight md:tracking-normal md:py-6 md:text-lg md:ml-0'
+            style={{ minHeight: '24px', minWidth: '24px' }}
+          >
             <IoStarSharp className='items-baseline md:mr-2' />
             {pathname === '/charter-schools'
               ? 'Book Charter School Free Trial'
