@@ -26,6 +26,8 @@ export default function Team(): JSX.Element {
                   src='https://dummyimage.com/80x80'
                   width={80}
                   height={80}
+                  loading='lazy'
+                  placeholder='blur'
                 />
                 <div className='flex-grow'>
                   <h2 className='text-accent title-font font-medium text-lg'>

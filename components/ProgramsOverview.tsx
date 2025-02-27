@@ -25,6 +25,8 @@ export default function ProgramsOverview(): JSX.Element {
                 alt='content'
                 className='object-cover object-center h-full w-full'
                 src={privateLessonsImg}
+                loading='lazy'
+                placeholder='blur'
               />
             </div>
             <h2 className='title-font text-2xl font-medium mt-6 mb-3'>
@@ -48,6 +50,8 @@ export default function ProgramsOverview(): JSX.Element {
                 alt='content'
                 className='object-cover object-center h-full w-full'
                 src={bandClassImg}
+                loading='lazy'
+                placeholder='blur'
               />
             </div>
             <h2 className='title-font text-2xl font-medium mt-6 mb-3'>

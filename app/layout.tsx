@@ -1,4 +1,4 @@
-// - Root Layout for the entire site
+//! - Root Layout for the entire site
 import './globals.css'
 import '/zeta-theme.scss'
 import { Arvo } from 'next/font/google'
@@ -13,57 +13,59 @@ import Footer from '@/components/Footer'
 // * Brand Font for Titles
 const soleil = localFont({
   src: [
-    {
-      path: './fonts/Soleil/Soleil_Extrabold_Italic.otf',
-      weight: '800',
-      style: 'italic',
-    },
-    {
-      path: './fonts/Soleil/Soleil_Extrabold.otf',
-      weight: '800',
-      style: 'normal',
-    },
-    {
-      path: './fonts/Soleil/Soleil_Bold_Italic.otf',
-      weight: '700',
-      style: 'italic',
-    },
+    // {
+    //   path: './fonts/Soleil/Soleil_Extrabold_Italic.otf',
+    //   weight: '800',
+    //   style: 'italic',
+    // },
+    // {
+    //   path: './fonts/Soleil/Soleil_Extrabold.otf',
+    //   weight: '800',
+    //   style: 'normal',
+    // },
+    // {
+    //   path: './fonts/Soleil/Soleil_Bold_Italic.otf',
+    //   weight: '700',
+    //   style: 'italic',
+    // },
     {
       path: './fonts/Soleil/Soleil_Bold.otf',
       weight: '700',
       style: 'normal',
     },
-    {
-      path: './fonts/Soleil/Soleil_Book_Italic.otf',
-      weight: '500',
-      style: 'italic',
-    },
-    {
-      path: './fonts/Soleil/Soleil_Book.otf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: './fonts/Soleil/Soleil_Italic.otf',
-      weight: '400',
-      style: 'italic',
-    },
+    // {
+    //   path: './fonts/Soleil/Soleil_Book_Italic.otf',
+    //   weight: '500',
+    //   style: 'italic',
+    // },
+    // {
+    //   path: './fonts/Soleil/Soleil_Book.otf',
+    //   weight: '500',
+    //   style: 'normal',
+    // },
+    // {
+    //   path: './fonts/Soleil/Soleil_Italic.otf',
+    //   weight: '400',
+    //   style: 'italic',
+    // },
     {
       path: './fonts/Soleil/Soleil_Regular.otf',
       weight: '400',
       style: 'normal',
     },
-    {
-      path: './fonts/Soleil/Soleil_Light.otf',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: './fonts/Soleil/Soleil_Light_Italic.otf',
-      weight: '300',
-      style: 'italic',
-    },
+    // {
+    //   path: './fonts/Soleil/Soleil_Light.otf',
+    //   weight: '300',
+    //   style: 'normal',
+    // },
+    // {
+    //   path: './fonts/Soleil/Soleil_Light_Italic.otf',
+    //   weight: '300',
+    //   style: 'italic',
+    // },
   ],
+  display: 'swap',
+  preload: true,
 })
 
 // * Body Font
@@ -71,6 +73,7 @@ const arvo = Arvo({
   subsets: ['latin'],
   variable: '--font-arvo',
   display: 'swap',
+  preload: true,
   weight: '400',
 })
 
@@ -78,6 +81,10 @@ export const metadata: Metadata = {
   title: 'Rockstars of Tomorrow - La Verne',
   description:
     'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
+  metadataBase: new URL('https://rockstarslaverne.com'),
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: '/favicons/favicon.ico', // Path to your favicon.ico in the public directory
     apple: '/favicons/apple-touch-icon.png', // Path to your apple-touch-icon.png in the public directory
@@ -154,10 +161,10 @@ export default function RootLayout({
         {/* Google Analytics */}
         <Script
           id='gtag-script'
-          strategy='afterInteractive'
+          strategy='lazyOnload'
           src={`https://www.googletagmanager.com/gtag/js?id=G-PZ2V2Q2WL2`}
         />
-        <Script id='gtag-config-script' strategy='afterInteractive'>
+        <Script id='gtag-config-script' strategy='lazyOnload'>
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

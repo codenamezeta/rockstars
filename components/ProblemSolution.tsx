@@ -18,6 +18,8 @@ export default function Benefits(): JSX.Element {
           <Image
             alt='Band of Six Kids'
             className='object-cover object-center'
+            loading='lazy'
+            placeholder='blur'
             src={bandOfSix}
           />
         </div>

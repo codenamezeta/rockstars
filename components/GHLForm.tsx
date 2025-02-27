@@ -14,9 +14,8 @@ export default function GHLForm() {
         src='https://api.leadconnectorhq.com/widget/form/rfGd5dRFL8gB4WDPke9g'
         style={{
           width: '100%',
-          height: '100%',
+          height: '2000px',
           border: 'none',
-          borderRadius: '3px',
         }}
         id='inline-rfGd5dRFL8gB4WDPke9g'
         data-layout="{'id':'INLINE'}"
@@ -32,7 +31,32 @@ export default function GHLForm() {
         data-form-id='rfGd5dRFL8gB4WDPke9g'
         title='00 La Verne Free Trial Form'
       ></iframe>
-      <Script src='https://link.msgsndr.com/js/form_embed.js'></Script>
+      {/* <iframe
+        src='https://api.leadconnectorhq.com/widget/form/cO9z4eQW9WRqYsmTn68j'
+        style={{
+          width: '100%',
+          height: '100%',
+          border: 'none',
+          borderRadius: '3px',
+        }}
+        id='inline-cO9z4eQW9WRqYsmTn68j'
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type='alwaysShow'
+        data-trigger-value=''
+        data-activation-type='alwaysActivated'
+        data-activation-value=''
+        data-deactivation-type='neverDeactivate'
+        data-deactivation-value=''
+        data-form-name='Error Handling TEST Form'
+        data-height='432'
+        data-layout-iframe-id='inline-cO9z4eQW9WRqYsmTn68j'
+        data-form-id='cO9z4eQW9WRqYsmTn68j'
+        title='Error Handling TEST Form'
+      ></iframe> */}
+      <Script
+        src='https://link.msgsndr.com/js/form_embed.js'
+        strategy='lazyOnload'
+      ></Script>
     </section>
   )
 }
