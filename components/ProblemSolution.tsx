@@ -1,13 +1,12 @@
 import Image from 'next/image'
 import bandOfSix from '../public/imgs/Kids/band-of-six.png'
-import Link from 'next/link'
 import SectionOverview from './SectionOverview'
 
 export default function Benefits(): JSX.Element {
   return (
     <section
-      id='benefits'
-      className='py-24 px-6 md:px-auto text-white body-font bg-background'
+      id='problem_solution'
+      className='py-24 px-6 md:px-auto text-white body-font background-7'
     >
       <SectionOverview
         title='We Make Music Lessons Fun'
@@ -24,8 +23,6 @@ export default function Benefits(): JSX.Element {
           />
         </div>
         <div className='flex flex-col flex-wrap lg:py-6 lg:w-1/2 lg:pl-12 text-left text-lg'>
-          {/* <div className='flex flex-col mb-10 lg:items-start items-center'>
-            <div className='flex-grow'> */}
           <h2 className='text-accent text-2xl title-font font-medium mb-3'>
             Transform Practice Time Into a Rockstar Experience
           </h2>
@@ -55,8 +52,6 @@ export default function Benefits(): JSX.Element {
           </p>
         </div>
       </div>
-      {/* </div>
-      </div> */}
     </section>
   )
 }

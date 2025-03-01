@@ -1,9 +1,6 @@
-'use client'
 import { Button } from '@/components/ui/button'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
-// import Photo from '@/public/imgs/drummer-girl-1.png'
 import { IoStarSharp } from 'react-icons/io5'
 
 interface HeroProps {
@@ -31,29 +28,13 @@ export default function Hero({
   ctaLink = '/?scrollTo=free_trial',
   image,
 }: HeroProps): JSX.Element {
-  // Start with isXlScreen as undefined (not true or false)
-  const [isXlScreen, setIsXlScreen] = useState<boolean | undefined>(undefined)
-  // Add a state to track if we've mounted on the client
-  const [hasMounted, setHasMounted] = useState(false)
-
-  // Check viewport size on client side
-  useEffect(() => {
-    // Mark that we've mounted on client
-    setHasMounted(true)
-
-    const checkViewportSize = () => {
-      setIsXlScreen(window.innerWidth >= 1280) // 1280px is the xl breakpoint in Tailwind
-    }
-
-    // Initial check
-    checkViewportSize()
-
-    // Listen for resize events
-    window.addEventListener('resize', checkViewportSize)
-    return () => window.removeEventListener('resize', checkViewportSize)
-  }, [])
   return (
-    <header className='hero xl:h-screen'>
+    <header
+      className='hero xl:h-screen'
+      style={{
+        background: `linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url('/assets/Fold-Overlay-Wide.webp') no-repeat center center/cover, url('/assets/Vine-Background.png') repeat center center/contain`,
+      }}
+    >
       <div className='container flex flex-col justify-center xl:justify-end h-full xl:flex-row'>
         <div className='z-10 lg:self-center lg:w-2/3 lg:h-auto pb-8 pt-44'>
           {/* <h1 className='text-4xl lg:text-8xl font-bold text-primary uppercase tracking-tighter'>
@@ -100,19 +81,19 @@ export default function Hero({
         </div>
 
         {/* Image section - only rendered if we're mounted on client and on XL screens */}
-        <div className='self-end hidden xl:block w-2/3 overflow-hidden'>
-          {image && hasMounted && isXlScreen === true && (
+        {image && (
+          <div className='self-end hidden xl:block w-2/3 overflow-hidden'>
             <Image
               src={image.src}
               alt={image.alt}
-              width={image.width || 1000}
-              height={image.height || 1000}
+              width={image.width}
+              height={image.height}
               className={image.classNames}
               priority={true}
-              quality={33}
+              quality={50}
             />
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </header>
   )

@@ -3,7 +3,7 @@ import SectionOverview from './SectionOverview'
 
 export default function GHLForm() {
   return (
-    <section id='free_trial' className='themed-background-style-1 py-24'>
+    <section id='free_trial' className='background-5 py-24'>
       <div className='container'>
         <SectionOverview
           title='Free Trial Lesson'
@@ -14,7 +14,7 @@ export default function GHLForm() {
         src='https://api.leadconnectorhq.com/widget/form/rfGd5dRFL8gB4WDPke9g'
         style={{
           width: '100%',
-          height: '2000px',
+          height: '200px',
           border: 'none',
         }}
         id='inline-rfGd5dRFL8gB4WDPke9g'

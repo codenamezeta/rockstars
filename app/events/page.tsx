@@ -18,7 +18,7 @@ export default async function EventsPage() {
 
   return (
     <>
-      <Header title='Events' headerStyle={1} />
+      <Header title='Events' />
       <main className='container py-24'>
         <ul>
           {/* {events.data.map((event: any) => (

@@ -7,7 +7,7 @@ export default function Benefits(): JSX.Element {
   return (
     <section
       id='benefits'
-      className='py-24 px-6 md:px-auto text-white body-font bg-background'
+      className='py-24 px-6 md:px-auto text-white body-font background-9'
     >
       <SectionOverview
         title='Learn the Rockstar Way!'

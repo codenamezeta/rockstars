@@ -120,12 +120,12 @@ export function InstrumentsSelector() {
   )
 
   return (
-    <div className='p-6 bg-background rounded-lg mx-auto mt-12 themed-background-style-3 flex flex-col lg:flex-row gap-x-6'>
-      <ul className='flex flex-wrap sm:justify-between md:items-start cursor-pointer mb-6 lg:w-2/5'>
+    <div className='p-6 bg-background rounded-lg mx-auto mt-12 themed-background-style-3 gap-x-6'>
+      <ul className='flex gap-x-6 sm:justify-between md:items-start cursor-pointer mb-6 w-full'>
         {instrumentsData.map((instrument, index) => (
           <li
             key={index}
-            className='border border-primary p-2 flex flex-col items-center w-1/3 sm:w-1/6 lg:w-1/2'
+            className='border border-primary p-2 transition-all flex flex-col items-center hover:scale-110'
             onClick={() => setSelected(instrument.title.toLowerCase())}
           >
             <Image

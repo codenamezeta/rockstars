@@ -19,8 +19,8 @@ export default function contactPage(): JSX.Element {
     <>
       <Header
         title={'Contact Us'}
-        headerStyle={2}
         subtitle='We would love to hear from you. Feel free to visit our studio in person or give us a call.'
+        customClasses='red-background-6'
       />
       <main className='themed-background-style-3 py-24'>
         <SectionOverview title='Contact Information' />
