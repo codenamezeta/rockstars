@@ -13,7 +13,7 @@ export default function StudioPolicies(): JSX.Element {
       <Header
         title='Studio Policies'
         subtitle='We value clear communication and want to make sure our students and families understand our policies. Below, you will find details about missed lessons, cancelations, and payment procedures.'
-        headerStyle={2}
+        customClasses='red-background-3'
       />
       <main className='container pt-8 pb-24 px-4 sm:px-6 lg:px-8'>
         {/* <!-- Cancelation Policies Section --> */}
