@@ -16,7 +16,7 @@ export default function TeamPage() {
   const teachers = getAllTeachers()
   return (
     <>
-      <Header title='Meet the Team' headerStyle={3} />
+      <Header title='Meet the Team' />
       <section className='mx-auto px-4 py-24'>
         <SectionOverview
           title='Instructors'

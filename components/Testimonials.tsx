@@ -87,10 +87,7 @@ const testimonials = [
 
 export default function Testimonials(): JSX.Element {
   return (
-    <section
-      id='testimonials'
-      className='themed-background-style-2 font-arvo py-24'
-    >
+    <section id='testimonials' className='red-background-4 font-arvo py-24'>
       <SectionOverview
         title='Testimonials'
         titleColor='white'

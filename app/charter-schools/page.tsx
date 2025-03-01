@@ -18,7 +18,7 @@ export default function StudioPolicies(): JSX.Element {
       <Header
         title='Charter Schools'
         subtitle='Your Music Journey, Funded by Your Charter School'
-        headerStyle={2}
+        customClasses='red-background-1'
       />
       <main className='max-w-4xl mx-auto py-24 px-4 sm:px-6 lg:px-8'>
         <SectionOverview title='Welcome Charter School Students & Families!' />
@@ -129,7 +129,7 @@ export default function StudioPolicies(): JSX.Element {
           </ul>
         </div>
       </main>
-      <section className='py-24 themed-background-style-2'>
+      <section className='py-24 red-background-6'>
         <div className='container'>
           <SectionOverview
             title='How It Works'
@@ -183,7 +183,7 @@ export default function StudioPolicies(): JSX.Element {
       </section>
       <section
         id='charter_school_trial_form'
-        className='py-24 px-4 sm:px-6 lg:px-8 themed-background-style-1'
+        className='py-24 px-4 sm:px-6 lg:px-8 background-6'
       >
         <SectionOverview
           title='Request a Free Trial Lesson'
@@ -213,7 +213,7 @@ export default function StudioPolicies(): JSX.Element {
         ></iframe>
         <Script src='https://link.msgsndr.com/js/form_embed.js'></Script>
       </section>
-      <section className='py-24 themed-background-style-1'>
+      <section className='py-24 bg-black'>
         <div className='container'>
           <SectionOverview
             title='Charter School Pricing'
@@ -224,10 +224,7 @@ export default function StudioPolicies(): JSX.Element {
         </div>
         {/* <CharterSchoolPricingLessons /> */}
       </section>
-      <section
-        className='py-24 themed-background-style-3'
-        id='charter_policies'
-      >
+      <section className='py-24 background-3' id='charter_policies'>
         <div className='container'>
           <SectionOverview
             title='Charter School Payment Policies'
@@ -273,62 +270,59 @@ export default function StudioPolicies(): JSX.Element {
           </ul>
         </div>
       </section>
-      <section className='pt-24'>
-        <div className='container'>
-          <FAQs
-            faqs={[
-              {
-                question: 'Do you accept purchase orders (POs)?',
-                answer:
-                  'Yes! Once you let your student’s teacher know you’d like to use charter funds, they will request a PO for you. The charter school will then notify us when the PO is approved.',
-              },
-              {
-                question:
-                  'Can I combine charter funds with out-of-pocket payments?',
-                answer:
-                  'Yes, if your funds don’t fully cover the lessons you want, you can pay the difference out of pocket. Charter students are required to keep a payment card on file to cover any charges not covered by charter funds.',
-              },
-              {
-                question: 'Do I need to renew my PO each semester?',
-                answer:
-                  'This varies by school, so we recommend checking with your charter school to confirm their renewal policies. Important: It is the responsibility of charter school families to submit a valid PO before the billing cycle begins. If no PO is on file at the start of the billing cycle, the student’s stored payment card will automatically be charged for all scheduled services. Late POs: If a PO is submitted after the billing cycle has started, we can issue a refund minus a $25 service charge. Fund Tracking: We do not send reminders about expiring or depleted charter funds. Families are responsible for monitoring their available balance and submitting new POs as needed.',
-              },
-              {
-                question: 'What if my child’s schedule changes?',
-                answer:
-                  'No problem! You can adjust your lesson schedule at any time.',
-              },
-              {
-                question: 'Can I switch instructors if needed?',
-                answer:
-                  'Absolutely! We want every student to have the best learning experience possible.',
-              },
-              {
-                question:
-                  'Will my child receive the same quality of instruction as other students?',
-                answer:
-                  'Yes! Every student at Rockstars of Tomorrow – La Verne gets top-notch instruction from qualified teachers, customized to their unique learning style and goals.',
-              },
-              {
-                question:
-                  'Do your instructors have experience teaching charter students?',
-                answer:
-                  'Yes! Our teachers have passed all background and screening requirements necessary for charter school partnerships.',
-              },
-              {
-                question:
-                  'What if my funds run out before the end of the term?',
-                answer:
-                  'You can continue lessons by covering the remaining balance out of pocket. Any services not covered by your charter funds will automatically be charged to your stored payment card. You can track your charter funds balance through your monthly invoice (emailed) or by logging into your student portal.',
-              },
-              {
-                question: 'Are there any hidden costs I should be aware of?',
-                answer:
-                  'We keep things transparent! Rockstars of Tomorrow – La Verne has a clear pricing model with no hidden fees. If you have questions about what your charter school covers, we recommend checking with them directly.',
-              },
-            ]}
-          />
-        </div>
+      <section className='pt-24 background-3'>
+        <FAQs
+          faqs={[
+            {
+              question: 'Do you accept purchase orders (POs)?',
+              answer:
+                'Yes! Once you let your student’s teacher know you’d like to use charter funds, they will request a PO for you. The charter school will then notify us when the PO is approved.',
+            },
+            {
+              question:
+                'Can I combine charter funds with out-of-pocket payments?',
+              answer:
+                'Yes, if your funds don’t fully cover the lessons you want, you can pay the difference out of pocket. Charter students are required to keep a payment card on file to cover any charges not covered by charter funds.',
+            },
+            {
+              question: 'Do I need to renew my PO each semester?',
+              answer:
+                'This varies by school, so we recommend checking with your charter school to confirm their renewal policies. Important: It is the responsibility of charter school families to submit a valid PO before the billing cycle begins. If no PO is on file at the start of the billing cycle, the student’s stored payment card will automatically be charged for all scheduled services. Late POs: If a PO is submitted after the billing cycle has started, we can issue a refund minus a $25 service charge. Fund Tracking: We do not send reminders about expiring or depleted charter funds. Families are responsible for monitoring their available balance and submitting new POs as needed.',
+            },
+            {
+              question: 'What if my child’s schedule changes?',
+              answer:
+                'No problem! You can adjust your lesson schedule at any time.',
+            },
+            {
+              question: 'Can I switch instructors if needed?',
+              answer:
+                'Absolutely! We want every student to have the best learning experience possible.',
+            },
+            {
+              question:
+                'Will my child receive the same quality of instruction as other students?',
+              answer:
+                'Yes! Every student at Rockstars of Tomorrow – La Verne gets top-notch instruction from qualified teachers, customized to their unique learning style and goals.',
+            },
+            {
+              question:
+                'Do your instructors have experience teaching charter students?',
+              answer:
+                'Yes! Our teachers have passed all background and screening requirements necessary for charter school partnerships.',
+            },
+            {
+              question: 'What if my funds run out before the end of the term?',
+              answer:
+                'You can continue lessons by covering the remaining balance out of pocket. Any services not covered by your charter funds will automatically be charged to your stored payment card. You can track your charter funds balance through your monthly invoice (emailed) or by logging into your student portal.',
+            },
+            {
+              question: 'Are there any hidden costs I should be aware of?',
+              answer:
+                'We keep things transparent! Rockstars of Tomorrow – La Verne has a clear pricing model with no hidden fees. If you have questions about what your charter school covers, we recommend checking with them directly.',
+            },
+          ]}
+        />
       </section>
     </>
   )

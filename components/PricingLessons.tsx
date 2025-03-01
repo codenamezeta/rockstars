@@ -31,9 +31,15 @@ export default function PricingLessons(): JSX.Element {
             Private, one-on-one instruction at your own pace, custom-tailored
             for every individual student. You can also share your lesson time in
             private groups with your own family members and friends.
+            <br />
+            <Link
+              href={'/charter-schools'}
+              className='underline hover:text-accent font-bold'
+            >
+              Click here to view our pricing for Charter Schools.
+            </Link>
           </p>
           {/* <div className='my-4 border-b border-gray-800 w-full'></div> */}
-
           {/* <h2 className='sm:text-3xl text-2xl font-medium title-font mb-2'>
             {sectionTitle}
           </h2>
@@ -62,7 +68,6 @@ export default function PricingLessons(): JSX.Element {
               Hourly Rate
             </button>
           </div>
-
           {/* This div marks the pricing data seperated from the textual description */}
           <div className='flex flex-col md:flex-row md:gap-2'>
             <LessonPriceBox
@@ -111,12 +116,11 @@ export default function PricingLessons(): JSX.Element {
               }
             />
           </div>
-
           <Link
-            className={`${buttonVariants({ variant: 'default' })} mt-4`}
+            className={`${buttonVariants({ variant: 'default', size: 'lg' })} mt-4`}
             href='/?scrollTo=free_trial'
           >
-            Book A Free Trial
+            <span className='text-lg'>Book A Free Trial</span>
             <svg
               fill='none'
               stroke='currentColor'

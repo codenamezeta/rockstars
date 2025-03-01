@@ -57,7 +57,7 @@ export default function ProgramsPage(): JSX.Element {
       <Header
         title='Programs'
         subtitle='Your path to Rockstardom!'
-        headerStyle={2}
+        customClasses='red-background-4'
       />
 
       <section id='band_classes' className='text-foreground body-font py-24'>
@@ -79,7 +79,7 @@ export default function ProgramsPage(): JSX.Element {
 
         <Programs />
       </section>
-      <section className='bg-black' id='private_lessons'>
+      <section className='background-8' id='private_lessons'>
         <div className='container px-5 py-24 mx-auto'>
           <div id='lessons' className='text-center mb-20'>
             <SectionOverview
@@ -99,7 +99,7 @@ export default function ProgramsPage(): JSX.Element {
 
       {/* <ProgramsComparisonCards /> */}
 
-      <section className='container'>
+      <section className='py-24 background-3'>
         {/* <SectionOverview title='FAQs' /> */}
         <FAQs
           faqs={[

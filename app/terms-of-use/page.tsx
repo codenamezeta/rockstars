@@ -5,13 +5,8 @@ import Link from 'next/link'
 export default function TermsOfUsePage() {
   return (
     <>
-      <Header
-        title='Terms of Use'
-        subtitle='Please read these terms of use carefully before using our website.'
-        headerStyle={2}
-      />
-      <main className='themed-background-style-3 py-24'>
-        <div className='max-w-prose mx-auto px-4'>
+      <main className='container pt-48'>
+        <div className='max-w-prose'>
           <SectionOverview
             title='Terms of Use'
             overviewText='By accessing or using this site, you agree to be bound by these terms'
