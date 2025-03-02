@@ -72,7 +72,6 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
         <Link
           className='text-3xl font-bold leading-none w-24 md:w-40 mr-auto lg:mr-0'
           href='/'
-          as={'image'}
         >
           <div className='relative h-[60px] md:h-[80px]'>
             <Image
