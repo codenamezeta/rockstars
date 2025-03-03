@@ -8,6 +8,7 @@ import ProgramsOverview from '@/components/ProgramsOverview'
 import Testimonials from '@/components/Testimonials'
 import Contact from '@/components/Contact'
 import GHLForm from '@/components/GHLForm'
+// import bandOfSix from '../public/imgs/Kids/band-of-six.png'
 // import FreeTrialForm from '@/components/FreeTrialForm'
 
 // import type { Metadata } from 'next'

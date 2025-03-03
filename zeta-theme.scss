@@ -20,21 +20,22 @@ strong {
 
 footer {
   background:
-    linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+    linear-gradient(to bottom, #00000000 50%, #000000 100%),
+    linear-gradient(to top, #00000000 33%, #000000 100%),
     url('/assets/Vine-Background.png') no-repeat center center/cover;
-  opacity: 0.99;
-  position: relative;
+  // opacity: 0.99;
+  // position: relative;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.33);
-    z-index: -1;
-  }
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   background-color: rgba(0, 0, 0, 0.33);
+  //   z-index: -1;
+  // }
 }
 
 .themed-text-1 {
@@ -46,6 +47,14 @@ footer {
 }
 .themed-text-2 {
   color: #cca366;
+  text-shadow:
+    2px 2px 0px #000,
+    -2px -2px 0px #000,
+    -2px 2px 0px #000,
+    2px -2px 0px #000;
+}
+.themed-text-3 {
+  color: #ffffff;
   text-shadow:
     2px 2px 0px #000,
     -2px -2px 0px #000,
@@ -80,54 +89,90 @@ footer {
 //   }
 // }
 
-.themed-gradient-1 {
-  background: linear-gradient(to top, black 0%, #150900 33%, black 100%);
-}
+// .gradient-1 {
+//   background: linear-gradient(to top, black 0%, #150900 33%, black 100%);
+// }
 
-.themed-gradient-2 {
-  background: radial-gradient(circle, #210, #000);
-}
+// .gradient-2 {
+//   background: radial-gradient(circle, #210, #000);
+// }
+
+// .gradient-1 {
+//   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
+//     linear-gradient(to left, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 1));
+// }
+// .gradient-2 {
+//   background: linear-gradient(
+//       to left,
+//       rgba(0, 0, 0, 0.1) 60%,
+//       rgba(0, 0, 0, 1)
+//     ),
+//     linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 1));
+// }
+// .gradient-3 {
+//   background: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1));
+// }
+// .gradient-4 {
+//   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+// }
+// .gradient-5 {
+//   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+// }
+// .gradient-6 {
+//   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+// }
+// .gradient-7 {
+//   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+// }
+// .gradient-8 {
+//   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+// }
+// .gradient-9 {
+//   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+// }
+// .gradient-10 {
+//   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+// }
 
 .background-1 {
   background:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75)),
     url('/assets/backgrounds/background-01.webp') no-repeat top center/cover;
 }
 
 .background-2 {
   background:
-    linear-gradient(to left, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 1)),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 1)),
+    linear-gradient(to top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 1)) 100%,
+    // linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 1)),
     url('/assets/backgrounds/background-02.webp') no-repeat center center/cover;
 }
 
 .background-3 {
   background:
-    // linear-gradient(to left, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 1)),
-    radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+    linear-gradient(to top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1)),
+    radial-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
     url('/assets/backgrounds/background-03.webp') no-repeat center center/cover;
 }
 .background-4 {
   background:
-    // linear-gradient(to left, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 1)),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+    radial-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 1)),
     url('/assets/backgrounds/background-04.webp') no-repeat center center/cover;
 }
 .background-5 {
   background:
-    // linear-gradient(to left, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 1)),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+    linear-gradient(to top, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 1)),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 1)),
     url('/assets/backgrounds/background-05.webp') no-repeat center center/cover;
 }
 .background-6 {
   background:
   // linear-gradient(to left, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 1)),
-    linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+    // linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
     url('/assets/backgrounds/background-06.webp') no-repeat bottom center/cover;
 }
 .background-7 {
   background:
-    linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+    // linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
     url('/assets/Dust-Overlay.png') no-repeat center center/cover;
   opacity: 0.99;
   position: relative;
@@ -163,7 +208,7 @@ footer {
 
 .background-9 {
   background:
-    linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+    // linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
     url('/assets/scratch-texture-2.jpg') no-repeat center center/cover;
   opacity: 0.99;
   position: relative;
@@ -215,21 +260,24 @@ footer {
   }
 }
 .red-background-3 {
-  background: url('/assets/backgrounds/red-background-03.webp') no-repeat center
-    center/cover;
-  position: relative;
-  opacity: 0.99;
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1)) 100%,
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 1)) 100%,
+    url('/assets/backgrounds/red-background-03.webp') no-repeat center
+      center/cover;
+  // position: relative;
+  // opacity: 0.99;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.33);
-    z-index: -1;
-  }
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   background-color: rgba(0, 0, 0, 0.33);
+  //   z-index: -1;
+  // }
 }
 .red-background-4 {
   background: url('/assets/backgrounds/red-background-04.webp') no-repeat center
@@ -266,21 +314,14 @@ footer {
   }
 }
 .red-background-6 {
-  background: url('/assets/backgrounds/red-background-06.webp') no-repeat center
-    center/cover;
-  position: relative;
-  opacity: 0.99;
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 1)) 100%,
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1)) 100%,
+    url('/assets/Dust-Overlay.png') no-repeat center center/cover,
+    url('/assets/backgrounds/red-background-06.webp') no-repeat center
+      center/cover;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-  }
+  background-color: rgba(0, 0, 0, 1);
 }
 
 .red-background-7 {

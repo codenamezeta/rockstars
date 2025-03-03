@@ -36,7 +36,7 @@ export default function PricingLessons(): JSX.Element {
               href={'/charter-schools'}
               className='underline hover:text-accent font-bold'
             >
-              Click here to view our pricing for Charter Schools.
+              For Charter School pricing, see here.
             </Link>
           </p>
           {/* <div className='my-4 border-b border-gray-800 w-full'></div> */}

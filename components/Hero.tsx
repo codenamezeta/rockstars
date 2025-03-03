@@ -36,7 +36,7 @@ export default function Hero({
       }}
     >
       <div className='container flex flex-col justify-center xl:justify-end h-full xl:flex-row'>
-        <div className='z-10 lg:self-center lg:w-2/3 lg:h-auto pb-8 pt-44'>
+        <div className='z-10 lg:self-center lg:w-2/3 lg:h-auto pb-8 pt-44 space-y-6'>
           {/* <h1 className='text-4xl lg:text-8xl font-bold text-primary uppercase tracking-tighter'>
             {title}
           </h1> */}
@@ -70,7 +70,7 @@ export default function Hero({
           )}
           <Link href={ctaLink}>
             <Button
-              className='lg:text-xl tracking-widest uppercase text-primary-foreground py-8 mt-4'
+              className='lg:text-xl tracking-widest uppercase text-primary-foreground py-8 mt-8'
               size='full'
             >
               <IoStarSharp className='mr-2' />
@@ -82,7 +82,7 @@ export default function Hero({
 
         {/* Image section - only rendered if we're mounted on client and on XL screens */}
         {image && (
-          <div className='self-end hidden xl:block w-2/3 overflow-hidden'>
+          <div className='self-end hidden xl:block overflow-hidden'>
             <Image
               src={image.src}
               alt={image.alt}

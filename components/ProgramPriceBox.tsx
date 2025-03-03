@@ -40,8 +40,8 @@ const ProgramPriceBox: React.FC<ProgramPriceBoxProps> = ({
       <div
         className={
           highlight
-            ? 'h-full p-4 rounded-lg border-2 border-primary flex flex-col flex-wrap relative overflow-hidden'
-            : 'h-full p-4 rounded-lg border-2 border-gray-800 flex flex-col flex-wrap relative overflow-hidden'
+            ? 'bg-black h-full p-4 rounded-lg border-2 border-primary flex flex-col flex-wrap relative overflow-hidden'
+            : 'bg-black h-full p-4 rounded-lg border-2 border-gray-800 flex flex-col flex-wrap relative overflow-hidden'
         }
       >
         {highlight && (
@@ -86,7 +86,7 @@ const ProgramPriceBox: React.FC<ProgramPriceBoxProps> = ({
               <li key={index} className='flex my-2 list-none'>
                 <span className='w-4 h-4 mr-2 mt-1 inline-flex items-center justify-center bg-transparent text-accent rounded-full flex-shrink-0'>
                   <svg
-                    fill='hsla(0, 100%, 100%, 0.0)'
+                    fill='hsl(36, 50%, 60%)'
                     stroke='currentColor'
                     strokeLinecap='round'
                     strokeLinejoin='round'

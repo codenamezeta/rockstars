@@ -18,7 +18,7 @@ export default function PricingClasses(): JSX.Element {
   return (
     <section
       id='classes_pricing'
-      className='bg-background overflow-hidden py-24'
+      className='background-2 overflow-hidden py-24'
     >
       <SectionOverview
         title='Rock Band Classes'
@@ -28,9 +28,9 @@ export default function PricingClasses(): JSX.Element {
         <div className='flex mx-auto w-11/12 md:w-3/5 xl:w-1/3 h-12 xl:h-auto border-2 border-accent rounded overflow-hidden my-6'>
           <button
             className={
-              !toggled ?
-                'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
-              : 'text-xs md:text-base py-1 px-4 w-full text-gray-300 focus:outline-none transition-all duration-500'
+              !toggled
+                ? 'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
+                : 'text-xs md:text-base py-1 px-4 w-full text-gray-300 focus:outline-none transition-all duration-500'
             }
             onClick={handleToggle}
           >
@@ -38,9 +38,9 @@ export default function PricingClasses(): JSX.Element {
           </button>
           <button
             className={
-              !toggled ?
-                'text-xs md:text-base py-1 px-4 w-full text-gray-300 focus:outline-none transition-all duration-500'
-              : 'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
+              !toggled
+                ? 'text-xs md:text-base py-1 px-4 w-full text-gray-300 focus:outline-none transition-all duration-500'
+                : 'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
             }
             onClick={handleToggle}
           >
@@ -73,15 +73,15 @@ export default function PricingClasses(): JSX.Element {
             currency={'$'}
             interval={'/class'}
             additionalCostText={
-              toggled ?
-                'RockStart program is only available when combined with private lessons.'
-              : ''
+              toggled
+                ? 'The RockStart program is only available when combined with private lessons.'
+                : ''
             }
             highlight={false}
             highlightText={''} // This is the text that will be displayed in the top right corner of the box
             featuresList={[
-              '30–120 minutes/class.*',
               'Monthly class.',
+              '30–120 minutes/class.*',
               'Students perform up to four songs in-studio as a band.',
               'Open to all levels, but focused on beginners.',
               'Pre-selected songs.',
