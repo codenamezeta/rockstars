@@ -16,10 +16,10 @@ export const metadata: Metadata = {
 export default function pricing() {
   return (
     <>
-      <Header title='Pricing' customClasses='red-background-6' />
+      <Header title='Pricing' customClasses='red-background-3' />
       <PricingLessons />
       <PricingClasses />
-      <section className='py-12 background-1'>
+      <section className='py-12 background-3'>
         <FAQs
           faqs={[
             {

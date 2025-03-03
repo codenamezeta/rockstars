@@ -20,10 +20,13 @@ export default function StudioPolicies(): JSX.Element {
         subtitle='Your Music Journey, Funded by Your Charter School'
         customClasses='red-background-1'
       />
-      <main className='max-w-4xl mx-auto py-24 px-4 sm:px-6 lg:px-8'>
-        <SectionOverview title='Welcome Charter School Students & Families!' />
-        <div className='mx-auto'>
-          <p className='text-foreground text-lg leading-relaxed tracking-wider font-bold my-12'>
+      <main className='py-24 background-5'>
+        <div className='container flex flex-wrap flex-col md:flex-row justify-between space-y-6'>
+          <SectionOverview
+            title='Welcome Charter School Students & Families!'
+            customClasses='w-full'
+          />
+          <p className='md:max-w-prose text-foreground pr-6 text-xl leading-relaxed tracking-wider font-bold'>
             Rockstars of Tomorrow – La Verne is an approved vendor for multiple
             charter schools, making it easy for students to access high-quality
             music education using their charter funds. Whether you're looking
@@ -31,105 +34,97 @@ export default function StudioPolicies(): JSX.Element {
             covered—with flexible scheduling and a personalized approach that
             fits your learning style.
           </p>
-
-          <h2 className='text-4xl title-font font-bold text-accent tracking-wider'>
-            Our Charter School Partners
-          </h2>
-          <span className='text-lg'>
-            We are currently an approved vendor for the following charter
-            schools:
-          </span>
-          <ul className='list-disc list-inside font-bold text-xl tracking-wider space-y-4 mt-4'>
-            <li>
-              <Link
-                href='https://www.sageoak.education/'
-                className='inline-flex items-center gap-2 hover:underline'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Sage Oak
-                <LiaExternalLinkAltSolid />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='https://granitemountainschool.com/'
-                className='inline-flex items-center gap-2 hover:underline'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Granite Mountain
-                <LiaExternalLinkAltSolid />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='https://www.eliteacademic.com/'
-                className='inline-flex items-center gap-2 hover:underline'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Elite Academy
-                <LiaExternalLinkAltSolid />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='https://theblueridgeacademy.com/'
-                className='inline-flex items-center gap-2 hover:underline'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Blue Ridge Academy
-                <LiaExternalLinkAltSolid />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='https://skymountaincs.org/'
-                className='inline-flex items-center gap-2 hover:underline'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Sky Mountain
-                <LiaExternalLinkAltSolid />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='https://innovationslearningacademy.pusd.org/'
-                className='inline-flex items-center gap-2 hover:underline'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Innovations
-                <LiaExternalLinkAltSolid />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='https://peak-prep.org/'
-                className='inline-flex items-center gap-2 hover:underline'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Peak Prep
-                <LiaExternalLinkAltSolid />
-              </Link>
-            </li>
-            {/* <li>
-              <Link
-                href='https://ileadschools.org/'
-                className='inline-flex items-center gap-2 hover:underline'
-              >
-                iLead
-                <LiaExternalLinkAltSolid />
-              </Link>
-            </li> */}
-          </ul>
+          <div>
+            <h2 className='text-4xl title-font font-bold text-foreground tracking-wider'>
+              Our Charter School Partners
+            </h2>
+            <span className='text-lg'>
+              We are currently an approved vendor for the following charter
+              schools:
+            </span>
+            <ul className='list-disc list-inside font-bold text-xl tracking-wider space-y-4 mt-4'>
+              <li>
+                <Link
+                  href='https://www.sageoak.education/'
+                  className='inline-flex items-center gap-2 hover:underline'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Sage Oak
+                  <LiaExternalLinkAltSolid />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='https://granitemountainschool.com/'
+                  className='inline-flex items-center gap-2 hover:underline'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Granite Mountain
+                  <LiaExternalLinkAltSolid />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='https://www.eliteacademic.com/'
+                  className='inline-flex items-center gap-2 hover:underline'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Elite Academy
+                  <LiaExternalLinkAltSolid />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='https://theblueridgeacademy.com/'
+                  className='inline-flex items-center gap-2 hover:underline'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Blue Ridge Academy
+                  <LiaExternalLinkAltSolid />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='https://skymountaincs.org/'
+                  className='inline-flex items-center gap-2 hover:underline'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Sky Mountain
+                  <LiaExternalLinkAltSolid />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='https://innovationslearningacademy.pusd.org/'
+                  className='inline-flex items-center gap-2 hover:underline'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Innovations
+                  <LiaExternalLinkAltSolid />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='https://peak-prep.org/'
+                  className='inline-flex items-center gap-2 hover:underline'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Peak Prep
+                  <LiaExternalLinkAltSolid />
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </main>
-      <section className='py-24 red-background-6'>
+      <section className='py-24 red-background-4'>
         <div className='container'>
           <SectionOverview
             title='How It Works'
@@ -138,7 +133,7 @@ export default function StudioPolicies(): JSX.Element {
           />
           <div className='grid md:grid-cols-3 lg:grid-cols-3 gap-8 mb-8'>
             {/* Step 1 */}
-            <div className='bg-background p-6 rounded-lg shadow-lg'>
+            <div className='bg-background border p-6 rounded-md shadow-lg'>
               <div className='flex items-baseline space-x-4 mb-4'>
                 <span className='text-accent font-bold text-4xl'>1</span>
                 <h3 className='text-xl font-bold'>
@@ -152,7 +147,7 @@ export default function StudioPolicies(): JSX.Element {
             </div>
 
             {/* Step 2 */}
-            <div className='bg-background p-6 rounded-lg shadow-lg'>
+            <div className='bg-background border p-6 rounded-md shadow-lg'>
               <div className='flex items-baseline space-x-4 mb-4'>
                 <span className='text-accent font-bold text-4xl'>2</span>
                 <h3 className='text-xl font-bold text-primary-foreground'>
@@ -160,13 +155,13 @@ export default function StudioPolicies(): JSX.Element {
                 </h3>
               </div>
               <p className='text-foreground'>
-                Request a free trial lesson and let us know you're using charter
-                funds.
+                Use the form below to request a free trial lesson and let us
+                know which charter school you're affiliated with.
               </p>
             </div>
 
             {/* Step 3 */}
-            <div className='bg-background p-6 rounded-lg shadow-lg'>
+            <div className='bg-background border p-6 rounded-md shadow-lg'>
               <div className='flex items-baseline space-x-4 mb-4'>
                 <span className='text-accent font-bold text-4xl'>3</span>
                 <h3 className='text-xl font-bold'>
@@ -183,7 +178,7 @@ export default function StudioPolicies(): JSX.Element {
       </section>
       <section
         id='charter_school_trial_form'
-        className='py-24 px-4 sm:px-6 lg:px-8 background-6'
+        className='py-24 px-4 sm:px-6 lg:px-8 background-1'
       >
         <SectionOverview
           title='Request a Free Trial Lesson'
@@ -213,7 +208,7 @@ export default function StudioPolicies(): JSX.Element {
         ></iframe>
         <Script src='https://link.msgsndr.com/js/form_embed.js'></Script>
       </section>
-      <section className='py-24 bg-black'>
+      <section className='py-24 background-2'>
         <div className='container'>
           <SectionOverview
             title='Charter School Pricing'
@@ -224,7 +219,7 @@ export default function StudioPolicies(): JSX.Element {
         </div>
         {/* <CharterSchoolPricingLessons /> */}
       </section>
-      <section className='py-24 background-3' id='charter_policies'>
+      <section className='py-24 background-4' id='charter_policies'>
         <div className='container'>
           <SectionOverview
             title='Charter School Payment Policies'

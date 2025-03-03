@@ -21,7 +21,7 @@ export default function SectionOverview({
   separatorColor = 'primary',
   overviewTextColor = 'primary-foreground',
   customId,
-  customClasses,
+  customClasses = '',
 }: SectionOverviewTypes): JSX.Element {
   return (
     <div id={customId} className={`mb-12 ${customClasses}`}>

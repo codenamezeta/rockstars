@@ -120,12 +120,16 @@ export function InstrumentsSelector() {
   )
 
   return (
-    <div className='p-6 bg-background rounded-lg mx-auto mt-12 themed-background-style-3 gap-x-6'>
-      <ul className='flex gap-x-6 sm:justify-between md:items-start cursor-pointer mb-6 w-full'>
+    <div className='p-6 background-7 rounded-sm mx-auto'>
+      <ul className='flex md:justify-between'>
         {instrumentsData.map((instrument, index) => (
           <li
             key={index}
-            className='border border-primary p-2 transition-all flex flex-col items-center hover:scale-110'
+            className={`transition-all cursor-pointer hover:scale-105 border hover:border-white p-2 w-1/5 md:w-1/6 ${
+              selected === instrument.title.toLowerCase()
+                ? 'border-accent'
+                : 'border-primary'
+            }`}
             onClick={() => setSelected(instrument.title.toLowerCase())}
           >
             <Image
@@ -134,23 +138,29 @@ export function InstrumentsSelector() {
               loading='lazy'
               placeholder='blur'
             />
-            <span className='themed-text-2 text-accent text-xl md:text-2xl lg:text-4xl tracking-tighter font-bold block w-full text-right -mt-6 lg:-mt-12 mr-4 lg:mb-2 z-20'>
+            <span
+              className={`text-base md:text-2xl lg:text-4xl tracking-tighter font-bold block w-full text-right -mt-2 -mb-4 md:-mt-6 lg:-mt-12 mr-4 lg:mb-2 z-20 ${
+                selected === instrument.title.toLowerCase()
+                  ? 'themed-text-3'
+                  : 'themed-text-2'
+              }`}
+            >
               {instrument.title}
             </span>
           </li>
         ))}
       </ul>
-      <div className='w-full'>
-        <h3 className='text-sm text-xl md:text-3xl lg:text-4xl text-accent font-bold mb-2'>
+      <div className=''>
+        <h3 className='text-lg text-xl md:text-3xl lg:text-5xl text-accent font-bold mt-12 mb-6'>
           {activeInstrument?.heading}
         </h3>
         {activeInstrument?.description.map((paragraph, idx) => (
-          <p key={idx} className='mb-4 text-sm md:text-xl'>
+          <p key={idx} className='mb-6 text-sm md:text-xl'>
             {paragraph}
           </p>
         ))}
         <Link href='/?scrollTo=free_trial'>
-          <Button size='full'>
+          <Button size='full' className='text-xl py-8 mt-4'>
             <IoStarSharp className='items-baseline mr-2' />
             Book A Free Trial
             <IoStarSharp className='inline ml-2' />

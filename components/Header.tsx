@@ -21,7 +21,7 @@ export default function Header({
         <h1 className='text-5xl md:text-8xl font-bold mb-2 text-accent themed-text-2'>
           {title}
         </h1>
-        <span className='sm:text-2xl text-xl font-medium body-font leading-text block w-full text-white'>
+        <span className='sm:text-2xl text-xl font-medium body-font leading-text block max-w-prose text-white'>
           {subtitle}
         </span>
         {date && (

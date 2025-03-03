@@ -22,7 +22,7 @@ export default function contactPage(): JSX.Element {
         subtitle='We would love to hear from you. Feel free to visit our studio in person or give us a call.'
         customClasses='red-background-6'
       />
-      <main className='themed-background-style-3 py-24'>
+      <main className='background-4 py-24'>
         <SectionOverview title='Contact Information' />
         <MapDisplay />
       </main>
@@ -75,6 +75,24 @@ export default function contactPage(): JSX.Element {
             </Link>
           </div>
         </div>
+
+        {/* <form
+          action='https://formspree.io/f/xvovzqzr'
+          method='POST'
+          className='grid grid-cols-1 gap-4'
+        >
+          <label htmlFor='name'>Name</label>
+          <input type='text' name='name' id='name' required />
+          <label htmlFor='email'>Email</label>
+          <input type='email' name='email' id='email' required />
+          <label htmlFor='message'>Message</label>
+          <textarea name='message' id='message' required></textarea>
+          <button type='submit' className='btn-primary'>
+            Submit
+          </button>
+        </form> */}
+      </section>
+      <section id='faq' className='bg-black py-24'>
         <FAQs
           faqs={[
             {
@@ -169,22 +187,6 @@ export default function contactPage(): JSX.Element {
             },
           ]}
         />
-
-        {/* <form
-          action='https://formspree.io/f/xvovzqzr'
-          method='POST'
-          className='grid grid-cols-1 gap-4'
-        >
-          <label htmlFor='name'>Name</label>
-          <input type='text' name='name' id='name' required />
-          <label htmlFor='email'>Email</label>
-          <input type='email' name='email' id='email' required />
-          <label htmlFor='message'>Message</label>
-          <textarea name='message' id='message' required></textarea>
-          <button type='submit' className='btn-primary'>
-            Submit
-          </button>
-        </form> */}
       </section>
     </>
   )

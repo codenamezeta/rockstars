@@ -13,12 +13,12 @@ interface FAQsProps {
 //* Default single column FAQs component
 const FAQs: React.FC<FAQsProps> = ({ faqs }) => {
   return (
-    <div className='grid divide-y divide-neutral-200 max-w-lg mx-auto mt-8 pb-24'>
+    <div className='container max-w-3xl divide-y divide-neutral-400 my-8'>
       <SectionOverview
         title='FAQ'
         overviewText='Frequently Asked Questions'
         titleColor='white'
-        overviewTextColor='neutral-500'
+        overviewTextColor='muted-foreground'
       />
       {faqs.map((faq, index) => (
         <div key={index} className='py-6'>

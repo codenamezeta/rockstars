@@ -72,7 +72,6 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
         <Link
           className='text-3xl font-bold leading-none w-24 md:w-40 mr-auto lg:mr-0'
           href='/'
-          as={'image'}
         >
           <div className='relative h-[60px] md:h-[80px]'>
             <Image
@@ -118,7 +117,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
           }
         >
           <Button
-            className='flex text-xs ml-4 tracking-tight md:tracking-normal md:py-6 md:text-lg md:ml-0'
+            className='flex text-xs ml-4 tracking-tight rounded-sm md:tracking-normal md:py-6 md:text-lg md:ml-0'
             style={{ minHeight: '24px', minWidth: '24px' }}
           >
             <IoStarSharp className='items-baseline md:mr-2' />

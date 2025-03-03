@@ -60,7 +60,7 @@ export default function ProgramsPage(): JSX.Element {
         customClasses='red-background-4'
       />
 
-      <section id='band_classes' className='text-foreground body-font py-24'>
+      <section id='band_classes' className='background-5 py-24'>
         <div className='text-center container'>
           {/* <Image
             src={rockstarProImage}
@@ -79,7 +79,7 @@ export default function ProgramsPage(): JSX.Element {
 
         <Programs />
       </section>
-      <section className='background-8' id='private_lessons'>
+      <section className='background-5' id='private_lessons'>
         <div className='container px-5 py-24 mx-auto'>
           <div id='lessons' className='text-center mb-20'>
             <SectionOverview
@@ -103,6 +103,16 @@ export default function ProgramsPage(): JSX.Element {
         {/* <SectionOverview title='FAQs' /> */}
         <FAQs
           faqs={[
+            {
+              question: 'What instruments are offered in band classes?',
+              answer:
+                'We’re all about guitar, bass, drums, keys, and vocals. But if you’ve got a violin, ukulele, or sax that’s itching to join the fun, we’re game.',
+            },
+            {
+              question: 'Can I bring my own instrument?',
+              answer:
+                'Heck yeah! Unless you’re a drummer or pianist—we’ve got those rigs on lock. But if it’s portable, bring your axe, your sticks, or whatever you need to slay.',
+            },
             {
               question: 'What genres or styles of music do you teach?',
               answer:
@@ -143,11 +153,7 @@ export default function ProgramsPage(): JSX.Element {
               answer:
                 'We’re not here for boring drills and stuffy theory. Our RockStart program gets you stage-ready in six months. You’ll jam out with a real band and master four songs while feeling like an absolute legend. Private lessons + live band vibes = the ultimate rockstar experience.',
             },
-            {
-              question: 'Can I bring my own instrument?',
-              answer:
-                'Heck yeah! Unless you’re a drummer or pianist—we’ve got those rigs on lock. But if it’s portable, bring your axe, your sticks, or whatever you need to slay.',
-            },
+
             {
               question: 'What is the typical lesson structure?',
               answer:
@@ -173,11 +179,7 @@ export default function ProgramsPage(): JSX.Element {
             //   answer:
             //     'You bet. Off-peak hours only, and it’s a strict every-two-weeks deal. Some months might have two lessons, some three. Rock and roll is flexible like that.',
             // },
-            {
-              question: 'What instruments are offered in band classes?',
-              answer:
-                'We’re all about guitar, bass, drums, keys, and vocals. But if you’ve got a violin, ukulele, or sax that’s itching to join the fun, we’re game.',
-            },
+
             {
               question: 'What is the format of band classes?',
               answer:

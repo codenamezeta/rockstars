@@ -250,7 +250,12 @@ export default function FreeTrialForm({
                     <FormItem className='w-full md:w-1/2 md:pr-4 mb-4'>
                       <FormLabel>Your First Name *</FormLabel>
                       <FormControl>
-                        <Input placeholder='First name' {...field} />
+                        <Input
+                          {...field}
+                          placeholder='First name'
+                          type='text'
+                          autoComplete='given-name'
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -263,7 +268,12 @@ export default function FreeTrialForm({
                     <FormItem className='w-full md:w-1/2 mb-4'>
                       <FormLabel>Your Last Name *</FormLabel>
                       <FormControl>
-                        <Input placeholder='Last name' {...field} />
+                        <Input
+                          {...field}
+                          placeholder='Last name'
+                          type='text'
+                          autoComplete='family-name'
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -276,7 +286,12 @@ export default function FreeTrialForm({
                     <FormItem className='w-full md:w-1/2 md:pr-4 mb-4'>
                       <FormLabel>Your Email Address *</FormLabel>
                       <FormControl>
-                        <Input placeholder='youremail@address.com' {...field} />
+                        <Input
+                          {...field}
+                          type='email'
+                          autoComplete='email'
+                          placeholder='youremail@address.com'
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -289,7 +304,12 @@ export default function FreeTrialForm({
                     <FormItem className='w-full md:w-1/2 mb-4'>
                       <FormLabel>Your Phone Number *</FormLabel>
                       <FormControl>
-                        <Input placeholder='(909) 555-0123' {...field} />
+                        <Input
+                          {...field}
+                          type='tel'
+                          placeholder='(909) 555-0123'
+                          autoComplete='tel'
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -374,7 +394,11 @@ export default function FreeTrialForm({
               {Array.from({ length: studentCount }).map((_, index) => (
                 <div key={index} className='space-x-3 space-y-4'>
                   <h3 className='mb-2 text-3xl font-bold'>
-                    {studentCount > 1 ? `Student ${index + 1}'s ` : 'Student'}{' '}
+                    {form.watch(`students.${index}.firstName`)
+                      ? form.watch(`students.${index}.firstName`) + "'s "
+                      : studentCount > 1
+                        ? `Student ${index + 1}'s `
+                        : 'Student'}{' '}
                     Details
                   </h3>
                   <FormField
@@ -385,8 +409,10 @@ export default function FreeTrialForm({
                         <FormLabel>Student's First Name</FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="Student's first name"
                             {...field}
+                            placeholder="Student's first name"
+                            type='text'
+                            autoComplete='given-name'
                             value={
                               selfSignup && index === 0
                                 ? contactFirstName
@@ -413,11 +439,24 @@ export default function FreeTrialForm({
                     name={`students.${index}.lastName`}
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Student's Last Name</FormLabel>
+                        <FormLabel>
+                          {form.watch(`students.${index}.firstName`)
+                            ? form.watch(`students.${index}.firstName`)
+                            : 'Student'}
+                          {"'s "} Last Name
+                        </FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="Student's last name"
                             {...field}
+                            type='text'
+                            autoComplete='family-name'
+                            placeholder={
+                              `${
+                                form.watch(`students.${index}.firstName`)
+                                  ? form.watch(`students.${index}.firstName`)
+                                  : 'Student'
+                              }` + "'s last name"
+                            }
                             value={
                               selfSignup && index === 0
                                 ? contactLastName
