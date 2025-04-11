@@ -12,6 +12,7 @@ import {
   DollarSign,
   CheckCircle,
   Star,
+  ExternalLink,
 } from 'lucide-react'
 import Header from '@/components/Header'
 import Image from 'next/image'
@@ -24,7 +25,7 @@ export default function SummerCamp() {
         subtitle='Where future rockstars are born!'
         customClasses='red-background-1'
       />
-      <main className='background-2 pb-24'>
+      <main className='background-5 pb-24'>
         <div className='container'>
           <Image
             src='/imgs/ai/live-band/kid-band-05.jpg'
@@ -42,8 +43,9 @@ export default function SummerCamp() {
             title='JamCamp'
             subtitle='A one-week summer music adventure for kids who were born to
                 rock!'
+            customClasses='mt-24'
           />
-          <div className='flex flex-col lg:flex-row gap-6 align-top justify-between'>
+          <div className='flex flex-col lg:flex-row gap-6 align-top justify-center'>
             <div
               id='camp-description'
               className='prose prose-lg space-y-2 max-w-3xl'
@@ -77,13 +79,13 @@ export default function SummerCamp() {
             </div>
             <div
               id='camp-details'
-              className='bg-muted/30 p-6 rounded-lg self-start'
+              className='bg-muted/30 p-6 rounded-lg self-start min-w-96 mx-auto'
             >
-              <h3 className='text-xl font-bold mb-4 flex items-center'>
+              <h3 className='text-xl font-bold mb-3 flex items-center'>
                 <Music className='h-5 w-5 mr-2 text-accent' />
                 Camp Highlights
               </h3>
-              <ul className='mb-4 space-y-2'>
+              <ul className='mb-6 space-y-2'>
                 <li className='flex items-center mb-2'>
                   <CheckCircle className='h-5 w-5 mr-3 text-accent' />
                   <span>Join a real band and rehearse every day</span>
@@ -113,9 +115,9 @@ export default function SummerCamp() {
                   </span>
                 </li>
               </ul>
-              <h3 className='text-xl font-bold flex items-center mb-2'>
+              <h3 className='text-xl font-bold flex items-center mb-3'>
                 <Music className='h-5 w-5 mr-2 text-accent' />
-                Instruments You Can Choose From:
+                Instruments You Can Choose From
               </h3>
               <div className='grid grid-cols-2 md:grid-cols-3 gap-3'>
                 <div className='flex items-center'>
@@ -155,12 +157,12 @@ export default function SummerCamp() {
           {/* Details at a Glance */}
           <div className='mt-12 grid grid-cols-1 md:grid-cols-3 gap-8'>
             {/* When */}
-            <div className='bg-background p-6 rounded-lg shadow-md'>
+            <div className='bg-muted/30 p-6 rounded-lg shadow-md'>
               <div className='flex items-center mb-4'>
                 <CalendarDays className='h-6 w-6 mr-2 text-primary' />
                 <h3 className='text-xl font-bold'>When</h3>
               </div>
-              <p className='mb-4'>Choose from two exciting sessions:</p>
+              <p className='mb-4'>Choose from three exciting sessions:</p>
               <ul className='space-y-2'>
                 <li className='flex items-center'>
                   <CheckCircle className='h-4 w-4 mr-2 text-primary' />
@@ -168,14 +170,23 @@ export default function SummerCamp() {
                 </li>
                 <li className='flex items-center'>
                   <CheckCircle className='h-4 w-4 mr-2 text-primary' />
-                  <span>Session 2: August 11th – August 15th, 2025</span>
+                  <span className='text-gray-400'>
+                    Session 2: July 7th – July 11th, 2025
+                  </span>
+                  <span className='ml-2 text-red-800 font-bold text-xs'>
+                    SOLD OUT
+                  </span>
+                </li>
+                <li className='flex items-center'>
+                  <CheckCircle className='h-4 w-4 mr-2 text-primary' />
+                  <span>Session 3: August 11th – August 15th, 2025</span>
                 </li>
               </ul>
               <p className='mt-4'>Daily schedule: 10:00 AM - 2:00 PM</p>
             </div>
 
             {/* Where */}
-            <div className='bg-background p-6 rounded-lg shadow-md'>
+            <div className='bg-muted/30 p-6 rounded-lg shadow-md'>
               <div className='flex items-center mb-4'>
                 <MapPin className='h-6 w-6 mr-2 text-primary' />
                 <h3 className='text-xl font-bold'>Where</h3>
@@ -192,7 +203,7 @@ export default function SummerCamp() {
             </div>
 
             {/* Who */}
-            <div className='bg-background p-6 rounded-lg shadow-md'>
+            <div className='bg-muted/30 p-6 rounded-lg shadow-md'>
               <div className='flex items-center mb-4'>
                 <User className='h-6 w-6 mr-2 text-primary' />
                 <h3 className='text-xl font-bold'>Who</h3>
@@ -223,7 +234,7 @@ export default function SummerCamp() {
       </section> */}
 
       {/* Daily Schedule */}
-      <section className='py-16 bg-background'>
+      <section className='py-16 red-background-5'>
         <div className='container'>
           <h2 className='text-3xl font-bold text-center mb-12'>
             A Day at JamCamp
@@ -340,12 +351,13 @@ export default function SummerCamp() {
             Practice Resources
           </h2>
 
-          <div className='bg-background border border-primary/50 p-8 rounded-lg'>
+          <div className='bg-muted/30 border border-primary/50 p-8 rounded-lg'>
             <p className='mb-4'>
-              Self-practice at home will make your band jam sound even better
-              and is highly recommended. All music and lesson materials are
-              available on your student portal for convenient access anytime on
-              any device.
+              Self-practice at home will make your band sound
+              <em> even better </em>
+              and is <strong> highly recommended. </strong>All music and lesson
+              materials are available on your student portal for convenient
+              access anytime on any device.
             </p>
 
             <h3 className='text-xl font-bold mb-4'>
@@ -385,6 +397,16 @@ export default function SummerCamp() {
               portal after enrollment. No app needed—just access through any web
               browser with your email and password.
             </p>
+            <Link
+              href='https://app.mymusicstaff.com/Student/v3/en/online-resources'
+              className={`${buttonVariants({ variant: 'outline', size: 'full' })} text-lg font-bold mt-6`}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='Go to Student Portal'
+            >
+              Go To Student Portal
+              <ExternalLink className='h-4 w-4' />
+            </Link>
           </div>
         </div>
       </section>
@@ -408,7 +430,7 @@ export default function SummerCamp() {
               <span className='text-xl font-bold'>- $50</span>
             </div>
 
-            <div className='h-px bg-muted my-6'></div>
+            {/* <div className='h-px bg-muted my-6'></div> */}
 
             <div className='flex justify-between items-center mb-2'>
               <h3 className='text-xl font-bold'>Early Bird Price</h3>
@@ -420,21 +442,43 @@ export default function SummerCamp() {
               starts
             </p>
 
-            <div className='bg-muted/50 p-4 rounded-lg mb-6'>
-              <p className='text-sm'>
+            {/* <div className='h-px bg-muted my-6'></div> */}
+
+            <div className='flex justify-between items-center mb-2'>
+              <h3 className='text-xl font-bold'>Materials</h3>
+              <span className='text-xl font-bold'>$49</span>
+            </div>
+
+            <p className='text-md text-muted-foreground mb-6'>
+              A materials fee covers all sheet music, practice resources, and
+              camp supplies. Includes a voucher for
+              <strong> $50 off </strong>a future band class.
+            </p>
+
+            <div className='h-px bg-muted my-6'></div>
+
+            {/* <p className='text-center'>
+              Enroll in multiple sessions for even more fun!
+            </p> */}
+
+            <div className='bg-muted/20 p-4 rounded-lg mb-6 space-y-2 mt-6'>
+              {/* <p className='text-sm'>
                 <strong>Note:</strong> A one-time $49 materials and registration
-                fee applies per student. This covers all sheet music, digital
-                resources, and camp supplies. Includes a voucher for $50 off a
-                future band class.
+                fee applies per student. This covers all sheet music, practice
+                resources, and camp supplies. Includes a voucher for
+                <strong> $50 off </strong>a future band class.
+              </p> */}
+              <p className='text-sm'>
+                <strong>Refund Policy: </strong>
+                Full refund 30+ days before camp start date. Partial refund
+                (75%) 15–30 days before camp start date. No refund if fewer than
+                15 days before camp start date.
               </p>
             </div>
 
-            <p className='text-center'>
-              You can enroll in both sessions for twice the fun!
-            </p>
             <Link
               href='/summer-camp?scrollTo=camp_registration'
-              className={`${buttonVariants({ variant: 'default', size: 'full' })} text-lg font-bold mt-6`}
+              className={`${buttonVariants({ variant: 'default', size: 'full' })} text-lg font-bold`}
             >
               Register Now
             </Link>

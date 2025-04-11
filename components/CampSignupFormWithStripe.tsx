@@ -44,19 +44,23 @@ const campSessions = [
     dates: '2025-06-16',
     price: 379,
     materialsFee: 49,
+    soldOut: false,
   },
-  // {
-  //   id: 'session2',
-  //   label: 'Session 2: July 7th – July 11th',
-  //   dates: '2025-07-07',
-  //   price: 349,
-  // },
+  {
+    id: 'session2',
+    label: 'Session 2: July 7th – July 11th',
+    dates: '2025-07-07',
+    price: 379,
+    materialsFee: 49,
+    soldOut: true,
+  },
   {
     id: 'session3',
     label: 'Session 3: August 11th – August 15th',
     dates: '2025-08-11',
     price: 379,
     materialsFee: 49,
+    soldOut: false,
   },
 ] as const
 
@@ -141,7 +145,7 @@ const instruments = [
   { id: 'Piano / Keyboard', label: ' Piano / Keyboard' },
   { id: 'Lead Vocals', label: ' Vocals' },
   { id: 'Backup Vocals', label: ' Backing Vocals' },
-  { id: 'Other', label: ' Unsure' },
+  { id: 'Unsure', label: ' Unsure' },
   // { id: 'Songwriting', label: ' Songwriting' },
   // { id: 'Audio', label: ' Audio Recording & Production' },
 ] as const
@@ -806,6 +810,7 @@ export default function CampSignupFormWithStripe({
                                       checked={field.value?.includes(
                                         session.id
                                       )}
+                                      disabled={session.soldOut}
                                       onCheckedChange={(checked) => {
                                         return checked
                                           ? field.onChange([
@@ -821,7 +826,18 @@ export default function CampSignupFormWithStripe({
                                     />
                                   </FormControl>
                                   <FormLabel className='text-lg'>
-                                    {session.label} - ${session.price}
+                                    <span
+                                      className={`font-bold tracking-wider ${session.soldOut ? 'text-gray-400' : ''}`}
+                                    >
+                                      {session.label}
+                                    </span>{' '}
+                                    {session.soldOut ? (
+                                      <span className='ml-2 text-red-500 font-bold text-sm'>
+                                        SOLD OUT
+                                      </span>
+                                    ) : (
+                                      `- $${session.price}`
+                                    )}
                                   </FormLabel>
                                 </FormItem>
                               )}
