@@ -9,6 +9,7 @@ const RockStart = {
   tagline: 'The perfect program for young beginners who are just starting out.',
   programType: 'Band class',
   slug: 'rockstart',
+  image: '/imgs/ai/imagen/band-11.jpg',
   description:
     'RockStart gets you ready to rock in just six months! Our beginner band program is designed to have students performing up to four pre-selected hit songs with confidence. Includes printed and digital sheet music, and custom audio tracks accessible through our student portal, learning and practicing is fun and effortless. Students perfect each song with their private instructor, rehearse and practice at home, and then meet monthly for a live band jam in our studio’s Live Room. After mastering all four songs, graduates are ready to level up to our JamCore band class.',
   details: {
@@ -67,6 +68,7 @@ const JamCore = {
   tagline: 'Experience the excitement of playing live with other musicians!',
   programType: 'Band class',
   slug: 'jamcore',
+  image: '/imgs/ai/imagen/band-15.jpg',
   description:
     "Designed for intermediate level students who are ready to take the stage. JamCore is your chance to experience the excitement of playing live with other musicians! In this program, you'll collaborate with classmates of similar skill levels to learn assigned songs chosen by your instructor. Each week, you'll rehearse these songs in a structured environment, focusing on developing your musicianship and teamwork. The program culminates in a live performance at a local venue, giving you the ultimate payoff – the thrill of rocking out in front of a real audience!",
   features: [
@@ -122,6 +124,7 @@ const BandCore = {
     'Join an elite group of musicians collaborating, performing, and evolving together.',
   programType: 'Band class',
   slug: 'bandcore',
+  image: '/imgs/ai/imagen/band-31.jpg',
   description:
     "Are you an experienced musician looking to push your boundaries and develop your own unique sound? BandCore is designed to take your musical journey to the next level! This program is all about collaboration and creative expression. You'll get to form your own band with classmates who share your musical tastes, allowing you to choose songs you're passionate about (with guidance from your instructor). BandCore has extended session lengths compared to JamCore, giving you more time to conquer more challenging material, hone your skills as a band, and truly own your sound. The BandCore program culminates in not just one, but two electrifying live shows at local venues, putting your hard work on display for the world to see!",
   features: [
@@ -175,6 +178,7 @@ const RockstarPro = {
   tagline: 'The ultimate program for serious musicians.',
   programType: 'Band class',
   slug: 'rockstar-pro',
+  image: '/imgs/ai/imagen/band-44.jpg',
   description:
     'Rockstar Pro is the ultimate one-of-a-kind band program fully customizable just for you and your chosen band mates. Whether you’re a seasoned performer or just starting out, this program is designed to help you take your music to the next level. You’ll get to perform at local venues, festivals, and more, and you’ll have the opportunity to build your ideal setlist and work on any music you want, including originals. With personalized instruction and guidance from an instructor of your choice, you’ll have the freedom to explore your musical interests and develop your own unique sound. Rockstar Pro is an ongoing program, so you can continue for as long as you and your bandmates wish, with discounts on recording time, photoshoots, and more.',
   features: [

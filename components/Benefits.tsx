@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import rockstar from '../public/imgs/Kids/Teen Girl with Guitar.png'
-import Link from 'next/link'
 import SectionOverview from './SectionOverview'
+// import Link from 'next/link'
 
 export default function Benefits(): JSX.Element {
   return (
@@ -18,7 +18,7 @@ export default function Benefits(): JSX.Element {
             sets us apart:"
       />
       <div className='container px-5 mx-auto flex flex-wrap '>
-        <div className='lg:w-1/2 w-full'>
+        <div className='lg:w-1/2 w-full sm:px-12 md:px-24 lg:px-0'>
           <Image
             alt='rockstar kid'
             className='object-cover object-center -mb-32 md:-mb-44 lg:-mb-56'

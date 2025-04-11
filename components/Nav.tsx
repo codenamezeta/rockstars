@@ -86,7 +86,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
           </div>
         </Link>
 
-        <ul className='hidden list-none lg:flex lg:mx-auto lg:flex lg:items-center lg:justify-between'>
+        <ul className='hidden list-none lg:flex lg:mx-auto lg:items-center lg:justify-between'>
           {pages.map((page) => (
             <li key={page.path} className=''>
               <Link
@@ -113,7 +113,9 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
           href={
             pathname === '/charter-schools'
               ? '/charter-schools?scrollTo=charter_school_trial_form'
-              : '/?scrollTo=free_trial'
+              : pathname === '/summer-camp'
+                ? '/summer-camp?scrollTo=camp_registration'
+                : '/?scrollTo=free_trial'
           }
         >
           <Button
@@ -123,7 +125,9 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
             <IoStarSharp className='items-baseline md:mr-2' />
             {pathname === '/charter-schools'
               ? 'Book Charter School Free Trial'
-              : 'Book A Free Trial'}
+              : pathname === '/summer-camp'
+                ? 'Register for Camp'
+                : 'Book A Free Trial'}
             <IoStarSharp className='inline md:ml-2' />
           </Button>
         </Link>
@@ -220,14 +224,18 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
                 href={
                   pathname === '/charter-schools'
                     ? '/charter-schools?scrollTo=charter_school_trial_form'
-                    : '/?scrollTo=free_trial'
+                    : pathname === '/summer-camp'
+                      ? '/summer-camp?scrollTo=camp_registration'
+                      : '/?scrollTo=free_trial'
                 }
               >
                 <Button size='full'>
                   <IoStarSharp className='items-baseline mr-2' />
                   {pathname === '/charter-schools'
                     ? 'Book Charter School Free Trial'
-                    : 'Book A Free Trial'}
+                    : pathname === '/summer-camp'
+                      ? 'Register for Camp'
+                      : 'Book A Free Trial'}
                   <IoStarSharp className='inline ml-2' />
                 </Button>
               </Link>

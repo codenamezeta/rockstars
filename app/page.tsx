@@ -23,9 +23,9 @@ export default function Home() {
   return (
     <>
       <Hero
-        title='The Ultimate Music Experience for Your Child'
-        subtitle='Discover a music school that nurtures talent and builds life skills through the power of live performance'
-        text='At Rockstars of Tomorrow, we believe every child deserves a moment in the spotlight. That’s why we offer more than lessons—we provide an experience that transforms their love of music into confidence, creativity, and a lifelong sense of achievement.'
+        title='Learn to Play & Rock the Stage!'
+        subtitle='Discover a music school that nurtures talent and builds life skills through the power of live performance.'
+        text='At Rockstars of Tomorrow, we believe everyone deserves their moment in the spotlight. That’s why we offer more than lessons—we provide an experience that transforms your love of music into confidence, creativity, and a lifelong sense of achievement.'
         list={[
           'Play the music you love with instructors who get it',
           'Develop stage presence and confidence with live performances',
