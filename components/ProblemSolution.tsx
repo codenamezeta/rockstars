@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import bandOfSix from '../public/imgs/Kids/band-of-six.png'
+// import bandOfSix from '../public/imgs/Kids/band-of-six.png'
+import bandOfSix from '../public/imgs/ai/imagen/band-20.jpg'
 import SectionOverview from './SectionOverview'
 
 export default function Benefits(): JSX.Element {

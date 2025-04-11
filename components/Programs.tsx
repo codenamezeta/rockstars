@@ -1,7 +1,8 @@
 //- Programs Component
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+// import Link from 'next/link'
+// import { Button } from '@/components/ui/button'
 import { getAllBandClasses } from '@/lib/programs'
+import Image from 'next/image'
 
 export default function Programs(): JSX.Element {
   const bandClasses = getAllBandClasses()
@@ -13,6 +14,14 @@ export default function Programs(): JSX.Element {
           id={bandClass.programName}
           className='program-card flex flex-col p-8 rounded-lg border-2 border-primary'
         >
+          <div className='w-full relative mb-4'>
+            <Image
+              src={bandClass.image}
+              alt={bandClass.programName}
+              width={1080}
+              height={720}
+            />
+          </div>
           <h2 className='text-accent text-3xl md:text-5xl title-font font-bold themed-text-2'>
             {bandClass.programName}
           </h2>

@@ -12,6 +12,50 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/summercamp',
+        destination: '/summer-camp',
+        permanent: true,
+      },
+      {
+        source: '/summer-camps',
+        destination: '/summer-camp',
+        permanent: true,
+      },
+      {
+        source: '/camp',
+        destination: '/summer-camp',
+        permanent: true,
+      },
+      {
+        source: '/jamcamp',
+        destination: '/summer-camp',
+        permanent: true,
+      },
+      {
+        source: '/jam-camp',
+        destination: '/summer-camp',
+        permanent: true,
+      },
+      {
+        source: '/charter-school',
+        destination: '/charter-schools',
+        permanent: true,
+      },
+      {
+        source: '/charterschool',
+        destination: '/charter-schools',
+        permanent: true,
+      },
+      {
+        source: '/charterschools',
+        destination: '/charter-schools',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig

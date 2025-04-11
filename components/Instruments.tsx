@@ -5,11 +5,16 @@ import { IoStarSharp } from 'react-icons/io5'
 import Link from 'next/link'
 import Image from 'next/image'
 //- AI Music Marketing Images
-import Guitarist from '@/public/imgs/AI Music Marketing/Electric Guitarists/ElectricGuitar1.png'
-import Bassist from '@/public/imgs/AI Music Marketing/Bassists/Bass1.png'
-import Drummer from '@/public/imgs/AI Music Marketing/Drummers/Drummer1.png'
-import Pianist from '@/public/imgs/AI Music Marketing/Pianists/Piano3.png'
-import Vocalist from '@/public/imgs/AI Music Marketing/Vocalists/Vocalist1.png'
+// import Guitarist from '@/public/imgs/ai/electric-guitarists/ElectricGuitar1.png'
+// import Bassist from '@/public/imgs/ai/bassists/Bass1.png'
+// import Drummer from '@/public/imgs/ai/drummers/Drummer1.png'
+// import Pianist from '@/public/imgs/ai/pianists/Piano3.png'
+// import Vocalist from '@/public/imgs/ai/vocalists/Vocalist1.png'
+import Guitarist from '@/public/imgs/ai/imagen/guitarist-04.jpg'
+import Bassist from '@/public/imgs/ai/imagen/bassist-02.jpg'
+import Drummer from '@/public/imgs/ai/imagen/drummer-02.jpg'
+import Pianist from '@/public/imgs/ai/imagen/pianist-02.jpg'
+import Vocalist from '@/public/imgs/ai/imagen/singer-02.jpg'
 
 const instrumentsData = [
   {
