@@ -144,6 +144,7 @@ export default function RootLayout({
               { name: 'Home', path: '/' },
               { name: 'Programs', path: '/programs' },
               { name: 'Pricing', path: '/pricing' },
+              { name: 'Summer Camp', path: '/summer-camp' },
               { name: 'Contact', path: '/contact' },
               // {
               //   name: 'More', // This will be the dropdown trigger
