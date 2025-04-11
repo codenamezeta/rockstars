@@ -295,6 +295,18 @@ export default function SummerCamp() {
                     <li className='text-sm italic'>
                       (Students should bring their own lunch)
                     </li>
+                    <li>
+                      <Link
+                        href='https://www.google.com/maps/search/restaurants+near+2855+Foothill+Boulevard,+La+Verne,+CA+91750'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='hover:text-accent underline flex items-center gap-2'
+                        aria-label='Search Restaurants Nearby'
+                      >
+                        View Restaurants Nearby
+                        <ExternalLink className='h-4 w-4' />
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
