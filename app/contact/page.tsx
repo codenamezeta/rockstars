@@ -126,9 +126,25 @@ export default function contactPage(): JSX.Element {
                 'Absolutely. By default, we hit your card on the 1st of the month to cover all your upcoming lessons, but hey, we’re flexible. Want a different date? No problem. Pick a date that fits your rhythm, and we’ll make sure your payment covers all the lessons between then and your next billing cycle. Easy, breezy, rockstar style.',
             },
             {
-              question: 'Do you offer summer camps or workshops?',
-              answer:
-                'Oh, you’re gonna love this. Jam Camp is a week-long shred fest in July and August. You’ll play a new song every day with a live band, then blow minds at the finale concert. We also run killer workshops on everything from gear care to audio production.',
+              question: 'Do you offer summer camps?',
+              answer: (
+                <>
+                  <p>
+                    Yes! Jam Camp is a week-long shred fest in June, July, and
+                    August. You’ll play a new song every day with a live band,
+                    then blow minds at the finale concert. We also run killer
+                    workshops on everything from gear care to audio production.
+                  </p>
+                  <Link
+                    href='/summer-camp'
+                    className={`${buttonVariants({ variant: 'outline', size: 'sm' })} mt-4`}
+                    target='_blank'
+                    rel='noreferrer noopener'
+                  >
+                    Learn More about Summer Camp
+                  </Link>
+                </>
+              ),
             },
             {
               question: 'What methods or curriculum do you use?',
@@ -157,8 +173,27 @@ export default function contactPage(): JSX.Element {
             },
             {
               question: 'What if I need to reschedule a lesson?',
-              answer:
-                'No sweat. Life happens—just give us 24 hours’ notice, and we’ll reschedule or line up a substitute instructor to keep your groove alive.',
+              answer: (
+                <>
+                  <p>
+                    No sweat. Life happens—just give us 24 hours’ notice, and
+                    we’ll reschedule or line up a substitute instructor to keep
+                    your groove alive.
+                  </p>
+                  <p>
+                    You can also manage and view your lesson schedule from your
+                    student portal.
+                  </p>
+                  <Link
+                    href='https://app.mymusicstaff.com/'
+                    className={`${buttonVariants({ variant: 'outline', size: 'sm' })} mt-4`}
+                    target='_blank'
+                    rel='noreferrer noopener'
+                  >
+                    Access Student Portal <FiExternalLink />
+                  </Link>
+                </>
+              ),
             },
             // {
             //   question: 'Can I get an every-other-week plan?',
@@ -172,13 +207,52 @@ export default function contactPage(): JSX.Element {
             },
             {
               question: 'What is the format of band classes?',
-              answer:
-                'RockStart: Beginner jams once a month—perfect for new rockers. JamCore: Intermediate bands meet weekly and hit the stage every 8 weeks. BandCore: Advanced rock warriors rehearse weekly and crush two epic gigs every 12 weeks. RockStar Pro: Go custom—your schedule, your band, your dream.',
+              answer: (
+                <ul className='space-y-2'>
+                  <li>
+                    <strong>RockStart:</strong> Beginner jams once a
+                    month—perfect for new rockers.
+                  </li>
+                  <li>
+                    <strong>JamCore:</strong> Intermediate bands meet weekly and
+                    hit the stage every 8 weeks.
+                  </li>
+                  <li>
+                    <strong>BandCore:</strong> Advanced rock warriors rehearse
+                    weekly and crush two epic gigs every 12 weeks.
+                  </li>
+                  <li>
+                    <strong>RockStar Pro:</strong> Go custom. Your schedule,
+                    your band, your dream.
+                  </li>
+                </ul>
+              ),
             },
             {
               question: 'What is the performance schedule for band classes?',
-              answer:
-                'RockStart: Studio shows every month—your first step to stardom. JamCore: Local venue gigs every 8 weeks. BandCore: Two blowout venue shows every 12 weeks. RockStar Pro: Whenever, wherever—this is your stage to own.',
+              answer: (
+                <ul className='space-y-2'>
+                  <li>
+                    <strong>RockStart:</strong> Studio shows every month. Your
+                    first step to stardom.
+                  </li>
+                  <li>
+                    <strong>JamCore:</strong> Local venue gigs every 8 weeks.
+                  </li>
+                  <li>
+                    <strong>BandCore:</strong> Two blowout venue shows every 12
+                    weeks.
+                  </li>
+                  <li>
+                    <strong>RockStar Pro:</strong> Whenever, wherever. This is
+                    your stage to own.
+                  </li>
+                  <li>
+                    <strong>Private Lessons:</strong> Monthly Open Mic Night
+                    opprotunities.
+                  </li>
+                </ul>
+              ),
             },
             {
               question: 'Do you offer ensemble coaching?',

@@ -4,6 +4,9 @@ import FAQs from '@/components/FAQs'
 import Header from '@/components/Header'
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
+import { buttonVariants } from '@/components/ui/button'
+import { FiExternalLink } from 'react-icons/fi'
 
 export const metadata: Metadata = {
   title: 'Pricing',
@@ -49,8 +52,27 @@ export default function pricing() {
             },
             {
               question: 'What if I need to reschedule a lesson?',
-              answer:
-                'No sweat. Life happens—just give us 24 hours’ notice, and we’ll reschedule or line up a substitute instructor to keep your groove alive.',
+              answer: (
+                <>
+                  <p>
+                    No sweat. Life happens—just give us 24 hours’ notice, and
+                    we’ll reschedule or line up a substitute instructor to keep
+                    your groove alive.
+                  </p>
+                  <p>
+                    You can also manage and view your lesson schedule from your
+                    student portal.
+                  </p>
+                  <Link
+                    href='https://app.mymusicstaff.com/'
+                    className={`${buttonVariants({ variant: 'outline', size: 'sm' })} mt-4`}
+                    target='_blank'
+                    rel='noreferrer noopener'
+                  >
+                    Access Student Portal <FiExternalLink />
+                  </Link>
+                </>
+              ),
             },
           ]}
         />

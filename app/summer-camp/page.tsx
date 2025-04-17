@@ -14,20 +14,35 @@ import {
   Star,
   ExternalLink,
 } from 'lucide-react'
-import Header from '@/components/Header'
-import Image from 'next/image'
+// import Header from '@/components/Header'
+// import Image from 'next/image'
+import FAQs from '@/components/FAQs'
+import { HeroMedium } from '@/components/Hero'
 
 export default function SummerCamp() {
   return (
     <>
-      <Header
+      <HeroMedium
+        title={'Rock & Roll Summer Camp'}
+        eyebrow='Where future Rockstars are born!'
+        image={{
+          src: '/imgs/ai/live-band/kid-band-05.jpg',
+          alt: 'Sumer Camp',
+          width: 1600,
+          height: 1000,
+        }}
+        text='JamCamp is a one-of-a-kind, high-energy week-long music camp where kids ages 7 and up join real bands, learn real songs, and put on a live performance by the end of the week.'
+        ctaText='Register Now'
+        ctaLink='/summer-camp?scrollTo=camp_registration'
+      />
+      {/* <Header
         title='Rock & Roll Summer Camp'
         subtitle='Where future rockstars are born!'
         customClasses='red-background-1'
-      />
+      /> */}
       <main className='background-5 pb-24'>
         <div className='container'>
-          <Image
+          {/* <Image
             src='/imgs/ai/live-band/kid-band-05.jpg'
             alt='JamCamp Band'
             width={1600}
@@ -38,7 +53,7 @@ export default function SummerCamp() {
             placeholder='blur'
             blurDataURL='/imgs/ai/live-band/kid-band-05.jpg'
             quality={100}
-          />
+          /> */}
           <SectionOverview
             title='JamCamp'
             subtitle='A one-week summer music adventure for kids who were born to
@@ -296,16 +311,43 @@ export default function SummerCamp() {
                       (Students should bring their own lunch)
                     </li>
                     <li>
-                      <Link
-                        href='https://www.google.com/maps/search/restaurants+near+2855+Foothill+Boulevard,+La+Verne,+CA+91750'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='hover:text-accent underline flex items-center gap-2'
-                        aria-label='Search Restaurants Nearby'
-                      >
-                        View Restaurants Nearby
-                        <ExternalLink className='h-4 w-4' />
-                      </Link>
+                      There are three killer food spots just steps from our
+                      door:
+                      <ul>
+                        <li>
+                          <Link
+                            href='https://www.antiguabread.com/'
+                            target='_blank'
+                            className='text-accent underline hover:text-white'
+                          >
+                            Antigua Bread
+                          </Link>{' '}
+                          (right next door!) serving up everything from
+                          sandwiches to sweet treats.
+                        </li>
+                        <li>
+                          <Link
+                            href='https://locations.wabagrill.com/ll/us/ca/la-verne/2855-foothill-blvd/'
+                            target='_blank'
+                            className='text-accent underline hover:text-white'
+                          >
+                            Waba Grill
+                          </Link>{' '}
+                          (2 doors down) for healthy bowls and protein-packed
+                          fuel.
+                        </li>
+                        <li>
+                          <Link
+                            href='https://www.kebabgmediterranean.com/'
+                            target='_blank'
+                            className='text-accent underline hover:text-white'
+                          >
+                            Kebab G Stop
+                          </Link>{' '}
+                          (3 doors down) with mouthwatering Mediterranean
+                          greatness.
+                        </li>
+                      </ul>
                     </li>
                   </ul>
                 </div>
@@ -496,6 +538,160 @@ export default function SummerCamp() {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* FAQs */}
+      <section className='py-16 background-5'>
+        <FAQs
+          faqs={[
+            {
+              question: 'What are the camp hours?',
+              answer: (
+                <p>
+                  We rock Monday through Friday from 10am to 2pm. Got an early
+                  bird or a late riser? Hit us up—early drop-off and late
+                  pick-up options may be available to keep the chaos under
+                  control.
+                </p>
+              ),
+            },
+            {
+              question: 'Do we need to bring our own instruments?',
+              answer: (
+                <p>
+                  Got a guitar you sleep with at night? Bring it. Don’t have one
+                  yet? No sweat—we’ve got gear for days. Guitars, basses, drums,
+                  keys, mics—we’ll get you plugged in.
+                </p>
+              ),
+            },
+            {
+              question: 'What ages can attend JamCamp?',
+              answer: (
+                <p>
+                  If you’re 7 or older and can hold a drumstick (or even just
+                  strike a power pose), you’re in. We welcome future headliners
+                  of all ages and skill levels.
+                </p>
+              ),
+            },
+            {
+              question: 'Is this camp beginner-friendly?',
+              answer: (
+                <p>
+                  Heck yes. Whether your kid’s been strumming for years or just
+                  learned which way to hold a guitar, we’ve got ‘em covered.
+                  Everyone starts somewhere—and we make “somewhere” sound epic.
+                </p>
+              ),
+            },
+            {
+              question: 'Is lunch provided?',
+              answer: (
+                <>
+                  <p>
+                    We don’t provide lunch—but you won’t go hungry. There are
+                    three killer food spots just steps from our door:
+                  </p>
+                  <ul className='list-disc list-inside mb-4'>
+                    <li>
+                      <Link
+                        href='https://www.antiguabread.com/'
+                        target='_blank'
+                        className='text-accent underline hover:text-white'
+                      >
+                        Antigua Bread
+                      </Link>{' '}
+                      (right next door!) serving up everything from sandwiches
+                      to sweet treats.
+                    </li>
+                    <li>
+                      <Link
+                        href='https://locations.wabagrill.com/ll/us/ca/la-verne/2855-foothill-blvd/'
+                        target='_blank'
+                        className='text-accent underline hover:text-white'
+                      >
+                        Waba Grill
+                      </Link>{' '}
+                      (2 doors down) for healthy bowls and protein-packed fuel.
+                    </li>
+                    <li>
+                      <Link
+                        href='https://www.kebabgmediterranean.com/'
+                        target='_blank'
+                        className='text-accent underline hover:text-white'
+                      >
+                        Kebab G Stop
+                      </Link>{' '}
+                      (3 doors down) with mouthwatering Mediterranean greatness.
+                    </li>
+                  </ul>
+                  <p>
+                    Bring your own lunch or let your little rocker grab
+                    something delicious between jams. Either way, they’ll be
+                    fueled and ready to shred.
+                  </p>
+                </>
+              ),
+            },
+            {
+              question: 'What’s the instructor situation?',
+              answer:
+                'Small bands, big support. We keep the ratio tight—about 1 coach for every 5-6 campers—so your rockstar-in-training actually gets seen, heard, and leveled up.',
+            },
+            {
+              question: 'What should my kid bring?',
+              answer: (
+                <ul className='list-disc list-inside'>
+                  <li>Their instrument (if they’ve got one)</li>
+                  <li>
+                    A water bottle (hydrated musicians are better musicians)
+                  </li>
+                  <li>Lunch/snacks</li>
+                  <li>A killer attitude and readiness to rock </li>
+                </ul>
+              ),
+            },
+            {
+              question: 'Is there a concert at the end?',
+              answer: (
+                <p>
+                  Absolutely. The week ends with a live RockStar Showcase.
+                  Lights. Crowd. Applause. Maybe even a fake backstage pass.
+                  Parents, bring your cameras—and your tissues.
+                </p>
+              ),
+            },
+            {
+              question: 'Can they try more than one instrument?',
+              answer: (
+                <p>
+                  Heck yeah. JamCamp is a musical playground. Try guitar Monday,
+                  jump on drums Wednesday, belt it out on vocals Friday. Why
+                  pick one when you can taste the whole buffet?
+                </p>
+              ),
+            },
+            {
+              question: 'How do I sign up?',
+              answer: (
+                <>
+                  <p>
+                    Smash that Register Now button or contact us directly if
+                    you’ve got questions. Just don’t wait—our camps fill up
+                    faster than a Taylor Swift presale.
+                  </p>
+                  <Link
+                    href='/summer-camp?scrollTo=camp_registration'
+                    className={`${buttonVariants({ variant: 'default', size: 'full' })} mt-4 text-lg font-bold`}
+                  >
+                    Register Now
+                  </Link>
+                </>
+              ),
+            },
+          ]}
+        />
       </section>
 
       {/* Location Map */}
