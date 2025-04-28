@@ -19,7 +19,364 @@ import {
 import FAQs from '@/components/FAQs'
 import { HeroMedium } from '@/components/Hero'
 
+import type { Metadata } from 'next'
+import Script from 'next/script'
+
+//- Define constants for reusable info - makes updates easier.
+const campName = "Rock N' Roll Summer Camp"
+const businessName = 'Rockstars of Tomorrow'
+const city = 'La Verne'
+const state = 'CA'
+const latitude = '34.10969514585363'
+const longitude = '-117.7531820340577'
+const targetAudience = 'Kids Ages 7+'
+const mainKeyword = 'Kids Music Summer Camp' // Or Rock Band Summer Camp, etc. - choose your primary target
+const pageUrl = 'https://rockstarslaverne.com/summer-camp' // Ensure this is the correct, final URL
+const imageUrl = '/imgs/ai/live-band/kid-band-05.jpg' // Your OG image
+const imageAlt =
+  'Young kids playing guitar and drums in a band at Rockstars of Tomorrow La Verne summer camp' // More descriptive alt text
+
+export const metadata: Metadata = {
+  // 1. Title Tag (Crucial for SEO & User Click-Through)
+  title: `${mainKeyword} in ${city}, ${state} | ${businessName}`, // Prioritize keywords, location, and brand. ~60 chars ideal.
+  // Example: "Kids Music Summer Camp in La Verne, CA | Rockstars of Tomorrow"
+
+  // 2. Meta Description (Appears in Search Results - Sell the Click!)
+  description: `Unleash your child's inner rockstar! ${businessName}'s ${campName} (${targetAudience}) offers a week of learning instruments, jamming in bands & performing live in ${city}. Limited spots - Register now!`, // Include keywords, location, age, benefits, and a strong CTA. ~155-160 chars ideal.
+
+  // 3. Keywords (Less impact on Google ranking now, but still useful)
+  keywords: [
+    'summer camp',
+    'kids summer camp',
+    'music camp',
+    'rock band camp',
+    'learn guitar',
+    'learn drums',
+    'learn vocals',
+    'kids activities',
+    'summer activities',
+    city, // La Verne
+    `${city} summer camp`,
+    'Rockstars of Tomorrow',
+    'JamCamp', // Keep your internal name if relevant
+    'music lessons',
+    'performing arts camp',
+  ],
+
+  // 4. Canonical URL (Tells search engines the definitive URL for this content)
+  alternates: {
+    canonical: pageUrl,
+  },
+
+  // 5. Robots Meta Tag (Instructions for search engine crawlers)
+  robots: {
+    index: true, // Allow search engines to index this page
+    follow: true, // Allow search engines to follow links on this page
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large', // Encourage large image previews in search results
+      'max-snippet': -1, // Allow Google to show a longer snippet if useful
+      'max-video-preview': -1, // Allow video previews if you add video
+    },
+  },
+
+  // 6. Open Graph Metadata (For Facebook, LinkedIn, Pinterest, etc.)
+  openGraph: {
+    title: `${campName} - ${businessName}`, // Often good to be slightly more "social" or concise here
+    description: `Give your child (${targetAudience}) an unforgettable summer! Learn instruments, join a band, and rock out live at our ${city} camp. Sign up today!`, // Social-friendly description
+    url: pageUrl,
+    siteName: businessName, // Your overall site/business name
+    images: [
+      {
+        url: imageUrl,
+        width: 1600, // Keep provided dimensions
+        height: 1000,
+        alt: imageAlt, // Use the descriptive alt text
+        type: 'image/jpeg', // Specify image type if known (jpeg, png, gif)
+      },
+      // Optional: Add more images (e.g., a square one) if you have them
+      // {
+      //   url: 'https://rockstarslaverne.com/imgs/square-camp-image.jpg',
+      //   width: 1200,
+      //   height: 1200,
+      //   alt: 'Close up of kid smiling while playing guitar at summer camp',
+      //   type: 'image/jpeg',
+      // },
+    ],
+    locale: 'en_US', // Specify language/region
+    type: 'website', // Or 'article' if it reads more like a blog post
+  },
+
+  // 7. Twitter Card Metadata (Optimize sharing specifically for Twitter)
+  twitter: {
+    card: 'summary_large_image', // Use 'summary_large_image' for more visual impact with your photo
+    title: `${campName} - ${businessName}`, // Similar to OG title
+    description: `La Verne parents! 🎸 Sign up your kids (${targetAudience}) for our awesome ${campName}. Real bands, real songs, real fun! Limited spots. #SummerCamp #${city} #MusicCamp`, // More concise, maybe use relevant hashtags
+    // siteId: '@YourTwitterHandle', // Optional: Your site's Twitter handle ID
+    creator: '@YourBusinessTwitterHandle', // Optional: Your business's Twitter handle
+    // creatorId: 'YourTwitterHandleID', // Optional: Your business's Twitter handle ID
+    images: {
+      url: imageUrl,
+      alt: imageAlt, // Use the descriptive alt text
+    },
+  },
+
+  // 8. Optional: Location / Geo Tags (Can sometimes help local SEO)
+  other: {
+    'geo.region': `US-${state}`, // e.g., 'US-CA'
+    'geo.placename': city, // e.g., 'La Verne'
+    // Optional: Add position if you have accurate coordinates
+    'geo.position': `${latitude};${longitude}`, // e.g., '34.1025;-117.7667'
+    // Optional: ICBM (Intercontinental Ballistic Missile - an older geo tag standard, sometimes still included)
+    ICBM: `${latitude}, ${longitude}`,
+  },
+
+  // 10. Icons (Favicon) - Ensure you have these set up, often in the root layout.js
+  icons: {
+    icon: '/favicons/favicon.ico',
+    shortcut: '/favicons/favicon-16x16.png',
+    apple: '/favicons/apple-touch-icon.png',
+  },
+}
+
 export default function SummerCamp() {
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'EducationEvent',
+      name: 'Rock & Roll Summer Camp - Session 1 (June 16-20)',
+      description:
+        'Join JamCamp, a high-energy week-long music camp in La Verne for kids ages 7-17. Learn instruments (guitar, bass, drums, piano, vocals), join a real band, learn songs, and perform live! No experience needed. Includes daily lessons, jam sessions, and a final RockStar Showcase.',
+      startDate: '2025-06-16T10:00:00', // Assuming 10:00 AM start
+      endDate: '2025-06-20T14:00:00', // Assuming 2:00 PM end on the last day
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+      eventStatus: 'https://schema.org/EventScheduled',
+      location: {
+        '@type': 'Place',
+        name: 'Rockstars of Tomorrow La Verne',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '2855 Foothill Blvd A-102',
+          addressLocality: 'La Verne',
+          addressRegion: 'CA',
+          postalCode: '91750',
+          addressCountry: 'US',
+        },
+      },
+      image: ['https://rockstarslaverne.com/imgs/ai/live-band/kid-band-05.jpg'],
+      organizer: {
+        '@type': 'Organization',
+        name: 'Rockstars of Tomorrow La Verne',
+        url: 'https://rockstarslaverne.com', // Or your La Verne specific location URL if available
+      },
+      typicalAgeRange: '7-17',
+      offers: [
+        {
+          '@type': 'Offer',
+          url: 'https://rockstarslaverne.com/summer-camp', // Link to registration/page
+          availability: 'https://schema.org/InStock', // Or LimitedAvailability if spots are genuinely limited
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            price: '379.00',
+            priceCurrency: 'USD',
+            name: 'Regular Price',
+          },
+        },
+        {
+          '@type': 'Offer',
+          url: 'https://rockstarslaverne.com/summer-camp', // Link to registration/page
+          availability: 'https://schema.org/InStock', // Or LimitedAvailability
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            price: '329.00',
+            priceCurrency: 'USD',
+            name: 'Early Bird Price',
+            description:
+              'Available when enrolling 30+ days before camp starts.',
+            // Optional: Define validity dates if you know the exact cutoff for early bird
+            validThrough: '2025-05-16T23:59:59', // 30 days before June 16th
+          },
+        },
+        {
+          '@type': 'Offer',
+          name: 'Materials Fee',
+          url: 'https://rockstarslaverne.com/summer-camp', // Link to registration/page
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            price: '49.00',
+            priceCurrency: 'USD',
+          },
+          description:
+            'Covers sheet music, practice resources, camp supplies, and includes a $50 voucher for future band class.',
+          availability: 'https://schema.org/InStock', // Assuming materials are always available if the camp slot is
+        },
+      ],
+      performer: {
+        '@type': 'PerformingGroup',
+        name: 'Student Rock Bands',
+      },
+      keywords:
+        'summer camp, music camp, rock band camp, kids camp, La Verne, guitar lessons, drum lessons, vocals, piano, learn music, kids activities',
+      teaches: [
+        'Music Theory',
+        'Guitar',
+        'Bass Guitar',
+        'Drums',
+        'Piano',
+        'Keyboard',
+        'Vocals',
+        'Live Performance',
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'EducationEvent',
+      name: 'Rock & Roll Summer Camp - Session 2 (July 7-11) - SOLD OUT',
+      description:
+        'Join JamCamp, a high-energy week-long music camp in La Verne for kids ages 7-17. Learn instruments, join a band, learn songs, perform live! No experience needed. SOLD OUT.',
+      startDate: '2025-07-07T10:00:00',
+      endDate: '2025-07-11T14:00:00',
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+      eventStatus: 'https://schema.org/EventScheduled', // The event *schedule* exists, but availability is gone
+      location: {
+        '@type': 'Place',
+        name: 'Rockstars of Tomorrow La Verne',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '2855 Foothill Blvd A-102',
+          addressLocality: 'La Verne',
+          addressRegion: 'CA',
+          postalCode: '91750',
+          addressCountry: 'US',
+        },
+      },
+      image: ['https://rockstarslaverne.com/imgs/ai/live-band/kid-band-05.jpg'],
+      organizer: {
+        '@type': 'Organization',
+        name: 'Rockstars of Tomorrow La Verne',
+        url: 'https://rockstarslaverne.com',
+      },
+      typicalAgeRange: '7-17',
+      offers: {
+        // Only one offer needed here to indicate status
+        '@type': 'Offer',
+        url: 'https://rockstarslaverne.com/summer-camp', // Still link to the main page
+        availability: 'https://schema.org/SoldOut',
+        priceSpecification: {
+          // Include price for context, even if sold out
+          '@type': 'PriceSpecification',
+          price: '379.00', // Or the price it was listed at
+          priceCurrency: 'USD',
+          name: 'Regular Price',
+        },
+      },
+      performer: {
+        '@type': 'PerformingGroup',
+        name: 'Student Rock Bands',
+      },
+      keywords:
+        'summer camp, music camp, rock band camp, kids camp, La Verne, guitar lessons, drum lessons, vocals, piano, learn music, kids activities',
+      teaches: [
+        'Music Theory',
+        'Guitar',
+        'Bass Guitar',
+        'Drums',
+        'Piano',
+        'Keyboard',
+        'Vocals',
+        'Live Performance',
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'EducationEvent',
+      name: 'Rock & Roll Summer Camp - Session 3 (Aug 11-15)',
+      description:
+        'Join JamCamp, a high-energy week-long music camp in La Verne for kids ages 7-17. Learn instruments (guitar, bass, drums, piano, vocals), join a real band, learn songs, and perform live! No experience needed. Includes daily lessons, jam sessions, and a final RockStar Showcase.',
+      startDate: '2025-08-11T10:00:00',
+      endDate: '2025-08-15T14:00:00',
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+      eventStatus: 'https://schema.org/EventScheduled',
+      location: {
+        '@type': 'Place',
+        name: 'Rockstars of Tomorrow La Verne',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '2855 Foothill Blvd A-102',
+          addressLocality: 'La Verne',
+          addressRegion: 'CA',
+          postalCode: '91750',
+          addressCountry: 'US',
+        },
+      },
+      image: ['https://rockstarslaverne.com/imgs/ai/live-band/kid-band-05.jpg'],
+      organizer: {
+        '@type': 'Organization',
+        name: 'Rockstars of Tomorrow La Verne',
+        url: 'https://rockstarslaverne.com',
+      },
+      typicalAgeRange: '7-17',
+      offers: [
+        // Same offers as Session 1
+        {
+          '@type': 'Offer',
+          url: 'https://rockstarslaverne.com/summer-camp',
+          availability: 'https://schema.org/InStock', // Or LimitedAvailability
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            price: '379.00',
+            priceCurrency: 'USD',
+            name: 'Regular Price',
+          },
+        },
+        {
+          '@type': 'Offer',
+          url: 'https://rockstarslaverne.com/summer-camp',
+          availability: 'https://schema.org/LimitedAvailability', // Or LimitedAvailability
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            price: '329.00',
+            priceCurrency: 'USD',
+            name: 'Early Bird Price',
+            description:
+              'Available when enrolling 30+ days before camp starts.',
+            validThrough: '2025-07-11T23:59:59', // 30 days before Aug 11th
+          },
+        },
+        {
+          '@type': 'Offer',
+          name: 'Materials Fee',
+          url: 'https://rockstarslaverne.com/summer-camp',
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            price: '49.00',
+            priceCurrency: 'USD',
+          },
+          description:
+            'Covers sheet music, practice resources, camp supplies, and includes a $50 voucher for future band class.',
+          availability: 'https://schema.org/InStock',
+        },
+      ],
+      performer: {
+        '@type': 'PerformingGroup',
+        name: 'Student Rock Bands',
+      },
+      keywords:
+        'summer camp, music camp, rock band camp, kids camp, La Verne, guitar lessons, drum lessons, vocals, piano, learn music, kids activities',
+      teaches: [
+        'Music Theory',
+        'Guitar',
+        'Bass Guitar',
+        'Drums',
+        'Piano',
+        'Keyboard',
+        'Vocals',
+        'Live Performance',
+      ],
+    },
+  ]
+
   return (
     <>
       <HeroMedium
@@ -708,6 +1065,11 @@ export default function SummerCamp() {
           overviewText='Spaces fill quickly! Complete the form below to enroll your child in our exciting summer rock camp. Remember, early bird discount of $50 applies when enrolling 30+ days before camp starts.'
         />
       </section>
+      <Script
+        id='summer-camp-schema' // Unique ID for the script tag
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
       {/* Testimonials or FAQ section could go here if needed */}
     </>
