@@ -14,7 +14,7 @@ import samii from '../public/imgs/testimonial-authors/samii.jpg'
 import trina from '../public/imgs/testimonial-authors/trina.jpg'
 import janelle from '../public/imgs/testimonial-authors/janelle.jpg'
 import randy from '../public/imgs/testimonial-authors/randy.png'
-import susie from '../public/imgs/testimonial-authors/susie.png'
+// import susie from '../public/imgs/testimonial-authors/susie.png'
 import SectionOverview from './SectionOverview'
 
 const testimonials = [
@@ -79,10 +79,10 @@ const testimonials = [
     image: randy,
   },
   // {
-  //   text: "Can’t say enough about this place-it’s where I have watched children(my own included) find their passion, talent and confidence thru music. The staff is amazing-shout out Michael! Thanks you for the good vibe and all you do to teach and inspire",
-  //   author: "Susie W.",
+  //   text: 'Can’t say enough about this place-it’s where I have watched children(my own included) find their passion, talent and confidence thru music. The staff is amazing-shout out Michael! Thanks you for the good vibe and all you do to teach and inspire',
+  //   author: 'Susie W.',
   //   image: susie,
-  // }
+  // },
 ]
 
 export default function Testimonials(): JSX.Element {

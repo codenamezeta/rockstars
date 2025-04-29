@@ -54,10 +54,7 @@ export default function GHLForm() {
         data-form-id='cO9z4eQW9WRqYsmTn68j'
         title='Error Handling TEST Form'
       ></iframe> */}
-      <Script
-        src='https://link.msgsndr.com/js/form_embed.js'
-        strategy='lazyOnload'
-      ></Script>
+      <Script src='https://link.msgsndr.com/js/form_embed.js'></Script>
     </section>
   )
 }
