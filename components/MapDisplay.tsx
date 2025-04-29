@@ -1,3 +1,4 @@
+'use client'
 import { Button } from '@/components/ui/button'
 import { FaPhone } from 'react-icons/fa'
 import { MdOutlineMail, MdMessage } from 'react-icons/md'
