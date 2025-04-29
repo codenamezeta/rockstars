@@ -3,12 +3,14 @@ import './globals.css'
 import '/zeta-theme.scss'
 import { Arvo } from 'next/font/google'
 import localFont from 'next/font/local'
-import lineLogo from '@/public/imgs/logos/Black-Line-Logo.png'
-import type { Metadata } from 'next'
+// import lineLogo from '@/public/imgs/logos/Black-Line-Logo.png'
+// import type { Metadata } from 'next'
 import Script from 'next/script'
 import { Suspense } from 'react'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+
+import type { Metadata, Viewport } from 'next'
 
 // * Brand Font for Titles
 const soleil = localFont({
@@ -77,55 +79,65 @@ const arvo = Arvo({
   weight: '400',
 })
 
+// export const metadata: Metadata = {
+//   title: 'Rockstars of Tomorrow - La Verne',
+//   description:
+//     'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
+//   metadataBase: new URL('https://rockstarslaverne.com'),
+//   alternates: {
+//     canonical: '/',
+//   },
+//   icons: {
+//     icon: '/favicons/favicon.ico', // Path to our favicon.ico in the public directory
+//     apple: '/favicons/apple-touch-icon.png', // Path to our apple-touch-icon.png in the public directory
+//   },
+//   manifest: '/favicons/site.webmanifest',
+//   keywords:
+//     'music lessons, music classes, music school, music instruction, music performance, music coaching, music, California, La Verne, Pomona, Claremont, San Dimas, Glendora, Covina, Upland, Rancho Cucamonga, Ontario, Fontana, Rialto, Riverside, San Bernardino, Inland Empire, locations, cost, price, pricing, reddit, yelp, facebook, instagram, google, twitter, social media, review, grease, beginners, intermediate, advanced, online, guitar, bass, drums, keyboards, vocals, singing, voice, synth, percussion, piano, ukulele, songwriting, song writing, audio, production, engineering, workshops, rock, metal, pop, alternative, punk, blues, modern, learn, play, fun, exciting, new, child, children, kid, kids, teen, teens, adult, adults, band, group, performance, venue, stage, jam, session, recording, studio, live, show, concert, event,',
+//   openGraph: {
+//     title: 'Rockstars of Tomorrow - La Verne',
+//     description:
+//       'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
+//     images: [
+//       {
+//         url: lineLogo.src,
+//         width: 800,
+//         height: 600,
+//         alt: 'Rockstars of Tomorrow - La Verne',
+//       },
+//     ],
+//   },
+//   twitter: {
+//     card: 'summary_large_image',
+//     title: 'Rockstars of Tomorrow - La Verne',
+//     description:
+//       'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
+//     images: [lineLogo.src],
+//   },
+// }
+
+// --- Define Metadata in Root Layout ---
 export const metadata: Metadata = {
-  title: 'Rockstars of Tomorrow - La Verne',
+  // Set the base URL for the entire application
+  metadataBase: new URL('https://rockstarslaverne.com'), // Use your production domain
+
+  // You can set default titles, descriptions, etc., here
+  // These can be overridden by individual pages
+  title: {
+    default: 'Rockstars of Tomorrow La Verne', // Default title if page doesn't specify
+    template: '%s | Rockstars of Tomorrow La Verne', // Template for page titles (e.g., "Summer Camp | Rockstars of Tomorrow La Verne")
+  },
   description:
-    'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
-  metadataBase: new URL('https://rockstarslaverne.com'),
-  alternates: {
-    canonical: '/',
-  },
-  icons: {
-    icon: '/favicons/favicon.ico', // Path to your favicon.ico in the public directory
-    apple: '/favicons/apple-touch-icon.png', // Path to your apple-touch-icon.png in the public directory
-    other: {
-      rel: 'apple-touch-icon-precomposed', // For older iOS versions if needed
-      url: '/favicons/apple-touch-icon.png',
-    },
-    shortcut: {
-      rel: 'shortcut icon', // For some browsers, though 'icon' rel is generally sufficient now
-      url: '/favicons/favicon.ico',
-    },
-    // You can specify different sizes for PNG favicons if needed, but 'icon' usually handles standard sizes
-    // 32x32 and 16x16 are often automatically picked up if named correctly (favicon-32x32.png, etc.)
-    // icon: [
-    //   { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    //   { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-    // ],
-  },
-  manifest: '/favicons/site.webmanifest',
-  keywords:
-    'music lessons, music classes, music school, music instruction, music performance, music coaching, music, California, La Verne, Pomona, Claremont, San Dimas, Glendora, Covina, Upland, Rancho Cucamonga, Ontario, Fontana, Rialto, Riverside, San Bernardino, Inland Empire, locations, cost, price, pricing, reddit, yelp, facebook, instagram, google, twitter, social media, review, grease, beginners, intermediate, advanced, online, guitar, bass, drums, keyboards, vocals, singing, voice, synth, percussion, piano, ukulele, songwriting, song writing, audio, production, engineering, workshops, rock, metal, pop, alternative, punk, blues, modern, learn, play, fun, exciting, new, child, children, kid, kids, teen, teens, adult, adults, band, group, performance, venue, stage, jam, session, recording, studio, live, show, concert, event,',
+    "La Verne's premier music school for lessons, band programs, and performance coaching. All ages welcome!", // Default description
+  // Add default openGraph/twitter images (like your logo) here if desired
   openGraph: {
-    title: 'Rockstars of Tomorrow - La Verne',
-    description:
-      'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
-    images: [
-      {
-        url: lineLogo.src,
-        width: 800,
-        height: 600,
-        alt: 'Rockstars of Tomorrow - La Verne',
-      },
-    ],
+    images: ['/default-og-image.png'], // Provide a default social image path
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Rockstars of Tomorrow - La Verne',
-    description:
-      'From music lessons to performance coaching, Rockstars of Tomorrow in La Verne is the neighborhood music school that will unleash your inner rockstar!',
-    images: [lineLogo.src],
-  },
+}
+
+// Viewport for theme color etc. (Best practice is often in root layout, but can be page-specific)
+export const viewport: Viewport = {
+  themeColor: '#5b0707',
 }
 
 export default function RootLayout({
