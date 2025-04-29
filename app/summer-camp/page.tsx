@@ -175,7 +175,10 @@ export default function SummerCamp() {
         {
           '@type': 'Offer',
           url: 'https://rockstarslaverne.com/summer-camp', // Link to registration/page
-          availability: 'https://schema.org/InStock', // Or LimitedAvailability if spots are genuinely limited
+          availability: 'https://schema.org/LimitedAvailability', // Or LimitedAvailability if spots are genuinely limited
+          price: '379.00',
+          priceCurrency: 'USD',
+          validFrom: '2025-05-17',
           priceSpecification: {
             '@type': 'PriceSpecification',
             price: '379.00',
@@ -186,7 +189,10 @@ export default function SummerCamp() {
         {
           '@type': 'Offer',
           url: 'https://rockstarslaverne.com/summer-camp', // Link to registration/page
-          availability: 'https://schema.org/InStock', // Or LimitedAvailability
+          availability: 'https://schema.org/LimitedAvailability', // Or LimitedAvailability
+          price: '329.00',
+          priceCurrency: 'USD',
+          validFrom: '2025-03-01',
           priceSpecification: {
             '@type': 'PriceSpecification',
             price: '329.00',
@@ -210,6 +216,9 @@ export default function SummerCamp() {
           description:
             'Covers sheet music, practice resources, camp supplies, and includes a $50 voucher for future band class.',
           availability: 'https://schema.org/InStock', // Assuming materials are always available if the camp slot is
+          price: '49.00',
+          priceCurrency: 'USD',
+          validFrom: '2025-03-01',
         },
       ],
       performer: {
@@ -263,6 +272,8 @@ export default function SummerCamp() {
         '@type': 'Offer',
         url: 'https://rockstarslaverne.com/summer-camp', // Still link to the main page
         availability: 'https://schema.org/SoldOut',
+        price: '379.00', // Price it *was*
+        priceCurrency: 'USD',
         priceSpecification: {
           // Include price for context, even if sold out
           '@type': 'PriceSpecification',
@@ -322,7 +333,10 @@ export default function SummerCamp() {
         {
           '@type': 'Offer',
           url: 'https://rockstarslaverne.com/summer-camp',
-          availability: 'https://schema.org/InStock', // Or LimitedAvailability
+          availability: 'https://schema.org/LimitedAvailability', // Or LimitedAvailability
+          price: '379.00',
+          priceCurrency: 'USD',
+          validFrom: '2025-07-12',
           priceSpecification: {
             '@type': 'PriceSpecification',
             price: '379.00',
@@ -334,6 +348,9 @@ export default function SummerCamp() {
           '@type': 'Offer',
           url: 'https://rockstarslaverne.com/summer-camp',
           availability: 'https://schema.org/LimitedAvailability', // Or LimitedAvailability
+          price: '329.00',
+          priceCurrency: 'USD',
+          validFrom: '2025-03-01',
           priceSpecification: {
             '@type': 'PriceSpecification',
             price: '329.00',
@@ -356,6 +373,9 @@ export default function SummerCamp() {
           description:
             'Covers sheet music, practice resources, camp supplies, and includes a $50 voucher for future band class.',
           availability: 'https://schema.org/InStock',
+          price: '49.00',
+          priceCurrency: 'USD',
+          validFrom: '2025-03-01',
         },
       ],
       performer: {

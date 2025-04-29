@@ -1,12 +1,13 @@
 import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = 'https://rockstarslaverne.com'
   return {
     rules: {
       userAgent: '*',
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://acme.com/sitemap.xml',
+    sitemap: `${baseUrl}/sitemap.xml`,
   }
 }

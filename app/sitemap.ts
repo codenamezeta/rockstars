@@ -24,13 +24,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://rockstarslaverne.com/contact',
       lastModified: new Date(),
       changeFrequency: 'yearly',
-      priority: 0.3,
+      priority: 0.4,
+    },
+    {
+      url: 'https://rockstarslaverne.com/summer-camp',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     {
       url: 'https://rockstarslaverne.com/charter-schools',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.1,
+      priority: 0.6,
     },
   ]
 }
