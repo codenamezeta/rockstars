@@ -7,9 +7,9 @@ import ProgramsOverview from '@/components/ProgramsOverview'
 // import Team from '@/components/Team'
 import Testimonials from '@/components/Testimonials'
 import Contact from '@/components/Contact'
-import GHLForm from '@/components/GHLForm'
+// import GHLForm from '@/components/GHLForm'
 // import bandOfSix from '../public/imgs/Kids/band-of-six.png'
-// import FreeTrialForm from '@/components/FreeTrialForm'
+import FreeTrialForm from '@/components/FreeTrialForm'
 
 import type { Metadata } from 'next'
 import Script from 'next/script'
@@ -177,22 +177,13 @@ export default function Home() {
         opens: '10:00',
         closes: '16:00',
       },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Sunday',
-        // Indicate closed by omitting opens/closes or setting specific times like 00:00-00:00
-        // Or simply omit the Sunday specification if preferred.
-      },
     ],
-    priceRange: '$$', // Optional: General price indication (e.g., $, $$, $$$)
+    priceRange: '$$',
     sameAs: [
-      // Links to your official profiles
       'https://g.page/r/CR_OFMy86p8OEBM/',
       'https://www.instagram.com/rockstarslaverne/',
       'https://www.facebook.com/rockstarslaverne/',
       'https://www.yelp.com/biz/rockstars-of-tomorrow-la-verne',
-      // Add Google Business Profile link if different from website/maps
-      // Add other relevant profiles (Twitter, YouTube, etc.)
     ],
     hasOfferCatalog: {
       // Describe main service categories
@@ -229,12 +220,6 @@ export default function Home() {
         },
       ],
     },
-    // Optional: Add potentialAction for Sitelinks Search Box if you have site search
-    // "potentialAction": {
-    //   "@type": "SearchAction",
-    //   "target": "https://rockstarslaverne.com/?s={search_term_string}",
-    //   "query-input": "required name=search_term_string"
-    // }
   }
   return (
     <>
@@ -259,9 +244,8 @@ export default function Home() {
       {/* <Team /> */}
       <Testimonials />
       <Contact />
-      <GHLForm />
-      {/* <FreeTrialForm /> */}
-
+      {/* <GHLForm /> */}
+      <FreeTrialForm />
       <Script
         id='homepage-schema'
         type='application/ld+json'
