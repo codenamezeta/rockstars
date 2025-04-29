@@ -156,8 +156,8 @@ export default function Home() {
       latitude: '34.10969514585363', // Example for La Verne area - REPLACE WITH ACCURATE VALUE
       longitude: '-117.7531820340577', // Example for La Verne area - REPLACE WITH ACCURATE VALUE
     },
-    image: ogImageUrl, // Use the same strong image as OG
-    logo: logoUrl, // Use the logo URL
+    image: `${homepageUrl}${ogImageUrl.startsWith('/') ? ogImageUrl.substring(1) : ogImageUrl}`, // Use the same strong image as OG
+    logo: `${homepageUrl}${logoUrl.startsWith('/') ? logoUrl.substring(1) : logoUrl}`, // Use the logo URL
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',

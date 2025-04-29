@@ -1,3 +1,4 @@
+'use client'
 import Script from 'next/script'
 import SectionOverview from './SectionOverview'
 
