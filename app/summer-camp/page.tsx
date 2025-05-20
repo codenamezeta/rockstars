@@ -1,6 +1,6 @@
 import SectionOverview from '@/components/SectionOverview'
 import CampSignupFormWithStripe from '@/components/CampSignupFormWithStripe'
-import Contact from '@/components/MapDisplay'
+import Contact from '@/components/Contact'
 import { buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
 import {
@@ -157,7 +157,7 @@ export default function SummerCamp() {
         name: 'Rockstars of Tomorrow La Verne',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: '2855 Foothill Blvd A-102',
+          streetAddress: '2855 Foothill Blvd Ste A102',
           addressLocality: 'La Verne',
           addressRegion: 'CA',
           postalCode: '91750',
@@ -253,7 +253,7 @@ export default function SummerCamp() {
         name: 'Rockstars of Tomorrow La Verne',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: '2855 Foothill Blvd A-102',
+          streetAddress: '2855 Foothill Blvd Ste A102',
           addressLocality: 'La Verne',
           addressRegion: 'CA',
           postalCode: '91750',
@@ -314,7 +314,7 @@ export default function SummerCamp() {
         name: 'Rockstars of Tomorrow La Verne',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: '2855 Foothill Blvd A-102',
+          streetAddress: '2855 Foothill Blvd Ste A102',
           addressLocality: 'La Verne',
           addressRegion: 'CA',
           postalCode: '91750',
@@ -587,7 +587,7 @@ export default function SummerCamp() {
                 Join us at our fully-equipped music studio:
               </p>
               <address className='not-italic mb-4'>
-                2855 Foothill Blvd A-102
+                2855 Foothill Blvd Ste A102
                 <br />
                 La Verne, CA 91750
               </address>
@@ -1074,7 +1074,6 @@ export default function SummerCamp() {
       {/* Location Map */}
       <section className='py-16 red-background-5'>
         <h2 className='text-3xl font-bold text-center mb-8'>Our Location</h2>
-
         <Contact />
       </section>
 

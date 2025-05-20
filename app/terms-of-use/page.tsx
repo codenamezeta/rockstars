@@ -139,7 +139,7 @@ export default function TermsOfUsePage() {
           <address>
             <strong>Rockstars of Tomorrow</strong>
             <br />
-            2855 Foothill Blvd, A102, La Verne CA 91750
+            2855 Foothill Blvd Ste A102, La Verne, CA 91750
             <br />
             laverne@rockstarsoftomorrow.com
             <br />

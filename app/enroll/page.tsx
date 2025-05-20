@@ -9,7 +9,7 @@ export default function Enroll() {
       <iframe
         id='sb_frame_97489628384'
         width='100%'
-        height={800}
+        height='0px'
         scrolling='yes'
         src='https://app.mymusicstaff.com/Website/v3/widget.html?settings=eyJTY2hvb2xJRCI6InNjaF94UFNKUyIsIldlYnNpdGVJRCI6Indic19LbEo4IiwiV2Vic2l0ZUJsb2NrSUQiOiJ3YmJfQno3V0p6In0%3d&amp;sandboxed=false'
       ></iframe>

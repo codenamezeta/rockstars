@@ -87,70 +87,72 @@ export default function Footer(): JSX.Element {
           <nav className='w-full md:w-1/2 lg:w-1/5 list-none text-center lg:text-left lg:tracking-tighter'>
             <h4 className='text-xl font-anton tracking-wider'>Get In Touch</h4>
             <hr className='w-16 h-1 rounded-full bg-primary border-0 inline-flex mb-2'></hr>
-            <ul className='list-none'>
-              <li className='mb-2'>
-                <a href='sms:8443668742'>
-                  (844) 36-MUSIC
-                  <br />
-                  <span className='md:text-sm'>(844) 366-8742</span>
-                </a>
-              </li>
-              <li className='mb-2 md:text-sm'>
-                <a href='mailto:laverne@rockstarsoftomorrow.com'>
-                  laverne@rockstarsoftomorrow.com
-                </a>
-              </li>
-              <li className='mb-0'>
-                <Link
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  href='https://maps.app.goo.gl/8YnNEHG3ZJVbneSH8'
-                >
-                  2855 Foothill Blvd. A-102
-                  <br />
-                  La Verne, CA 91750
-                </Link>
-              </li>
-              <li>
-                <span className='flex mt-2 justify-center lg:justify-start'>
+            <address>
+              <ul className='list-none'>
+                <li className='mb-2'>
+                  <a href='sms:8443668742'>
+                    (844) 36-MUSIC
+                    <br />
+                    <span className='md:text-sm'>(844) 366-8742</span>
+                  </a>
+                </li>
+                <li className='mb-2 md:text-sm'>
+                  <a href='mailto:laverne@rockstarsoftomorrow.com'>
+                    laverne@rockstarsoftomorrow.com
+                  </a>
+                </li>
+                <li className='mb-0'>
                   <Link
-                    href='https://www.instagram.com/rockstarslaverne/'
-                    className='mr-2'
                     target='_blank'
                     rel='noopener noreferrer'
-                    aria-label='Instagram Page'
+                    href='https://maps.app.goo.gl/8YnNEHG3ZJVbneSH8'
                   >
-                    <FaInstagram />
+                    2855 Foothill Blvd Ste A102
+                    <br />
+                    La Verne, CA 91750
                   </Link>
-                  <Link
-                    href='https://www.facebook.com/rockstarslaverne/'
-                    className='mr-2'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label='Facebook Page'
-                  >
-                    <FaFacebook />
-                  </Link>
-                  <Link
-                    href='https://www.yelp.com/biz/rockstars-of-tomorrow-la-verne'
-                    className='mr-2'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label='Yelp Reviews'
-                  >
-                    <FaYelp />
-                  </Link>
-                  <Link
-                    href='https://g.page/r/CR_OFMy86p8OEBM/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label='Google Reviews'
-                  >
-                    <GrGoogle />
-                  </Link>
-                </span>
-              </li>
-            </ul>
+                </li>
+                <li>
+                  <span className='flex mt-2 justify-center lg:justify-start'>
+                    <Link
+                      href='https://www.instagram.com/rockstarslaverne/'
+                      className='mr-2'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label='Instagram Page'
+                    >
+                      <FaInstagram />
+                    </Link>
+                    <Link
+                      href='https://www.facebook.com/rockstarslaverne/'
+                      className='mr-2'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label='Facebook Page'
+                    >
+                      <FaFacebook />
+                    </Link>
+                    <Link
+                      href='https://www.yelp.com/biz/rockstars-of-tomorrow-la-verne'
+                      className='mr-2'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label='Yelp Reviews'
+                    >
+                      <FaYelp />
+                    </Link>
+                    <Link
+                      href='https://g.page/r/CR_OFMy86p8OEBM/'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label='Google Reviews'
+                    >
+                      <GrGoogle />
+                    </Link>
+                  </span>
+                </li>
+              </ul>
+            </address>
           </nav>
         </div>
       </div>

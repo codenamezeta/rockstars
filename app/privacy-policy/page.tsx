@@ -66,7 +66,7 @@ export default function PrivacyPolicyPage() {
               <strong>Company</strong> (referred to as either &quot;the
               Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot;
               in this Agreement) refers to Rockstars of Tomorrow, 2855 Foothill
-              Blvd A-102 La Verne CA 91750.
+              Blvd Ste A102 La Verne CA 91750.
             </p>
           </li>
           <li>
