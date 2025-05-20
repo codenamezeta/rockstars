@@ -146,10 +146,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en'>
-      <body
-        className={`${arvo.variable} ${soleil.className} font-arvo bg-black min-h-screen flex flex-col`}
-      >
+    <html lang='en' className={`${arvo.variable} ${soleil.className}`}>
+      <body className='font-arvo bg-black min-h-screen flex flex-col'>
         <Suspense fallback={<div>Loading...</div>}>
           <Nav
             pages={[

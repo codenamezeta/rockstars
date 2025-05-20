@@ -8,6 +8,7 @@ import ProgramsOverview from '@/components/ProgramsOverview'
 import Testimonials from '@/components/Testimonials'
 import Contact from '@/components/Contact'
 import GHLForm from '@/components/GHLForm'
+import SectionOverview from '@/components/SectionOverview'
 // import bandOfSix from '../public/imgs/Kids/band-of-six.png'
 // import FreeTrialForm from '@/components/FreeTrialForm'
 
@@ -134,7 +135,7 @@ export default function Home() {
   // 1. Define the JSON-LD Data
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'MusicSchool', // More specific than LocalBusiness
+    '@type': 'LocalBusiness', // More specific than LocalBusiness
     name: 'Rockstars of Tomorrow La Verne',
     description:
       'Rockstars of Tomorrow La Verne offers customized music lessons (guitar, drums, vocals, piano & more) & rock band programs for kids, teens & adults. Build confidence through live performance!',
@@ -143,7 +144,7 @@ export default function Home() {
     email: 'laverne@rockstarsoftomorrow.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '2855 Foothill Blvd A-102',
+      streetAddress: '2855 Foothill Blvd Ste A102',
       addressLocality: 'La Verne',
       addressRegion: 'CA',
       postalCode: '91750',
@@ -243,7 +244,14 @@ export default function Home() {
       <ProgramsOverview />
       {/* <Team /> */}
       <Testimonials />
-      <Contact />
+      <section id='contact_info' className='pt-24 pb-12 background-2'>
+        <SectionOverview
+          title='Contact Us'
+          overviewText='We would love to hear from you. Feel free to visit our studio in person or give us a call.'
+          customClasses='container'
+        />
+        <Contact />
+      </section>
       <GHLForm />
       {/* <FreeTrialForm /> */}
       <Script

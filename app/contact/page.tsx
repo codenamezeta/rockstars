@@ -1,12 +1,23 @@
-import MapDisplay from '@/components/MapDisplay'
+// import MapDisplay from '@/components/MapDisplay'
 import Header from '@/components/Header'
 import SectionOverview from '@/components/SectionOverview'
 import FAQs from '@/components/FAQs'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
 import { FiExternalLink } from 'react-icons/fi'
+// import dynamic from 'next/dynamic'
+
+// const DynamicMapDisplay = dynamic(() => import('@/components/MapDisplay'), {
+//   ssr: false,
+//   loading: () => (
+//     <div className='w-full h-[400px] flex justify-center items-center bg-muted rounded-lg'>
+//       <p>Loading map...</p>
+//     </div>
+//   ), // Optional: a placeholder with similar dimensions
+// })
 
 import type { Metadata } from 'next'
+import Contact from '@/components/Contact'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -23,8 +34,9 @@ export default function contactPage(): JSX.Element {
         customClasses='red-background-6'
       />
       <main className='background-4 py-24'>
-        <SectionOverview title='Contact Information' />
-        <MapDisplay />
+        {/* <SectionOverview title='Contact Information' /> */}
+        {/* <MapDisplay /> */}
+        <Contact />
       </main>
       <section className='container mx-auto px-4 py-24'>
         <SectionOverview
