@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { buttonVariants } from '@/components/ui/button'
 import guitarBanner from '@/public/imgs/guitar-04.jpg'
-import FreeTrialForm from '@/components/FreeTrialForm'
+// import FreeTrialForm from '@/components/FreeTrialForm'
 
 // import type { Metadata, ResolvingMetadata } from 'next'
 
@@ -127,10 +127,27 @@ export default async function teamMemberPage({
           <p className='mt-2 pr-12 text-2xl max-w-prose'>{teacher.bio}</p>
         </div>
       </main>
-      <FreeTrialForm
+      <section className='container mx-auto px-4 py-24'>
+        <SectionOverview
+          title={`Book a Free Trial Lesson with ${teacher.first_name}`}
+          overviewText={`Interested in taking lessons with ${teacher.first_name}? Fill out the form below to schedule a free trial lesson and get started on your musical journey!`}
+        />
+        <div className='flex flex-col items-center justify-center'>
+          <iframe
+            // allowtransparency='false'
+            // frameBorder='0'
+            width={'100%'}
+            height={'1600px'}
+            src='https://rockstarslaverne.opus1.io/w/michael-zeta'
+            // scrolling='yes'
+            // style='overflow: hidden; height: 647px;'
+          ></iframe>
+        </div>
+      </section>
+      {/* <FreeTrialForm
         title={`Interested In Working With ${teacher.first_name}?`}
         overviewText={`${teacher.first_name} ${teacher.last_name} is available for a free trial lesson! To get started, please fill out the form below to get a tour of our school, meet ${teacher.first_name}, and claim your free trial lesson.`}
-      />
+      /> */}
     </>
   )
 }

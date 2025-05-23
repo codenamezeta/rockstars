@@ -1,5 +1,7 @@
 // import lineLogo from '@/public/imgs/logos/Black-Line-Logo.png'
-import drummerGirl from '@/public/imgs/drummer-girl-1.png'
+// import drummerGirl from '@/public/imgs/drummer-girl-1.png'
+import heroImage from '@/public/imagen/hero-image-kid-band-01.png'
+// import heroImage from '@/public/imagen/back-to-back-kids-01.png'
 import Hero from '@/components/Hero'
 import ProblemSolution from '@/components/ProblemSolution'
 import Benefits from '@/components/Benefits'
@@ -15,13 +17,13 @@ import SectionOverview from '@/components/SectionOverview'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 
-const businessName = 'Rockstars of Tomorrow La Verne'
+const businessName = 'Rockstars of Tomorrow - La Verne'
 const city = 'La Verne'
 const state = 'CA'
 const mainService = 'Music Lessons'
 const secondaryService = 'Band Programs'
 const homepageUrl = 'https://rockstarslaverne.com/'
-const ogImageUrl = '/imgs/ai/imagen/band-47.jpg' // Choose a strong image URL for social sharing - ideally a photo, not just logo
+const ogImageUrl = '/imagen/hero-image-kid-band-01.png' // Choose a strong image URL for social sharing - ideally a photo, not just logo
 const logoUrl = '/imgs/logos/rockstars-la-verne-logo-white.png' // Use the logo URL for the favicon and manifest
 
 export const metadata: Metadata = {
@@ -235,7 +237,7 @@ export default function Home() {
           'Join a vibrant community that celebrates creativity and individuality',
         ]}
         image={{
-          src: drummerGirl,
+          src: heroImage,
           alt: 'Young Woman Drummer',
         }}
       />
