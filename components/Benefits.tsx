@@ -17,7 +17,7 @@ export default function Benefits(): JSX.Element {
             the unique and immersive learning experience you crave. Here's what
             sets us apart:"
       />
-      <div className='container px-5 mx-auto flex flex-wrap '>
+      <div className='container px-5 mx-auto flex flex-wrap flex-row-reverse'>
         <div className='lg:w-1/2 w-full sm:px-12 md:px-24 lg:px-0'>
           <Image
             alt='rockstar kid'

@@ -7,12 +7,273 @@ import FAQs from '@/components/FAQs'
 import { LiaExternalLinkAltSolid } from 'react-icons/lia'
 import Link from 'next/link'
 
+const pageUrl = '/charter-schools' // Relative to metadataBase
+const businessName = 'Rockstars of Tomorrow - La Verne'
+const city = 'La Verne'
+const state = 'CA'
+const charterImage = '/imagen/band-10.jpg'
+const charterImageAlt = `Music lessons for charter school students at ${businessName} in ${city}`
+
 export const metadata: Metadata = {
-  title: 'Studio Policies',
-  description: '',
+  title: `Charter School Music Programs in ${city}, ${state} | ${businessName}`,
+  description: `Use your charter school funds for music lessons at ${businessName}! We partner with Sage Oak, Granite Mountain, Elite Academic, Blue Ridge, Sky Mountain, Innovations & Peak Prep. Learn guitar, drums, vocals & more.`,
+  keywords: [
+    'charter school music lessons',
+    'homeschool music programs',
+    `${city} charter school vendor`,
+    'music education charter funds',
+    'Sage Oak music vendor',
+    'Granite Mountain music vendor',
+    'Elite Academic music vendor',
+    'Blue Ridge Academy music vendor',
+    'Sky Mountain music vendor',
+    'Innovations Learning Academy music vendor',
+    'Peak Prep Academy music vendor',
+    'guitar lessons charter school',
+    'drum lessons charter school',
+    'piano lessons charter school',
+    'voice lessons charter school',
+    `${businessName}`,
+  ],
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: `Music Lessons with Charter Funds in ${city} | ${businessName}`,
+    description: `Partnering with leading charter schools to make music education accessible. Learn about using your funds for lessons in guitar, drums, vocals, and more at ${businessName}.`,
+    url: pageUrl, // Next.js will resolve this with metadataBase
+    siteName: businessName,
+    images: [
+      {
+        url: charterImage, // Next.js will resolve this with metadataBase
+        width: 1200, // Adjust if your image has different dimensions
+        height: 630, // Adjust for standard OG image aspect ratio
+        alt: charterImageAlt,
+        type: 'image/jpeg', // Or image/png
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Charter School Music Programs | ${businessName} ${city}`,
+    description: `Learn how to use your charter school funds for awesome music lessons (guitar, drums, vocals & more) at ${businessName} in ${city}!`,
+    images: {
+      url: charterImage, // Next.js will resolve this with metadataBase
+      alt: charterImageAlt,
+    },
+  },
 }
 
-export default function StudioPolicies(): JSX.Element {
+export default function CharterSchoolsPage(): JSX.Element {
+  const faqsForSchema = [
+    {
+      question: 'Do you accept purchase orders (POs)?',
+      answer:
+        'Yes! Once you let your student’s teacher know you’d like to use charter funds, they will request a PO for you. The charter school will then notify us when the PO is approved.',
+    },
+    {
+      question: 'Can I combine charter funds with out-of-pocket payments?',
+      answer:
+        'Yes, if your funds don’t fully cover the lessons you want, you can pay the difference out of pocket. Charter students are required to keep a payment card on file to cover any charges not covered by charter funds.',
+    },
+    {
+      question: 'Do I need to renew my PO each semester?',
+      answer:
+        'This varies by school, so we recommend checking with your charter school to confirm their renewal policies. Important: It is the responsibility of charter school families to submit a valid PO before the billing cycle begins. If no PO is on file at the start of the billing cycle, the student’s stored payment card will automatically be charged for all scheduled services. Late POs: If a PO is submitted after the billing cycle has started, we can issue a refund minus a $25 service charge. Fund Tracking: We do not send reminders about expiring or depleted charter funds. Families are responsible for monitoring their available balance and submitting new POs as needed.',
+    },
+    {
+      question: 'What if my child’s schedule changes?',
+      answer: 'No problem! You can adjust your lesson schedule at any time.',
+    },
+    {
+      question: 'Can I switch instructors if needed?',
+      answer:
+        'Absolutely! We want every student to have the best learning experience possible.',
+    },
+    {
+      question:
+        'Will my child receive the same quality of instruction as other students?',
+      answer:
+        'Yes! Every student at Rockstars of Tomorrow – La Verne gets top-notch instruction from qualified teachers, customized to their unique learning style and goals.',
+    },
+    {
+      question:
+        'Do your instructors have experience teaching charter students?',
+      answer:
+        'Yes! Our teachers have passed all background and screening requirements necessary for charter school partnerships.',
+    },
+    {
+      question: 'What if my funds run out before the end of the term?',
+      answer:
+        'You can continue lessons by covering the remaining balance out of pocket. Any services not covered by your charter funds will automatically be charged to your stored payment card. You can track your charter funds balance through your monthly invoice (emailed) or by logging into your student portal.',
+    },
+    {
+      question: 'Are there any hidden costs I should be aware of?',
+      answer:
+        'We keep things transparent! Rockstars of Tomorrow – La Verne has a clear pricing model with no hidden fees. If you have questions about what your charter school covers, we recommend checking with them directly.',
+    },
+  ]
+
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: metadata.title, // Uses the title from your metadata
+      description: metadata.description, // Uses the description from your metadata
+      url: `https://rockstarslaverne.com${pageUrl}`,
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://rockstarslaverne.com/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Charter Schools',
+            item: `https://rockstarslaverne.com${pageUrl}`,
+          },
+        ],
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'EducationalOrganization',
+      name: 'Rockstars of Tomorrow - La Verne',
+      url: 'https://rockstarslaverne.com/',
+      logo: `/imgs/logos/rockstars-la-verne-logo-white.png`, // Assuming logoUrl is defined like on homepage
+      // IMPORTANT: Copy address, telephone, email, geo, priceRange, sameAs from your homepage structured data for consistency
+      // Example (replace with your actual data from homepage schema):
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '2855 Foothill Blvd Ste A102',
+        addressLocality: 'La Verne',
+        addressRegion: 'CA',
+        postalCode: '91750',
+        addressCountry: 'US',
+      },
+      telephone: '+1-844-366-8742',
+      email: 'laverne@rockstarsoftomorrow.com',
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: '34.10969514585363',
+        longitude: '-117.7531820340577',
+      },
+      priceRange: '$$', // Or your actual price range
+      sameAs: [
+        // Your social media/directory links
+        'https://g.page/r/CR_OFMy86p8OEBM/',
+        'https://www.instagram.com/rockstarslaverne/',
+        'https://www.facebook.com/rockstarslaverne/',
+        'https://www.yelp.com/biz/rockstars-of-tomorrow-la-verne',
+      ],
+      description: `Rockstars of Tomorrow - La Verne is an approved vendor for multiple charter schools, enabling students to use their educational funds for music lessons (guitar, drums, vocals, piano & more) and band programs in ${city}, ${state}.`,
+      knowsAbout: [
+        // Listing partner schools
+        {
+          '@type': 'EducationalOrganization',
+          name: 'Sage Oak',
+          url: 'https://www.sageoak.education/',
+        },
+        {
+          '@type': 'EducationalOrganization',
+          name: 'Granite Mountain',
+          url: 'https://granitemountainschool.com/',
+        },
+        {
+          '@type': 'EducationalOrganization',
+          name: 'Elite Academy',
+          url: 'https://www.eliteacademic.com/',
+        }, // Assuming this is Elite Academic
+        {
+          '@type': 'EducationalOrganization',
+          name: 'Blue Ridge Academy',
+          url: 'https://theblueridgeacademy.com/',
+        },
+        {
+          '@type': 'EducationalOrganization',
+          name: 'Sky Mountain',
+          url: 'https://skymountaincs.org/',
+        },
+        {
+          '@type': 'EducationalOrganization',
+          name: 'Innovations Learning Academy',
+          url: 'https://innovationslearningacademy.pusd.org/',
+        }, // Full name
+        {
+          '@type': 'EducationalOrganization',
+          name: 'Peak Prep Academy',
+          url: 'https://peak-prep.org/',
+        }, // Full name
+      ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Charter School Music Programs',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Private Music Lessons for Charter School Students',
+              description:
+                'One-on-one instruction in guitar, bass, drums, piano, vocals, and ukulele, eligible for charter school funding.',
+              provider: {
+                '@type': 'EducationalOrganization',
+                name: 'Rockstars of Tomorrow - La Verne',
+              },
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Band Programs for Charter School Students',
+              description:
+                'Join a band and learn to play with others, eligible for charter school funding.',
+              provider: {
+                '@type': 'EducationalOrganization',
+                name: 'Rockstars of Tomorrow - La Verne',
+              },
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Music Workshops for Charter School Students',
+              description:
+                'Specialized workshops on various music topics, eligible for charter school funding.',
+              provider: {
+                '@type': 'EducationalOrganization',
+                name: 'Rockstars of Tomorrow - La Verne',
+              },
+            },
+          },
+        ],
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqsForSchema.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    },
+  ]
+
+  // Assuming logoUrl is defined globally or passed as a prop if needed for the EducationalOrganization schema
+  const logoUrl = '/imgs/logos/rockstars-la-verne-logo-white.png' // Example, ensure this is correct
+
   return (
     <>
       <Header
@@ -319,6 +580,11 @@ export default function StudioPolicies(): JSX.Element {
           ]}
         />
       </section>
+      <Script
+        id='charter-schools-schema'
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
     </>
   )
 }

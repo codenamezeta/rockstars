@@ -403,7 +403,7 @@ export default function SummerCamp() {
         title={'Rock & Roll Summer Camp'}
         eyebrow='Where future Rockstars are born!'
         image={{
-          src: '/imgs/ai/live-band/kid-band-05.jpg',
+          src: '/imagen/band-04.jpg',
           alt: 'Sumer Camp',
           width: 1600,
           height: 1000,
