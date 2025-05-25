@@ -1,9 +1,9 @@
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 // import privateLessonsImg from '@/public/imgs/drums-02.jpg'
-import privateLessonsImg from '@/public/imgs/ai/imagen/keyboard-lesson-04.jpg'
+import privateLessonsImg from '@/public/imagen/guitar-lesson-02.jpg'
 // import bandClassImg from '@/public/imgs/band-02-crop-01.png'
-import bandClassImg from '@/public/imgs/ai/imagen/band-41.jpg'
+import bandClassImg from '@/public/imagen/band-21.jpg'
 // import rockstarProImg from '@/public/imgs/stage-02.jpg'
 // import workshopsImg from '@/public/imgs/audio-01.jpg'
 import SectionOverview from './SectionOverview'
@@ -25,7 +25,7 @@ export default function ProgramsOverview(): JSX.Element {
             <div className='rounded-lg h-64 overflow-hidden'>
               <Image
                 alt='content'
-                className='object-cover object-center h-full w-full'
+                className='object-cover h-full w-full'
                 src={privateLessonsImg}
                 loading='lazy'
                 placeholder='blur'
@@ -50,7 +50,7 @@ export default function ProgramsOverview(): JSX.Element {
             <div className='rounded-lg h-64 overflow-hidden'>
               <Image
                 alt='content'
-                className='object-cover object-center h-full w-full'
+                className='object-cover object-top h-full w-full'
                 src={bandClassImg}
                 loading='lazy'
                 placeholder='blur'

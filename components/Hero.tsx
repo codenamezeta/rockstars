@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { IoStarSharp } from 'react-icons/io5'
-import backToBackKids from '../public/imagen/back-to-back-kids-01.png'
+import backToBackKids from '../public/imagen/back-to-back-kids-02.png'
 
 interface HeroProps {
   title: string
@@ -32,13 +32,13 @@ export default function Hero({
 }: HeroProps): JSX.Element {
   return (
     <header
-      className='hero h-screen'
+      className='hero xl:h-screen xl:overflow-hidden'
       style={{
         background: `linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url('/assets/Fold-Overlay-Wide.webp') no-repeat center center/cover, url('/assets/Vine-Background.png') repeat center center/contain`,
       }}
     >
-      <div className='container flex flex-col justify-end min-h-full xl:flex-row pt-20'>
-        <div className='z-10 lg:self-center lg:w-2/3 lg:h-auto flex flex-col'>
+      <div className='container flex flex-col items-start xl:flex-row pt-20'>
+        <div className='z-10 lg:w-3/4 flex flex-col mt-24 space-y-6 self-center xl:self-auto'>
           {/* <h1 className='text-4xl lg:text-8xl font-bold text-primary uppercase tracking-tighter'>
             {title}
           </h1> */}
