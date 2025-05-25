@@ -93,6 +93,7 @@ export default function Hero({
               className={image.classNames}
               priority={true}
               quality={50}
+              sizes='(min-width: 1280px) 50vw, 100vw' // 50% of viewport width on xl+, full width otherwise.
             />
           </div>
         )}
@@ -100,11 +101,11 @@ export default function Hero({
           <div className='self-end hidden xl:block'>
             <Image
               src={backToBackKids}
-              alt={'Back to Back Kids'}
-              width={1200}
-              height={1200}
+              alt='Two kids playing guitar back to back'
               priority={true}
-              quality={100}
+              quality={80}
+              className='object-contain'
+              sizes='(min-width: 1280px) 50vw, 0px' // 50% of viewport width on xl+, 0px otherwise as it's hidden.
             />
           </div>
         )}
