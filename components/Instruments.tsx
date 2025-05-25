@@ -10,11 +10,11 @@ import Image from 'next/image'
 // import Drummer from '@/public/imgs/ai/drummers/Drummer1.png'
 // import Pianist from '@/public/imgs/ai/pianists/Piano3.png'
 // import Vocalist from '@/public/imgs/ai/vocalists/Vocalist1.png'
-import Guitarist from '@/public/imgs/ai/imagen/guitarist-04.jpg'
-import Bassist from '@/public/imgs/ai/imagen/bassist-02.jpg'
-import Drummer from '@/public/imgs/ai/imagen/drummer-02.jpg'
-import Pianist from '@/public/imgs/ai/imagen/pianist-02.jpg'
-import Vocalist from '@/public/imgs/ai/imagen/singer-02.jpg'
+import Guitarist from '@/public/imagen/guitarist-03.jpg'
+import Bassist from '@/public/imagen/bassist-05.jpg'
+import Drummer from '@/public/imagen/drummer-02.jpg'
+import Pianist from '@/public/imagen/piano-01.jpg'
+import Vocalist from '@/public/imagen/singer-01.jpg'
 
 const instrumentsData = [
   {

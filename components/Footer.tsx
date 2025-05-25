@@ -87,7 +87,7 @@ export default function Footer(): JSX.Element {
           <nav className='w-full md:w-1/2 lg:w-1/5 list-none text-center lg:text-left lg:tracking-tighter'>
             <h4 className='text-xl font-anton tracking-wider'>Get In Touch</h4>
             <hr className='w-16 h-1 rounded-full bg-primary border-0 inline-flex mb-2'></hr>
-            <address>
+            <address className='not-italic'>
               <ul className='list-none'>
                 <li className='mb-2'>
                   <a href='sms:8443668742'>
@@ -96,7 +96,7 @@ export default function Footer(): JSX.Element {
                     <span className='md:text-sm'>(844) 366-8742</span>
                   </a>
                 </li>
-                <li className='mb-2 md:text-sm'>
+                <li className='mb-2 md:text-xs'>
                   <a href='mailto:laverne@rockstarsoftomorrow.com'>
                     laverne@rockstarsoftomorrow.com
                   </a>

@@ -17,13 +17,13 @@ import SectionOverview from '@/components/SectionOverview'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 
-const businessName = 'Rockstars of Tomorrow - La Verne'
+const businessName = 'Rockstars of Tomorrow'
 const city = 'La Verne'
 const state = 'CA'
 const mainService = 'Music Lessons'
 const secondaryService = 'Band Programs'
 const homepageUrl = 'https://rockstarslaverne.com/'
-const ogImageUrl = '/imagen/hero-image-kid-band-01.png' // Choose a strong image URL for social sharing - ideally a photo, not just logo
+const ogImageUrl = '/imagen/band-13.jpg' // Choose a strong image URL for social sharing - ideally a photo, not just logo
 const logoUrl = '/imgs/logos/rockstars-la-verne-logo-white.png' // Use the logo URL for the favicon and manifest
 
 export const metadata: Metadata = {
@@ -154,10 +154,8 @@ export default function Home() {
     },
     geo: {
       '@type': 'GeoCoordinates',
-      // --- IMPORTANT: Get accurate Lat/Long for your address ---
-      // --- You can find these using Google Maps ---
-      latitude: '34.10969514585363', // Example for La Verne area - REPLACE WITH ACCURATE VALUE
-      longitude: '-117.7531820340577', // Example for La Verne area - REPLACE WITH ACCURATE VALUE
+      latitude: '34.10969514585363',
+      longitude: '-117.7531820340577',
     },
     image: `${homepageUrl}${ogImageUrl.startsWith('/') ? ogImageUrl.substring(1) : ogImageUrl}`, // Use the same strong image as OG
     logo: `${homepageUrl}${logoUrl.startsWith('/') ? logoUrl.substring(1) : logoUrl}`, // Use the logo URL

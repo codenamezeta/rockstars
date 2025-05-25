@@ -18,22 +18,22 @@ export default function Benefits(): JSX.Element {
             sets us apart:"
       />
       <div className='container px-5 mx-auto flex flex-wrap flex-row-reverse'>
-        <div className='lg:w-1/2 w-full sm:px-12 md:px-24 lg:px-0'>
+        <div className='xl:w-1/2 w-full sm:px-12 md:px-24 xl:px-0'>
           <Image
             alt='rockstar kid'
-            className='object-cover object-center -mb-32 md:-mb-44 lg:-mb-56'
+            className='object-cover object-center -mb-32 md:-mb-44 xl:-mb-56'
             src={rockstar}
             loading='lazy'
             placeholder='blur'
           />
         </div>
-        <div className='flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center text-lg'>
-          <div className='flex flex-col mb-10 lg:items-start items-center'>
+        <div className='flex flex-col flex-wrap xl:py-6 -mb-10 xl:w-1/2 xl:pl-12 xl:text-left text-center text-lg'>
+          <div className='flex flex-col mb-10 xl:items-start items-center'>
             <div className='flex-grow'>
               <h2 className='text-accent text-2xl title-font font-medium mb-3'>
                 Performance Opportunities Galore
               </h2>
-              <p className='leading-relaxed'>
+              <p className='leading-relaxed max-w-prose'>
                 At Rockstars of Tomorrow, we offer regular live performance
                 opportunities at top venues in La Verne and nearby communities.
                 Build your confidence, gain real-world experience, and captivate
@@ -48,12 +48,12 @@ export default function Benefits(): JSX.Element {
               </Link> */}
             </div>
           </div>
-          <div className='flex flex-col mb-10 lg:items-start items-center'>
+          <div className='flex flex-col mb-10 xl:items-start items-center'>
             <div className='flex-grow'>
               <h2 className='text-accent text-2xl title-font font-medium mb-3'>
                 Live Band Classes
               </h2>
-              <p className='leading-relaxed'>
+              <p className='leading-relaxed max-w-prose'>
                 Join forces with fellow musicians in our exclusive JamCore and
                 BandCore classes, where the magic of collaboration comes alive.
                 Sharpen your communication skills, learn to adapt and sync with
@@ -70,12 +70,12 @@ export default function Benefits(): JSX.Element {
               </Link> */}
             </div>
           </div>
-          <div className='flex flex-col mb-10 lg:items-start items-center'>
+          <div className='flex flex-col mb-10 xl:items-start items-center'>
             <div className='flex-grow'>
               <h2 className='text-accent text-2xl title-font font-medium mb-3'>
                 Superstar Music Mentors
               </h2>
-              <p className='leading-relaxed'>
+              <p className='leading-relaxed max-w-prose'>
                 Learn from the best! With diverse backgrounds and years of
                 experience, the Rockstars of Tomorrow team includes some of the
                 most accomplished and inspiring contemporary music instructors
@@ -91,12 +91,12 @@ export default function Benefits(): JSX.Element {
               </Link> */}
             </div>
           </div>
-          <div className='flex flex-col mb-0 lg:items-start items-center'>
+          <div className='flex flex-col mb-0 xl:items-start items-center'>
             <div className='flex-grow'>
               <h2 className='text-accent text-2xl title-font font-medium mb-3'>
                 State-of-the-Art Facilities
               </h2>
-              <p className='leading-relaxed'>
+              <p className='leading-relaxed max-w-prose'>
                 Elevate your music journey in our state-of-the-art,
                 professional-grade studios, fully equipped to meet the needs of
                 aspiring rockstars. Designed for both practice and performance,
