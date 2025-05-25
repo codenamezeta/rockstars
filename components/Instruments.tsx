@@ -4,12 +4,7 @@ import { Button } from './ui/button'
 import { IoStarSharp } from 'react-icons/io5'
 import Link from 'next/link'
 import Image from 'next/image'
-//- AI Music Marketing Images
-// import Guitarist from '@/public/imgs/ai/electric-guitarists/ElectricGuitar1.png'
-// import Bassist from '@/public/imgs/ai/bassists/Bass1.png'
-// import Drummer from '@/public/imgs/ai/drummers/Drummer1.png'
-// import Pianist from '@/public/imgs/ai/pianists/Piano3.png'
-// import Vocalist from '@/public/imgs/ai/vocalists/Vocalist1.png'
+
 import Guitarist from '@/public/imagen/guitarist-03.jpg'
 import Bassist from '@/public/imagen/bassist-05.jpg'
 import Drummer from '@/public/imagen/drummer-02.jpg'
@@ -69,53 +64,6 @@ const instrumentsData = [
   },
 ]
 
-export default function Instruments() {
-  const [selected, setSelected] = useState('guitar')
-
-  // Find the currently selected instrument once
-  const activeInstrument = instrumentsData.find(
-    (item) => item.title.toLowerCase() === selected
-  )
-
-  return (
-    <div className='flex-col md:flex-row flex lg:w-2/3 mx-auto'>
-      <ul className='flex flex-row md:flex-col flex-wrap text-sm md:text-lg font-medium text-muted-foreground'>
-        {instrumentsData.map((instrument, index) => (
-          <li
-            key={index}
-            className={`flex w-1/3 md:w-full text-sm px-4 py-3 border-b border-r border-black cursor-pointer hover:text-primary-foreground hover:bg-primary transition-all duration-700 ${
-              selected === instrument.title.toLowerCase()
-                ? 'font-bold text-primary-foreground bg-primary'
-                : 'bg-secondary'
-            }`}
-            onClick={() => setSelected(instrument.title.toLowerCase())}
-          >
-            {instrument.title}
-          </li>
-        ))}
-      </ul>
-
-      <div className='p-6 bg-background rounded-lg w-full themed-background-style-3'>
-        <h3 className='text-sm text-xl md:text-3xl text-accent font-bold mb-2'>
-          {activeInstrument?.heading}
-        </h3>
-        {activeInstrument?.description.map((paragraph, idx) => (
-          <p key={idx} className='mb-4 text-sm md:text-xl'>
-            {paragraph}
-          </p>
-        ))}
-        <Link href='/?scrollTo=free_trial'>
-          <Button size='full'>
-            <IoStarSharp className='items-baseline mr-2' />
-            Book A Free Trial
-            <IoStarSharp className='inline ml-2' />
-          </Button>
-        </Link>
-      </div>
-    </div>
-  )
-}
-
 export function InstrumentsSelector() {
   const [selected, setSelected] = useState('guitar')
 
@@ -156,7 +104,7 @@ export function InstrumentsSelector() {
         ))}
       </ul>
       <div className=''>
-        <h3 className='text-lg text-xl md:text-3xl lg:text-5xl text-accent font-bold mt-12 mb-6'>
+        <h3 className='text-xl md:text-3xl lg:text-5xl text-accent font-bold mt-12 mb-6'>
           {activeInstrument?.heading}
         </h3>
         {activeInstrument?.description.map((paragraph, idx) => (
@@ -175,3 +123,50 @@ export function InstrumentsSelector() {
     </div>
   )
 }
+
+// export default function Instruments() {
+//   const [selected, setSelected] = useState('guitar')
+
+//   // Find the currently selected instrument once
+//   const activeInstrument = instrumentsData.find(
+//     (item) => item.title.toLowerCase() === selected
+//   )
+
+//   return (
+//     <div className='flex-col md:flex-row flex lg:w-2/3 mx-auto'>
+//       <ul className='flex flex-row md:flex-col flex-wrap text-sm md:text-lg font-medium text-muted-foreground'>
+//         {instrumentsData.map((instrument, index) => (
+//           <li
+//             key={index}
+//             className={`flex w-1/3 md:w-full text-sm px-4 py-3 border-b border-r border-black cursor-pointer hover:text-primary-foreground hover:bg-primary transition-all duration-700 ${
+//               selected === instrument.title.toLowerCase()
+//                 ? 'font-bold text-primary-foreground bg-primary'
+//                 : 'bg-secondary'
+//             }`}
+//             onClick={() => setSelected(instrument.title.toLowerCase())}
+//           >
+//             {instrument.title}
+//           </li>
+//         ))}
+//       </ul>
+
+//       <div className='p-6 bg-background rounded-lg w-full themed-background-style-3'>
+//         <h3 className='md:text-3xl text-accent font-bold mb-2'>
+//           {activeInstrument?.heading}
+//         </h3>
+//         {activeInstrument?.description.map((paragraph, idx) => (
+//           <p key={idx} className='mb-4 text-sm md:text-xl'>
+//             {paragraph}
+//           </p>
+//         ))}
+//         <Link href='/?scrollTo=free_trial'>
+//           <Button size='full'>
+//             <IoStarSharp className='items-baseline mr-2' />
+//             Book A Free Trial
+//             <IoStarSharp className='inline ml-2' />
+//           </Button>
+//         </Link>
+//       </div>
+//     </div>
+//   )
+// }
