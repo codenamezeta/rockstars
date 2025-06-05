@@ -70,7 +70,7 @@ export default function Footer(): JSX.Element {
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href='/contact'>Contact Us</Link>
+                <Link href='/charter-schools'>Charter Schools</Link>
               </li>
               <li className='mb-2'>
                 <Link href='/policies'>Studio Policies</Link>
