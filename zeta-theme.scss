@@ -342,6 +342,29 @@ footer {
     z-index: -1;
   }
 }
+.texture-background-1 {
+  background: url('/assets/backgrounds/guitar-cab-texture-02.jpg') no-repeat top
+    center/cover;
+  position: relative;
+  opacity: 0.99;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.67);
+    z-index: -1;
+  }
+}
+.image-background-1 {
+  background:
+    linear-gradient(to right, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 60%),
+    url('/imagen/band-09.jpg') no-repeat right center/50% cover;
+  position: relative;
+}
 
 .background-theme-img {
   background: url('/assets/Dust-Overlay.png') no-repeat center center/cover;

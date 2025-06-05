@@ -279,7 +279,8 @@ export default function CharterSchoolsPage(): JSX.Element {
       <Header
         title='Charter Schools'
         subtitle='Your Music Journey, Funded by Your Charter School'
-        customClasses='red-background-1'
+        // customClasses='red-background-1'
+        customClasses='image-background-1'
       />
       <main className='py-24 background-5'>
         <div className='container flex flex-wrap flex-col md:flex-row justify-between space-y-6'>

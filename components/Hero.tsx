@@ -38,7 +38,7 @@ export default function Hero({
       }}
     >
       <div className='container flex flex-col items-start xl:flex-row pt-20'>
-        <div className='z-10 lg:w-3/4 flex flex-col mt-24 space-y-6 self-center xl:self-auto'>
+        <div className='z-10 lg:w-3/4 flex flex-col mt-24 space-y-6 self-center xl:self-auto pr-12'>
           {/* <h1 className='text-4xl lg:text-8xl font-bold text-primary uppercase tracking-tighter'>
             {title}
           </h1> */}

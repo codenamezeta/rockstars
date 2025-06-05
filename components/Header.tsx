@@ -15,7 +15,7 @@ export default function Header({
 }: HeaderProps): JSX.Element {
   return (
     <header
-      className={`font-anton z-0 px-5 pt-32 md:pt-56 pb-24 ${customClasses}`}
+      className={`font-soleil z-0 px-5 pt-32 md:pt-56 pb-24 ${customClasses}`}
     >
       <div className='container'>
         <h1 className='text-5xl md:text-8xl font-bold mb-2 text-accent themed-text-2'>
