@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import Stripe from 'stripe'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-  apiVersion: '2025-03-31.basil',
+  apiVersion: '2025-07-30.basil',
 })
 
 export async function POST(req: Request) {
@@ -13,14 +13,10 @@ export async function POST(req: Request) {
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amount * 100, // Stripe requires the amount in cents
       currency: 'usd',
-      automatic_payment_methods: {
-        enabled: true,
-      },
+      automatic_payment_methods: { enabled: true },
     })
 
-    return NextResponse.json({
-      clientSecret: paymentIntent.client_secret,
-    })
+    return NextResponse.json({ clientSecret: paymentIntent.client_secret })
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 400 })
   }
