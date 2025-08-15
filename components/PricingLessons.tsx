@@ -55,7 +55,7 @@ export default function PricingLessons(): JSX.Element {
               }
               onClick={handleToggle}
             >
-              Flat Rate
+              Monthly
             </button>
             <button
               className={
@@ -65,14 +65,14 @@ export default function PricingLessons(): JSX.Element {
               }
               onClick={handleToggle}
             >
-              Hourly Rate
+              Packages
             </button>
           </div>
-          {/* This div marks the pricing data seperated from the textual description */}
+          {/* This div marks the pricing data separated from the textual description */}
           <div className='flex flex-col md:flex-row md:gap-2'>
             <LessonPriceBox
-              timeBlockSize={toggled ? 2 : 30}
-              interval={toggled ? '' : '/month'}
+              timeBlockSize={30}
+              interval={toggled ? 'for 4 lessons' : '/month'}
               price={159}
               additionalCostText='+$69 each additional student'
               customPrice={false}
@@ -81,38 +81,46 @@ export default function PricingLessons(): JSX.Element {
               highlightText={''}
               featuresList={
                 !toggled
-                  ? ['Fifth week free', 'Free trial lesson']
+                  ? [
+                      'Fifth week free',
+                      'Save your weekly time slot',
+                      'Free trial lesson',
+                    ]
                   : ['Flexible scheduling']
               }
               disclaimers={['Prices & availability are subject to change.']}
               callToActionText={''}
-              recurrence={toggled ? 'Hour Block' : 'minutes per week'}
+              recurrence={toggled ? 'minute lessons' : 'minutes per week'}
             />
             <LessonPriceBox
               highlight={!toggled}
               highlightText='Most Popular'
-              timeBlockSize={toggled ? 3 : 45}
-              interval={toggled ? '' : '/month'}
-              recurrence={toggled ? 'Hour Block' : 'minutes per week'}
+              timeBlockSize={45}
+              interval={toggled ? 'for 4 lessons' : '/month'}
+              recurrence={toggled ? 'minute lessons' : 'minutes per week'}
               price={237}
               additionalCostText='+$87 each additional student'
               callToActionText={''}
               featuresList={
-                !toggled ? ['Fifth week free'] : ['Flexible scheduling']
+                !toggled
+                  ? ['Fifth week free', 'Save your weekly time slot']
+                  : ['Flexible scheduling']
               }
             />
             <LessonPriceBox
               highlight={true}
               highlightText='Best Value'
               highlightColor='accent'
-              timeBlockSize={toggled ? 4 : 60}
-              interval={toggled ? '' : '/month'}
-              recurrence={toggled ? 'Hour Block' : 'minutes per week'}
+              timeBlockSize={60}
+              interval={toggled ? 'for 4 lessons' : '/month'}
+              recurrence={toggled ? 'minute lessons' : 'minutes per week'}
               price={309}
               additionalCostText='+$109 each additional student'
               callToActionText={''}
               featuresList={
-                !toggled ? ['Fifth week free'] : ['Flexible scheduling']
+                !toggled
+                  ? ['Fifth week free', 'Save your weekly time slot']
+                  : ['Flexible scheduling']
               }
             />
           </div>
