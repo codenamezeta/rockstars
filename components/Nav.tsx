@@ -80,7 +80,7 @@ export default function Nav({ pages }: { pages: Page[] }): JSX.Element {
               quality={50}
               fill
               style={{ objectFit: 'contain' }}
-              sizes='180px' // This is critical - specify the exact max size
+              sizes='180px' //- This is critical - specify the exact max size
               priority={true}
             />
           </div>
