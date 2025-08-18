@@ -1,3 +1,8 @@
+/*
+  The summer camp payment intent logic below has been temporarily disabled.
+  To re-enable it for the next season, simply remove this block comment
+  and the `export {};` line at the very bottom of the file.
+
 import { NextResponse } from 'next/server'
 import Stripe from 'stripe'
 
@@ -20,4 +25,17 @@ export async function POST(req: Request) {
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 400 })
   }
+}
+*/
+
+// This temporary code tells TypeScript that this file is a module,
+// which resolves the build error.
+import { NextResponse } from 'next/server'
+
+export async function POST(request: Request) {
+  // Return a specific error message while camps are not running.
+  return NextResponse.json(
+    { message: 'The summer camp program is currently closed.' },
+    { status: 403 } // 403 Forbidden is an appropriate HTTP status.
+  )
 }

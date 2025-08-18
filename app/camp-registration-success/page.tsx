@@ -3,7 +3,23 @@ import Link from 'next/link'
 export default function CampRegistrationSuccess() {
   return (
     <div className='max-w-screen-md mx-auto px-6 py-24 text-center'>
-      <h1 className='text-4xl font-bold mb-6'>Registration Successfull!</h1>
+      <h1 className='text-4xl font-bold mb-6'>
+        Registration is currently closed.
+      </h1>
+      <Link
+        href='/'
+        className='inline-block bg-primary text-white py-2 px-6 rounded-md hover:bg-opacity-90 transition'
+      >
+        Return to Home Page
+      </Link>
+      <Link
+        href='/contact'
+        className='inline-block bg-primary text-white py-2 px-6 rounded-md hover:bg-opacity-90 transition'
+      >
+        Contact Us
+      </Link>
+      // Original code to be re-enabled next year.
+      {/* <h1 className='text-4xl font-bold mb-6'>Registration Successful!</h1>
       <p className='text-xl mb-4'>
         Thank you for enrolling in our summer rock camp!
       </p>
@@ -22,7 +38,7 @@ export default function CampRegistrationSuccess() {
         className='inline-block bg-primary text-white py-2 px-6 rounded-md hover:bg-opacity-90 transition'
       >
         Contact Us
-      </Link>
+      </Link> */}
     </div>
   )
 }

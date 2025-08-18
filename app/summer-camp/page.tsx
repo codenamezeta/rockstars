@@ -1,5 +1,5 @@
 import SectionOverview from '@/components/SectionOverview'
-import CampSignupFormWithStripe from '@/components/CampSignupFormWithStripe'
+// import CampSignupFormWithStripe from '@/components/CampSignupFormWithStripe'
 import Contact from '@/components/Contact'
 import { buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
@@ -1058,12 +1058,12 @@ export default function SummerCamp() {
                     you’ve got questions. Just don’t wait—our camps fill up
                     faster than a Taylor Swift presale.
                   </p>
-                  <Link
+                  {/* <Link
                     href='/summer-camp?scrollTo=camp_registration'
-                    className={`${buttonVariants({ variant: 'default', size: 'full' })} mt-4 text-lg font-bold`}
+                    className={`${buttonVariants({ variant: 'default', size: 'full' })} disabled:opacity-50 cursor-not-allowed mt-4 text-lg font-bold`}
                   >
-                    Register Now
-                  </Link>
+                    Registration is currently closed
+                  </Link> */}
                 </>
               ),
             },
@@ -1079,10 +1079,25 @@ export default function SummerCamp() {
 
       {/* Enrollment Form */}
       <section id='enroll' className='background-5'>
-        <CampSignupFormWithStripe
+        <div className='max-w-2xl mx-auto' id='camp_registration'>
+          <h1 className='text-4xl font-bold text-center mb-8 text-accent'>
+            Summer Camp Registration
+          </h1>
+          <h2 className='text-3xl font-bold text-center mb-8'>
+            Registration has closed for 2025. Please check back in 2026 for the
+            next year of summer camps.
+          </h2>
+          <Link
+            href='/'
+            className={buttonVariants({ variant: 'default', size: 'full' })}
+          >
+            Return to Home
+          </Link>
+        </div>
+        {/* <CampSignupFormWithStripe
           title='Secure Your Spot Today'
           overviewText='Spaces fill quickly! Complete the form below to enroll your child in our exciting summer rock camp. Remember, early bird discount of $50 applies when enrolling 30+ days before camp starts.'
-        />
+        /> */}
       </section>
       <Script
         id='summer-camp-schema' // Unique ID for the script tag
