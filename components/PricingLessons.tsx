@@ -49,9 +49,9 @@ export default function PricingLessons(): JSX.Element {
           <div className='flex md:w-2/5 lg:w-1/4 mx-auto border-2 border-accent rounded overflow-hidden my-6'>
             <button
               className={
-                !toggled
-                  ? 'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
-                  : 'text-xs md:text-base py-1 px-4 w-full text-muted-foreground focus:outline-none transition-all duration-500'
+                !toggled ?
+                  'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
+                : 'text-xs md:text-base py-1 px-4 w-full text-muted-foreground focus:outline-none transition-all duration-500'
               }
               onClick={handleToggle}
             >
@@ -59,9 +59,9 @@ export default function PricingLessons(): JSX.Element {
             </button>
             <button
               className={
-                !toggled
-                  ? 'text-xs md:text-base py-1 px-4 w-full text-muted-foreground focus:outline-none transition-all duration-500'
-                  : 'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
+                !toggled ?
+                  'text-xs md:text-base py-1 px-4 w-full text-muted-foreground focus:outline-none transition-all duration-500'
+                : 'text-xs md:text-base py-1 px-4 w-full bg-accent text-white focus:outline-none transition-all duration-500'
               }
               onClick={handleToggle}
             >
@@ -73,20 +73,20 @@ export default function PricingLessons(): JSX.Element {
             <LessonPriceBox
               timeBlockSize={30}
               interval={toggled ? 'for 4 lessons' : '/month'}
-              price={159}
-              additionalCostText='+$69 each additional student'
+              price={165}
+              additionalCostText='+$72 each additional student'
               customPrice={false}
               customPriceText={''}
               highlight={false}
               highlightText={''}
               featuresList={
-                !toggled
-                  ? [
-                      'Fifth week free',
-                      'Save your weekly time slot',
-                      'Free trial lesson',
-                    ]
-                  : ['Flexible scheduling']
+                !toggled ?
+                  [
+                    'Fifth week free',
+                    'Save your weekly time slot',
+                    'Free trial lesson',
+                  ]
+                : ['Flexible scheduling']
               }
               disclaimers={['Prices & availability are subject to change.']}
               callToActionText={''}
@@ -98,13 +98,13 @@ export default function PricingLessons(): JSX.Element {
               timeBlockSize={45}
               interval={toggled ? 'for 4 lessons' : '/month'}
               recurrence={toggled ? 'minute lessons' : 'minutes per week'}
-              price={237}
-              additionalCostText='+$87 each additional student'
+              price={245}
+              additionalCostText='+$91 each additional student'
               callToActionText={''}
               featuresList={
-                !toggled
-                  ? ['Fifth week free', 'Save your weekly time slot']
-                  : ['Flexible scheduling']
+                !toggled ?
+                  ['Fifth week free', 'Save your weekly time slot']
+                : ['Flexible scheduling']
               }
             />
             <LessonPriceBox
@@ -114,13 +114,13 @@ export default function PricingLessons(): JSX.Element {
               timeBlockSize={60}
               interval={toggled ? 'for 4 lessons' : '/month'}
               recurrence={toggled ? 'minute lessons' : 'minutes per week'}
-              price={309}
-              additionalCostText='+$109 each additional student'
+              price={320}
+              additionalCostText='+$115 each additional student'
               callToActionText={''}
               featuresList={
-                !toggled
-                  ? ['Fifth week free', 'Save your weekly time slot']
-                  : ['Flexible scheduling']
+                !toggled ?
+                  ['Fifth week free', 'Save your weekly time slot']
+                : ['Flexible scheduling']
               }
             />
           </div>

@@ -112,7 +112,7 @@ export default function pricing() {
       name: 'Monthly Private Lessons (30-mins)',
       description:
         'Weekly 30-minute private lessons. Ideal for focused, individual instruction.',
-      price: '159', // Example price
+      price: '165', // Example price
       billingIncrement: 'Month',
       itemOfferedName: '30-Minute Private Music Lessons',
       itemOfferedDescription:
@@ -124,7 +124,7 @@ export default function pricing() {
       name: 'Monthly Private Lessons (45-mins)',
       description:
         'Weekly 45-minute private lessons. Ideal for focused, individual instruction.',
-      price: '237',
+      price: '245',
       billingIncrement: 'Month',
       itemOfferedName: '45-Minute Private Music Lessons',
       itemOfferedDescription:
@@ -136,7 +136,7 @@ export default function pricing() {
       name: 'Monthly Private Lessons (60-mins)',
       description:
         'Weekly 60-minute private lessons. Ideal for focused, individual instruction.',
-      price: '309',
+      price: '320',
       billingIncrement: 'Month',
       itemOfferedName: '60-Minute Private Music Lessons',
       itemOfferedDescription:
@@ -304,8 +304,11 @@ export default function pricing() {
         name: pkg.name,
         description: pkg.description, // This description will be important for Rockstar Pro
         url: `https://rockstarslaverne.com${pageUrl}#${pkg.id}`,
-        priceSpecification: pkg.price // Check if price exists before creating PriceSpecification
-          ? {
+        priceSpecification:
+          (
+            pkg.price // Check if price exists before creating PriceSpecification
+          ) ?
+            {
               '@type': 'PriceSpecification',
               price: pkg.price,
               priceCurrency: 'USD',
